@@ -1,5 +1,5 @@
 ﻿################################################################################
-## 초기화
+## 초기화 ##
 ################################################################################
 
 ## The init offset statement causes the initialization statements in this file
@@ -465,6 +465,3 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
-
-
-
