@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 21, in script
+    show room at halfsize,truecenter
+  File "game/script.rpy", line 21, in <module>
+    show room at halfsize,truecenter
+NameError: name 'halfsize' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 21, in script
+    show room at halfsize,truecenter
+  File "/Applications/renpy-7.1.1-sdk/renpy/ast.py", line 1151, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "/Applications/renpy-7.1.1-sdk/renpy/ast.py", line 1110, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "/Applications/renpy-7.1.1-sdk/renpy/python.py", line 1944, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Applications/renpy-7.1.1-sdk/renpy/python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 21, in <module>
+    show room at halfsize,truecenter
+NameError: name 'halfsize' is not defined
+
+Darwin-18.0.0-x86_64-i386-64bit
+Ren'Py 7.1.1.929
+Nuclear Inssamaker 1.0
+Sat Nov  3 22:37:47 2018

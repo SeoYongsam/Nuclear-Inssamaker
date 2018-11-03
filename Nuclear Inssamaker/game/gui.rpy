@@ -1,8 +1,8 @@
 ﻿################################################################################
-## 초기화 ##
+## 초기화
 ################################################################################
 
-## 서용삼
+
 
 ## The init offset statement causes the initialization statements in this file
 ## to run before init statements in any other file.
