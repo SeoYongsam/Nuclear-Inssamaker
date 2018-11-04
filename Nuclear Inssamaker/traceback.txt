@@ -1,57 +1,69 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/sunday_room.rpy", line 33, in prepare_screen
-    screen schedule_button():
-  File "game/sunday_room.rpy", line 33, in prepare
-    screen schedule_button():
-  File "game/sunday_room.rpy", line 34, in prepare
+While running game code:
+  File "game/sunday_room.rpy", line 197, in script
+    "하루가 지난다"
+  File "game/sunday_room.rpy", line 147, in execute
+    screen schedule_sat():
+  File "game/sunday_room.rpy", line 147, in execute
+    screen schedule_sat():
+  File "game/sunday_room.rpy", line 148, in execute
+    if day_schedule[5] != 0:
+  File "game/sunday_room.rpy", line 149, in execute
     frame:
-  File "game/sunday_room.rpy", line 34, in prepare
-    frame:
-  File "game/sunday_room.rpy", line 36, in prepare
-    vbox:
-  File "game/sunday_room.rpy", line 36, in prepare
-    vbox:
-  File "game/sunday_room.rpy", line 39, in prepare
-    textbutton "공부하기":
-  File "game/sunday_room.rpy", line 39, in prepare
-    textbutton "공부하기":
-TypeError: __init__() takes exactly 2 arguments (3 given)
+  File "game/sunday_room.rpy", line 151, in execute
+    if day_schedule[6] == 1:
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Applications/renpy-7.1.1-sdk/renpy/bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "/Applications/renpy-7.1.1-sdk/renpy/main.py", line 513, in main
-    run(restart)
-  File "/Applications/renpy-7.1.1-sdk/renpy/main.py", line 90, in run
-    renpy.display.screen.prepare_screens()
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 908, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/sunday_room.rpy", line 33, in prepare_screen
-    screen schedule_button():
-  File "game/sunday_room.rpy", line 33, in prepare
-    screen schedule_button():
-  File "game/sunday_room.rpy", line 34, in prepare
+  File "game/sunday_room.rpy", line 197, in script
+    "하루가 지난다"
+  File "/Applications/renpy-7.1.1-sdk/renpy/ast.py", line 678, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "/Applications/renpy-7.1.1-sdk/renpy/exports.py", line 1204, in say
+    who(what, *args, **kwargs)
+  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 1031, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 823, in do_display
+    **display_args)
+  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 572, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Applications/renpy-7.1.1-sdk/renpy/ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 3049, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 424, in visit_all
+    callback(self)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 3049, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 434, in per_interact
+    self.update()
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 619, in update
+    self.screen.function(**self.scope)
+  File "game/sunday_room.rpy", line 147, in execute
+    screen schedule_sat():
+  File "game/sunday_room.rpy", line 147, in execute
+    screen schedule_sat():
+  File "game/sunday_room.rpy", line 148, in execute
+    if day_schedule[5] != 0:
+  File "game/sunday_room.rpy", line 149, in execute
     frame:
-  File "game/sunday_room.rpy", line 34, in prepare
-    frame:
-  File "game/sunday_room.rpy", line 36, in prepare
-    vbox:
-  File "game/sunday_room.rpy", line 36, in prepare
-    vbox:
-  File "game/sunday_room.rpy", line 39, in prepare
-    textbutton "공부하기":
-  File "game/sunday_room.rpy", line 39, in prepare
-    textbutton "공부하기":
-  File "/Applications/renpy-7.1.1-sdk/renpy/python.py", line 1937, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<screen language>", line 40, in <module>
-TypeError: __init__() takes exactly 2 arguments (3 given)
+  File "game/sunday_room.rpy", line 151, in execute
+    if day_schedule[6] == 1:
+  File "<screen language>", line 151, in <module>
+IndexError: list index out of range
 
 Darwin-18.0.0-x86_64-i386-64bit
 Ren'Py 7.1.1.929
 Nuclear Inssamaker 1.0
-Sun Nov  4 15:54:00 2018
+Sun Nov  4 18:04:44 2018

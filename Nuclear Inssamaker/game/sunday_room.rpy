@@ -4,30 +4,31 @@
 image planner_background = "planner_background.png"
 image highlight = "highlight.png"
 
-image sel_club = "sel_club.png"
-image sel_gwa = "sel_gwa.png"
-image sel_rest = "sel_rest.png"
-image sel_study = "sel_study.png"
+image sel_study = "sel_study.png" #1
+image sel_club = "sel_club.png" #2
+image sel_gwa = "sel_gwa.png" #3
+image sel_rest = "sel_rest.png" #4
 
 style center_text:
     text_align 0.5
 
+## 일요일 방에서 핸드폰 아이콘
 screen phone_icon():
-#    frame:
-#        xalign 0.34 yalign 0.7
     vbox xalign 0.34 yalign 0.7:
         imagebutton:
             idle "phone"
             hover im.Alpha("phone.png",2)
-            action Call("phone")
+            action Jump("phone")
 
+## 일요일 방에서 플래너 아이콘
 screen planner_icon():
     vbox xalign 0.64 yalign 0.7:
         imagebutton:
             idle "planner"
             hover im.Alpha("planner.png",2)
-            action Call("planner")
+            action Jump("planner")
 
+## 플래너를 눌렀을 때 나오는 일정짜기 버튼
 screen schedule_button():
     frame:
         xpos 750 yalign 0.5
@@ -36,39 +37,130 @@ screen schedule_button():
             spacing 10
 
             textbutton "공부하기":
-                action Jump("schedule_setup")
-#                action Notify("공부했다")
+                action SetVariable("tmp", 1)
 
             textbutton "동아리":
-                action Notify("동아리 활동했다")
+                action SetVariable("tmp", 2)
+#                action Notify("동아리 활동했다")
 
             textbutton "과활동":
-                action Notify("과활동했다")
+                action SetVariable("tmp", 3)
+#                action Notify("과활동했다")
 
             textbutton "휴식":
-                action Notify("쉬었다")
+                action SetVariable("tmp", 4)
+#                action Notify("쉬었다")
 
             textbutton "뒤로가기":
+#                $ tmp = 5
                 action Notify("뒤로간다...")
                 #text_align 0.5
 
+
+
+## 스케줄러에서 선택화면이 나타나는 하이라이트 화면
 screen schedule_highlight():
     vbox:
         xpos (59+ 99*(day-1)) ypos 307
         add "highlight"
 
-screen schedule_text():
-    frame:
-        xpos 59+ 99*(day-1) ypos 307
-        add "sel_study"
+screen schedule_mon():
+    if day_schedule[0] != 0:
+        frame:
+            xpos 59 ypos 307
+            if day_schedule[0] == 1:
+                add "sel_study"
 
-label schedule_setup():
-    show screen schedule_text
-    show screen schedule_highlight
+            elif day_schedule[0] == 2:
+                add "sel_club"
 
-    return
+            elif day_schedule[0] == 3:
+                add "sel_gwa"
 
-#start 함수에서 오는 곳
+            elif day_schedule[0] == 4:
+                add "sel_rest"
+
+screen schedule_tue():
+    if day_schedule[1] != 0:
+        frame:
+            xpos 159 ypos 307
+            if day_schedule[1] == 1:
+                add "sel_study"
+
+            elif day_schedule[1] == 2:
+                add "sel_club"
+
+            elif day_schedule[1] == 3:
+                add "sel_gwa"
+
+            elif day_schedule[1] == 4:
+                add "sel_rest"
+
+screen schedule_wed():
+    if day_schedule[2] != 0:
+        frame:
+            xpos 259 ypos 307
+            if day_schedule[2] == 1:
+                add "sel_study"
+
+            elif day_schedule[2] == 2:
+                add "sel_club"
+
+            elif day_schedule[2] == 3:
+                add "sel_gwa"
+
+            elif day_schedule[2] == 4:
+                add "sel_rest"
+
+screen schedule_thu():
+    if day_schedule[3] != 0:
+        frame:
+            xpos 359 ypos 307
+            if day_schedule[3] == 1:
+                add "sel_study"
+
+            elif day_schedule[3] == 2:
+                add "sel_club"
+
+            elif day_schedule[3] == 3:
+                add "sel_gwa"
+
+            elif day_schedule[3] == 4:
+                add "sel_rest"
+
+screen schedule_fri():
+    if day_schedule[4] != 0:
+        frame:
+            xpos 459 ypos 307
+            if day_schedule[4] == 1:
+                add "sel_study"
+
+            elif day_schedule[4] == 2:
+                add "sel_club"
+
+            elif day_schedule[4] == 3:
+                add "sel_gwa"
+
+            elif day_schedule[4] == 4:
+                add "sel_rest"
+
+screen schedule_sat():
+    if day_schedule[5] != 0:
+        frame:
+            xpos 559 ypos 307
+            if day_schedule[5] == 1:
+                add "sel_study"
+
+            elif day_schedule[5] == 2:
+                add "sel_club"
+
+            elif day_schedule[5] == 3:
+                add "sel_gwa"
+
+            elif day_schedule[5] == 4:
+                add "sel_rest"
+
+#s tart 함수에서 오는 곳
 label sunday_room:
     scene room at truecenter
 
@@ -96,13 +188,29 @@ label planner:
     hide screen phone_icon
     hide screen planner_icon
 
+    # 형광색 하이라이트 창
     show screen schedule_highlight
+
+
+    # 오른쪽 스케줄 창
     show screen schedule_button
     "하루가 지난다"
 
-    hide screen schedule_button
-    $ day += 1
-    jump sunday_room
+    $ day_schedule[day-1] = tmp
+    show screen schedule_mon
+    show screen schedule_tue
+    show screen schedule_wed
+    show screen schedule_thu
+    show screen schedule_fri
+    show screen schedule_sat
+
+#    hide screen schedule_button
+
+    if tmp != 0:
+        $ day += 1
+        $ tmp = 0
+
+    jump planner
 
     return
 
