@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sunday_room.rpy", line 219: reached end of line when expecting ':'.
-    if
-      ^
+File "game/WeekSchedule.rpy", line 5: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    $renpy.say("system","으악")
+    ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sun Nov  4 19:09:52 2018
+Sun Nov  4 20:10:11 2018
