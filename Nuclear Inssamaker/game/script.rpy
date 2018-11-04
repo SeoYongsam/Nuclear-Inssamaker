@@ -14,9 +14,8 @@ define s = Character('시스템', color="#c8ffc8")
 init python:
     hp = 72
     day = 1
-    day_schedule = [0,0,0,0,0,0] #일주일
+    day_schedule = [0,0,0,0,0,0]
     tmp = 0
-    i = 1
 
 # 여기에서부터 게임이 시작합니다.
 label start:

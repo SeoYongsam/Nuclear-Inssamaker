@@ -9,6 +9,9 @@ image sel_club = "sel_club.png"     #2
 image sel_gwa = "sel_gwa.png"       #3
 image sel_rest = "sel_rest.png"     #4
 
+style center_text:
+    text_align 0.5
+
 ## 일요일 방에서 핸드폰 아이콘
 screen phone_icon():
     vbox xalign 0.34 yalign 0.7:
@@ -67,11 +70,7 @@ screen schedule_mon():
         frame:
             xpos 59 ypos 307
             if day_schedule[0] == 1:
-                imagebutton:
-                    idle "sel_study"
-                    hover im.Alpha("sel_study.png",2)
-                    action NullAction()
-                #add "sel_study"
+                add "sel_study"
 
             elif day_schedule[0] == 2:
                 add "sel_club"
@@ -218,20 +217,6 @@ label planner:
             $ day += 1
         $ tmp = 0
 
-    # 형광색 하이라이트 창
-    if day <= 6 :
-        show screen schedule_highlight
-    else :
-        hide screen schedule_highlight
-
-    if day == 7:
-        "일주일 일정을 실행하시겠습니까?"
-        menu:
-            "실행한다":
-                jump WeekSchedule
-
-            "안한다":
-                "아무 일도 일어나지 않는다"
 
     jump planner
 
