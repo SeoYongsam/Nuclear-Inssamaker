@@ -1,80 +1,57 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Recolor' <'Image' u'phone'> 255 255 255 76 True>:
-  File "game/script.rpy", line 68, in script
-    s "Hi"
-IOError: Couldn't find file 'phone'.
+After initialization, but before game start.
+  File "game/sunday_room.rpy", line 33, in prepare_screen
+    screen schedule_button():
+  File "game/sunday_room.rpy", line 33, in prepare
+    screen schedule_button():
+  File "game/sunday_room.rpy", line 34, in prepare
+    frame:
+  File "game/sunday_room.rpy", line 34, in prepare
+    frame:
+  File "game/sunday_room.rpy", line 36, in prepare
+    vbox:
+  File "game/sunday_room.rpy", line 36, in prepare
+    vbox:
+  File "game/sunday_room.rpy", line 39, in prepare
+    textbutton "공부하기":
+  File "game/sunday_room.rpy", line 39, in prepare
+    textbutton "공부하기":
+TypeError: __init__() takes exactly 2 arguments (3 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 68, in script
-    s "Hi"
-  File "/Applications/renpy-7.1.1-sdk/renpy/ast.py", line 678, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/exports.py", line 1204, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 1031, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 823, in do_display
-    **display_args)
-  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 572, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-7.1.1-sdk/renpy/ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 2662, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 3148, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 2065, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 487, in renpy.display.render.render_screen
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 669, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/layout.py", line 922, in render
-    surf = render(d, width - x, rh, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/behavior.py", line 724, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/layout.py", line 1121, in render
-    st, at)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/im.py", line 580, in render
-    return cache.get(self, render=True)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/im.py", line 266, in get
-    surf = image.load()
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/im.py", line 1150, in load
-    surf = cache.get(self.image)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/im.py", line 266, in get
-    surf = image.load()
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/im.py", line 625, in load
-    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
-  File "/Applications/renpy-7.1.1-sdk/renpy/loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'phone'.
+  File "/Applications/renpy-7.1.1-sdk/renpy/bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "/Applications/renpy-7.1.1-sdk/renpy/main.py", line 513, in main
+    run(restart)
+  File "/Applications/renpy-7.1.1-sdk/renpy/main.py", line 90, in run
+    renpy.display.screen.prepare_screens()
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 908, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/sunday_room.rpy", line 33, in prepare_screen
+    screen schedule_button():
+  File "game/sunday_room.rpy", line 33, in prepare
+    screen schedule_button():
+  File "game/sunday_room.rpy", line 34, in prepare
+    frame:
+  File "game/sunday_room.rpy", line 34, in prepare
+    frame:
+  File "game/sunday_room.rpy", line 36, in prepare
+    vbox:
+  File "game/sunday_room.rpy", line 36, in prepare
+    vbox:
+  File "game/sunday_room.rpy", line 39, in prepare
+    textbutton "공부하기":
+  File "game/sunday_room.rpy", line 39, in prepare
+    textbutton "공부하기":
+  File "/Applications/renpy-7.1.1-sdk/renpy/python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<screen language>", line 40, in <module>
+TypeError: __init__() takes exactly 2 arguments (3 given)
 
 Darwin-18.0.0-x86_64-i386-64bit
 Ren'Py 7.1.1.929
 Nuclear Inssamaker 1.0
-Sun Nov  4 00:44:40 2018
+Sun Nov  4 15:54:00 2018

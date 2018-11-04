@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/sunday_room.rpy", line 68: expected a keyword argument or end of line.
+    style center_text:
+                     ^
+
+Ren'Py Version: Ren'Py 7.1.1.929
+Sun Nov  4 16:09:00 2018
