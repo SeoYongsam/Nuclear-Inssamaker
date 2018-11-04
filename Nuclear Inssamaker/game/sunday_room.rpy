@@ -53,7 +53,7 @@ screen schedule_button():
 
             textbutton "뒤로가기":
 #                $ tmp = 5
-                action Notify("뒤로간다...")
+                action Jump("GoBack")
                 #text_align 0.5
 
 
@@ -64,6 +64,7 @@ screen schedule_highlight():
         xpos (59+ 99*(day-1)) ypos 307
         add "highlight"
 
+# 월요일부터 금요일까지 노가다 작업
 screen schedule_mon():
     if day_schedule[0] != 0:
         frame:
@@ -189,14 +190,11 @@ label planner:
     hide screen planner_icon
 
     # 형광색 하이라이트 창
-    show screen schedule_highlight
+    if day <= 6 :
+        show screen schedule_highlight
+    else :
+        hide screen schedule_highlight
 
-
-    # 오른쪽 스케줄 창
-    show screen schedule_button
-    "하루가 지난다"
-
-    $ day_schedule[day-1] = tmp
     show screen schedule_mon
     show screen schedule_tue
     show screen schedule_wed
@@ -204,16 +202,41 @@ label planner:
     show screen schedule_fri
     show screen schedule_sat
 
+    # 오른쪽 스케줄 창
+    show screen schedule_button
+    "하루가 지난다"
+
+
+    if day < 7:
+        $ day_schedule[day-1] = tmp
+
 #    hide screen schedule_button
 
     if tmp != 0:
-        $ day += 1
+        if day <= 6:
+            $ day += 1
         $ tmp = 0
+
 
     jump planner
 
     return
 
+label GoBack :
+    hide planner_background
+
+    hide screen schedule_button
+    hide screen schedule_highlight
+
+    hide screen schedule_mon
+    hide screen schedule_tue
+    hide screen schedule_wed
+    hide screen schedule_thu
+    hide screen schedule_fri
+    hide screen schedule_sat
+
+
+    jump sunday_room
 
 label phone:
     hide screen phone_icon

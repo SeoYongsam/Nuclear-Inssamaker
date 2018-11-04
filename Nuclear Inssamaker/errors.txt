@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sunday_room.rpy", line 73: u'else' is not a keyword argument or valid child for the frame statement.
-    else if day_schedule[0] == 2:
-        ^
+File "game/sunday_room.rpy", line 219: reached end of line when expecting ':'.
+    if
+      ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sun Nov  4 17:50:51 2018
+Sun Nov  4 19:09:52 2018

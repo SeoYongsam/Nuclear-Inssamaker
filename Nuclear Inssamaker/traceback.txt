@@ -1,69 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/sunday_room.rpy", line 197, in script
-    "하루가 지난다"
-  File "game/sunday_room.rpy", line 147, in execute
-    screen schedule_sat():
-  File "game/sunday_room.rpy", line 147, in execute
-    screen schedule_sat():
-  File "game/sunday_room.rpy", line 148, in execute
-    if day_schedule[5] != 0:
-  File "game/sunday_room.rpy", line 149, in execute
-    frame:
-  File "game/sunday_room.rpy", line 151, in execute
-    if day_schedule[6] == 1:
-IndexError: list index out of range
+After loading the script.
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/sunday_room.rpy", line 197, in script
-    "하루가 지난다"
-  File "/Applications/renpy-7.1.1-sdk/renpy/ast.py", line 678, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/exports.py", line 1204, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 1031, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 823, in do_display
-    **display_args)
-  File "/Applications/renpy-7.1.1-sdk/renpy/character.py", line 572, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Applications/renpy-7.1.1-sdk/renpy/bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "/Applications/renpy-7.1.1-sdk/renpy/main.py", line 415, in main
+    if renpy.parser.report_parse_errors():
+  File "/Applications/renpy-7.1.1-sdk/renpy/parser.py", line 2787, in report_parse_errors
+    renpy.display.error.report_parse_errors(full_text, error_fn)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/error.py", line 187, in report_parse_errors
+    error_fn=error_fn,
+  File "/Applications/renpy-7.1.1-sdk/renpy/game.py", line 281, in invoke_in_new_context
+    return callable(*args, **kwargs)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/error.py", line 45, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
   File "/Applications/renpy-7.1.1-sdk/renpy/ui.py", line 289, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 2662, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 3049, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 424, in visit_all
-    callback(self)
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 3049, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 434, in per_interact
-    self.update()
-  File "/Applications/renpy-7.1.1-sdk/renpy/display/screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/sunday_room.rpy", line 147, in execute
-    screen schedule_sat():
-  File "game/sunday_room.rpy", line 147, in execute
-    screen schedule_sat():
-  File "game/sunday_room.rpy", line 148, in execute
-    if day_schedule[5] != 0:
-  File "game/sunday_room.rpy", line 149, in execute
-    frame:
-  File "game/sunday_room.rpy", line 151, in execute
-    if day_schedule[6] == 1:
-  File "<screen language>", line 151, in <module>
-IndexError: list index out of range
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 3340, in interact_core
+    self.quit_event()
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 2366, in quit_event
+    renpy.exports.take_screenshot()
+  File "/Applications/renpy-7.1.1-sdk/renpy/exports.py", line 1574, in take_screenshot
+    renpy.game.interface.take_screenshot(scale, background=background)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/core.py", line 2112, in take_screenshot
+    surf = renpy.display.scale.smoothscale(surf, scale)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/scale.py", line 95, in real_smoothscale
+    dest = pgrender.surface_unscaled(size, src)
+  File "/Applications/renpy-7.1.1-sdk/renpy/display/pgrender.py", line 118, in surface
+    surf = Surface((width + 4, height + 4), 0, sample)
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
 Darwin-18.0.0-x86_64-i386-64bit
 Ren'Py 7.1.1.929
-Nuclear Inssamaker 1.0
-Sun Nov  4 18:04:44 2018
+ 
+Sun Nov  4 19:13:09 2018
