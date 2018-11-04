@@ -4,10 +4,10 @@
 image planner_background = "planner_background.png"
 image highlight = "highlight.png"
 
-image sel_study = "sel_study.png" #1
-image sel_club = "sel_club.png" #2
-image sel_gwa = "sel_gwa.png" #3
-image sel_rest = "sel_rest.png" #4
+image sel_study = "sel_study.png"   #1
+image sel_club = "sel_club.png"     #2
+image sel_gwa = "sel_gwa.png"       #3
+image sel_rest = "sel_rest.png"     #4
 
 style center_text:
     text_align 0.5
