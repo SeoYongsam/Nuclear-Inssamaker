@@ -55,10 +55,11 @@ screen schedule_mon():
         hbox:
             xpos 60 ypos 308
             if day_schedule[0] == 1:
-                imagebutton:
-                    idle "sel_study.png"
-                    hover im.Alpha("sel_study.png",2)
-                    action Null
+                add "sel_study"
+#                imagebutton:
+#                    idle "sel_study.png"
+#                    hover im.Alpha("sel_study.png",2)
+#                    action Call("button_reset", number = 0)
 
             elif day_schedule[0] == 2:
                 add "sel_club"
@@ -148,3 +149,37 @@ screen schedule_sat():
 
             elif day_schedule[5] == 4:
                 add "sel_rest"
+
+screen schedule_revise_button():
+    hbox:
+        xpos 60 ypos 308
+        spacing 1
+        imagebutton :
+            idle im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            hover im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            action Call("button_reset", number = 0)
+
+        imagebutton :
+            idle im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            hover im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            action Call("button_reset", number = 1)
+
+        imagebutton :
+            idle im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            hover im.Alpha("sel_study.png",0)
+            action Call("button_reset", number = 2)
+
+        imagebutton :
+            idle im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            hover im.Alpha("sel_study.png",0)
+            action Call("button_reset", number = 3)
+
+        imagebutton :
+            idle im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            hover im.Alpha("sel_study.png",0)
+            action Call("button_reset", number = 4)
+
+        imagebutton :
+            idle im.Scale(im.Alpha("sel_study.png",0), 98, 98)
+            hover im.Alpha("sel_study.png",0)
+            action Call("button_reset", number = 5)

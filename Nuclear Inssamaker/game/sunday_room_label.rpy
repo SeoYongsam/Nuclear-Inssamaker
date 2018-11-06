@@ -50,6 +50,7 @@ label planner:
     show screen schedule_thu
     show screen schedule_fri
     show screen schedule_sat
+    show screen schedule_revise_button
 
     # 오른쪽 스케줄 창
     show screen schedule_button
@@ -62,10 +63,12 @@ label planner:
 
 #    hide screen schedule_button
 
-    if tmp_1 != 0:
+    while day_schedule[day-1] != 0:
+#    if tmp_1 != 0:
         if day <= 6:
             $ day += 1
-        $ tmp_1 = 0
+
+    $ tmp_1 = 0
 
     if day == 7:
         hide screen schedule_highlight
@@ -95,6 +98,15 @@ label go_sunday_room :
     hide screen schedule_sat
 
     jump sunday_room
+
+label button_reset(number) :
+    if day_schedule[number] != 0:
+        $ day_schedule[number] = 0
+        $ day = number + 1
+#    while day_schedule[day]
+#    if day_schedule[day] != 0
+#        $ day += 1
+    return
 
 label phone:
     hide screen phone_icon
