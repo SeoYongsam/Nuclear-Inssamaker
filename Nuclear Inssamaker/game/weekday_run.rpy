@@ -3,10 +3,16 @@
 
 label weekday_run:
     call hide_planner_button
-    scene black
+    # 낮 이벤트 넣기 전, 정기적 낮 수업을 위해 새로운 이미지를 첨부했습니다.
+    # (이후 강의실 도트나 좀 더 좋은 그림 나오면 수정하겠습니다)
+    scene bg lecture_room
 
+    # while문에 논리행 몇 개를 추가해서 낮, 밤 일정을 추가해보았습니다.
     $ i = 1
     while i <= 6:
+        "[i]일차 낮, 강의실에서 수업을 들었다."
+        scene black
+
         "[i]일차 일정은\n"
         if day_schedule[i] == 1:
             extend "공부했다"
@@ -18,6 +24,10 @@ label weekday_run:
             extend "휴식했다"
         else :
             extend "에러"
+
+        show phone_night at truecenter
+        "[i]일차 밤, SNS를 확인했다."
+        scene bg lecture_room
         $ i += 1
 
     "일요일 화면으로 돌아갑니다."

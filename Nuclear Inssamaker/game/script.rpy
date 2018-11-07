@@ -5,6 +5,8 @@
 image sunday_room_image = im.Scale("room.png",1480,820)
 image phone = "phone.png"
 image planner = "planner.png"
+image bg lecture_room = im.Scale("lecture_room.png",1480,820)
+image phone_night = "phone_night.png"
 
 # 게임에서 사용할 캐릭터를 정의합니다.
 #define e = Character('아이린', color="#c8ffc8")
