@@ -2,10 +2,12 @@
 # file, define a label and jump to it from another file.
 
 label weekday_run:
-    $ i = 0
-    while i < 6:
-        $ tmp_2 = i + 1
-        "[tmp_2]일차 일정은\n"
+    call hide_planner_button
+    scene black
+
+    $ i = 1
+    while i <= 6:
+        "[i]일차 일정은\n"
         if day_schedule[i] == 1:
             extend "공부했다"
         elif day_schedule[i] == 2:
@@ -20,12 +22,12 @@ label weekday_run:
 
     "일요일 화면으로 돌아갑니다."
     call weekday_schedule_reset
-    jump go_sunday_room
+    jump sunday_room
     return
 
 label weekday_schedule_reset:
-    $ i = 0
-    while i < 6:
+    $ i = 1
+    while i < 7:
         $ day_schedule[i] = 0
         $ i += 1
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sunday_room.rpy", line 219: reached end of line when expecting ':'.
-    if
-      ^
+File "game/sunday_room_screen.rpy", line 23: expected a keyword argument or end of line.
+    xalign 0.64 yalign 0.7:
+                          ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sun Nov  4 19:09:52 2018
+Wed Nov  7 23:50:47 2018
