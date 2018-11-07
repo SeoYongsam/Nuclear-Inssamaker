@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/sunday_room_screen.rpy", line 23: expected a keyword argument or end of line.
-    xalign 0.64 yalign 0.7:
-                          ^
+File "game/script.rpy", line 28: expected 'image_name_component' not found.
+    show "hp_background.png"
+         ^
+
+File "game/script.rpy", line 29: expected 'image_name_component' not found.
+    show "mental_background.png"
+         ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov  7 23:50:47 2018
+Thu Nov  8 02:37:53 2018

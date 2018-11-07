@@ -23,6 +23,7 @@ label planner:
 
     # 플래너 배경 ON
     show planner_background
+    show planner_schedule_list
 
     # 형광색 하이라이트 창
     show screen schedule_highlight
@@ -37,6 +38,8 @@ label planner:
 
     if day < 7 :
         "[day]일차 일정을 선택하세요."
+        window hide
+        pause
 
     # 뒤로가기 버튼을 눌러 for_day_schedule_select가 5가 되었을 시
     # 플래너 버튼을 숨기고 일요일로 간다.
@@ -62,6 +65,11 @@ label planner:
             "실행한다":
                 jump weekday_run
             "수정한다":
+                $ day = 1
+                while day_schedule[day] != 0:
+                #    if for_day_schedule_select != 0:
+                    if day <= 6:
+                        $ day += 1
                 window hide
                 pause
 
