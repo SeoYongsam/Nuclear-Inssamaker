@@ -3,17 +3,10 @@
 # image 문을 사용해 이미지를 정의합니다.
 # image eileen happy = "eileen_happy.png"
 image sunday_room_image = im.Scale("room.png",1480,820)
-<<<<<<< HEAD
-=======
-image phone = "phone.png"
-image planner = "planner.png"
 image bg lecture_room = im.Scale("lecture_room.png",1480,820)
 image phone_night = "phone_night.png"
->>>>>>> eeaef7b8c10c3d12ef6301a25b75640cbd1d0c80
 
 # 게임에서 사용할 캐릭터를 정의합니다.
-#define e = Character('아이린', color="#c8ffc8")
-define s = Character('시스템', color="#c8ffc8")
 
 # 변수 선언
 init python:
