@@ -21,6 +21,9 @@ label planner:
     hide screen phone_icon
     hide screen planner_icon
 
+    show screen hp_show
+
+
     # 플래너 배경 ON
     show planner_background
     show planner_schedule_list
@@ -79,6 +82,8 @@ label planner:
 
 label hide_planner_button :
     hide planner_background
+
+    hide screen hp_show
 
     hide screen schedule_button
     hide screen schedule_highlight

@@ -24,7 +24,6 @@ label start:
     # call what_is_your_name
 
     # 화면 좌측 위 HP바 띄우는 스크린 함수
-    show screen hp_show
 
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
