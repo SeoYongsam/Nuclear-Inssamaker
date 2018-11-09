@@ -85,7 +85,7 @@ screen stats_screen():
             text "Day: [day]"
 
 # 무한히 대화창을 없애버리는 기능을 하는 label
-label hide_dialouge_box:
+label hide_dialogue_box:
     while True :
         window hide
         pause
