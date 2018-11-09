@@ -2,8 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/sunday_room_screen.rpy", line 461: is not terminated with a newline. (Check strings and parenthesis.)
-                elif day_schedule[256 == 4:
+File "game/weekday_run.rpy", line 71: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    xsize 1280
+              ^
+
+File "game/weekday_run.rpy", line 78: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    xsize 1280
+              ^
+
+File "game/weekday_run.rpy", line 85: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    xsize 1280
+              ^
+
+File "game/weekday_run.rpy", line 92: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    xsize 1280
+              ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Fri Nov  9 14:20:00 2018
+Fri Nov  9 16:24:28 2018
