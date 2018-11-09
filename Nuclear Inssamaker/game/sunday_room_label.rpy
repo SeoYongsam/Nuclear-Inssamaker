@@ -13,12 +13,9 @@ label sunday_room:
     show screen hp_show
 
     "일요일이 되었습니다.\n"
-    "핸드폰을 이용해 SNS를 확인하거나,\n"
-    "플래너를 이용해 다음주 일정을 짜세요."
-
-    while True :
-        window hide
-        pause
+    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
+    extend "플래너를 이용해 다음주 일정을 짜세요."
+    call hide_dialouge_box
 
     return
 

@@ -76,7 +76,7 @@ label evening_club:
     return
 
 label evening_gwa:
-    $ rand = renpy.random.randint(1, 6)
+    $ rand = renpy.random.randint(1, 7)
     show expression ("gwa/%d.jpg" %rand) at truecenter
     return
 
