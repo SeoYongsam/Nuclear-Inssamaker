@@ -1,4 +1,4 @@
-﻿# 이 파일에 게임 스크립트를 입력합니다.
+# 이 파일에 게임 스크립트를 입력합니다.
 
 # image 문을 사용해 이미지를 정의합니다.
 # image eileen happy = "eileen_happy.png"
@@ -83,9 +83,3 @@ screen stats_screen():
             text "HP: [hp]"
             text "Week: [week]"
             text "Day: [day]"
-
-# 무한히 대화창을 없애버리는 기능을 하는 label
-label hide_dialogue_box:
-    while True :
-        window hide
-        pause

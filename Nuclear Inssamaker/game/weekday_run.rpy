@@ -1,4 +1,4 @@
-﻿# Ren'Py automatically loads all script files ending with .rpy. To use this
+# Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 label weekday_run:
     hide screen sunday_room_UI
