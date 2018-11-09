@@ -2,13 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 28: expected 'image_name_component' not found.
-    show "hp_background.png"
-         ^
-
-File "game/script.rpy", line 29: expected 'image_name_component' not found.
-    show "mental_background.png"
-         ^
+File "game/sunday_room_screen.rpy", line 461: is not terminated with a newline. (Check strings and parenthesis.)
+                elif day_schedule[256 == 4:
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Thu Nov  8 02:37:53 2018
+Fri Nov  9 14:20:00 2018

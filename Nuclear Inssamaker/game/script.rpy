@@ -11,10 +11,13 @@ image phone_night = "phone_night.png"
 # 변수 선언
 init python:
     hp = 30
+    week = 1
     day = 1
+    day_name = [0,"월요일","화요일","수요일","목요일","금요일","토요일"]
+    YoIl = 0
     # day_schedule[0]은 사용하지 않음
     # day_schedule[day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
-    day_schedule = [0,0,0,0,0,0,0,0]
+    day_schedule = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     for_day_schedule_select = 0
     i = 0
 
@@ -22,8 +25,6 @@ init python:
 label start:
     # 플레이어 이름을 묻는 함수 what_is_your_name
     # call what_is_your_name
-
-    # 화면 좌측 위 HP바 띄우는 스크린 함수
 
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
@@ -57,31 +58,7 @@ label what_is_your_name:
 
     return
 
-# label start에서 호출됨
-screen hp_show():
-#    frame:
-#        align(0.05,0.05)
-    hbox:
-        xpos 972 ypos 300 # 멘탈박스는 344
-        #align (0.05, 0.05) # 박스 위치, 화면에서 가로방향으로 0.95, 세로방향으로 0.05 비율 되는 곳에 존재
 
-        # horizon box 각 요소별 스페이싱 10씩
-        spacing 10
-
- #       text "HP" style "button_text" yalign 0.5
-
-        # 화면 상단 HP 버튼을 누르면 체력이 10씩 증가
-#        textbutton "HP" :
-#            yalign 0.5
-#            text_color "#f00"
-#            text_hover_color "#ff0"
-#            action SetVariable("hp", hp + 10)
-
-        # 체력바
-        bar value AnimatedValue(hp, 100, 1.0) :
-            yalign 0.5
-            xsize 288
-            ysize 24
 
 
 # label start에서 호출됨
@@ -98,12 +75,13 @@ screen stats_button_screen():
 screen stats_screen():
     frame:
         align(0.95,0.15)
-        xysize(180, 100)
+#        xysize(180, 100)
         vbox:
             spacing 10
             align(1.0, 0.5)
             text "{u}Stats:{/u}"
             text "HP: [hp]"
+            text "Week: [week]"
             text "Day: [day]"
 
 # 무한히 대화창을 없애버리는 기능을 하는 label
