@@ -1,5 +1,3 @@
-# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
 label weekday_run:
     hide screen sunday_room_UI
     call hide_planner_button
@@ -7,7 +5,6 @@ label weekday_run:
     # (이후 강의실 도트나 좀 더 좋은 그림 나오면 수정하겠습니다)
 
     # while문에 논리행 몇 개를 추가해서 낮, 밤 일정을 추가해보았습니다.
-<<<<<<< HEAD
     $ day = 1
     while day < 7:
         $ YoIl = day_name[day]
@@ -15,6 +12,14 @@ label weekday_run:
         #낮 일정 소화
         scene bg lecture_room with dissolve
         "[YoIl] 낮, 강의실에서 수업을 들었다."
+
+        $ j = renpy.random.randint(1,3)
+        if j == 1:
+            call lecture_sleep
+        else :
+            call lecture
+
+        scene black
 
         #저녁 일정 소화
         scene black
@@ -28,46 +33,17 @@ label weekday_run:
             call evening_gwa
         elif day_schedule[((week - 1) * 7 + day) % 28] == 4:
             call evening_rest
-=======
-    $ i = 1
-
-
-    while i <= 6:
-        $ j = renpy.random.randint(1,3)
-        if j == 1:
-            call lecture_sleep
-        else :
-            call lecture
-
-        scene black
-        "[i]일차 일정은\n"
-        if day_schedule[i] == 1:
-            extend "공부했다"
-        elif day_schedule[i] == 2:
-            extend "동아리 연습했다"
-        elif day_schedule[i] == 3:
-            extend "과활동했다"
-        elif day_schedule[i] == 4:
-            extend "휴식했다"
->>>>>>> a7be7585ead2636196fbf552837f0f32e5f81847
         else :
             extend "에러"
         window hide
         pause
 
-<<<<<<< HEAD
         #밤 일정 소화
         scene black
         "[YoIl] 밤, SNS를 확인했다."
         show phone_night at truecenter
         pause
         $ day += 1
-=======
-        scene black
-        show phone_night at truecenter
-        "[i]일차 밤, SNS를 확인했다."
-        $ i += 1
->>>>>>> a7be7585ead2636196fbf552837f0f32e5f81847
 
     "일요일 화면으로 돌아갑니다."
     call weekday_schedule_reset
