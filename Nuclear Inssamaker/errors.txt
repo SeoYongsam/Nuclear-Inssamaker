@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 28: expected 'image_name_component' not found.
-    show "hp_background.png"
-         ^
-
-File "game/script.rpy", line 29: expected 'image_name_component' not found.
-    show "mental_background.png"
-         ^
+File "game/Forenoon_event.rpy", line 2: python block expects a non-empty block.
+    init python:
+                ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Thu Nov  8 02:37:53 2018
+Sun Nov 11 14:40:14 2018
