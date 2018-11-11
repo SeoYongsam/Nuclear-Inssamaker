@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/weekday_run.rpy", line 12: Line is indented, but the preceding call statment statement does not expect a block. Please check this line's indentation.
+    $ day += 1
+    ^
+
+Ren'Py Version: Ren'Py 7.1.1.929
+Sun Nov 11 16:03:00 2018
