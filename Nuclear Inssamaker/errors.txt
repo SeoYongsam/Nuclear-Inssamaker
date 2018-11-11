@@ -1,8 +1,0 @@
-﻿I'm sorry, but errors were detected in your script. Please correct the
-errors listed below, and try again.
-
-
-File "game/weekday_run.rpy", line 8: indentation mismatch.
-
-Ren'Py Version: Ren'Py 7.1.1.929
-Sun Nov 11 16:21:02 2018

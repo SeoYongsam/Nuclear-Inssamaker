@@ -2,6 +2,8 @@
 ## 초기화
 ################################################################################
 
+
+
 ## The init offset statement causes the initialization statements in this file
 ## to run before init statements in any other file.
 init offset = -2
@@ -57,13 +59,13 @@ define gui.interface_text_color = '#ffffff'
 ## 글자와 글자 크기 ###################################################################
 
 ## 인-게임 글자에 사용됩니다.
-define gui.text_font = "NanumGothic.ttf"
+define gui.text_font = "soyanon8.ttf"
 
 ## 캐릭터의 이름에 사용됩니다.
-define gui.name_text_font = "NanumGothic.ttf"
+define gui.name_text_font = "soyanon8.ttf"
 
 ## 인터페이스에 사용됩니다.
-define gui.interface_text_font = "NanumGothic.ttf"
+define gui.interface_text_font = "soyanon8.ttf"
 
 ## 일반 대사의 글자 크기입니다.
 define gui.text_size = 22
@@ -465,6 +467,3 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
-
-
-
