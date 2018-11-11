@@ -12,9 +12,9 @@ label sunday_room:
 
     show screen hp_show
 
-    "일요일이 되었습니다.\n"
-    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
-    extend "플래너를 이용해 다음주 일정을 짜세요."
+#    "일요일이 되었습니다.\n"
+#    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
+#    extend "플래너를 이용해 다음주 일정을 짜세요."
     while True :
         window hide
         pause
@@ -22,9 +22,41 @@ label sunday_room:
     return
 
 label planner:
+    call show_planner
+    show screen stats_screen
+    call planner_icon_select
+
+    # 토요일까지 선택을 완료하고 day가 7이 되면,
+    if day == 7:
+        hide screen schedule_highlight
+        "일주일 일정을 실행하시겠습니까?"
+        menu:
+            "실행한다":
+                $ day = 1
+                call hide_planner_button
+                hide screen sunday_room_UI
+
+                $ renpy.transition(dissolve)
+                show screen dateShow
+                jump weekday_day
+
+            "처음부터":
+                $ day = 1
+                $ i = 1
+                while i < 7:
+                    $ day_schedule[month - 3][(week - 1) * 7 + i] = 0
+                    $ i += 1
+
+    # 버튼 만악의 근원
+    while True:
+        window hide
+        pause
+
+    return
+
+label show_planner :
     # 플래너 배경 ON
     show screen planner_UI
-
 
     hide screen sunday_room_UI
     show screen sunday_room_UI
@@ -39,51 +71,41 @@ label planner:
     show screen schedule_button
 
     # 스케줄러 속 월화수목금토 '공부'~'휴식' 아이콘 띄우기
-    show screen week_schedule_icon_show
+    if month == 3 :
+        show screen first_month_schedule_icon_show
 
+    elif month == 4 :
+        show screen second_month_schedule_icon_show
+
+    elif month == 5 :
+        show screen third_month_schedule_icon_show
+
+    else :
+        show screen fourth_month_schedule_icon_show
 #    # 그 위에 투명한 수정 버튼
 #    show screen schedule_revise_button
 
-    window hide
-    pause
-
-    # 뒤로가기 버튼을 눌러 for_day_schedule_select가 5가 되었을 시
-    # 플래너 버튼을 숨기고 일요일로 간다.
-    if for_day_schedule_select == 5:
-        call hide_planner_button
-        $ for_day_schedule_select = 0
-        jump sunday_room
-
-    $ day_schedule[((week - 1) * 7 + day) % 28] = for_day_schedule_select
-    $ for_day_schedule_select = 0
-
-    # day_schedule[day]가 선택되어 있다면,day를 늘려 다음 날로 넘어간다.
-    while day_schedule[((week - 1) * 7 + day) % 28] != 0:
-#    if for_day_schedule_select != 0:
-        if day <= 6:
-            $ day += 1
-
-    # 토요일까지 선택을 완료하고 day가 7이 되면,
-    if day == 7:
-        hide screen schedule_highlight
-        "일주일 일정을 실행하시겠습니까?"
-        menu:
-            "실행한다":
-                $ day = 1
-                call hide_planner_button
-                hide screen sunday_room_UI
-
-                jump weekday_day
-            "처음부터":
-                $ day = 1
-                $ i = 1
-                while i < 7:
-                    $ day_schedule[( (week - 1) * 7 + i ) % 28] = 0
-                    $ i += 1
-
-    jump planner
 
     return
+
+label planner_icon_select :
+    if day != 7:
+        $ day_schedule[month - 3][(week - 1) * 7 + day] = for_day_schedule_select
+        $ for_day_schedule_select = 0
+
+    # day_schedule[day]가 선택되어 있다면, day를 늘려 다음 날로 넘어간다.
+        while day_schedule[month - 3][(week - 1) * 7 + day] != 0:
+#    if for_day_schedule_select != 0:
+            $ day += 1
+    return
+
+label return_to_sunday_room :
+    call hide_planner_button
+    $ for_day_schedule_select = 0
+    jump sunday_room
+
+    return
+
 
 label hide_planner_button :
     hide planner_background
@@ -94,7 +116,10 @@ label hide_planner_button :
     hide screen schedule_button
     hide screen schedule_highlight
 
-    hide screen week_schedule_icon_show
+    hide screen first_month_schedule_icon_show
+    hide screen second_month_schedule_icon_show
+    hide screen third_month_schedule_icon_show
+    hide screen fourth_month_schedule_icon_show
 
     return
 

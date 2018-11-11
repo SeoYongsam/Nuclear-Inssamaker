@@ -11,13 +11,17 @@ image phone_night = "phone_night.png"
 # 변수 선언
 init python:
     hp = 30
+    month = 3 # number 0~3 : 3~6월
+#    month_for_display = 3
     week = 1
     day = 1
-    day_name = [0,"월요일","화요일","수요일","목요일","금요일","토요일"]
+    day_name = [0,"월","화","수","목","금","토"]
     YoIl = 0
-    # day_schedule[0]은 사용하지 않음
-    # day_schedule[day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
-    day_schedule = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    # day_schedule[month - 3][(week-1)*7 + day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
+    day_schedule = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
     for_day_schedule_select = 0
 
 # 여기에서부터 게임이 시작합니다.
@@ -28,8 +32,13 @@ label start:
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
 
+    show screen dateShow
 
     call limitation #아직 구현 안된 것
+
+    "일요일에는.\n"
+    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
+    extend "플래너를 이용해 다음주 일정을 짜세요."
 
     # sunday_room_label의 sunday_room label 호출
     jump sunday_room
@@ -40,6 +49,9 @@ label limitation:
     "아직 구현 안 된 것 목록입니다. \n"
     extend "핸드폰 화면"
     return
+
+screen dateShow() :
+    add "date.png"
 
 # label start에서 넘어옴
 label what_is_your_name:
@@ -80,5 +92,6 @@ screen stats_screen():
             align(1.0, 0.5)
             text "{u}Stats:{/u}"
             text "HP: [hp]"
+            text "Month: [month]"
             text "Week: [week]"
             text "Day: [day]"
