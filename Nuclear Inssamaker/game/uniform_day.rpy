@@ -2,6 +2,7 @@
 # file, define a label and jump to it from another file.
 
 # 4월 1일 교복데이 이벤트
+# 이벤트가 끝나면 밤으로 가고싶
 
 #이미지 선언
 image gyobok = im.Scale("gyobok.jpg", 1280, 720)
@@ -10,7 +11,7 @@ image gyobok = im.Scale("gyobok.jpg", 1280, 720)
 label uniform:
     $i = 1
     while i <= 6:
-        #if day == 30:
+        #if day == 30 (4월 2일, week 5 day 1):
 
         "오늘은 만우절이다. 과 동기들이 다같이 교복을 입고 등교를 했다."
         "과 동기들이 점심식사를 함께 야외에서 배달음식을 먹자고 한다."
