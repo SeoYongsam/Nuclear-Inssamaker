@@ -1,10 +1,3 @@
-
-    call weekday_day
-    call weekday_evening
-    call weekday_SNS
-
-    return
-
 label weekday_day :
     $ YoIl = day_name[day]
 
@@ -20,12 +13,11 @@ label weekday_day :
 
     scene black
 
+    jump weekday_evening
+
     return
 
 label weekday_evening :
-    if day == 7:
-        jump week_SNS
-
     #저녁 일정 소화
     scene black
     "[YoIl] 저녁이 되었다.\n"
@@ -42,6 +34,9 @@ label weekday_evening :
         extend "에러"
     window hide
     pause
+
+    jump weekday_SNS
+
     return
 
 label weekday_SNS :
@@ -53,7 +48,7 @@ label weekday_SNS :
 
     if day < 6 :
         $ day += 1
-        jump weekday_run
+        jump weekday_day
     else :
         "일요일 화면으로 돌아갑니다."
         call weekday_schedule_reset

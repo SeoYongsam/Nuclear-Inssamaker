@@ -69,7 +69,11 @@ label planner:
         "일주일 일정을 실행하시겠습니까?"
         menu:
             "실행한다":
-                jump weekday_run
+                $ day = 1
+                call hide_planner_button
+                hide screen sunday_room_UI
+
+                jump weekday_day
             "처음부터":
                 $ day = 1
                 $ i = 1
