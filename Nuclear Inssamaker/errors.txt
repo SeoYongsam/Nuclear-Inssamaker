@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/weekday_run.rpy", line 68: expected statement.
-    renpy.scene()
-                 ^
-
-File "game/weekday_run.rpy", line 69: expected statement.
-    renpy.show("study/%d.jpg" %rand)
-                                    ^
+File "game/weekday_run.rpy", line 12: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    $ YoIl = day_name[day]
+    ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Fri Nov  9 17:40:22 2018
+Sun Nov 11 14:31:28 2018

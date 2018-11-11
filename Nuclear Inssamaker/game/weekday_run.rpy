@@ -8,7 +8,7 @@ label weekday_run:
 
     # while문에 논리행 몇 개를 추가해서 낮, 밤 일정을 추가해보았습니다.
     $ day = 1
-    while day <= 6:
+    while day < 7:
         $ YoIl = day_name[day]
 
         #낮 일정 소화
@@ -76,11 +76,11 @@ label evening_club:
     return
 
 label evening_gwa:
-    $ rand = renpy.random.randint(1, 7)
+    $ rand = renpy.random.randint(1, 6)
     show expression ("gwa/%d.jpg" %rand) at truecenter
     return
 
 label evening_rest:
-    $ rand = renpy.random.randint(1, 7)
+    $ rand = renpy.random.randint(1, 6)
     show expression ("rest/%d.jpg" %rand) at truecenter
     return

@@ -3,10 +3,10 @@ image planner_schedule_list = "planner_schedule_list.png"
 #image highlight = im.Scale("highlight.png",100,100)
 image highlight = "highlight.png"
 
-image sel_study = im.Alpha("sel_study.png",0.3)
-image sel_club = "sel_club.png"
-image sel_gwa = "sel_gwa.png"
-image sel_rest = "sel_rest.png"
+image sel_study = im.Alpha("sel_study.png",0.7)
+image sel_club = im.Alpha("sel_club.png",0.7)
+image sel_gwa = im.Alpha("sel_gwa.png",0.7)
+image sel_rest = im.Alpha("sel_rest.png",0.7)
 
 ## 일요일 방에서 핸드폰 아이콘
 screen phone_icon():
@@ -53,12 +53,13 @@ screen hp_show():
             left_bar color("#008000")
             right_bar color("#008000",alpha = 0.2)
             yalign 0.5
-            xsize 288
+            xsize 416
             ysize 24
 
 # 일요일 방 hp, mental, to-do-list 바
 screen sunday_room_UI() :
     ## 일단 여기다가 background 때려 박았음"
+    add "date.png"
     add "hp_background.png"
     add "mental_background.png"
     add "to_do_list.png"
@@ -69,34 +70,63 @@ screen planner_UI() :
     add "planner_background.png"
     add "planner_schedule_list"
 
+    # 달력 상단 중앙 3~6월
+    vbox xpos 448 ypos 81 :
+        if week <= 4 :
+            add "month3.png"
+        elif week <= 8 :
+            add "month4.png"
+        elif week <= 12 :
+            add "month5.png"
+        else :
+            add "month6.png"
+
+    vbox xpos 896 ypos 72 :
+        imagebutton :
+            idle "exitButton.png"
+            hover "exitButton_on.png"
+            selected_idle "exitButton_on.png"
+            action SetVariable("for_day_schedule_select", 5)
+
 ## 스케줄러에서 선택화면이 나타나는 노란색 테두리 하이라이트 화면
 screen schedule_highlight():
     if day < 7:
         vbox:
-            xpos (32 + 128*(day-1)) ypos (180 + 128* ((week-1)%4) )
+            xpos (160 + 128*(day-1)) ypos (184 + 128* ((week-1)%4) )
             add "highlight"
 
 ## 플래너를 눌렀을 때 나오는 일정짜기 버튼
 screen schedule_button():
-    frame:
-        xpos 986 ypos 450
-        xsize 260
         vbox:
-            spacing 10
-            xalign 0.5
+            xpos 968 ypos 424
+            spacing 4
+#            xalign 0.5
 
-            textbutton "공부하기":
+            imagebutton :
+                idle "button_study.png"
+                hover "button_study_on.png"
+                selected_idle "button_study_on.png"
+                # action Call("button_reset", number = 1)
                 action SetVariable("for_day_schedule_select", 1)
 
-            textbutton "동아리":
+            imagebutton :
+                idle "button_club.png"
+                hover "button_club_on.png"
+                selected_idle "button_club_on.png"
                 action SetVariable("for_day_schedule_select", 2)
 #                action Notify("동아리 활동했다")
 
-            textbutton "과활동":
+            imagebutton :
+                idle "button_gwa.png"
+                hover "button_gwa_on.png"
+                selected_idle "button_gwa_on.png"
                 action SetVariable("for_day_schedule_select", 3)
 #                action Notify("과활동했다")
 
-            textbutton "휴식":
+            imagebutton :
+                idle "button_rest.png"
+                hover "button_rest_on.png"
+                selected_idle "button_rest_on.png"
                 action SetVariable("for_day_schedule_select", 4)
 #                action Notify("쉬었다")
 
@@ -113,7 +143,7 @@ screen week_schedule_icon_show():
     # 월요일
     if day_schedule[1] != 0:
         hbox:
-            xpos 32 ypos 180
+            xpos 160 ypos 184
             if day_schedule[1] == 1:
                 add "sel_study"
 
@@ -129,7 +159,7 @@ screen week_schedule_icon_show():
     # 화요일
     if day_schedule[2] != 0:
         hbox:
-            xpos 160 ypos 180
+            xpos 288 ypos 184
             if day_schedule[2] == 1:
                 add "sel_study"
 
@@ -144,7 +174,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[3] != 0:
         hbox:
-            xpos 288 ypos 180
+            xpos 416 ypos 184
             if day_schedule[3] == 1:
                 add "sel_study"
 
@@ -159,7 +189,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[4] != 0:
         hbox:
-            xpos 416 ypos 180
+            xpos 544 ypos 184
             if day_schedule[4] == 1:
                 add "sel_study"
 
@@ -174,7 +204,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[5] != 0:
         hbox:
-            xpos 544 ypos 180
+            xpos 672 ypos 184
             if day_schedule[5] == 1:
                 add "sel_study"
 
@@ -189,7 +219,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[6] != 0:
         hbox:
-            xpos 672 ypos 180
+            xpos 800 ypos 184
             if day_schedule[6] == 1:
                 add "sel_study"
 
@@ -205,7 +235,7 @@ screen week_schedule_icon_show():
 #2주차
     if day_schedule[8] != 0:
         hbox:
-            xpos 32 ypos 308
+            xpos 160 ypos 312
             if day_schedule[8] == 1:
                 add "sel_study"
 
@@ -221,7 +251,7 @@ screen week_schedule_icon_show():
     # 화요일
     if day_schedule[9] != 0:
         hbox:
-            xpos 160 ypos 308
+            xpos 288 ypos 312
             if day_schedule[9] == 1:
                 add "sel_study"
 
@@ -236,7 +266,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[10] != 0:
         hbox:
-            xpos 288 ypos 308
+            xpos 416 ypos 312
             if day_schedule[10] == 1:
                 add "sel_study"
 
@@ -251,7 +281,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[11] != 0:
         hbox:
-            xpos 416 ypos 308
+            xpos 544 ypos 312
             if day_schedule[11] == 1:
                 add "sel_study"
 
@@ -266,7 +296,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[12] != 0:
         hbox:
-            xpos 544 ypos 308
+            xpos 672 ypos 312
             if day_schedule[12] == 1:
                 add "sel_study"
 
@@ -281,7 +311,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[13] != 0:
         hbox:
-            xpos 672 ypos 308
+            xpos 800 ypos 312
             if day_schedule[13] == 1:
                 add "sel_study"
 
@@ -297,7 +327,7 @@ screen week_schedule_icon_show():
 #3주차
     if day_schedule[15] != 0:
         hbox:
-            xpos 32 ypos 436
+            xpos 160 ypos 440
             if day_schedule[15] == 1:
                 add "sel_study"
 
@@ -312,7 +342,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[16] != 0:
         hbox:
-            xpos 160 ypos 436
+            xpos 288 ypos 440
             if day_schedule[16] == 1:
                 add "sel_study"
 
@@ -327,7 +357,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[17] != 0:
         hbox:
-            xpos 288 ypos 436
+            xpos 416 ypos 440
             if day_schedule[17] == 1:
                 add "sel_study"
 
@@ -342,7 +372,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[18] != 0:
         hbox:
-            xpos 416 ypos 436
+            xpos 544 ypos 440
             if day_schedule[18] == 1:
                 add "sel_study"
 
@@ -357,7 +387,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[19] != 0:
         hbox:
-            xpos 544 ypos 436
+            xpos 672 ypos 440
             if day_schedule[19] == 1:
                 add "sel_study"
 
@@ -372,7 +402,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[20] != 0:
         hbox:
-            xpos 672 ypos 436
+            xpos 800 ypos 440
             if day_schedule[20] == 1:
                 add "sel_study"
 
@@ -388,7 +418,7 @@ screen week_schedule_icon_show():
 #4주차
     if day_schedule[22] != 0:
         hbox:
-            xpos 32 ypos 564
+            xpos 160 ypos 568
             if day_schedule[22] == 1:
                 add "sel_study"
 
@@ -403,7 +433,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[23] != 0:
         hbox:
-            xpos 160 ypos 564
+            xpos 288 ypos 568
             if day_schedule[23] == 1:
                 add "sel_study"
 
@@ -418,7 +448,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[24] != 0:
         hbox:
-            xpos 288 ypos 564
+            xpos 416 ypos 568
             if day_schedule[24] == 1:
                 add "sel_study"
 
@@ -433,7 +463,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[25] != 0:
         hbox:
-            xpos 416 ypos 564
+            xpos 544 ypos 568
             if day_schedule[25] == 1:
                 add "sel_study"
 
@@ -448,7 +478,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[26] != 0:
         hbox:
-            xpos 544 ypos 564
+            xpos 672 ypos 568
             if day_schedule[26] == 1:
                 add "sel_study"
 
@@ -463,7 +493,7 @@ screen week_schedule_icon_show():
 
     if day_schedule[27] != 0:
         hbox:
-            xpos 672 ypos 564
+            xpos 800 ypos 568
             if day_schedule[27] == 1:
                 add "sel_study"
 
@@ -479,7 +509,7 @@ screen week_schedule_icon_show():
 
 #screen schedule_revise_button():
 #    hbox:
-#        xpos 32 ypos 180
+#        xpos 160 ypos 180
 #        spacing -4
 #        imagebutton :
 #            idle im.Alpha("sel_study.png",0)

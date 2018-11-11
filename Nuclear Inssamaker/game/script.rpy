@@ -19,7 +19,6 @@ init python:
     # day_schedule[day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
     day_schedule = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     for_day_schedule_select = 0
-    i = 0
 
 # 여기에서부터 게임이 시작합니다.
 label start:
