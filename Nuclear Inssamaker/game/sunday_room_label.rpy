@@ -63,25 +63,22 @@ label show_planner :
     hide screen hp_show
     show screen hp_show
 
+    if month - 3 == month_for_display :
+        # 형광색 하이라이트 창
+        show screen schedule_highlight
 
-    # 형광색 하이라이트 창
-    show screen schedule_highlight
+        # 오른쪽 스케줄 창
+        show screen schedule_button
 
-    # 오른쪽 스케줄 창
-    show screen schedule_button
 
     # 스케줄러 속 월화수목금토 '공부'~'휴식' 아이콘 띄우기
-    if month == 3 :
-        show screen first_month_schedule_icon_show
+    show screen month_schedule_icon_show
 
-    elif month == 4 :
-        show screen second_month_schedule_icon_show
+#    show screen second_month_schedule_icon_show
 
-    elif month == 5 :
-        show screen third_month_schedule_icon_show
+#    show screen third_month_schedule_icon_show
 
-    else :
-        show screen fourth_month_schedule_icon_show
+#    show screen fourth_month_schedule_icon_show
 #    # 그 위에 투명한 수정 버튼
 #    show screen schedule_revise_button
 
@@ -116,11 +113,34 @@ label hide_planner_button :
     hide screen schedule_button
     hide screen schedule_highlight
 
-    hide screen first_month_schedule_icon_show
-    hide screen second_month_schedule_icon_show
-    hide screen third_month_schedule_icon_show
-    hide screen fourth_month_schedule_icon_show
+    hide screen month_schedule_icon_show
 
+    return
+
+label show_previous_month :
+    if month_for_display > 0 and month_for_display <= 3 :
+        $ month_for_display -= 1
+
+        if month - 3 != month_for_display :
+            hide screen schedule_highlight
+            hide screen schedule_button
+
+        else :
+            show screen schedule_highlight
+            show screen schedule_button            
+    return
+
+label show_next_month :
+    if month_for_display >= 0 and month_for_display < 3 :
+        $ month_for_display += 1
+
+        if month - 3 != month_for_display :
+            hide screen schedule_highlight
+            hide screen schedule_button
+
+        else :
+            show screen schedule_highlight
+            show screen schedule_button
     return
 
 #label button_reset(number) :

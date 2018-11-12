@@ -12,7 +12,7 @@ image phone_night = "phone_night.png"
 init python:
     hp = 30
     month = 3 # number 0~3 : 3~6월
-#    month_for_display = 3
+    month_for_display = month - 3
     week = 1
     day = 1
     day_name = [0,"월","화","수","목","금","토"]
