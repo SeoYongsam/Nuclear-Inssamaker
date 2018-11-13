@@ -21,7 +21,8 @@ init python:
     day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
 
-    ktalk_mode = ["friends", "talk"]
+    #카톡모드 1 = 친구목록, 2 = 대화목록
+    ktalk_mode = 1
 
     # day_schedule[month - 3][(week-1)*7 + day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
     day_schedule = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
