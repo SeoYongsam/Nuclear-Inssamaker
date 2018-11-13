@@ -1,5 +1,6 @@
 label weekday_day :
     $ YoIl = day_name[day]
+    $ day_for_show = (week-1)*7 + day + 1    
 
     #낮 일정 소화 #임시 주석처리
 #    scene bg lecture_room with dissolve

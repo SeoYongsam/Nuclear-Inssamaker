@@ -11,12 +11,18 @@ image phone_night = "phone_night.png"
 # 변수 선언
 init python:
     hp = 30
+    loneliness = 0
+
     month = 3 # number 0~3 : 3~6월
     month_for_display = month - 3
     week = 1
-    day = 1
-    day_name = [0,"월","화","수","목","금","토"]
+    day = 0
+    day_for_show = (week-1)*7 + day + 1
+    day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
+
+    ktalk_mode = ["friends", "talk"]
+
     # day_schedule[month - 3][(week-1)*7 + day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
     day_schedule = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -48,7 +54,14 @@ label limitation:
     return
 
 screen dateShow() :
-    add "date.png"
+    add "date.png" xpos 12 ypos 9
+    vbox xpos 12 ypos 9 xysize(360, 60) :
+        if YoIl != "일" :
+            text "{color=#000}[month]월 [day_for_show]일 [YoIl]요일" :
+                size 25 xalign 0.3 yalign 0.5
+        else :
+            text "{color=#000}[month]월 {color=#ff0000}[day_for_show]{color=#000}일 {color=#ff0000}[YoIl]{color=#000}요일" :
+                size 25 xalign 0.3 yalign 0.5
 
 # label start에서 넘어옴
 label what_is_your_name:

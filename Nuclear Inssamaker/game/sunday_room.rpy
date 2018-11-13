@@ -5,7 +5,11 @@
 label sunday_room:
     scene sunday_room_image at truecenter
 
+    $ day = 0
+    $ YoIl = day_name[day]
+    $ day_for_show = (week-1)*7 + day + 1
     show screen dateShow
+
     show screen sunday_room_UI
     # sunday_room_screen에 있는 핸드폰, 플래너 아이콘을 보여주는 스크린
     show screen phone_icon
@@ -43,6 +47,7 @@ screen planner_icon() :
             # 클릭시 planner label을 실행함
             action [Hide("phone_icon"), Hide("planner_icon"),
                     SetVariable("month_for_display", month - 3),
+                    SetVariable("day", 1),
                     Hide("dateShow"), Show("hp_show"), Jump("planner")]
 
 

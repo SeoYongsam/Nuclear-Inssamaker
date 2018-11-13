@@ -5,8 +5,6 @@ image sel_club = im.Alpha("planner/sel_club.png",0.7)
 image sel_gwa = im.Alpha("planner/sel_gwa.png",0.7)
 image sel_rest = im.Alpha("planner/sel_rest.png",0.7)
 
-
-
 screen planner_UI() :
     add Solid("#000c")
     add "planner/planner_background.png"

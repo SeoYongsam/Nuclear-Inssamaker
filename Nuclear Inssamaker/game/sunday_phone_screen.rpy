@@ -11,14 +11,14 @@ screen phone_UI() :
         imagebutton :
             idle "phone/exitButton.png"
             hover "phone/exitButton_on.png"
-            action Hide("phone_UI"), Hide("phone_button_in_homescreen"), Hide("fbook"), Hide("ktalk"), Jump("sunday_room")
+            action Hide("phone_UI", dissolve), Hide("phone_button_in_homescreen", dissolve), Hide("fbook", dissolve), Hide("ktalk", dissolve), SetVariable("ktalk_mode",1), Jump("sunday_room")
 
     #홈버튼
     vbox xpos 620 ypos 672 :
         imagebutton :
             idle "phone/homebutton.png"
             hover "phone/homebutton_on.png"
-            action Hide("fbook"), Hide("ktalk"), Show("phone_button_in_homescreen")
+            action Hide("fbook"), Hide("ktalk"), SetVariable("ktalk_mode",1), Show("phone_button_in_homescreen")
 
 
 screen phone_button_in_homescreen() :
@@ -47,4 +47,37 @@ screen fbook :
     add "fbook_screen_tab" xpos 420 ypos 40
 
 screen ktalk:
-    add "phone/talk_list.png" xpos 420 ypos 40
+    if ktalk_mode == 1 :
+        viewport:
+            xpos 420 ypos 40
+            xsize 440 ysize 624
+            draggable True
+            mousewheel True
+            arrowkeys True
+
+            add "phone/ktalk_friends.png" xpos 420 ypos 40
+
+        add "phone/button_friends_sel.png" xpos 420 ypos 588
+        imagebutton :
+                xpos 640 ypos 588
+                idle "phone/button_talk.png"
+                hover "phone/button_talk_on.png"
+                action SetVariable("ktalk_mode", 2)
+
+    elif ktalk_mode == 2 :
+        viewport:
+            xpos 420 ypos 40
+            xsize 440 ysize 548
+            draggable True
+            mousewheel True
+            arrowkeys True
+
+            add "phone/ktalk_list.png" xpos 420 ypos 40
+
+        imagebutton :
+                xpos 420 ypos 588
+                idle "phone/button_friends.png"
+                hover "phone/button_friends_on.png"
+                action SetVariable("ktalk_mode", 1)
+
+        add "phone/button_talk_sel.png" xpos 640 ypos 588

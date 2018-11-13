@@ -4,9 +4,10 @@
 label phone:
 
     show screen phone_UI
-    show screen dateShow
     show screen phone_button_in_homescreen
 
+    hide screen dateShow
+    show screen dateShow
     hide screen sunday_room_UI
     show screen sunday_room_UI
     hide screen hp_show

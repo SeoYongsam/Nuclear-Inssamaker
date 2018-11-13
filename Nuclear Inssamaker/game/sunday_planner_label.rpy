@@ -3,7 +3,6 @@
 
 label planner:
     call show_planner
-    show screen stats_screen
     call planner_icon_select
 
     # 토요일까지 선택을 완료하고 day가 7이 되면,
