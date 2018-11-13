@@ -78,8 +78,8 @@ label weekday_schedule_reset :
     $ day = 1
     $ for_day_schedule_select = 0
 
-    scene black with dissolve
-    pause
+#    scene black with dissolve
+#    pause
     return
 
 label evening_study:

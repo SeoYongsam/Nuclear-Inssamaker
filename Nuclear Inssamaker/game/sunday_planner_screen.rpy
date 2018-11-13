@@ -5,61 +5,7 @@ image sel_club = im.Alpha("planner/sel_club.png",0.7)
 image sel_gwa = im.Alpha("planner/sel_gwa.png",0.7)
 image sel_rest = im.Alpha("planner/sel_rest.png",0.7)
 
-## 일요일 방에서 핸드폰 아이콘
-screen phone_icon():
-    vbox :
-        xalign 0.34 yalign 0.7
-        imagebutton:
-            idle "phone_icon.png"
-            # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
-            hover im.Alpha("phone_icon.png",2)
-            # 클릭시 phone label을 실행함
-            action Jump("phone")
 
-## 일요일 방에서 플래너 아이콘
-screen planner_icon() :
-    vbox xalign 0.64 yalign 0.7 :
-        imagebutton:
-            idle "planner_icon.png"
-            # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
-            hover im.Alpha("planner_icon.png",2)
-            # 클릭시 planner label을 실행함
-            action Hide("phone_icon"), Hide("planner_icon"), SetVariable("month_for_display", month - 3), Hide("dateShow"), Show("hp_show"), Jump("planner")
-
-screen hp_show():
-#    frame:
-#        align(0.05,0.05)
-    hbox:
-        xpos 972 ypos 300 # 멘탈박스는 344
-        #align (0.05, 0.05) # 박스 위치, 화면에서 가로방향으로 0.95, 세로방향으로 0.05 비율 되는 곳에 존재
-
-        # horizon box 각 요소별 스페이싱 10씩
-        spacing 10
-
- #       text "HP" style "button_text" yalign 0.5
-
-        # 화면 상단 HP 버튼을 누르면 체력이 10씩 증가
-#        textbutton "HP" :
-#            yalign 0.5
-#            text_color "#f00"
-#            text_hover_color "#ff0"
-#            action SetVariable("hp", hp + 10)
-
-        # 체력바
-        bar value AnimatedValue(hp, 100, 1.0) :
-            left_bar color("#008000")
-            right_bar color("#008000",alpha = 0.2)
-            yalign 0.5
-            xsize 416
-            ysize 24
-
-# 일요일 방 hp, mental, to-do-list 바
-screen sunday_room_UI() :
-    ## 일단 여기다가 background 때려 박았음"
-    add "hp_background.png"
-    add "mental_background.png"
-    add "to_do_list.png"
-    ##
 
 screen planner_UI() :
     add Solid("#000c")
@@ -96,7 +42,12 @@ screen planner_UI() :
         imagebutton :
             idle "planner/exitButton.png"
             hover "planner/exitButton_on.png"
-            action Jump("return_to_sunday_room")
+            #플래너 X버튼 누르면 플래너 화면들을 전부 숨기고, 일요일 방으로 간다.
+            action [Hide("planner_UI"), Hide("schedule_button"),
+                    Hide("schedule_highlight"),
+                    Hide("month_schedule_icon_show"), Jump("sunday_room")]
+            #아래 코드는 위와 똑같지만 작동하지 않는 코드. Call이 호출되면 뒷 액션들은 호출되지 않는 것 같다.
+            #action Call("hide_planner_button"), Jump("sunday_room")
 
 ## 스케줄러에서 선택화면이 나타나는 노란색 테두리 하이라이트 화면
 screen schedule_highlight():

@@ -1,25 +1,5 @@
-# Ren'Py automatically loads all script files ending with .rpy. To use this
+﻿# Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
-
-#start 함수에서 넘어옴
-label sunday_room:
-    scene sunday_room_image at truecenter
-
-    show screen sunday_room_UI
-    # sunday_room_screen에 있는 핸드폰, 플래너 아이콘을 보여주는 스크린
-    show screen phone_icon
-    show screen planner_icon
-
-    show screen hp_show
-
-#    "일요일이 되었습니다.\n"
-#    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
-#    extend "플래너를 이용해 다음주 일정을 짜세요."
-    while True :
-        window hide
-        pause
-
-    return
 
 label planner:
     call show_planner
@@ -47,7 +27,7 @@ label planner:
                     $ day_schedule[month - 3][(week - 1) * 7 + i] = 0
                     $ i += 1
 
-    # 버튼 만악의 근원
+    # 버튼 만악의 근원이었지만 해결함
     while True:
         window hide
         pause
@@ -74,15 +54,6 @@ label show_planner :
     # 스케줄러 속 월화수목금토 '공부'~'휴식' 아이콘 띄우기
     show screen month_schedule_icon_show
 
-#    show screen second_month_schedule_icon_show
-
-#    show screen third_month_schedule_icon_show
-
-#    show screen fourth_month_schedule_icon_show
-#    # 그 위에 투명한 수정 버튼
-#    show screen schedule_revise_button
-
-
     return
 
 label planner_icon_select :
@@ -96,17 +67,7 @@ label planner_icon_select :
             $ day += 1
     return
 
-label return_to_sunday_room :
-    call hide_planner_button
-    $ for_day_schedule_select = 0
-    jump sunday_room
-
-    return
-
-
 label hide_planner_button :
-    hide planner_background
-
     hide screen hp_show
 
     hide screen planner_UI
@@ -114,8 +75,6 @@ label hide_planner_button :
     hide screen schedule_highlight
 
     hide screen month_schedule_icon_show
-
-    return
 
 label show_previous_month :
     if month_for_display > 0 and month_for_display <= 3 :
@@ -127,7 +86,7 @@ label show_previous_month :
 
         else :
             show screen schedule_highlight
-            show screen schedule_button            
+            show screen schedule_button
     return
 
 label show_next_month :
@@ -151,12 +110,3 @@ label show_next_month :
 ##    if day_schedule[day] != 0
 ##        $ day += 1
 #    return
-
-label phone:
-    hide screen phone_icon
-    hide screen planner_icon
-    "핸드폰 화면이 구현되지 않았습니다."
-    "일요일 화면으로 돌아갑니다"
-
-    jump sunday_room
-    return

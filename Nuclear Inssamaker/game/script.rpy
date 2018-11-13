@@ -32,8 +32,6 @@ label start:
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
 
-    show screen dateShow
-
     call limitation #아직 구현 안된 것
 
     "일요일에는.\n"
@@ -46,8 +44,7 @@ label start:
 
 # label start에서 넘어옴
 label limitation:
-    "아직 구현 안 된 것 목록입니다. \n"
-    extend "핸드폰 화면"
+    "아직 구현 안 된 것 목록입니다.\n첫 주 페이스북 이미지\n카카오톡 하단 버튼"
     return
 
 screen dateShow() :
@@ -83,6 +80,7 @@ screen stats_button_screen():
         align (0.95, 0.05)
 
 # label start에서 호출된 stats_button_screen의 텍스트버튼이 눌리면 호출됨
+
 screen stats_screen():
     frame:
         align(0.95,0.15)
