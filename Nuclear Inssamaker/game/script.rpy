@@ -10,7 +10,7 @@ image phone_night = "phone_night.png"
 
 # 변수 선언
 init python:
-    hp = 30
+    hp = 200
     loneliness = 0
 
     month = 3 # number 0~3 : 3~6월
@@ -20,6 +20,10 @@ init python:
     day_for_show = (week-1)*7 + day + 1
     day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
+
+    study_parameter = 0
+    club_parameter = 0
+    gwa_parameter = 0
 
     #카톡모드 1 = 친구목록, 2 = 대화목록
     ktalk_mode = 1
@@ -84,7 +88,7 @@ label what_is_your_name:
 
 
 # label start에서 호출됨
-screen stats_button_screen():
+screen stats_button_screen() :
     textbutton "스탯" :
         # action : "스탯"버튼이 눌렸을 때 실행할 행동
         # if문 해석 : stats_screen이 켜져있으면 Hide하고, 꺼져있으면 Show해라.
@@ -95,15 +99,50 @@ screen stats_button_screen():
 
 # label start에서 호출된 stats_button_screen의 텍스트버튼이 눌리면 호출됨
 
-screen stats_screen():
+screen stats_screen() :
     frame:
         align(0.95,0.15)
 #        xysize(180, 100)
         vbox:
-            spacing 10
+            spacing 3
             align(1.0, 0.5)
             text "{u}Stats:{/u}"
-            text "HP: [hp]"
+            text "체력: [hp]"
+            text "외로움: [loneliness]"
             text "Month: [month]"
             text "Week: [week]"
             text "Day: [day]"
+            text "공부: [study_parameter]"
+            text "동아리: [club_parameter]"
+            text "과: [gwa_parameter]"
+
+label parameter_maxmin_check :
+    if hp < 0 :
+        $ hp = 0
+
+    if hp > 200 :
+        $ hp = 200
+
+    if loneliness < 0 :
+        $ loneliness = 0
+
+    if loneliness > 100 :
+        $ loneliness = 100
+
+    if study_parameter < 0 :
+        $ study_parameter = 0
+
+    if study_parameter > 100 :
+        $ study_parameter = 100
+
+    if club_parameter < 0 :
+        $ club_parameter = 0
+
+    if club_parameter > 100 :
+        $ club_parameter = 100
+
+    if gwa_parameter < 0 :
+        $ gwa_parameter = 0
+
+    if gwa_parameter > 100 :
+        $ gwa_parameter = 100

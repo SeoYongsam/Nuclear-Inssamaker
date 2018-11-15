@@ -15,7 +15,7 @@ label sunday_room:
     show screen phone_icon
     show screen planner_icon
 
-    show screen hp_show
+    show screen hp_and_loneliness_show
 
 #    "일요일이 되었습니다.\n"
 #    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
@@ -48,7 +48,7 @@ screen planner_icon() :
             action [Hide("phone_icon"), Hide("planner_icon"),
                     SetVariable("month_for_display", month - 3),
                     SetVariable("day", 1),
-                    Hide("dateShow"), Show("hp_show"), Jump("planner")]
+                    Hide("dateShow"), Show("hp_and_loneliness_show"), Jump("planner")]
 
 
 # 일요일 방 hp, mental, to-do-list 바
@@ -59,12 +59,12 @@ screen sunday_room_UI() :
     add "to_do_list.png"
     ##
 
-screen hp_show():
-    hbox:
+screen hp_and_loneliness_show():
+    vbox:
         xpos 972 ypos 300 # 멘탈박스는 344
 
         # horizon box 각 요소별 스페이싱 10씩
-        spacing 10
+        spacing 20
 
         # 화면 상단 HP 버튼을 누르면 체력이 10씩 증가
 #        textbutton "HP" :
@@ -74,9 +74,16 @@ screen hp_show():
 #            action SetVariable("hp", hp + 10)
 
         # 체력바
-        bar value AnimatedValue(hp, 100, 1.0) :
+        bar value AnimatedValue(hp, 200, 1.0) :
             left_bar color("#008000")
             right_bar color("#008000",alpha = 0.2)
+            yalign 0.5
+            xsize 288
+            ysize 24
+
+        bar value AnimatedValue(loneliness, 100, 1.0) :
+            left_bar color("#000080")
+            right_bar color("#000080",alpha = 0.2)
             yalign 0.5
             xsize 288
             ysize 24

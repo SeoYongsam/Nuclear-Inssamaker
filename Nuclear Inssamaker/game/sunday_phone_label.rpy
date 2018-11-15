@@ -10,8 +10,8 @@ label phone:
     show screen dateShow
     hide screen sunday_room_UI
     show screen sunday_room_UI
-    hide screen hp_show
-    show screen hp_show
+    hide screen hp_and_loneliness_show
+    show screen hp_and_loneliness_show
 
     while True:
         window hide

@@ -39,8 +39,8 @@ label show_planner :
 
     hide screen sunday_room_UI
     show screen sunday_room_UI
-    hide screen hp_show
-    show screen hp_show
+    hide screen hp_and_loneliness_show
+    show screen hp_and_loneliness_show
 
     if month - 3 == month_for_display :
         # 형광색 하이라이트 창
@@ -67,7 +67,7 @@ label planner_icon_select :
     return
 
 label hide_planner_button :
-    hide screen hp_show
+    hide screen hp_and_loneliness_show
 
     hide screen planner_UI
     hide screen schedule_button
