@@ -32,12 +32,13 @@ screen phone_button_in_homescreen() :
         imagebutton :
             idle "phone/icon_talk.png"
             hover "phone/icon_talk_on.png"
-            action Hide("phone_button_in_homescreen"), Show("ktalk")
+            action Hide("phone_button_in_homescreen"), Show("ktalk",msg_list="messages")
 
 screen fbook :
     viewport :
         xpos 420 ypos 40
         xsize 440 ysize 624
+        xmaximum 440 ymaximum 624
         draggable True
         mousewheel True
         arrowkeys True
@@ -46,7 +47,7 @@ screen fbook :
 
     add "fbook_screen_tab" xpos 420 ypos 40
 
-screen ktalk:
+screen ktalk(msg_list):
     if ktalk_mode == 1 :
         viewport:
             xpos 420 ypos 40
@@ -55,7 +56,7 @@ screen ktalk:
             mousewheel True
             arrowkeys True
 
-            add "phone/ktalk_friends.png" xpos 420 ypos 40
+            add "phone/ktalk_friends.png" #xpos 420 ypos 40
 
         add "phone/button_friends_sel.png" xpos 420 ypos 588
         imagebutton :
@@ -64,7 +65,8 @@ screen ktalk:
                 hover "phone/button_talk_on.png"
                 action SetVariable("ktalk_mode", 2)
 
-    elif ktalk_mode == 2 :
+    # 원래 2, 대화창 모드
+    elif ktalk_mode == 3 :
         viewport:
             xpos 420 ypos 40
             xsize 440 ysize 548
@@ -72,7 +74,7 @@ screen ktalk:
             mousewheel True
             arrowkeys True
 
-            add "phone/ktalk_list.png" xpos 420 ypos 40
+            add "phone/ktalk_list.png" #xalign 0.5 #ypos 40
 
         imagebutton :
                 xpos 420 ypos 588
@@ -81,3 +83,61 @@ screen ktalk:
                 action SetVariable("ktalk_mode", 1)
 
         add "phone/button_talk_sel.png" xpos 640 ypos 588
+
+    # 원래 3, 친구 대화 목록
+    elif ktalk_mode == 2 :
+        viewport:
+            xpos 420 ypos 40
+            xsize 440 ysize 624
+            yinitial 1.0
+            draggable True
+            mousewheel True
+            arrowkeys True
+
+#            add "phone/ktalk_list.png" #xalign 0.5 #ypos 40
+
+#            vbox : #xalign 0.5 yalign 0.5 :
+#                null height 66
+#                add "phone/ktalk/1.png"
+#                null height 10
+#                add "phone/ktalk/1.png"
+
+            vbox : #xalign 0.5 yalign 0.5 :
+                null height 66
+
+                for msg in messages :
+                    hbox xpos 4 ypos 4:
+                        if msg[0] == "장중" :
+                            add "phone/ktalk/jangjung.png"
+
+                        elif msg[0] == "진일" :
+                            add "phone/ktalk/jinil.png"
+
+                        elif msg[0] == "삼용" :
+                            add "phone/ktalk/samyong.png"
+
+                        elif msg[0] == "현재" :
+                            add "phone/ktalk/hyunjae.png"
+
+                        elif msg[0] == "미래" :
+                            add "phone/ktalk/mirae.png"
+
+                        elif msg[0] == "동아" :
+                            add "phone/ktalk/dongah.png"
+
+                        else :
+                            add "phone/ktalk/1.png"
+
+                        null width 3
+                        vbox :
+                            add "phone/ktalk/2.png"
+                            null height -20
+                            text "{color=#000}%s" %msg[0] size 18
+                            null height 2
+                            add "phone/ktalk/3.png"
+                            null height -48
+                            hbox xpos 6 ypos 6 :
+                                text "{color=#000}%s" %msg[1] size 34
+                    null height 15
+
+        add "phone/ktalk/0.png" xpos 420 ypos 40

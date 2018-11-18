@@ -2,7 +2,6 @@
 # file, define a label and jump to it from another file.
 
 label phone:
-
     show screen phone_UI
     show screen phone_button_in_homescreen
 

@@ -3,7 +3,6 @@
 # image 문을 사용해 이미지를 정의합니다.
 # image eileen happy = "eileen_happy.png"
 image sunday_room_image = im.Scale("room.png",1480,820)
-image bg lecture_room = im.Scale("lecture_room.png",1480,820)
 image phone_night = "phone_night.png"
 
 # 게임에서 사용할 캐릭터를 정의합니다.
@@ -20,6 +19,15 @@ init python:
     day_for_show = (week-1)*7 + day + 1
     day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
+
+    messages = [["장중", "안녕"], ["삼용", "즐거운 하루가 되길!"],
+                ["현재", "안녕"], ["동아", "닥쳐!"],
+                ["진일", "어머나 세상에"], ["미래", "웃기지마!"],
+                ["장중", "만세~"], ["삼용", "뭐라고 쓸까?"],
+                ["장중", "뭘 쓸지도 모르겠다"], ["삼용", "허허"],
+                ["현재", "구글링 만세!"], ["동아", "구현은 되었다"],
+                ["진일", "노잼일까?"], ["미래", "노잼인데?"],
+                ["장중", "호호하하"], ["삼용", "반가워"]]
 
     study_parameter = 0
     club_parameter = 0
