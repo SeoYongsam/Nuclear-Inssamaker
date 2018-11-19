@@ -1,7 +1,7 @@
 image bg lecture_room = "lecture_room.png"
 
 label weekday_day :
-    scene black with dissolve
+    scene black #with dissolve
     show screen stats_screen
 
     $ YoIl = day_name[day]
@@ -73,15 +73,20 @@ label weekday_SNS :
 #    scene black
 #    "[YoIl]요일 밤, SNS를 확인했다."
 #    show phone_night at truecenter
-#    pause
 
+    call change_ktalk_talk
+    call change_fbook_timeline
+    call phone
+
+
+    # 일주일 일정 반복. 다 소화하면, 일주일 스케줄 리셋하고 일요일로 감
     if day < 6 :
         $ day += 1
         jump weekday_day
     else :
-        "일요일 화면으로 돌아갑니다."
+        "일요일 화면으로 돌아갑니다. 체력을 20 회복합니다."
         call weekday_schedule_reset
-        $ hp += 30
+        $ hp += 20
         $ loneliness += 5
 
         jump sunday_room
@@ -102,7 +107,8 @@ label weekday_schedule_reset :
 #            $ i += 1
     else :
         $ week += 1
-    $ day = 1
+    $ day = 0
+    call change_ktalk_talk
     $ for_day_schedule_select = 0
 
 #    scene black with dissolve

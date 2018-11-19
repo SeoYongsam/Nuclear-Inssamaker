@@ -13,10 +13,13 @@ label planner:
             "실행한다":
                 $ day = 1
                 call hide_planner_button
-                hide screen sunday_room_UI
+                hide screen always_except_planner_UI
 
                 $ renpy.transition(dissolve)
                 show screen dateShow
+                show screen always_except_planner_UI
+                show screen hp_and_loneliness_show
+
                 jump weekday_day
 
             "처음부터":
@@ -37,8 +40,8 @@ label show_planner :
     # 플래너 배경 ON
     show screen planner_UI
 
-    hide screen sunday_room_UI
-    show screen sunday_room_UI
+    hide screen always_except_planner_UI
+    show screen always_except_planner_UI
     hide screen hp_and_loneliness_show
     show screen hp_and_loneliness_show
 
@@ -53,6 +56,18 @@ label show_planner :
     # 스케줄러 속 월화수목금토 '공부'~'휴식' 아이콘 띄우기
     show screen month_schedule_icon_show
 
+    return
+
+label planner_close :
+    hide screen planner_UI
+    hide screen schedule_button
+    hide screen schedule_highlight
+    hide screen month_schedule_icon_show
+    $ i = 1
+    while i < 7:
+        $ day_schedule[month - 3][(week - 1) * 7 + i] = 0
+        $ i += 1
+    jump sunday_room
     return
 
 label planner_icon_select :

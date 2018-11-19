@@ -5,12 +5,12 @@
 label sunday_room:
     scene sunday_room_image at truecenter
 
-    $ day = 0
     $ YoIl = day_name[day]
     $ day_for_show = (week-1)*7 + day + 1
+
     show screen dateShow
 
-    show screen sunday_room_UI
+    show screen always_except_planner_UI
     # sunday_room_screen에 있는 핸드폰, 플래너 아이콘을 보여주는 스크린
     show screen phone_icon
     show screen planner_icon
@@ -49,15 +49,6 @@ screen planner_icon() :
                     SetVariable("month_for_display", month - 3),
                     SetVariable("day", 1),
                     Hide("dateShow"), Show("hp_and_loneliness_show"), Jump("planner")]
-
-
-# 일요일 방 hp, mental, to-do-list 바
-screen sunday_room_UI() :
-    ## 일단 여기다가 background 때려 박았음"
-    add "hp_background.png"
-    add "mental_background.png"
-    add "to_do_list.png"
-    ##
 
 screen hp_and_loneliness_show():
     vbox:

@@ -9,6 +9,7 @@ image phone_night = "phone_night.png"
 
 # 변수 선언
 init python:
+    import string
     hp = 200
     loneliness = 0
 
@@ -20,14 +21,16 @@ init python:
     day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
 
-    messages = [["장중", "안녕"], ["삼용", "즐거운 하루가 되길!"],
+    # 첫째날 대사
+    messages = [["장중", "안녕\n테스트를해보겠다"], ["삼용", "즐거운 하루가 되길!"],
                 ["현재", "안녕"], ["동아", "닥쳐!"],
-                ["진일", "어머나 세상에"], ["미래", "웃기지마!"],
+                ["진일", "어머나 세상에\n짱짱하다\n세줄도 써볼까?"], ["미래", "웃기지마!"],
                 ["장중", "만세~"], ["삼용", "뭐라고 쓸까?"],
-                ["장중", "뭘 쓸지도 모르겠다"], ["삼용", "허허"],
-                ["현재", "구글링 만세!"], ["동아", "구현은 되었다"],
+                ["주인공", "뭘 쓸지도 모르겠다"], ["삼용", "허허"],
+                ["현재", "구글링 만세!"], [0, "구현은 되었다"],
                 ["진일", "노잼일까?"], ["미래", "노잼인데?"],
-                ["장중", "호호하하"], ["삼용", "반가워"]]
+                ["장중", "이정도 글자크기는 괜찮나요?"], ["삼용", "반가워"],
+                ["주인공", "아직 제대로 안 뜰거야"]]
 
     study_parameter = 0
     club_parameter = 0
@@ -76,6 +79,14 @@ screen dateShow() :
             text "{color=#000}[month]월 {color=#ff0000}[day_for_show]{color=#000}일 {color=#ff0000}[YoIl]{color=#000}요일" :
                 size 25 xalign 0.3 yalign 0.5
 
+# 일요일 방 hp, mental, to-do-list 바
+screen always_except_planner_UI() :
+    ## 일단 여기다가 background 때려 박았음"
+    add "hp_background.png"
+    add "mental_background.png"
+    add "to_do_list.png"
+    ##
+
 # label start에서 넘어옴
 label what_is_your_name:
     s "이름이 무엇인가요?"
@@ -109,7 +120,7 @@ screen stats_button_screen() :
 
 screen stats_screen() :
     frame:
-        align(0.95,0.15)
+        align(0.05,0.25)
 #        xysize(180, 100)
         vbox:
             spacing 3

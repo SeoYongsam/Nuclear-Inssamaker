@@ -41,9 +41,7 @@ screen planner_UI() :
             idle "planner/exitButton.png"
             hover "planner/exitButton_on.png"
             #플래너 X버튼 누르면 플래너 화면들을 전부 숨기고, 일요일 방으로 간다.
-            action [Hide("planner_UI"), Hide("schedule_button"),
-                    Hide("schedule_highlight"),
-                    Hide("month_schedule_icon_show"), Jump("sunday_room")]
+            action Jump("planner_close")
             #아래 코드는 위와 똑같지만 작동하지 않는 코드. Call이 호출되면 뒷 액션들은 호출되지 않는 것 같다.
             #action Call("hide_planner_button"), Jump("sunday_room")
 
@@ -93,17 +91,17 @@ screen month_schedule_icon_show():
                 hbox:
                     xpos 160 + 128*(j-1) ypos 184 + 128*(i-1)
                     if day_schedule[month_for_display][(i-1)*7 + j] == 1:
-                        add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+((1/week) * ((month_for_display+3)/month)))), 0.8)
+                        add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 #im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(1/week) * ((month_for_display+3)/month))), 0.8)
 
                     elif day_schedule[month_for_display][(i-1)*7 + j] == 2:
-                        add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+((1/week) * ((month_for_display+3)/month)))), 0.8)
+                        add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
                     elif day_schedule[month_for_display][(i-1)*7 + j] == 3:
-                        add im.Alpha(im.MatrixColor("planner/sel_gwa.png",im.matrix.saturation( 0.1+((1/week) * ((month_for_display+3)/month)))), 0.8)
+                        add im.Alpha(im.MatrixColor("planner/sel_gwa.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
                     elif day_schedule[month_for_display][(i-1)*7 + j] == 4:
-                        add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+((1/week) * ((month_for_display+3)/month)))), 0.8)
+                        add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
 #screen schedule_revise_button():
 #    hbox:
