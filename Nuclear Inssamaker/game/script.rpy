@@ -21,16 +21,57 @@ init python:
     day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
 
-    # 첫째날 대사
-    messages = [["장중", "안녕\n테스트를해보겠다"], ["삼용", "즐거운 하루가 되길!"],
+
+    talk_with_who = "그룹"
+#클래스 테스트1
+    class messages :
+        def __init__(self) :
+            self.message = []
+            self.new_message_count = 0
+            self.new_message_watch = False
+
+        def add(self, data) :
+            tmp = data.split("|")
+            self.message.extend([[tmp[0], tmp[1]]])
+
+        def reset(self) :
+            del self.message[:]
+
+#클래스 테스트2
+# 캐릭터 일람 : 장중, 삼용, 현재, 동아, 진일, 미래, 주인공, 0, 1
+    grouptalk = messages()
+    grouptalk.message = [["날짜","3월 1일 일요일"],
+                ["장중", "안녕\n테스트를해보겠다"], ["삼용", "즐거운 하루가 되길!"],
                 ["현재", "안녕"], ["동아", "닥쳐!"],
                 ["진일", "어머나 세상에\n짱짱하다\n세줄도 써볼까?"], ["미래", "웃기지마!"],
                 ["장중", "만세~"], ["삼용", "뭐라고 쓸까?"],
                 ["주인공", "뭘 쓸지도 모르겠다"], ["삼용", "허허"],
-                ["현재", "구글링 만세!"], [0, "구현은 되었다"],
+                ["현재", "구글링 만세!"], ["연속", "구현은 되었다"],
                 ["진일", "노잼일까?"], ["미래", "노잼인데?"],
                 ["장중", "이정도 글자크기는 괜찮나요?"], ["삼용", "반가워"],
                 ["주인공", "아직 제대로 안 뜰거야"]]
+
+    jangjung = messages()
+    jangjung.message = [["날짜","3월 1일 일요일 뾰로롱"],
+                ["장중", "안녕\n테스트를해보겠다"], ["주인공", "안녕\n퓨우우우우우우우우우우전"]]
+    jangjung.add("장중|어쩌구저쩌구")
+
+
+    samyong = messages()
+    samyong.message = [["날짜","3월 1일 일요일 뾰로롱"],
+                ["삼용", "안녕\n테스트를해보겠다"]]
+
+    hyunjae = messages()
+    hyunjae.message = [["날짜","3월 1일 일요일 뾰로롱"],
+                ["현재", "안녕\n테스트를해보겠다"]]
+
+    jinil = messages()
+    jinil.message = [["날짜","3월 1일 일요일 뾰로롱"],
+                ["진일", "안녕\n테스트를해보겠다"]]
+
+    dongah = messages()
+    dongah.message = [["날짜","3월 1일 일요일 뾰로롱"],
+                ["동아", "안녕\n테스트를해보겠다"]]
 
     study_parameter = 0
     club_parameter = 0

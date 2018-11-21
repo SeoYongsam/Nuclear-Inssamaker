@@ -74,7 +74,12 @@ label weekday_SNS :
 #    "[YoIl]요일 밤, SNS를 확인했다."
 #    show phone_night at truecenter
 
-    call change_ktalk_talk
+    call change_group_talk
+    call change_jangjung_talk
+    call change_jinil_talk
+    call change_samyong_talk
+    call change_dongah_talk
+
     call change_fbook_timeline
     call phone
 
@@ -88,6 +93,7 @@ label weekday_SNS :
         call weekday_schedule_reset
         $ hp += 20
         $ loneliness += 5
+        call parameter_maxmin_check
 
         jump sunday_room
     return
@@ -108,7 +114,13 @@ label weekday_schedule_reset :
     else :
         $ week += 1
     $ day = 0
-    call change_ktalk_talk
+
+    call change_group_talk
+    call change_jangjung_talk
+    call change_jinil_talk
+    call change_samyong_talk
+    call change_dongah_talk
+
     $ for_day_schedule_select = 0
 
 #    scene black with dissolve
