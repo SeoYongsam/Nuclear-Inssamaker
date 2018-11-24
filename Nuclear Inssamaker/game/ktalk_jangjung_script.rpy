@@ -4,7 +4,10 @@
 label change_jangjung_talk :
     if month == 3 :
         if week == 1 :
-            if day == 1 :
+            if day == 0 :
+                $ jangjung.add("핫|핫")
+
+            elif day == 1 :
                 $ jangjung.add("날짜|3월 2일 월요일")
                 $ jangjung.add("장중|테스트")
                 $ jangjung.add("연속|잘 되려나\n되겠지")

@@ -112,7 +112,7 @@ screen say(who, what):
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.08 yalign 0.95
 
 
 ## Make the namebox available for styling through the Character object.
@@ -1310,7 +1310,7 @@ screen nvl(dialogue, items=None):
                 action i.action
                 style "nvl_button"
 
-    add SideImage() xalign 0.0 yalign 1.0
+    add SideImage() xalign 0.2 yalign 0.8
 
 
 screen nvl_dialogue(dialogue):
@@ -1498,8 +1498,3 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
-
-
-
-
-

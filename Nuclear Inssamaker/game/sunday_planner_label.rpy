@@ -13,12 +13,11 @@ label planner:
             "실행한다":
                 $ day = 1
                 call hide_planner_button
-                hide screen always_except_planner_UI
+                hide screen upper_right_UI
 
                 $ renpy.transition(dissolve)
                 show screen dateShow
-                show screen always_except_planner_UI
-                show screen hp_and_loneliness_show
+                show screen upper_right_UI
 
                 jump weekday_day
 
@@ -40,10 +39,8 @@ label show_planner :
     # 플래너 배경 ON
     show screen planner_UI
 
-    hide screen always_except_planner_UI
-    show screen always_except_planner_UI
-    hide screen hp_and_loneliness_show
-    show screen hp_and_loneliness_show
+    hide screen upper_right_UI
+    show screen upper_right_UI
 
     if month - 3 == month_for_display :
         # 형광색 하이라이트 창
@@ -82,8 +79,6 @@ label planner_icon_select :
     return
 
 label hide_planner_button :
-    hide screen hp_and_loneliness_show
-
     hide screen planner_UI
     hide screen schedule_button
     hide screen schedule_highlight

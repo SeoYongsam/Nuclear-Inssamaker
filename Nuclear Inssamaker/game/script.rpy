@@ -11,16 +11,19 @@ image phone_night = "phone_night.png"
 init python:
     import string
     hp = 200
-    loneliness = 0
+    mental_point = 100
 
     month = 3 # number 0~3 : 3~6월
     month_for_display = month - 3
-    week = 1
+    week = 3
     day = 0
     day_for_show = (week-1)*7 + day + 1
     day_name = ["일","월","화","수","목","금","토"]
     YoIl = 0
 
+    study_parameter = 0
+    club_parameter = 0
+    gwa_parameter = 0
 
     talk_with_who = "그룹"
 #클래스 테스트1
@@ -32,6 +35,14 @@ init python:
 
         def add(self, data) :
             tmp = data.split("|")
+
+            tmplist = list(tmp[1])
+            for i in range (1, len(tmp[1])/17 + 1) :
+                tmplist.insert( 17  * ( len(tmp[1])/17 + 1 - i ), "\n")
+            if tmplist[len(tmplist) - 1] == "\n" :
+                del tmplist[len(tmplist) - 1]
+            tmp[1] = ''.join(tmplist)
+
             self.message.extend([[tmp[0], tmp[1]]])
 
         def reset(self) :
@@ -40,22 +51,10 @@ init python:
 #클래스 테스트2
 # 캐릭터 일람 : 장중, 삼용, 현재, 동아, 진일, 미래, 주인공, 0, 1
     grouptalk = messages()
-    grouptalk.message = [["날짜","3월 1일 일요일"],
-                ["장중", "안녕\n테스트를해보겠다"], ["삼용", "즐거운 하루가 되길!"],
-                ["현재", "안녕"], ["동아", "닥쳐!"],
-                ["진일", "어머나 세상에\n짱짱하다\n세줄도 써볼까?"], ["미래", "웃기지마!"],
-                ["장중", "만세~"], ["삼용", "뭐라고 쓸까?"],
-                ["주인공", "뭘 쓸지도 모르겠다"], ["삼용", "허허"],
-                ["현재", "구글링 만세!"], ["연속", "구현은 되었다"],
-                ["진일", "노잼일까?"], ["미래", "노잼인데?"],
-                ["장중", "이정도 글자크기는 괜찮나요?"], ["삼용", "반가워"],
-                ["주인공", "아직 제대로 안 뜰거야"]]
 
     jangjung = messages()
     jangjung.message = [["날짜","3월 1일 일요일 뾰로롱"],
                 ["장중", "안녕\n테스트를해보겠다"], ["주인공", "안녕\n퓨우우우우우우우우우우전"]]
-    jangjung.add("장중|어쩌구저쩌구")
-
 
     samyong = messages()
     samyong.message = [["날짜","3월 1일 일요일 뾰로롱"],
@@ -73,9 +72,15 @@ init python:
     dongah.message = [["날짜","3월 1일 일요일 뾰로롱"],
                 ["동아", "안녕\n테스트를해보겠다"]]
 
-    study_parameter = 0
-    club_parameter = 0
-    gwa_parameter = 0
+    fbook_post = [["고딩친구", "2018년 2월 28일", "3.1절 끝나면 학기 시작"],
+                  ["그냥친구","2018년 3월 1일", "수능 끝난 고3 다시 하고 싶다"],
+                  ["띠용","2018년 3월 1일", "하... 기대된다"],
+                  ["김범주","2018년 3월 1일", "새로운 학기입니다."]]
+    def fbook_post_add(data) :
+        tmp = data.split("|")
+        if len(fbook_post) > 7:
+            del fbook_post[0]
+        fbook_post.extend([[tmp[0], tmp[1], tmp[2]]])
 
     #카톡모드 1 = 친구목록, 2 = 대화목록
     ktalk_mode = 1
@@ -95,7 +100,13 @@ label start:
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
 
-    call limitation #아직 구현 안된 것
+#    call limitation #아직 구현 안된 것
+    call change_fbook_post
+    call change_group_talk
+    call change_jangjung_talk
+    call change_jinil_talk
+    call change_samyong_talk
+    call change_dongah_talk
 
     "일요일에는.\n"
     extend "핸드폰을 이용해 SNS를 확인하거나,\n"
@@ -117,16 +128,32 @@ screen dateShow() :
             text "{color=#000}[month]월 [day_for_show]일 [YoIl]요일" :
                 size 25 xalign 0.3 yalign 0.5
         else :
-            text "{color=#000}[month]월 {color=#ff0000}[day_for_show]{color=#000}일 {color=#ff0000}[YoIl]{color=#000}요일" :
+            text "{color=#000}[month]월 [day_for_show]{color=#000}일 {color=#ff0000}[YoIl]요일{color=#000}" :
                 size 25 xalign 0.3 yalign 0.5
 
 # 일요일 방 hp, mental, to-do-list 바
-screen always_except_planner_UI() :
+screen upper_right_UI() :
     ## 일단 여기다가 background 때려 박았음"
-    add "hp_background.png"
-    add "mental_background.png"
-    add "to_do_list.png"
-    ##
+    add "parameter_UI.png"
+    add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
+    add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64
+    add im.Scale("parameter_bar.png", 52*(study_parameter)/100, 4) xpos 992 ypos 180
+    add im.Scale("parameter_bar.png", 52*(gwa_parameter)/100, 4) xpos 1092 ypos 180
+    add im.Scale("parameter_bar.png", 52*(club_parameter)/100, 4) xpos 1192 ypos 180
+
+## 일요일 방과 일정 실행 중에 핸드폰 아이콘
+screen phone_icon():
+    vbox :
+        if day == 0 :
+            xalign 0.34 yalign 0.7
+        else :
+            xalign 0.1 yalign 0.5
+        imagebutton:
+            idle "phone_icon.png"
+            # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
+            hover im.Alpha("phone_icon.png",2)
+            # 클릭시 phone label을 실행함
+            action Hide("phone_icon"), Hide("planner_icon"), Call("phone")
 
 # label start에서 넘어옴
 label what_is_your_name:
@@ -168,7 +195,7 @@ screen stats_screen() :
             align(1.0, 0.5)
             text "{u}Stats:{/u}"
             text "체력: [hp]"
-            text "외로움: [loneliness]"
+            text "외로움: [mental_point]"
             text "Month: [month]"
             text "Week: [week]"
             text "Day: [day]"
@@ -183,11 +210,11 @@ label parameter_maxmin_check :
     if hp > 200 :
         $ hp = 200
 
-    if loneliness < 0 :
-        $ loneliness = 0
+    if mental_point < 0 :
+        $ mental_point = 0
 
-    if loneliness > 100 :
-        $ loneliness = 100
+    if mental_point > 100 :
+        $ mental_point = 100
 
     if study_parameter < 0 :
         $ study_parameter = 0

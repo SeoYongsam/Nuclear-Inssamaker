@@ -4,7 +4,10 @@
 label change_jinil_talk :
     if month == 3 :
         if week == 1 :
-            if day == 1 :
+            if day == 0 :
+                $ jinil.add("핫|핫")
+
+            elif day == 1 :
                 $ jinil.add("날짜|3월 2일 월요일")
                 $ jinil.add("장중|테스트")
                 $ jinil.add("연속|잘 되려나\n되겠지")

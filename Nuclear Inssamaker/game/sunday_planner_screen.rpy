@@ -49,7 +49,7 @@ screen planner_UI() :
 screen schedule_highlight():
     if day < 7:
         vbox:
-            xpos (160 + 128*(day-1)) ypos (184 + 128* (week-1) )
+            xpos (160 + 128*(day-1)) ypos (175 + 128* (week-1) )
             add "planner/highlight.png"
 
 ## 플래너를 눌렀을 때 나오는 일정짜기 버튼
@@ -89,7 +89,7 @@ screen month_schedule_icon_show():
         # 월요일
             if day_schedule[month_for_display][(i-1)*7 + j] != 0:
                 hbox:
-                    xpos 160 + 128*(j-1) ypos 184 + 128*(i-1)
+                    xpos 160 + 128*(j-1) ypos 175 + 128*(i-1)
                     if day_schedule[month_for_display][(i-1)*7 + j] == 1:
                         add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 #im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(1/week) * ((month_for_display+3)/month))), 0.8)
