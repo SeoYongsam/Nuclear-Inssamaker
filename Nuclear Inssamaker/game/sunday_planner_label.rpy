@@ -6,27 +6,26 @@ label planner:
     call planner_icon_select
 
     # 토요일까지 선택을 완료하고 day가 7이 되면,
-    if day == 7:
+    if day == 8:
         hide screen schedule_highlight
         "일주일 일정을 실행하시겠습니까?"
         menu:
             "실행한다":
                 $ day = 1
                 call hide_planner_button
-                hide screen always_except_planner_UI
+                hide screen upper_right_UI
 
                 $ renpy.transition(dissolve)
                 show screen dateShow
-                show screen always_except_planner_UI
-                show screen hp_and_loneliness_show
+                show screen upper_right_UI
 
                 jump weekday_day
 
             "처음부터":
                 $ day = 1
                 $ i = 1
-                while i < 7:
-                    $ day_schedule[month - 3][(week - 1) * 7 + i] = 0
+                while i < 8:
+                    $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
                     $ i += 1
 
     # 버튼 만악의 근원이었지만 해결함
@@ -40,10 +39,8 @@ label show_planner :
     # 플래너 배경 ON
     show screen planner_UI
 
-    hide screen always_except_planner_UI
-    show screen always_except_planner_UI
-    hide screen hp_and_loneliness_show
-    show screen hp_and_loneliness_show
+    hide screen upper_right_UI
+    show screen upper_right_UI
 
     if month - 3 == month_for_display :
         # 형광색 하이라이트 창
@@ -64,26 +61,24 @@ label planner_close :
     hide screen schedule_highlight
     hide screen month_schedule_icon_show
     $ i = 1
-    while i < 7:
-        $ day_schedule[month - 3][(week - 1) * 7 + i] = 0
+    while i < 8:
+        $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
         $ i += 1
     jump sunday_room
     return
 
 label planner_icon_select :
-    if day != 7:
-        $ day_schedule[month - 3][(week - 1) * 7 + day] = for_day_schedule_select
+    if day != 8:
+        $ day_schedule[month - 3][(week - 1) * 8 + day] = for_day_schedule_select
         $ for_day_schedule_select = 0
 
     # day_schedule[day]가 선택되어 있다면, day를 늘려 다음 날로 넘어간다.
-        while day_schedule[month - 3][(week - 1) * 7 + day] != 0:
+        while day_schedule[month - 3][(week - 1) * 8 + day] != 0:
 #    if for_day_schedule_select != 0:
             $ day += 1
     return
 
 label hide_planner_button :
-    hide screen hp_and_loneliness_show
-
     hide screen planner_UI
     hide screen schedule_button
     hide screen schedule_highlight

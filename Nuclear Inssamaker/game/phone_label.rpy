@@ -8,10 +8,8 @@ label phone :
     #if day == 0 :
     hide screen dateShow
     show screen dateShow
-    hide screen always_except_planner_UI
-    show screen always_except_planner_UI
-    hide screen hp_and_loneliness_show
-    show screen hp_and_loneliness_show
+    hide screen upper_right_UI
+    show screen upper_right_UI
 
     while True:
         window hide
@@ -24,7 +22,7 @@ label phone_close :
     hide screen phone_button_in_homescreen
     hide screen fbook
     hide screen ktalk
-    $ ktalk_mode = 1
+    show screen phone_icon
 
     if day == 0:
         jump sunday_room
