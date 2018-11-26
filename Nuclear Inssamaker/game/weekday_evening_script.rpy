@@ -25,7 +25,7 @@ label weekday_evening_event :
     if month == 3 :
         if week == 3 :
             if day == 1 :
-                "null"
+                call pcbang
 
             elif day == 2 :
                 Player "과잠준비위원회 지원해주셔서 감사합니다!"
