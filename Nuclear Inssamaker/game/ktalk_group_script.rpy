@@ -60,6 +60,9 @@ label change_group_talk :
         elif week == 3 :
             if day == 0 :
                 $ grouptalk.add("날짜|3월 15일 일요일")
+                $ grouptalk.add("주인공|이것도 테스트")
+                $ grouptalk.add("주인공|이것도 테스트ㅁㄴㅇ러ㅏㅣㅁ넝라ㅣㅓㅁ나ㅣㅇ러미나")
+                $ grouptalk.add("주인공|ㅁㄴ어라ㅣ먼아리ㅓㅁㄴ이러미ㅏㄴ어라ㅣㅁ넝리ㅏㅁㄴㅇ러ㅣㅁㄴㅇㄹ")
                 $ grouptalk.add("현재|아 총엠에서 마신 술 아직도 안깬듯 ㅠㅠ")
                 $ grouptalk.add("미래|그러게 조절하며 마시지 현재야아아아~~~ ㅠㅠㅠ")
                 $ grouptalk.add("금지|얘들아 나 벌써 과제 나왔어…")
@@ -67,7 +70,6 @@ label change_group_talk :
                 $ grouptalk.add("대현|헐 나도 그 생각!!!우리도 얼른 맞췄으면 좋겠다!!!과잠 가즈아~")
                 $ grouptalk.add("장중|야 우리는 과잠 안맞추냐 뻔대야")
                 $ grouptalk.add("진일|일해라 노예야 ㅋㅋ")
-                $ grouptalk.add("장중|이건 실행이 됨")
 
             elif day == 1 :
                 $ grouptalk.add("날짜|3월 16일 월요일")
@@ -76,6 +78,7 @@ label change_group_talk :
                 $ grouptalk.add("대현|오! 그게 좋을듯")
                 $ grouptalk.add("미래|응응 그래야 뭐라도 진행될것 같아 ㅠㅠ")
                 $ grouptalk.add("삼용|와 심리학과는 벌써 과잠 맞췄다는데??? 이거 봐봐. 진짜 잘 맞췄다 ㅠㅠㅠ")
+
                 $ grouptalk.add("현재|와 진짜 예쁘다… 우리도 그럼 얼른 과준위 만들자. 일단 그럼 XX랑 나 할래 ㅋㅋㅋ 또 하고싶은 분?")
                 $ grouptalk.add("삼용|나나나나나나나나")
                 $ grouptalk.add("진일|과잠 디자인이면 또 내가 나설 차례가 왔군")

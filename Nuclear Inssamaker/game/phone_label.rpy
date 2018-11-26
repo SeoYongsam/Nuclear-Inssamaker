@@ -23,7 +23,6 @@ label phone_close :
     hide screen fbook
     hide screen ktalk
     show screen phone_icon
-    $ ktalk_mode = 1
 
     if day == 0:
         jump sunday_room
