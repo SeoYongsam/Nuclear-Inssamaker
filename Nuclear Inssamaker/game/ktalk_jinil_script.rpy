@@ -71,7 +71,7 @@ label change_jinil_talk :
                 $ jinil.add("장중|테스트")
 
             elif day == 4 :
-                $ jinil.add("장중|테스트")
+                $ jinil.add("진일|뻔대야 카모 진짜 멋있지 않냐 ㅋㅋㅋ 이걸로 가자")
 
             elif day == 5 :
                 $ jinil.add("장중|테스트")
@@ -81,13 +81,22 @@ label change_jinil_talk :
 
         elif week == 4 :
             if day == 0 :
-                $ jinil.add("장중|이건 실행이 됨")
+                # 투표 진행
+                $ jinil.add("진일| ㅋㅋㅋㅋㅋ 내가 애들이 이거 좋아할거라고 했지? 아.. 근데 혹시 내가 단톡방에서 좀 오버했나??	")
+
+                # 강제 종료
+                $ jinil.add("진일|과잠 예쁜 것 같아 빨리 입고 싶다ㅋㅋㅋㅋ")
 
             elif day == 1 :
-                $ jinil.add("장중|캐릭터이름과 메시지를 변경하세요")
+                # 강제 종료
+                $ jinil.add("진일|우리 과잠은 언제오지???")
+
+                # 투표 지속
+                $ jinil.add	("진일|내가 애들한테 갠톡 돌려볼게!")
 
             elif day == 2 :
-                $ jinil.add("삼용|테스트")
+                #투표 지속
+                $ jinil.add("진일|아 진짜 애들 너무한 것 같아 하….")
 
             elif day == 3 :
                 $ jinil.add("장중|테스트")
