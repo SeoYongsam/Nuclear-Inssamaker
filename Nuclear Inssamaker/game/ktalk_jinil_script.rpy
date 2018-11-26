@@ -92,7 +92,7 @@ label change_jinil_talk :
                 $ jinil.add("진일|우리 과잠은 언제오지???")
 
                 # 투표 지속
-                $ jinil.add	("진일|내가 애들한테 갠톡 돌려볼게!")
+                $ jinil.add("진일|내가 애들한테 갠톡 돌려볼게!")
 
             elif day == 2 :
                 #투표 지속
