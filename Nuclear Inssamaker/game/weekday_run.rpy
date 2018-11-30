@@ -4,12 +4,13 @@ label weekday_day :
     scene black #with dissolve
     show screen stats_screen
 
-    show screen phone_icon
+    show screen phone_icon with vpunch
 
     $ YoIl = day_name[day]
     $ day_for_show = (week-1)*8 + day + 1
 
     if day < 8 :
+        $ day_or_evening = "day"
         call weekday_day_event
 
     if hp <= 30 :
@@ -45,6 +46,7 @@ label mental_point_100_event :
 label weekday_evening :
     #저녁 일정 소화
     if day != 6 :
+        $ day_or_evening = "evening"
         scene black
         "[YoIl]요일 저녁이 되었다.\n"
         call weekday_evening_event
@@ -77,6 +79,9 @@ label weekday_SNS :
 #    "[YoIl]요일 밤, SNS를 확인했다."
 #    show phone_night at truecenter
 
+#    scene black with vpunch
+
+    $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
     call change_jangjung_talk
@@ -110,6 +115,7 @@ label weekday_schedule_reset :
         $ week += 1
     $ day = 0
 
+    $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
     call change_jangjung_talk

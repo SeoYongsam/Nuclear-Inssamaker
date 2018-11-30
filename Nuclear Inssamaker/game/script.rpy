@@ -11,21 +11,25 @@ image phone_night = "phone_night.png"
 init python:
     import string
     import re
+    import random
 
     hp = 200
     mental_point = 100
 
     month = 3 # number 0~3 : 3~6월
     month_for_display = month - 3
-    week = 3
+    week = 1
     day = 0
     day_for_show = (week-1)*7 + day + 1
     day_name = ["일","월","화","수","목","금","토","토"]
     YoIl = 0
+    day_or_evening = "day"
 
     study_parameter = 0
     club_parameter = 0
     gwa_parameter = 0
+
+    rand_list_for_katlk_list = [1, 2, 3, 4, 5, 6]
 
     talk_with_who = "그룹"
 #클래스 테스트1
@@ -45,7 +49,13 @@ init python:
                 del tmplist[len(tmplist) - 1]
             tmp[1] = ''.join(tmplist)
 
+
             self.message.extend([[tmp[0], tmp[1]]])
+
+#            if renpy.get_screen("phone_UI") :
+#                renpy.pause(1)
+#                renpy.hide_screen("ktalk")
+#                renpy.show_screen("ktalk")
 
         def reset(self) :
             del self.message[:]
@@ -121,10 +131,14 @@ label start:
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
 
+    Player "으으 머리야...분명히 금요일에 병샷을 한 것 까지는 기억나는데..."
+    Player "아 핸드폰 어딨지? 핸드폰 한 번 확인해봐야겠다."
+
     "일요일에는.\n"
     extend "핸드폰을 이용해 SNS를 확인하거나,\n"
     extend "플래너를 이용해 다음주 일정을 짜세요."
 
+    $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
     call change_jangjung_talk
@@ -143,13 +157,17 @@ label limitation:
 
 screen dateShow() :
     add "date.png" xpos 12 ypos 9
-    vbox xpos 12 ypos 9 xysize(360, 60) :
+    hbox xpos 12 ypos 9 xysize(360, 60) :
         if YoIl != "일" :
             text "{color=#000}[month]월 [day_for_show]일 [YoIl]요일" :
-                size 25 xalign 0.3 yalign 0.5
+                size 25 xalign 0.8 yalign 0.5
         else :
             text "{color=#000}[month]월 [day_for_show]{color=#000}일 {color=#ff0000}[YoIl]요일{color=#000}" :
-                size 25 xalign 0.3 yalign 0.5
+                size 25 xalign 0.8 yalign 0.5
+        if day_or_evening == "day" :
+            add "date_day.png" xalign 0.1 yalign 0.5
+        else :
+            add "date_evening.png" xalign 0.1 yalign 0.5
 
 # 일요일 방 hp, mental, to-do-list 바
 screen upper_right_UI() :
@@ -168,6 +186,7 @@ screen phone_icon():
             xalign 0.34 yalign 0.7
         else :
             xalign 0.1 yalign 0.5
+
         imagebutton:
             idle "phone_icon.png"
             # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
