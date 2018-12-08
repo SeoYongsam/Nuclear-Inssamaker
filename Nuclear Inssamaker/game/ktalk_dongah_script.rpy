@@ -1,11 +1,10 @@
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
-
 label change_dongah_talk :
     if month == 3 :
         if week == 1 :
             if day == 0 :
-                $ dongah.add("핫|핫")
+                $ dongah.add("장중|테스트")
 
             elif day == 1 :
                 $ dongah.add("날짜|3월 2일 월요일")

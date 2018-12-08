@@ -10,20 +10,26 @@ image phone_night = "phone_night.png"
 # 변수 선언
 init python:
     import string
+    import re
+    import random
+
     hp = 200
     mental_point = 100
 
     month = 3 # number 0~3 : 3~6월
     month_for_display = month - 3
-    week = 3
+    week = 1
     day = 0
     day_for_show = (week-1)*7 + day + 1
-    day_name = ["일","월","화","수","목","금","토"]
+    day_name = ["일","월","화","수","목","금","토","토"]
     YoIl = 0
+    day_or_evening = "day"
 
     study_parameter = 0
     club_parameter = 0
     gwa_parameter = 0
+
+    rand_list_for_katlk_list = [1, 2, 3, 4, 5, 6]
 
     talk_with_who = "그룹"
 #클래스 테스트1
@@ -43,7 +49,13 @@ init python:
                 del tmplist[len(tmplist) - 1]
             tmp[1] = ''.join(tmplist)
 
+
             self.message.extend([[tmp[0], tmp[1]]])
+
+#            if renpy.get_screen("phone_UI") :
+#                renpy.pause(1)
+#                renpy.hide_screen("ktalk")
+#                renpy.show_screen("ktalk")
 
         def reset(self) :
             del self.message[:]
@@ -72,24 +84,43 @@ init python:
     dongah.message = [["날짜","3월 1일 일요일 뾰로롱"],
                 ["동아", "안녕\n테스트를해보겠다"]]
 
-    fbook_post = [["고딩친구", "2018년 2월 28일", "3.1절 끝나면 학기 시작"],
-                  ["그냥친구","2018년 3월 1일", "수능 끝난 고3 다시 하고 싶다"],
-                  ["띠용","2018년 3월 1일", "하... 기대된다"],
-                  ["김범주","2018년 3월 1일", "새로운 학기입니다."]]
+    fbook_post = [["본문", "고딩친구", "2018년 2월 28일", "3.1절 끝나면 학기 시작"],["그림자"],
+                  ["본문", "그냥친구","2018년 3월 1일", "수능 끝난 고3 다시 하고 싶다"],["그림자"],
+                  ["본문", "띠용","2018년 3월 1일", "하... 기대된다"],["그림자"],
+                  ["본문", "김범주","2018년 3월 1일", "새로운 학기입니다."],["댓글시작"],["댓글", "김범주","새로어러러러러운 학기입니다."],["댓글종료"],["그림자"],
+                  ["본문", "김범주","2018년 3월 1일", "새로어러러러러\n운 학기입니다."],["댓글시작"],["댓글", "김범주","새로어러러러러운 학\n기입니다."],["댓글종료"],["그림자"],
+                  ["본문", "김범주","2018년 3월 1일", "새로어러러러러\n운 학\n기입니다."],["댓글시작"],["댓글", "김범주","새로어러러러러\n운 학\n기입니다."],["댓글종료"],["그림자"],
+                  ["본문", "김범주","2018년 3월 1일", "새로어러러러러\n운 학\n기입니다."],["댓글시작"],["댓글", "김범주","새로어러\n러러러\n운 학\n기입니다."],["댓글종료"],["그림자"]]
+
     def fbook_post_add(data) :
         tmp = data.split("|")
-        if len(fbook_post) > 7:
-            del fbook_post[0]
-        fbook_post.extend([[tmp[0], tmp[1], tmp[2]]])
+#        if week > 1 or month > 3:
+#            del fbook_post[0]
+#            while fbook_post[0] != "본문" :
+#                del fbook_post[0]
+        if tmp[0] == "본문" :
+            #tmplist = list(tmp[3])
+            #for i in range (1, len(tmp[3])/22 + 1) :
+            #    tmplist.insert( 22  * ( len(tmp[3])/22 + 1 - i ), "\n")
+            #if tmplist[len(tmplist) - 1] == "\n" :
+            #    del tmplist[len(tmplist) - 1]
+            #tmp[3] = ''.join(tmplist)
+
+            fbook_post.extend([[tmp[0], tmp[1], tmp[2], tmp[3]]])
+
+        elif tmp[0] == "댓글" :
+            fbook_post.extend([[tmp[0], tmp[1], tmp[2]]])
+        else :
+            fbook_post.extend([[tmp[0]]])
 
     #카톡모드 1 = 친구목록, 2 = 대화목록
     ktalk_mode = 1
 
-    # day_schedule[month - 3][(week-1)*7 + day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
-    day_schedule = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+    # day_schedule[month - 3][(week-1)*8 + day] 형식(day는 1부터 시작)으로 이용할 것이기 때문에
+    day_schedule = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
     for_day_schedule_select = 0
 
 # 여기에서부터 게임이 시작합니다.
@@ -100,17 +131,20 @@ label start:
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     show screen stats_button_screen
 
-#    call limitation #아직 구현 안된 것
+    Player "으으 머리야...분명히 금요일에 병샷을 한 것 까지는 기억나는데..."
+    Player "아 핸드폰 어딨지? 핸드폰 한 번 확인해봐야겠다."
+
+    "일요일에는.\n"
+    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
+    extend "플래너를 이용해 다음주 일정을 짜세요."
+
+    $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
     call change_jangjung_talk
     call change_jinil_talk
     call change_samyong_talk
     call change_dongah_talk
-
-    "일요일에는.\n"
-    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
-    extend "플래너를 이용해 다음주 일정을 짜세요."
 
     # sunday_room_label의 sunday_room label 호출
     jump sunday_room
@@ -123,13 +157,17 @@ label limitation:
 
 screen dateShow() :
     add "date.png" xpos 12 ypos 9
-    vbox xpos 12 ypos 9 xysize(360, 60) :
+    hbox xpos 12 ypos 9 xysize(360, 60) :
         if YoIl != "일" :
             text "{color=#000}[month]월 [day_for_show]일 [YoIl]요일" :
-                size 25 xalign 0.3 yalign 0.5
+                size 25 xalign 0.8 yalign 0.5
         else :
             text "{color=#000}[month]월 [day_for_show]{color=#000}일 {color=#ff0000}[YoIl]요일{color=#000}" :
-                size 25 xalign 0.3 yalign 0.5
+                size 25 xalign 0.8 yalign 0.5
+        if day_or_evening == "day" :
+            add "date_day.png" xalign 0.1 yalign 0.5
+        else :
+            add "date_evening.png" xalign 0.1 yalign 0.5
 
 # 일요일 방 hp, mental, to-do-list 바
 screen upper_right_UI() :
@@ -148,6 +186,7 @@ screen phone_icon():
             xalign 0.34 yalign 0.7
         else :
             xalign 0.1 yalign 0.5
+
         imagebutton:
             idle "phone_icon.png"
             # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
@@ -195,7 +234,7 @@ screen stats_screen() :
             align(1.0, 0.5)
             text "{u}Stats:{/u}"
             text "체력: [hp]"
-            text "외로움: [mental_point]"
+            text "멘탈: [mental_point]"
             text "Month: [month]"
             text "Week: [week]"
             text "Day: [day]"

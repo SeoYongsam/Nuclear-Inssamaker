@@ -32,7 +32,7 @@ screen phone_button_in_homescreen() :
         imagebutton :
             idle "phone/icon_talk.png"
             hover "phone/icon_talk_on.png"
-            action Hide("phone_button_in_homescreen"), Show("ktalk",msg_list="messages")
+            action Hide("phone_button_in_homescreen"), Show("ktalk")
 
 screen fbook :
     add im.Scale("phone/fbook/fbook_background.png", 440, 624) xpos 420 ypos 40
@@ -48,23 +48,63 @@ screen fbook :
         vbox xpos 420 ypos 148 xsize 440:
             vbox :
                 for msg in fbook_post :
-                    add "fbook_post"
-                    null height -208
-                    hbox xsize 440 ysize 208 xpos 8 ypos 8:
-                        add "fbook_profile"
-                        vbox xsize 380 :
-                            null height 5
-                            text "{color=#000}%s" %msg[0] size 18
-                            null height 2
-                            text "{color=#808080}%s" %msg[1] size 15
-                            null height 10
-                            text "{color=#000}%s" %msg[2] size 20
-                    add "fbook_post_shadow"
-                    null height 8
+                    if msg[0] == "본문" :
+                        $ tmp_height = 105 + msg[3].count("\n") * 26
+
+                        add im.Scale("white.png", 440, tmp_height)
+                        null height -tmp_height
+                        hbox xsize 440 ysize tmp_height xpos 8 ypos 8:
+                            add "fbook_profile"
+
+                            vbox xsize 380 :
+                                null height 5
+                                text "{color=#000}%s" %msg[1] size 18
+                                null height 2
+                                text "{color=#808080}%s" %msg[2] size 15
+                                null height 10
+
+                                $ lines = string.split(msg[3], "\n")
+                                for each_line in lines :
+                                    $ tmplist = list(each_line)
+                                    if tmplist[0] == " " :
+                                        $ del tmplist[0]
+                                    $ tmp = ''.join(tmplist)
+
+                                    text "{color=#000}%s" %tmp size 20
+
+
+                    elif msg[0] == "댓글시작" :
+                        add "phone/fbook/comment_top.png"
+                        add im.Scale("phone/fbook/comment_mid.png", 440, 40)
+                        null height -40
+                        vbox xsize 440 ysize 40 :
+                            text "{color=#000}댓글" size 20 xpos 20 yalign 0.6
+
+                    elif msg[0] == "댓글" :
+                        $ tmp_height = 65 + msg[2].count("\n") * 26
+
+                        add im.Scale("phone/fbook/comment_mid.png", 440, tmp_height)
+                        null height -tmp_height
+                        hbox xsize 425 ysize tmp_height xpos 15:
+                            add "phone/fbook/comment_profile.png"
+                            vbox :
+                                add "phone/fbook/comment_message_topbot.png"
+                                add im.Scale("white.png", 356, tmp_height-15)
+                                null height - (tmp_height-15)
+                                vbox ysize tmp_height-15:
+                                    text "{color=#000}%s" %(msg[1]) xpos 12 yalign 0.5 size 17
+                                    text "{color=#505050}%s" %(msg[2]) xpos 12 yalign 0.5 size 17
+                                add "phone/fbook/comment_message_topbot.png"
+
+                    elif msg[0] == "댓글종료" :
+                        add "phone/fbook/comment_bottom.png"
+
+                    elif msg[0] == "그림자" :
+                        add "phone/fbook/fbook_post_shadow.png"
 
     add "fbook_screen_tab" xpos 420 ypos 40
 
-screen ktalk(msg_list):
+screen ktalk:
     if ktalk_mode == 1 :
         viewport:
             xpos 420 ypos 40
@@ -93,59 +133,66 @@ screen ktalk(msg_list):
             vbox :
                 add "phone/ktalk/ktalk_list.png" #xalign 0.5 #ypos 40
                 null height -572
-                imagebutton :
-                    idle "phone/ktalk/talklist1.png"
-                    hover "phone/ktalk/talklist1_on.png"
-                    action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹")
-                null height -92
-                vbox xsize 440 ysize 92 :
-                    text "{color=#000}단톡(순서는 신경쓰지 마시오)" xalign 0.5 yalign 0.5
-                null height -1
+                for i in rand_list_for_katlk_list :
+                    if i == 1 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist1.png"
+                            hover "phone/ktalk/talklist1_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹")#, Call("change_group_talk")
+                        null height -92
+                        vbox xsize 440 ysize 92 :
+                            text "{color=#000}단톡(순서는 신경쓰지 마시오)" xalign 0.5 yalign 0.5
+                        null height -1
 
-                imagebutton :
-                    idle "phone/ktalk/talklist2.png"
-                    hover "phone/ktalk/talklist2_on.png"
-                    action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중")
-                null height -92
-                vbox xsize 440 ysize 92 :
-                    text "{color=#000}장중" xalign 0.5 yalign 0.5
-                null height -1
+                    elif i == 2 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist2.png"
+                            hover "phone/ktalk/talklist2_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중")
+                        null height -92
+                        vbox xsize 440 ysize 92 :
+                            text "{color=#000}장중" xalign 0.5 yalign 0.5
+                        null height -1
 
-                imagebutton :
-                    idle "phone/ktalk/talklist3.png"
-                    hover "phone/ktalk/talklist3_on.png"
-                    action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일")
-                null height -92
-                vbox xsize 440 ysize 92 :
-                    text "{color=#000}진일" xalign 0.5 yalign 0.5
-                null height -1
+                    elif i == 3 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist3.png"
+                            hover "phone/ktalk/talklist3_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일")
+                        null height -92
+                        vbox xsize 440 ysize 92 :
+                            text "{color=#000}진일" xalign 0.5 yalign 0.5
+                        null height -1
 
-                imagebutton :
-                    idle "phone/ktalk/talklist4.png"
-                    hover "phone/ktalk/talklist4_on.png"
-                    action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용")
-                null height -92
-                vbox xsize 440 ysize 92 :
-                    text "{color=#000}삼용" xalign 0.5 yalign 0.5
-                null height -1
+                    elif i == 4 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist4.png"
+                            hover "phone/ktalk/talklist4_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용")
+                        null height -92
+                        vbox xsize 440 ysize 92 :
+                            text "{color=#000}삼용" xalign 0.5 yalign 0.5
+                        null height -1
 
-                imagebutton :
-                    idle "phone/ktalk/talklist5.png"
-                    hover "phone/ktalk/talklist5_on.png"
-                    action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아")
-                null height -92
-                vbox xsize 440 ysize 92 :
-                    text "{color=#000}동아" xalign 0.5 yalign 0.5
-                null height -1
+                    elif i == 5 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist5.png"
+                            hover "phone/ktalk/talklist5_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아")
+                        null height -92
+                        vbox xsize 440 ysize 92 :
+                            text "{color=#000}동아" xalign 0.5 yalign 0.5
+                        null height -1
 
-                imagebutton :
-                    idle "phone/ktalk/talklist6.png"
-                    hover "phone/ktalk/talklist6_on.png"
-                    action Null
-                null height -92
-                vbox xsize 440 ysize 92 :
-                    text "{color=#000}현재?" xalign 0.5 yalign 0.5
-                null height -1
+                    elif i == 6 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist6.png"
+                            hover "phone/ktalk/talklist6_on.png"
+                            action Null
+                        null height -92
+                        vbox xsize 440 ysize 92 :
+                            text "{color=#000}현재?" xalign 0.5 yalign 0.5
+                        null height -1
 
 
         imagebutton :
@@ -165,6 +212,7 @@ screen ktalk(msg_list):
             draggable True
             mousewheel True
             arrowkeys True
+            #edgescroll (200, 1000)
 
 #            add "phone/ktalk_list.png" #xalign 0.5 #ypos 40
 
@@ -178,7 +226,7 @@ screen ktalk(msg_list):
                     null height 66
                     for msg in grouptalk.message :
                         #tmp_width = len(msg[1])
-                        $ tmp_height = msg[1].count("\n")
+                        $ tmp_height = 33 + msg[1].count("\n") * 24
                         $ tmp = []
                         $ lines = []
 
@@ -186,16 +234,42 @@ screen ktalk(msg_list):
 
                         $ lines = string.split(msg[1], "\n")
                         for each_line in lines :
-                            $ tmp.append(len(each_line))
+
+                            $ hangul = re.compile('[^~가-힣]+')
+                            $ KletterFull = len(hangul.sub('',each_line))
+                            $ hangul = re.compile('[^ㄱ-ㅣ]+')
+                            $ KletterHalf = len(hangul.sub('',each_line))
+                            $ letter_without_Kletter = len(each_line) - KletterFull - KletterHalf
+                            $ each_line_width = 10 + KletterFull*17 + KletterHalf*15 + letter_without_Kletter*10
+                            $ tmp.append(each_line_width)
+
                         $ tmp_width = max(tmp)
 
                         if msg[0] == "주인공" :
-                            hbox xpos 434 - (10 + tmp_width * 17) ypos 4:
-                                vbox :
-                                    add im.Scale("phone/ktalk/my_talk.png", 10 + tmp_width * 17 , 33 + tmp_height * 24)
-                                    null height -36 - tmp_height * 24
-                                    hbox xpos 6 ypos 8 :
-                                        text "{color=#000}%s" %msg[1] size 18
+                            vbox xpos 434 - (tmp_width) ypos 4:
+                                add im.Scale("phone/ktalk/my_talk.png", tmp_width , tmp_height)
+
+                                null height -tmp_height
+                                hbox xsize tmp_width :
+                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                    null width tmp_width -8
+                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                null height tmp_height - 8
+                                hbox xsize tmp_width :
+                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                    null width tmp_width -8
+                                    add im.Scale("phone/screen_main.png", 4, 4)
+
+                                null height -3 - tmp_height
+                                vbox xpos 6 ypos 8 :
+                                    $ lines = string.split(msg[1], "\n")
+                                    for each_line in lines :
+                                        $ tmplist = list(each_line)
+                                        if tmplist[0] == " " :
+                                            $ del tmplist[0]
+                                        $ tmp = ''.join(tmplist)
+
+                                        text "{color=#000}%s" %tmp size 18
                             null height 12
 
                         else :
@@ -228,8 +302,20 @@ screen ktalk(msg_list):
                                         hbox xpos 6:
                                             text "{color=#000}%s" %msg[0] size 18
                                         null height 4
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24) # 33+24x
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -237,8 +323,20 @@ screen ktalk(msg_list):
                                     null width 67
                                     vbox:
                                         #null height -15
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24)
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height)
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -253,23 +351,51 @@ screen ktalk(msg_list):
                     null height 66
                     for msg in jangjung.message :
                         #tmp_width = len(msg[1])
-                        $ tmp_height = msg[1].count("\n")
+                        $ tmp_height = 33 + msg[1].count("\n") * 24
                         $ tmp = []
                         $ lines = []
+
                         #$ tmp_width = len(msg[1]) / (msg[1].count("\n") + 1)
 
                         $ lines = string.split(msg[1], "\n")
                         for each_line in lines :
-                            $ tmp.append(len(each_line))
+
+                            $ hangul = re.compile('[^~가-힣]+')
+                            $ KletterFull = len(hangul.sub('',each_line))
+                            $ hangul = re.compile('[^ㄱ-ㅣ]+')
+                            $ KletterHalf = len(hangul.sub('',each_line))
+                            $ letter_without_Kletter = len(each_line) - KletterFull - KletterHalf
+                            $ each_line_width = 10 + KletterFull*17 + KletterHalf*15 + letter_without_Kletter*10
+                            $ tmp.append(each_line_width)
+
                         $ tmp_width = max(tmp)
 
                         if msg[0] == "주인공" :
-                            hbox xpos 434 - (10 + tmp_width * 17) ypos 4:
+                            hbox xpos 434 - (tmp_width) ypos 4:
                                 vbox :
-                                    add im.Scale("phone/ktalk/my_talk.png", 10 + tmp_width * 17 , 33 + tmp_height * 24)
-                                    null height -36 - tmp_height * 24
-                                    hbox xpos 6 ypos 8 :
-                                        text "{color=#000}%s" %msg[1] size 18
+                                    add im.Scale("phone/ktalk/my_talk.png", tmp_width , tmp_height)
+
+                                    null height -tmp_height
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                    null height tmp_height - 8
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+
+                                    null height -3 - tmp_height
+                                    vbox xpos 6 ypos 8 :
+                                        $ lines = string.split(msg[1], "\n")
+                                        for each_line in lines :
+                                            $ tmplist = list(each_line)
+                                            if tmplist[0] == " " :
+                                                $ del tmplist[0]
+                                            $ tmp = ''.join(tmplist)
+
+                                            text "{color=#000}%s" %tmp size 18
                             null height 12
 
                         else :
@@ -283,8 +409,20 @@ screen ktalk(msg_list):
                                         hbox xpos 6:
                                             text "{color=#000}장중" size 18
                                         null height 4
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24) # 33+24x
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -292,8 +430,20 @@ screen ktalk(msg_list):
                                     null width 67
                                     vbox:
                                         #null height -15
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24)
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height)
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -308,23 +458,51 @@ screen ktalk(msg_list):
                     null height 66
                     for msg in jinil.message :
                         #tmp_width = len(msg[1])
-                        $ tmp_height = msg[1].count("\n")
+                        $ tmp_height = 33 + msg[1].count("\n") * 24
                         $ tmp = []
                         $ lines = []
+
                         #$ tmp_width = len(msg[1]) / (msg[1].count("\n") + 1)
 
                         $ lines = string.split(msg[1], "\n")
                         for each_line in lines :
-                            $ tmp.append(len(each_line))
+
+                            $ hangul = re.compile('[^~가-힣]+')
+                            $ KletterFull = len(hangul.sub('',each_line))
+                            $ hangul = re.compile('[^ㄱ-ㅣ]+')
+                            $ KletterHalf = len(hangul.sub('',each_line))
+                            $ letter_without_Kletter = len(each_line) - KletterFull - KletterHalf
+                            $ each_line_width = 10 + KletterFull*17 + KletterHalf*15 + letter_without_Kletter*10
+                            $ tmp.append(each_line_width)
+
                         $ tmp_width = max(tmp)
 
                         if msg[0] == "주인공" :
-                            hbox xpos 434 - (10 + tmp_width * 17) ypos 4:
+                            hbox xpos 434 - (tmp_width) ypos 4:
                                 vbox :
-                                    add im.Scale("phone/ktalk/my_talk.png", 10 + tmp_width * 17 , 33 + tmp_height * 24)
-                                    null height -36 - tmp_height * 24
-                                    hbox xpos 6 ypos 8 :
-                                        text "{color=#000}%s" %msg[1] size 18
+                                    add im.Scale("phone/ktalk/my_talk.png", tmp_width , tmp_height)
+
+                                    null height -tmp_height
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                    null height tmp_height - 8
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+
+                                    null height -3 - tmp_height
+                                    vbox xpos 6 ypos 8 :
+                                        $ lines = string.split(msg[1], "\n")
+                                        for each_line in lines :
+                                            $ tmplist = list(each_line)
+                                            if tmplist[0] == " " :
+                                                $ del tmplist[0]
+                                            $ tmp = ''.join(tmplist)
+
+                                            text "{color=#000}%s" %tmp size 18
                             null height 12
 
                         else :
@@ -338,8 +516,20 @@ screen ktalk(msg_list):
                                         hbox xpos 6:
                                             text "{color=#000}진일" size 18
                                         null height 4
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24) # 33+24x
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -347,8 +537,20 @@ screen ktalk(msg_list):
                                     null width 67
                                     vbox:
                                         #null height -15
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24)
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height)
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -363,23 +565,51 @@ screen ktalk(msg_list):
                     null height 66
                     for msg in samyong.message :
                         #tmp_width = len(msg[1])
-                        $ tmp_height = msg[1].count("\n")
+                        $ tmp_height = 33 + msg[1].count("\n") * 24
                         $ tmp = []
                         $ lines = []
+
                         #$ tmp_width = len(msg[1]) / (msg[1].count("\n") + 1)
 
                         $ lines = string.split(msg[1], "\n")
                         for each_line in lines :
-                            $ tmp.append(len(each_line))
+
+                            $ hangul = re.compile('[^~가-힣]+')
+                            $ KletterFull = len(hangul.sub('',each_line))
+                            $ hangul = re.compile('[^ㄱ-ㅣ]+')
+                            $ KletterHalf = len(hangul.sub('',each_line))
+                            $ letter_without_Kletter = len(each_line) - KletterFull - KletterHalf
+                            $ each_line_width = 10 + KletterFull*17 + KletterHalf*15 + letter_without_Kletter*10
+                            $ tmp.append(each_line_width)
+
                         $ tmp_width = max(tmp)
 
                         if msg[0] == "주인공" :
-                            hbox xpos 434 - (10 + tmp_width * 17) ypos 4:
+                            hbox xpos 434 - (tmp_width) ypos 4:
                                 vbox :
-                                    add im.Scale("phone/ktalk/my_talk.png", 10 + tmp_width * 17 , 33 + tmp_height * 24)
-                                    null height -36 - tmp_height * 24
-                                    hbox xpos 6 ypos 8 :
-                                        text "{color=#000}%s" %msg[1] size 18
+                                    add im.Scale("phone/ktalk/my_talk.png", tmp_width , tmp_height)
+
+                                    null height -tmp_height
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                    null height tmp_height - 8
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+
+                                    null height -3 - tmp_height
+                                    vbox xpos 6 ypos 8 :
+                                        $ lines = string.split(msg[1], "\n")
+                                        for each_line in lines :
+                                            $ tmplist = list(each_line)
+                                            if tmplist[0] == " " :
+                                                $ del tmplist[0]
+                                            $ tmp = ''.join(tmplist)
+
+                                            text "{color=#000}%s" %tmp size 18
                             null height 12
 
                         else :
@@ -393,8 +623,20 @@ screen ktalk(msg_list):
                                         hbox xpos 6:
                                             text "{color=#000}삼용" size 18
                                         null height 4
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24) # 33+24x
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -402,8 +644,20 @@ screen ktalk(msg_list):
                                     null width 67
                                     vbox:
                                         #null height -15
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24)
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height)
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -418,23 +672,51 @@ screen ktalk(msg_list):
                     null height 66
                     for msg in dongah.message :
                         #tmp_width = len(msg[1])
-                        $ tmp_height = msg[1].count("\n")
+                        $ tmp_height = 33 + msg[1].count("\n") * 24
                         $ tmp = []
                         $ lines = []
+
                         #$ tmp_width = len(msg[1]) / (msg[1].count("\n") + 1)
 
                         $ lines = string.split(msg[1], "\n")
                         for each_line in lines :
-                            $ tmp.append(len(each_line))
+
+                            $ hangul = re.compile('[^~가-힣]+')
+                            $ KletterFull = len(hangul.sub('',each_line))
+                            $ hangul = re.compile('[^ㄱ-ㅣ]+')
+                            $ KletterHalf = len(hangul.sub('',each_line))
+                            $ letter_without_Kletter = len(each_line) - KletterFull - KletterHalf
+                            $ each_line_width = 10 + KletterFull*17 + KletterHalf*15 + letter_without_Kletter*10
+                            $ tmp.append(each_line_width)
+
                         $ tmp_width = max(tmp)
 
                         if msg[0] == "주인공" :
-                            hbox xpos 434 - (10 + tmp_width * 17) ypos 4:
+                            hbox xpos 434 - (tmp_width) ypos 4:
                                 vbox :
-                                    add im.Scale("phone/ktalk/my_talk.png", 10 + tmp_width * 17 , 33 + tmp_height * 24)
-                                    null height -36 - tmp_height * 24
-                                    hbox xpos 6 ypos 8 :
-                                        text "{color=#000}%s" %msg[1] size 18
+                                    add im.Scale("phone/ktalk/my_talk.png", tmp_width , tmp_height)
+
+                                    null height -tmp_height
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                    null height tmp_height - 8
+                                    hbox xsize tmp_width :
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        null width tmp_width -8
+                                        add im.Scale("phone/screen_main.png", 4, 4)
+
+                                    null height -3 - tmp_height
+                                    vbox xpos 6 ypos 8 :
+                                        $ lines = string.split(msg[1], "\n")
+                                        for each_line in lines :
+                                            $ tmplist = list(each_line)
+                                            if tmplist[0] == " " :
+                                                $ del tmplist[0]
+                                            $ tmp = ''.join(tmplist)
+
+                                            text "{color=#000}%s" %tmp size 18
                             null height 12
 
                         else :
@@ -448,8 +730,20 @@ screen ktalk(msg_list):
                                         hbox xpos 6:
                                             text "{color=#000}동아" size 18
                                         null height 4
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24) # 33+24x
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -457,8 +751,20 @@ screen ktalk(msg_list):
                                     null width 67
                                     vbox:
                                         #null height -15
-                                        add im.Scale("phone/ktalk/3.png", 10 + tmp_width * 17, 33 + tmp_height * 24)
-                                        null height -33 - tmp_height * 24
+                                        add im.Scale("white.png", tmp_width, tmp_height)
+
+                                        null height -tmp_height
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                        null height tmp_height - 8
+                                        hbox xsize tmp_width :
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            null width tmp_width -8
+                                            add im.Scale("phone/screen_main.png", 4, 4)
+
+                                        null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
@@ -471,5 +777,13 @@ screen ktalk(msg_list):
         add "phone/ktalk/0.png" xpos 420 ypos 40
         imagebutton :
             xpos 420 ypos 40
-            idle im.Alpha(im.Scale("phone/ktalk/2.png", 40, 50), 0)
+            idle im.Alpha(im.Scale("white.png", 40, 50), 0)
             action SetVariable("ktalk_mode", 2)
+
+transform shake:
+    linear 0.090 xoffset 2 yoffset -6
+    linear 0.090 xoffset -2.8 yoffset -2
+    linear 0.090 xoffset 2.8 yoffset -2
+    linear 0.090 xoffset -2 yoffset -6
+    linear 0.090 xoffset +0 yoffset +0
+    repeat

@@ -4,12 +4,14 @@ label weekday_day :
     scene black #with dissolve
     show screen stats_screen
 
-    show screen phone_icon
+    show screen phone_icon with vpunch
 
     $ YoIl = day_name[day]
-    $ day_for_show = (week-1)*7 + day + 1
+    $ day_for_show = (week-1)*8 + day + 1
 
-    call weekday_day_event
+    if day < 8 :
+        $ day_or_evening = "day"
+        call weekday_day_event
 
     if hp <= 30 :
         if hp == 0 :
@@ -43,24 +45,26 @@ label mental_point_100_event :
 
 label weekday_evening :
     #저녁 일정 소화
-    scene black
-    "[YoIl]요일 저녁이 되었다.\n"
-    call weekday_evening_event
+    if day != 6 :
+        $ day_or_evening = "evening"
+        scene black
+        "[YoIl]요일 저녁이 되었다.\n"
+        call weekday_evening_event
 
-    if day_schedule[month - 3][(week - 1) * 7 + day] == 1:
-        call evening_study
+        if day_schedule[month - 3][(week - 1) * 8 + day] == 1:
+            call evening_study
 
-    elif day_schedule[month - 3][(week - 1) * 7 + day] == 2:
-        call evening_club
+        elif day_schedule[month - 3][(week - 1) * 8 + day] == 2:
+            call evening_club
 
-    elif day_schedule[month - 3][(week - 1) * 7 + day] == 3:
-        call evening_gwa
+        elif day_schedule[month - 3][(week - 1) * 8 + day] == 3:
+            call evening_gwa
 
-    elif day_schedule[month - 3][(week - 1) * 7 + day] == 4:
-        call evening_rest
+        elif day_schedule[month - 3][(week - 1) * 8 + day] == 4:
+            call evening_rest
 
-    else :
-        extend "에러"
+        else :
+            extend "에러"
 
     #window hide
     #pause
@@ -75,6 +79,9 @@ label weekday_SNS :
 #    "[YoIl]요일 밤, SNS를 확인했다."
 #    show phone_night at truecenter
 
+#    scene black with vpunch
+
+    $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
     call change_jangjung_talk
@@ -86,7 +93,7 @@ label weekday_SNS :
 
 
     # 일주일 일정 반복. 다 소화하면, 일주일 스케줄 리셋하고 일요일로 감
-    if day < 6 :
+    if day < 7 :
         $ day += 1
         jump weekday_day
     else :
@@ -100,22 +107,15 @@ label weekday_SNS :
     return
 
 label weekday_schedule_reset :
-#    $ i = 1
-#    while i < 7:
-#        $ day_schedule[0][i] = 0
-#        $ i += 1
-    if (week - 1) * 7 + day + 1 == 28:
+    if (week - 1) * 8 + day + 1 == 32:
         $ month += 1
         "[month]월이 되었습니다."
         $ week = 1
-#        $ i = 1
-#        while i < 28:
-#            $ day_schedule[0][i] = 0
-#            $ i += 1
     else :
         $ week += 1
     $ day = 0
 
+    $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
     call change_jangjung_talk
@@ -137,7 +137,7 @@ label evening_study:
 #임시
     show expression ("study/%d.png" %rand) at truecenter
     "공부했다\n"
-    extend "체력 -5, 외로움 +5, 공부 +10, 과 -5, 동아리 -5"
+    extend "체력 -5, 멘탈 -5, 공부 +10, 과 -5, 동아리 -5"
 
     python :
         hp -= 5
@@ -154,7 +154,7 @@ label evening_club:
     $ rand = renpy.random.randint(1, 2)
     show expression ("club/%d.png" %rand) at truecenter
     "동아리 활동했다\n"
-    extend "체력 -15, 외로움 -10, 공부 -5, 과 -5, 동아리 +15"
+    extend "체력 -15, 멘탈 +10, 공부 -5, 과 -5, 동아리 +15"
 
     python :
         hp -= 15
