@@ -27,11 +27,11 @@ label sunday_room:
 
 ## 일요일 방에서 플래너 아이콘
 screen planner_icon() :
-    vbox xalign 0.64 yalign 0.7 :
+    vbox xpos 892 ypos 364 :
         imagebutton:
             idle "planner_icon.png"
             # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
-            hover im.Alpha("planner_icon.png",2)
+            hover "planner_icon_sel.png" #im.Alpha("planner_icon.png",2)
             # 클릭시 planner label을 실행함
             action [Hide("phone_icon"), Hide("planner_icon"),
                     SetVariable("month_for_display", month - 3),
