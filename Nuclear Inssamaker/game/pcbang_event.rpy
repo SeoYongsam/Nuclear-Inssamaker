@@ -4,12 +4,12 @@
 #피시방 이벤트
 
 #이미지 선언
-image pcbang = im.Scale("pcbang.jpg", 1280, 720)
-image leagueoflegends = im.Scale("leagueoflegends.jpeg", 1280, 720)
-image leagueloss = im.Scale("leagueloss.png", 1280, 720)
-image kartrider = im.Scale("kartrider.jpg", 1280, 720)
+image pcbang = im.Scale("pcbang/pcbang.jpg", 1280, 720)
+image leagueoflegends = im.Scale("pcbang/leagueoflegends.jpeg", 1280, 720)
+image leagueloss = im.Scale("pcbang/leagueloss.png", 1280, 720)
+image kartrider = im.Scale("pcbang/kartrider.jpg", 1280, 720)
 image black = im.Scale("black.jpg", 1280, 720)
-image pcbangstreet = im.Scale("pcbangstreet.jpg", 1280, 720)
+image pcbangstreet = im.Scale("pcbang/pcbangstreet.jpg", 1280, 720)
 
 
 
@@ -72,7 +72,7 @@ label pcbang:
                         그래도 친구들은 모두 재밌게 게임한 것 같다."
                         "진일이는 오늘 '리그 오브 전설'을 할 수 있어서 전반적으로 행복해했던 것 같다.
                         하지만 나는 게임하는 도중 게속해서 진일이에게 질타를 받고 진일이의 눈치를 봐야해서 힘들었다."
-                        #과 파라미터 UP, 진일이와의 친밀도 UP, 멘탈 DOWN
+                        #진일이와의 친밀도 UP, 멘탈 DOWN
 
 
                     "'쇼핑카트 라이더'를 한다":
@@ -102,12 +102,12 @@ label pcbang:
                         "하지만 진일이는 오늘 '리그 오브 전설'을 못해서 그런지 기분이 좋지 않은 것 같다."
 
 
-                        #과 파라미터 UP, 진일이와의 친밀도 DOWN, 멘탈 UP
+                        #진일이와의 친밀도 DOWN, 멘탈 UP
 
 
             "정중히 거절하고 예정된 계획대로 하루를 보낸다":
 
-                #과활동 패러미터 DOWN
+            #과활동 패러미터 DOWN
 
                 return
 
