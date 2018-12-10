@@ -4,10 +4,10 @@
 # 3월 9일 동소제 이벤트
 
 #이미지 선언
-image dance = im.Scale("dongsoze/dance.jpg", 1280, 720)
-image donga = im.Scale("dongsoze/donga.jpg", 1280, 720)
-image perfo = im.Scale("dongsoze/perfo.jpg", 1280, 720)
-image dongsoze = im.Scale("dongsoze/dongsoze.jpg", 1280, 720)
+image dance = im.Scale("dongsoze/dance.jpg", 480, 320)
+image donga = im.Scale("dongsoze/donga.jpg", 480, 320)
+image perfo = im.Scale("dongsoze/perfo.jpg", 480, 320)
+image dongsoze = im.Scale("dongsoze/dongsoze.jpg", 480, 320)
 
 # week2 day 1
 label dongsoze:

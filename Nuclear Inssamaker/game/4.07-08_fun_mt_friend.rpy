@@ -1,7 +1,7 @@
-image friend_2 = im.Scale("fun_mt/friend_2.jpg", 1280, 720)
-image friend_3 = im.Scale("fun_mt/friend_3.jpg", 1280, 720)
-image friend_4 = im.Scale("fun_mt/friend_4.jpg", 1280, 720)
-image friend_5 = im.Scale("fun_mt/friend_5.jpg", 1280, 720)
+image friend_2 = im.Scale("fun_mt/friend_2.jpg", 480, 320)
+image friend_3 = im.Scale("fun_mt/friend_3.jpg", 480, 320)
+image friend_4 = im.Scale("fun_mt/friend_4.jpg", 480, 320)
+image friend_5 = im.Scale("fun_mt/friend_5.jpg", 480, 320)
 
 label friend_2:
     "삼용이와 술을 마시기로 결정했다."

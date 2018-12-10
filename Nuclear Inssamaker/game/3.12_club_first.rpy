@@ -1,11 +1,11 @@
 # 3월 12일 동아리 첫 연습
 
 #이미지 선언
-image studentcenter = im.Scale("club_first/studentcenter.jpg", 1280, 720)
-image prac = im.Scale("club_first/1.png", 1280, 720)
-image clubroom = im.Scale("club_first/clubroom.jpg", 1280, 720)
+image studentcenter = im.Scale("club_first/studentcenter.jpg", 480, 320)
+image prac = im.Scale("club_first/1.png", 480, 320)
+image clubroom = im.Scale("club_first/clubroom.jpg", 480, 320)
 
-# week 2 day 4
+# month week 2 day 4
 label club_first:
 
     scene black

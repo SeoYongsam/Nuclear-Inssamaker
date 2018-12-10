@@ -1,7 +1,7 @@
-image gwa_2 = im.Scale("fun_mt/gwa_2.jpg", 1280, 720)
-image gwa_3 = im.Scale("fun_mt/gwa_3.jpg", 1280, 720)
-image gwa_4 = im.Scale("fun_mt/gwa_4.jpg", 1280, 720)
-image gwa_5 = im.Scale("fun_mt/gwa_5.jpg", 1280, 720)
+image gwa_2 = im.Scale("fun_mt/gwa_2.jpg", 480, 320)
+image gwa_3 = im.Scale("fun_mt/gwa_3.jpg", 480, 320)
+image gwa_4 = im.Scale("fun_mt/gwa_4.jpg", 480, 320)
+image gwa_5 = im.Scale("fun_mt/gwa_5.jpg", 480, 320)
 
 label gwa_2:
     "돌아다니면서 술을 마시기로 결정했다."

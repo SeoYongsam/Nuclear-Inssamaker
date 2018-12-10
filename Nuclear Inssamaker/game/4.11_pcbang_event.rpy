@@ -1,15 +1,15 @@
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-#피시방 이벤트
+#피시방 이벤트 4월 11일 month4 week2 day3
 
 #이미지 선언
-image pcbang = im.Scale("pcbang/pcbang.jpg", 1280, 720)
-image leagueoflegends = im.Scale("pcbang/leagueoflegends.jpeg", 1280, 720)
-image leagueloss = im.Scale("pcbang/leagueloss.png", 1280, 720)
-image kartrider = im.Scale("pcbang/kartrider.jpg", 1280, 720)
-image black = im.Scale("black.jpg", 1280, 720)
-image pcbangstreet = im.Scale("pcbang/pcbangstreet.jpg", 1280, 720)
+image pcbang = im.Scale("pcbang/pcbang.jpg", 480, 320)
+image leagueoflegends = im.Scale("pcbang/leagueoflegends.jpeg", 480, 320)
+image leagueloss = im.Scale("pcbang/leagueloss.png", 480, 320)
+image kartrider = im.Scale("pcbang/kartrider.jpg", 480, 320)
+image black = im.Scale("black.jpg", 480, 320)
+image pcbangstreet = im.Scale("pcbang/pcbangstreet.jpg", 480, 320)
 
 
 

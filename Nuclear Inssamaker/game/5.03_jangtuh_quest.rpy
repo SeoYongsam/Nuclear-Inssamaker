@@ -1,12 +1,12 @@
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-# 4월 16일 교복데이 이벤트
+# 5월 3일 장터 이벤트
 
 #이미지 선언
-image gyobok = im.Scale("gyobok.jpg", 1280, 720)
+image gyobok = im.Scale("gyobok.jpg", 480, 320)
 
-# month4 week3 day 1
+# month5 week1 day2
 label jangtuh:
 
     "오늘은 어쩔수 없이 수업을 못갔다.

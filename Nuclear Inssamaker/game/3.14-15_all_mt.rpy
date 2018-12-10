@@ -4,19 +4,19 @@
 # 3월 13일-14일 총엠 이벤트
 
 #이미지 선언
-image jangbal = im.Scale("all_mt/jangbal.jpg", 1280, 720)
-image bus = im.Scale("all_mt/bus.jpg", 1280, 720)
-image bus_inside = im.Scale("all_mt/bus_inside.jpg", 1280, 720)
-image arriving = im.Scale("all_mt/arriving.jpg", 1280, 720)
-image small_room = im.Scale("all_mt/small_room.jpg", 1280, 720)
-image big_room = im.Scale("all_mt/big_room.jpg", 1280, 720)
-image gogi = im.Scale("all_mt/gogi.png", 1280, 720)
-image setting = im.Scale("all_mt/setting.jpg", 1280, 720)
-image rice_kimchi = im.Scale("all_mt/rice_kimchi.jpg", 1280, 720)
-image leaving = im.Scale("all_mt/leaving.jpg", 1280, 720)
-image soondae = im.Scale("all_mt/soondae.jpg", 1280, 720)
-image subway = im.Scale("all_mt/subway.jpg", 1280, 720)
-image black = im.Scale("black.jpg", 1280, 720)
+image jangbal = im.Scale("all_mt/jangbal.jpg", 480, 320)
+image bus = im.Scale("all_mt/bus.jpg", 480, 320)
+image bus_inside = im.Scale("all_mt/bus_inside.jpg", 480, 320)
+image arriving = im.Scale("all_mt/arriving.jpg", 480, 320)
+image small_room = im.Scale("all_mt/small_room.jpg", 480, 320)
+image big_room = im.Scale("all_mt/big_room.jpg", 480, 320)
+image gogi = im.Scale("all_mt/gogi.png", 480, 320)
+image setting = im.Scale("all_mt/setting.jpg", 480, 320)
+image rice_kimchi = im.Scale("all_mt/rice_kimchi.jpg", 480, 320)
+image leaving = im.Scale("all_mt/leaving.jpg", 480, 320)
+image soondae = im.Scale("all_mt/soondae.jpg", 480, 320)
+image subway = im.Scale("all_mt/subway.jpg", 480, 320)
+image black = im.Scale("black.jpg", 480, 320)
 
 # month3 week2 day6
 label all_mt:
@@ -221,6 +221,7 @@ label all_mt:
 
     scene black
 
-    $ day += 1
+    # 아직 고쳐야함. 날짜가 바뀌는건지?
+    # $ day += 1
 
     return

@@ -1,20 +1,20 @@
 # 4월 6일, 7일 뻔엠
 
 #이미지 선언
-image big_room = im.Scale("fun_mt/big_room.jpg", 1280, 720)
-image gogi_f = im.Scale("fun_mt/gogi_f.png", 1280, 720)
-image gogi_s = im.Scale("fun_mt/gogi_s.jpg", 1280, 720)
-image gwa = im.Scale("fun_mt/gwa.jpg", 1280, 720)
-image gwa_3 = im.Scale("fun_mt/gwa_3.jpg", 1280, 720)
-image jangbal_f = im.Scale("fun_mt/jangbal_f.jpg", 1280, 720)
-image jangbal_little = im.Scale("fun_mt/jangbal_little.jpg", 1280, 720)
-image jangbal_one = im.Scale("fun_mt/jangbal_one.jpg", 1280, 720)
-image jangbal_rest = im.Scale("fun_mt/jangbal_rest.jpg", 1280, 720)
-image jangbal_s = im.Scale("fun_mt/jangbal_s.jpg", 1280, 720)
-image naksung = im.Scale("fun_mt/naksung.jpg", 1280, 720)
-image ramyen = im.Scale("fun_mt/ramyen.jpg", 1280, 720)
-image small_room = im.Scale("fun_mt/small_room.jpg", 1280, 720)
-image subway = im.Scale("fun_mt/subway.jpg", 1280, 720)
+image big_room = im.Scale("fun_mt/big_room.jpg", 480, 320)
+image gogi_f = im.Scale("fun_mt/gogi_f.png", 480, 320)
+image gogi_s = im.Scale("fun_mt/gogi_s.jpg", 480, 320)
+image gwa = im.Scale("fun_mt/gwa.jpg", 480, 320)
+image gwa_3 = im.Scale("fun_mt/gwa_3.jpg", 480, 320)
+image jangbal_f = im.Scale("fun_mt/jangbal_f.jpg", 480, 320)
+image jangbal_little = im.Scale("fun_mt/jangbal_little.jpg", 480, 320)
+image jangbal_one = im.Scale("fun_mt/jangbal_one.jpg", 480, 320)
+image jangbal_rest = im.Scale("fun_mt/jangbal_rest.jpg", 480, 320)
+image jangbal_s = im.Scale("fun_mt/jangbal_s.jpg", 480, 320)
+image naksung = im.Scale("fun_mt/naksung.jpg", 480, 320)
+image ramyen = im.Scale("fun_mt/ramyen.jpg", 480, 320)
+image small_room = im.Scale("fun_mt/small_room.jpg", 480, 320)
+image subway = im.Scale("fun_mt/subway.jpg", 480, 320)
 
 # week 1 day 5
 label fun_mt:

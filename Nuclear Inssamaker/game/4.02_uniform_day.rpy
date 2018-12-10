@@ -1,15 +1,15 @@
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-# 4월 16일 교복데이 이벤트
+# 4월 2일 교복데이 이벤트
 
 #이미지 선언
-image gyobok = im.Scale("uniform_day/gyobok.jpg", 1280, 720)
-image jjangge = im.Scale("uniform_day/jjangge.jpg", 1280, 720)
-image pizza = im.Scale("uniform_day/pizza.jpg", 1280, 720)
+image gyobok = im.Scale("uniform_day/gyobok.jpg", 480, 320)
+image jjangge = im.Scale("uniform_day/jjangge.jpg", 480, 320)
+image pizza = im.Scale("uniform_day/pizza.jpg", 480, 320)
 
 
-# week5 day 1
+# month4 week1 day 1
 label uniform:
     "오늘은 만우절이다. 과 동기들이 다같이 교복을 입고 등교를 했다."
     "과 동기들이 만우절 기념으로 점심식사를 함께 야외에서 배달음식을 먹자고 한다."
@@ -21,21 +21,21 @@ label uniform:
             "수업을 째고 동기들이랑 점심을 먹으러 캠퍼스 안에 있는 잔디밭에 갔다."
             scene gyobok at truecenter
 
-            "현재: 얘들아 오늘 점심으로 뭐먹을까??"
-            "대현: 야외에서 시켜먹을 때는 중식이지!"
-            "삼용: 중식? 그럼 우리 꿔바로우 하나 시키자!"
-            "대현: ㅋㅋㅋ 우리가 말하는 중식은 짜장면, 짬뽕 말하는거야"
-            "삼용: 나 한국와서 짜장면, 짬뽕 한번도 안먹어 봤어! 그거 먹자 ㅎㅎㅎ"
-            "진일: 야 무슨소리야 밖에 나왔으면 들고 다니면서 먹을 수 있는 피자 먹어야지"
-            "현재: 오 피자 맛있겠다... 난 피자에 한표."
-            "미래: 나도 피자!!!"
-            "장중: 아... 난 짬뽕 먹을래... "
+            "현재" "얘들아 오늘 점심으로 뭐먹을까??"
+            "대현" "야외에서 시켜먹을 때는 중식이지!"
+            "삼용" "중식? 그럼 우리 꿔바로우 하나 시키자!"
+            "대현" "ㅋㅋㅋ 우리가 말하는 중식은 짜장면, 짬뽕 말하는거야"
+            "삼용" "나 한국와서 짜장면, 짬뽕 한번도 안먹어 봤어! 그거 먹자 ㅎㅎㅎ"
+            "진일" "야 무슨소리야 밖에 나왔으면 들고 다니면서 먹을 수 있는 피자 먹어야지"
+            "현재" "오 피자 맛있겠다... 난 피자에 한표."
+            "미래" "나도 피자!!!"
+            "장중" "아... 난 짬뽕 먹을래... "
 
             "친구들이 점심 메뉴를 두고 의견이 갈리고 있다."
 
-            "현재: 지금 중식 아니면 피자 둘 중에 의견이 반반 갈리는데 어떡하지?"
+            "현재" "지금 중식 아니면 피자 둘 중에 의견이 반반 갈리는데 어떡하지?"
 
-            "진일: 뻔대가 남아있잖아. 넌 뭐먹을래? 너가 고르는 걸로 결정되겠다."
+            "진일" "뻔대가 남아있잖아. 넌 뭐먹을래? 너가 고르는 걸로 결정되겠다."
 
 
             menu:

@@ -1,16 +1,16 @@
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-# 4월 16일 동소제 이벤트
+# 4월 16일 축제 이벤트
 
 #이미지 선언
-image fest_poong = im.Scale("festival/fest_poong.jpg", 1280, 720)
-image fest_food = im.Scale("festival/fest_food.jpg", 1280, 720)
-image fest_stage = im.Scale("festival/fest_stage.jpg", 1280, 720)
-image cuprice = im.Scale("festival/cuprice.jpg", 1280, 720)
-image shrimp = im.Scale("festival/shrimp.jpg", 1280, 720)
-image steak = im.Scale("festival/steak.jpg", 1280, 720)
-image soran = im.Scale("festival/soran.jpg", 1280, 720)
+image fest_poong = im.Scale("festival/fest_poong.jpg", 480, 320)
+image fest_food = im.Scale("festival/fest_food.jpg", 480, 320)
+image fest_stage = im.Scale("festival/fest_stage.jpg", 480, 320)
+image cuprice = im.Scale("festival/cuprice.jpg", 480, 320)
+image shrimp = im.Scale("festival/shrimp.jpg", 480, 320)
+image steak = im.Scale("festival/steak.jpg", 480, 320)
+image soran = im.Scale("festival/soran.jpg", 480, 320)
 
 # week3 day 1
 label festival:
