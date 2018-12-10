@@ -11,6 +11,8 @@ label phone :
     hide screen upper_right_UI
     show screen upper_right_UI
 
+    show homebutton
+
     while True:
         window hide
         pause

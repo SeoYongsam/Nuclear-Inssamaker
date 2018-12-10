@@ -42,16 +42,15 @@ label show_planner :
     hide screen upper_right_UI
     show screen upper_right_UI
 
+    # 스케줄러 속 월화수목금토 '공부'~'휴식' 아이콘 띄우기
+    show screen month_schedule_icon_show
+
     if month - 3 == month_for_display :
         # 형광색 하이라이트 창
         show screen schedule_highlight
 
         # 오른쪽 스케줄 창
         show screen schedule_button
-
-
-    # 스케줄러 속 월화수목금토 '공부'~'휴식' 아이콘 띄우기
-    show screen month_schedule_icon_show
 
     return
 
