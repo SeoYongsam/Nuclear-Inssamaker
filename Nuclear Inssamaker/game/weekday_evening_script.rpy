@@ -29,7 +29,7 @@ label weekday_evening_event :
                 "PC방 이벤트가 일어날 예정입니다"
 
             elif day == 2 :
-#                "하"
+                "하"
 #                Player "과잠준비위원회 지원해주셔서 감사합니다!"
 #                Jangjung "동기가 일하는데 도와줘야지!"
 #                Jinil "카모로하면 멋있을 것 같다 ㅋㅋㅋㅋ"

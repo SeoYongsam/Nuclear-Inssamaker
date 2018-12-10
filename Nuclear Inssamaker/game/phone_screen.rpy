@@ -171,7 +171,7 @@ screen ktalk:
                 add "phone/ktalk/ktalk_list.png" #xalign 0.5 #ypos 40
                 null height -572
                 for i in rand_list_for_katlk_list :
-                    if i == 1 :
+                    if i == 1 and grouptalk.new_message_count != 0 :
                         imagebutton :
                             idle "phone/ktalk/talklist1.png"
                             hover "phone/ktalk/talklist1_on.png"
@@ -180,16 +180,15 @@ screen ktalk:
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}단톡" xalign 0.5 yalign 0.5
-                            if grouptalk.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[grouptalk.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[grouptalk.new_message_count]" size 20 xalign 0.84 yalign 0.5
                         null height -1
 
-                    elif i == 2 :
+                    elif i == 2 and jangjung.new_message_count != 0 :
                         imagebutton :
                             idle "phone/ktalk/talklist2.png"
                             hover "phone/ktalk/talklist2_on.png"
@@ -198,16 +197,15 @@ screen ktalk:
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}장중" xalign 0.5 yalign 0.5
-                            if jangjung.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[jangjung.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[jangjung.new_message_count]" size 20 xalign 0.84 yalign 0.5
                         null height -1
 
-                    elif i == 3 :
+                    elif i == 3 and jinil.new_message_count != 0:
                         imagebutton :
                             idle "phone/ktalk/talklist3.png"
                             hover "phone/ktalk/talklist3_on.png"
@@ -216,16 +214,15 @@ screen ktalk:
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}진일" xalign 0.5 yalign 0.5
-                            if jinil.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[jinil.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[jinil.new_message_count]" size 20 xalign 0.84 yalign 0.5
                         null height -1
 
-                    elif i == 4 :
+                    elif i == 4 and samyong.new_message_count != 0 :
                         imagebutton :
                             idle "phone/ktalk/talklist4.png"
                             hover "phone/ktalk/talklist4_on.png"
@@ -234,16 +231,15 @@ screen ktalk:
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}삼용" xalign 0.5 yalign 0.5
-                            if samyong.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[samyong.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[samyong.new_message_count]" size 20 xalign 0.84 yalign 0.5
                         null height -1
 
-                    elif i == 5 :
+                    elif i == 5 and dongah.new_message_count != 0 :
                         imagebutton :
                             idle "phone/ktalk/talklist5.png"
                             hover "phone/ktalk/talklist5_on.png"
@@ -252,15 +248,70 @@ screen ktalk:
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}동아" xalign 0.5 yalign 0.5
-                            if dongah.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[dongah.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[dongah.new_message_count]" size 20 xalign 0.84 yalign 0.5
                         null height -1
 
+
+                for i in rand_list_for_katlk_list :
+                    if i == 1 and grouptalk.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist1.png"
+                            hover "phone/ktalk/talklist1_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
+                        null height -92
+                        hbox xsize 440 ysize 92 :
+                            hbox xsize 440 ysize 92 :
+                                text "{color=#000}단톡" xalign 0.5 yalign 0.5
+                        null height -1
+
+                    elif i == 2 and jangjung.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist2.png"
+                            hover "phone/ktalk/talklist2_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
+                        null height -92
+                        hbox xsize 440 ysize 92 :
+                            hbox xsize 440 ysize 92 :
+                                text "{color=#000}장중" xalign 0.5 yalign 0.5
+                        null height -1
+
+                    elif i == 3 and jinil.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist3.png"
+                            hover "phone/ktalk/talklist3_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
+                        null height -92
+                        hbox xsize 440 ysize 92 :
+                            hbox xsize 440 ysize 92 :
+                                text "{color=#000}진일" xalign 0.5 yalign 0.5
+                        null height -1
+
+                    elif i == 4 and samyong.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist4.png"
+                            hover "phone/ktalk/talklist4_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
+                        null height -92
+                        hbox xsize 440 ysize 92 :
+                            hbox xsize 440 ysize 92 :
+                                text "{color=#000}삼용" xalign 0.5 yalign 0.5
+                        null height -1
+
+                    elif i == 5 and dongah.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist5.png"
+                            hover "phone/ktalk/talklist5_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
+                        null height -92
+                        hbox xsize 440 ysize 92 :
+                            hbox xsize 440 ysize 92 :
+                                text "{color=#000}동아" xalign 0.5 yalign 0.5
+                        null height -1
 
         imagebutton :
                 xpos 420 ypos 588
