@@ -39,6 +39,7 @@ init python:
             self.message = []
             self.new_message_count = 0
             self.new_message_watch = False
+            self.parameter = 0
 
         # messages.add("이름|내용")
         def add(self, data) :
@@ -217,30 +218,45 @@ screen stats_screen() :
 label parameter_maxmin_check :
     if hp < 0 :
         $ hp = 0
-
-    if hp > 200 :
+    elif hp > 200 :
         $ hp = 200
 
     if mental_point < 0 :
         $ mental_point = 0
-
-    if mental_point > 100 :
+    elif mental_point > 100 :
         $ mental_point = 100
 
     if study_parameter < 0 :
         $ study_parameter = 0
-
-    if study_parameter > 100 :
+    elif study_parameter > 100 :
         $ study_parameter = 100
 
     if club_parameter < 0 :
         $ club_parameter = 0
-
-    if club_parameter > 100 :
+    elif club_parameter > 100 :
         $ club_parameter = 100
 
     if gwa_parameter < 0 :
         $ gwa_parameter = 0
-
-    if gwa_parameter > 100 :
+    elif gwa_parameter > 100 :
         $ gwa_parameter = 100
+
+    if jangjung.parameter < 0 :
+        $ jangjung.parameter = 0
+    elif jangjung.parameter > 100 :
+        $ jangjung.parameter = 100
+
+    if samyong.parameter < 0 :
+        $ samyong.parameter = 0
+    elif samyong.parameter > 100 :
+        $ samyong.parameter = 100
+
+    if jinil.parameter < 0 :
+        $ jinil.parameter = 0
+    elif jinil.parameter > 100 :
+        $ jinil.parameter = 100
+
+    if dongah.parameter < 0 :
+        $ dongah.parameter = 0
+    elif dongah.parameter > 100 :
+        $ dongah.parameter = 100

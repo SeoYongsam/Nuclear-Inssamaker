@@ -6,7 +6,7 @@
 #이미지 선언
 image gyobok = im.Scale("gyobok.jpg", 1280, 720)
 
-# week5 day 1
+# month4 week3 day 1
 label jangtuh:
 
     "오늘은 어쩔수 없이 수업을 못갔다.

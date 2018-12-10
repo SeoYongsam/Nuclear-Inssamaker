@@ -1,7 +1,7 @@
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-# 3월 13일 총엠 이벤트
+# 3월 13일-14일 총엠 이벤트
 
 #이미지 선언
 image jangbal = im.Scale("all_mt/jangbal.jpg", 1280, 720)
@@ -18,9 +18,8 @@ image soondae = im.Scale("all_mt/soondae.jpg", 1280, 720)
 image subway = im.Scale("all_mt/subway.jpg", 1280, 720)
 image black = im.Scale("black.jpg", 1280, 720)
 
-# week2 day 6
+# month3 week2 day6
 label all_mt:
-
     scene black
 
     "오늘은 과 총MT가 있는 날이다. 나는 아침부터 MT에서 먹을 음식, 과자, 술을 사는 역할인 장발대로 나왔다."
@@ -44,21 +43,18 @@ label all_mt:
     "버스를 탔다. 아직 입학한지 얼마 안된 3월 초이지만 벌써부터 친한 무리들이 생기기 시작한 것 같다."
     "하나 둘 씩 아는 사람 옆에 앉는 사람들이 있는 반면 아직 친해지지 못해 누구가 옆에 앉기만을 기다리는 사람들도 있다."
     "이미 자리가 차있어서 앉을 자리가 얼마 없지만 삼용이, 진일이, 그리고 장중이의 옆자리가 각각 비어있다. 누구 옆에가서 앉을까?"
-    #(파라미터 변화)
-
 
     menu:
         "진일이 옆":
-
             scene bus_inside at truecenter
 
             "진일" "한눈에 알아보고 인싸 자리에 앉았네 뻔대?  역시 사람 볼줄 알아~ 우리 지금부터 한잔 하는거 어때 ㅋㅋㅋ"
             "주인공" "버스 안에서 술을 어떻게 마셔 ㅋㅋㅋㅋㅋ"
             "진일" "불가능은 없다!!!"
-
+            $ jinil.parameter += 20
+            call parameter_maxmin_check
 
         "장중이 옆":
-
             scene bus_inside at truecenter
 
             "장중" "뻔대쓰~ 자리 선정 오지구여~ "
@@ -66,10 +62,10 @@ label all_mt:
             "장중" "나 그냥 핸드폰으로 우리 동기들끼리 나중에 할 수 있는거 찾아보고 있었어 ㅋㅋㅋ"
             "주인공" "벌써부터 다음에 놀거 생각하고 있어?? 대단하다..."
             "장중" "우리의 청춘을 허되게 낭비할수는 없으니깐!!!"
-
+            $ jangjung.parameter += 20
+            call parameter_maxmin_check
 
         "삼용이 옆":
-
             scene bus_inside at truecenter
 
             "삼용" "야야 여기 얼른 와봐!"
@@ -77,7 +73,8 @@ label all_mt:
             "삼용" "지금 현재랑 미래 같이 앉은거 보여? 저 둘 수상해~"
             "주인공" "그럴수도 있지 왜 ㅋㅋㅋ 둘이 친한가보지"
             "삼용" "아니야... 만리장성 걸고 저 둘이 뭔가 있어"
-
+            $ samyong.parameter += 20
+            call parameter_maxmin_check
 
     scene arriving at truecenter
 
@@ -105,7 +102,6 @@ label all_mt:
 
     menu:
         "식기 셋팅":
-
             scene setting at truecenter
 
             "장중" "뻔대야 얼른 와 이거 개꿀임 ㅋㅋㅋ"
@@ -114,13 +110,10 @@ label all_mt:
             그리고 고기 받을 수 있는 좋은 자리 먼저 차지 할 수 있어 ㅋㅋㅋ"
             "주인공" "올~ 장중이 예리한데?? 빨리 셋팅하고 저기 고기 불판 쪽으로 가자"
             "장중" "가즈아~"
-
-
-        #장중 파라미터 +
-
+            $ jangjung.parameter += 20
+            call parameter_maxmin_check
 
         "고기 굽기":
-
             scene gogi at truecenter
 
             "진일" "마침 사람 부족했는데 잘됐다. 뻔대야 여기 와서 같이 고기나 굽자"
@@ -128,14 +121,10 @@ label all_mt:
             "진일" "몰라 다들 고기 굽기 싫어서 식기 셋팅하러 빠진것 같은데. 저기봐봐 식기 셋팅하는데 무슨 20명이나 가있냐"
             "주인공" "그렇네 ㅋㅋ..."
             "진일" "너라도 여기 와서 그래도 좀 낫네. 역시 뻔대는 다르다"
-
-
-
-        #진일 파라미터 +
-
+            $ jinil.parameter += 20
+            call parameter_maxmin_check
 
         "밥/반찬 준비하기":
-
             scene rice_kimchi at truecenter
 
             "삼용" "아무나 여기 김치랑 밥좀 가져가~"
@@ -144,9 +133,8 @@ label all_mt:
             "주인공" "나 방금!"
             "삼용" "잘됐다. 그러면 내가 밥 퍼서 애들한테 전달할테니까 넌 여기서 김치 좀 썰고있어. 혼자 하려니까 너무 힘드네"
             "주인공" "알겠어!"
-
-        #삼용 파라미터 +
-
+            $ samyong.parameter += 20
+            call parameter_maxmin_check
 
     scene big_room
 
@@ -163,35 +151,22 @@ label all_mt:
     scene small_room
 
     "방문이 열리며"
-    "진일" "야 ㅋㅋㅋㅋㅋ 너 일어났냐?
-    어제 장난 아니더라 ㅋㅋㅋㅋ"
-
-    "주인공" "응? 그게 무슨말이야…
-    내가 뭐했...웁…."
-
+    "진일" "야 ㅋㅋㅋㅋㅋ 너 일어났냐?\n어제 장난 아니더라 ㅋㅋㅋㅋ"
+    "주인공" "응? 그게 무슨말이야…\n내가 뭐했...웁…."
     "장중" "야 화장실 가서 토해! 여기다 토하지 말고!!!"
-
     "주인공" "우웩… 아… 나 어제 도대체 얼마나 마신거냐"
-
     "진일" "너 어제 레크레이션 하다가 신나서 선배들이랑 술 엄청 마셨어 ㅋㅋㅋㅋ"
-
     "삼용" "선배들이 너 술 잘마신다고 계속 먹이다가 너 취해서 들여 보냈어 ㅋㅋㅋㅋ"
-
     "주인공" "술 취했다고? 어떻게?"
-
     "삼용" "기억 진짜 안나? 너 뻔대라고 우리 과 애들 다 책임지겠다고 하다가 갑자기 막 푸쉬업하고 술 계속 원샷하고 난리였어 ㅋㅋㅋㅋ"
-
     "진일" "진짜 상남자 ㅋㅋㅋ 내가 인정 잘 안하는데 인정한다 뻔대야"
-
     "장중" "믿을만하다 뻔대!!!"
-
     "삼용" "일단 우리 여기 정리하고 갈 준비하자"
-
     "장중" "맞아 사람들 이미 다 가고 몇명 안남았어"
 
     scene leaving at truecenter
 
-    "다들 술을 많이 마셔서 그런지 피곤해 보이는 것 같다.
+    "다들 술을 많이 마셔서 그런지 피곤해 보이는 것 같다.\n
     하지만 내가 가장 많이 피곤해 보였는지 사람들이 나를 볼때마다 괜찮냐고 물어본다."
     "어제 술주정이 재밌었는지 날 보고 피식하며 웃는 동기, 선배들도 많았다."
     "숙소를 정리하고 엠티장소를 떠났다. 남은 친구들 그리고 선배들과 함께 집에 가려고 버스를 탔다."
@@ -208,11 +183,10 @@ label all_mt:
     "진일" "뻔대야 너는 안가?"
 
     #선택 간다 = 친구 파라미터 모두 업 + 체력 소모
-    #안 간다 = 친구 파라미터 그대로 + 체력 유지
+    #안 간다 = 친구 파라미터 그대로 + 체력 유지 - 바뀌는 게 없음
 
     menu:
         "해장하러 간다":
-
             scene soondae at truecenter
 
             "주인공" "가자... 나도 해장해야할 것 같아"
@@ -229,20 +203,24 @@ label all_mt:
             "주인공" "나도 불가능 할듯 ㅋㅋ 오늘은 좀 쉬어야지"
             "진일" "다들 술 약해서 어떡하냐~ 어쩔수 없지"
             "삼용" "이제 가자"
-
+            $ jangjung.parameter += 20
+            $ jinil.parameter += 20
+            $ samyong.parameter += 20
+            $ hp -= 50
+            call parameter_maxmin_check
 
         "집에 바로 간다":
-
             "주인공" "아 나는 집에 빨리 들어가서 쉴래 ㅠㅠㅠ"
             "장중" "야 속 풀고가야 집에가서도 안 괴로워"
             "삼용" "근데 뻔대 많이 힘든것 같다... 보내주자"
             "진일" "뻔대 약한 모습 보기 안좋다~"
-
 
     scene subway at truecenter
 
     "이제 드디어 집으로 간다! 최대한 빨리 집에 가고싶지만 오늘따라 지하철에 사람이 많은것 같다. 그냥 순간이동 하고 싶다…"
 
     scene black
+
+    $ day += 1
 
     return
