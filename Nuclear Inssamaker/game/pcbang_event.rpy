@@ -5,9 +5,10 @@
 
 #이미지 선언
 image pcbang = im.Scale("pcbang/pcbang.jpg", 1280, 720)
-image leagueoflegends = im.Scale("pcbang/leagueoflegends.jpeg", 1280, 720)
+image leagueoflegends = im.Scale("pcbang/leagueoflegends.jpg", 1280, 720)
 image leagueloss = im.Scale("pcbang/leagueloss.png", 1280, 720)
 image kartrider = im.Scale("pcbang/kartrider.jpg", 1280, 720)
+image kartrider_end  = im.Scale("pcbang/kartrider_end.jpg", 1280, 720)
 image black = im.Scale("black.jpg", 1280, 720)
 image pcbangstreet = im.Scale("pcbang/pcbangstreet.jpg", 1280, 720)
 
@@ -61,16 +62,16 @@ label pcbang:
                         "2시간 뒤"
 
                         scene pcbangstreet
-                        "대현 : 아~ 그래도 피방 오랜만에 가니까 개재밌다"
+                        "대현 : 아~ 그래도 피방 오랜만에 오니까 개재밌다"
                         "진일 : 내가 캐리 해줬으니까 재밌었던거겠지~
                         뻔대야 게임 잘 못하면 말하지~ 내가 다음번엔 제대로 가르쳐줄게"
                         "현재 : ㅋㅋ"
                         "미래 : ... 뻔대야 너무 신경쓰지마!"
 
                         scene black
-                        "오늘 내가 게임을 잘 못했지만 친구들이 게임을 잘해서 자주 이긴 것 같다.
+                        "오늘 내가 게임을 잘 못했지만 친구들이 게임을 잘해서 자주 이긴 것 같다. /n
                         그래도 친구들은 모두 재밌게 게임한 것 같다."
-                        "진일이는 오늘 '리그 오브 전설'을 할 수 있어서 전반적으로 행복해했던 것 같다.
+                        "진일이는 오늘 '리그 오브 전설'을 할 수 있어서 전반적으로 행복해했던 것 같다. /n
                         하지만 나는 게임하는 도중 게속해서 진일이에게 질타를 받고 진일이의 눈치를 봐야해서 힘들었다."
                         #진일이와의 친밀도 UP, 멘탈 DOWN
 
@@ -87,14 +88,26 @@ label pcbang:
                         scene black
                         "3시간 뒤"
 
+                        scene kartrider_end
+                        "대현: 아 치사하게 마지막에 아이템 쓰는거 뭐냐"
+                        "미래" "ㅋㅋㅋㅋ 이것도 실력이라구~"
+                        "현재" "와 미래 뭐야? 엄청 잘하네"
+                        "미래" "그럼 뭐해 뻔대가 결국 1등 했는데"
+                        "대현" "근데 진일이는 카트 오늘 처음함? 개못하던데 ㅋㅋㅋㅋ"
+                        "진일" "..."
+                        "미래" "박대현 너도 비슷비슷 하거든? 진일이 괴롭히지 마 ㅋㅋㅋ"
+
+
                         scene pcbangstreet
-                        "대현 : 아~ 그래도 피방 오랜만에 가니까 개재밌다"
+                        "대현 : 아~ 그래도 피방 오랜만에 오니까 개재밌다"
                         "미래 : ㅋㅋㅋㅋ 내 운전실력 다시는 무시하지마라~"
-                        "현재 : 와 근데 뻔대 개 잘하던데?? 오늘 나 한번도 1등 못함 얘 때문에!"
+                        "대현 : 미래 게임 진짜 잘하구나..."
+                        "현재 : 와 근데 뻔대도 진짜 잘하던데?? 오늘 나 한번도 1등 못함 얘 때문에!"
                         "미래 : 맞아맞아 장난 아니더라. 프로 게이머인줄?"
-                        "진일 : ㅋㅋ '쇼핑카트 라이더' 재밌네. '리그 오브 전설'했으면 더 재밌었겠지만."
+                        "진일 : '쇼핑카트 라이더'도 재밌네. '리그 오브 전설'했으면 더 재밌었겠지만."
                         "대현 : 에이~ 진일이 왜그래 아까 재밌게 하던데~"
                         "진일 : ㅋㅋ"
+
 
                         scene black
                         "오늘 카트라이더를 오랜만에 해서 너무 재밌었다. 운이 좋아서 그런지 게임도 잘됐다.
