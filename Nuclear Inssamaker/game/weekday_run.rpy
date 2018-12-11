@@ -9,18 +9,17 @@ label weekday_day :
     $ YoIl = day_name[day]
     $ day_for_show = (week-1)*8 + day + 1
 
-    if day < 8 :
-        $ day_or_evening = "day"
-        call weekday_day_event
-    
     if hp <= 30 :
         if hp == 0 :
             call hp_0_break_event
         else :
             call hp_low_rest_event
 
-    if mental_point == 100 :
-        call mental_point_100_event
+    elif mental_point == 0 :
+        call mental_point_0_event
+
+    elif day < 8 :
+        call weekday_day_event
 
 #    $ j = renpy.random.randint(1,3)
 #    if j == 1:
@@ -42,31 +41,15 @@ label hp_low_rest_event :
 
     return
 
-label mental_point_100_event :
+label mental_point_0_event :
     return
 
 label weekday_evening :
     #저녁 일정 소화
     if day != 6 :
-        $ day_or_evening = "evening"
         scene black
         "[YoIl]요일 저녁이 되었다.\n"
         call weekday_evening_event
-
-        if day_schedule[month - 3][(week - 1) * 8 + day] == 1:
-            call evening_study
-
-        elif day_schedule[month - 3][(week - 1) * 8 + day] == 2:
-            call evening_club
-
-        elif day_schedule[month - 3][(week - 1) * 8 + day] == 3:
-            call evening_gwa
-
-        elif day_schedule[month - 3][(week - 1) * 8 + day] == 4:
-            call evening_rest
-
-        else :
-            extend "에러"
 
     #window hide
     #pause
@@ -129,75 +112,4 @@ label weekday_schedule_reset :
 
 #    scene black with dissolve
 #    pause
-    return
-
-
-label evening_study:
-    $ rand = renpy.random.randint(1, 2)
-    #$ renpy.scene()
-    #$ renpy.show("study/%d.jpg" %rand)
-#임시
-    show expression ("study/%d.png" %rand) at truecenter
-    "공부했다\n"
-    extend "체력 -5, 멘탈 -5, 공부 +10, 과 -5, 동아리 -5"
-
-    python :
-        hp -= 5
-        mental_point -= 5
-        study_parameter += 10
-        gwa_parameter -= 5
-        club_parameter -= 5
-
-    call parameter_maxmin_check
-
-    return
-
-label evening_club:
-    $ rand = renpy.random.randint(1, 2)
-    show expression ("club/%d.png" %rand) at truecenter
-    "동아리 활동했다\n"
-    extend "체력 -15, 멘탈 +10, 공부 -5, 과 -5, 동아리 +15"
-
-    python :
-        hp -= 15
-        mental_point += 10
-        study_parameter -= 5
-        gwa_parameter -= 5
-        club_parameter += 15
-
-    call parameter_maxmin_check
-
-    return
-
-label evening_gwa:
-#    $ rand = renpy.random.randint(1, 6)
-    show expression ("gwa/1.png") at truecenter
-    "과 활동했다\n"
-
-    extend "체력 -10, 공부 -5, 과 +15, 동아리 -5"
-
-    python :
-        hp -= 10
-        mental_point += 0
-        study_parameter -= 5
-        gwa_parameter += 15
-        club_parameter -= 5
-
-    call parameter_maxmin_check
-
-    return
-
-label evening_rest:
-#    $ rand = renpy.random.randint(1, 6)
-    show expression ("rest/1.png") at truecenter
-    "쉬었다\n"
-    extend "체력 +20, 과 -5, 동아리 -5"
-
-    python :
-        hp += 20
-        gwa_parameter -= 5
-        club_parameter -= 5
-
-    call parameter_maxmin_check
-
     return

@@ -6,7 +6,7 @@ image friend_5 = "fun_mt/friend_5.jpg"
 label friend_2:
     "삼용이와 술을 마시기로 결정했다."
 
-    scene friend_2 at truecenter
+    show friend_2 at truecenter
     "삼용" "오오~ 고생한 우리뻔대! 술이라도 한 잔 받어~"
     "주인공" "ㅎㅎㅎ 고마워! 너도 많이 고생했으니 너도 한 잔 받아"
     "주인공" "후 그래도 걱정 나름 많았는데, 다들 뻔엠 즐기고 있는 것 같아서 다행이다.."
@@ -27,7 +27,7 @@ label friend_2:
 label friend_3:
     "장중이와 술을 마시기로 결정했다."
 
-    scene friend_3 at truecenter
+    show friend_3 at truecenter
     "장중" "예에 문정과에서 제일 고생하는 뻔대~ 술 한 잔 해야지!"
     "장중" "넌 진짜 나 없었으면 어쩔 뻔 했냐? ㅋㅋㅋ"
     "주인공" "ㅋㅋㅋ 진짜로 맞는 말이다"
@@ -49,7 +49,7 @@ label friend_4:
     "진일이를 찾으러 나가기로 결정했다."
     "다행히 진일이는 숙소 바로 앞에 있었다."
 
-    scene friend_4 at truecenter
+    show friend_4 at truecenter
     "주인공" "야 김진일! 또 사라져서 깜짝 놀랐잖아!"
     "진일" "아 뻔대냐? 아 그냥 바람 좀 쐬러 나왔지."
     "주인공" "어디 딴 데 가지말고 이 주변에만 있어랔ㅋㅋㅋ"
@@ -74,7 +74,7 @@ label friend_5:
     "장중, 진일, 용삼의 술자리에 합류하기로 결정했다."
     "...뭔가 땅이 흔들리는 것 같다."
 
-    scene friend_5 at truecenter
+    show friend_5 at truecenter
     "주인공" "으어..얘들아 여기서 뭐하고 있었냐..."
     "장중" "엌ㅋㅋㅋㅋㅋㅋ 이 친구 많이 취했네, 야 괜찮냐?"
     "주인공" "어...아마도 괜찮은듯??"

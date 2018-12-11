@@ -16,10 +16,12 @@ init python:
     hp = 200
     mental_point = 100
 
-    month = 3 # number 0~3 : 3~6월
+    # 게임 시작 시 월, 주, 일
+    month = 3
     month_for_display = month - 3
     week = 1
     day = 0
+
     day_for_show = (week-1)*7 + day + 1
     day_name = ["일","월","화","수","목","금","토","토"]
     YoIl = 0
@@ -79,8 +81,8 @@ init python:
 #                del fbook_post[0]
         if tmp[0] == "본문" :
             tmplist = list(tmp[3])
-            for i in range (1, len(tmp[3])/22 + 1) :
-                tmplist.insert( 22  * ( len(tmp[3])/22 + 1 - i ), "\n")
+            for i in range (1, len(tmp[3])/21 + 1) :
+                tmplist.insert( 21  * ( len(tmp[3])/21 + 1 - i ), "\n")
             if tmplist[len(tmplist) - 1] == "\n" :
                 del tmplist[len(tmplist) - 1]
             tmp[3] = ''.join(tmplist)
@@ -89,8 +91,8 @@ init python:
 
         elif tmp[0] == "댓글" :
             tmplist = list(tmp[2])
-            for i in range (1, len(tmp[2])/23 + 1) :
-                tmplist.insert( 23  * ( len(tmp[2])/23 + 1 - i ), "\n")
+            for i in range (1, len(tmp[2])/21 + 1) :
+                tmplist.insert( 21  * ( len(tmp[2])/21 + 1 - i ), "\n")
             if tmplist[len(tmplist) - 1] == "\n" :
                 del tmplist[len(tmplist) - 1]
             tmp[2] = ''.join(tmplist)
@@ -214,6 +216,9 @@ screen stats_screen() :
             text "공부: [study_parameter]"
             text "동아리: [club_parameter]"
             text "과: [gwa_parameter]"
+            text "삼용: [samyong.parameter]"
+            text "진일: [jinil.parameter]"
+            text "장중: [jangjung.parameter]"
 
 label parameter_maxmin_check :
     if hp < 0 :

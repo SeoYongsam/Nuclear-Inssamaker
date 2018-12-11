@@ -1,16 +1,11 @@
-# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
-
-# 4월 2일 교복데이 이벤트
-
 #이미지 선언
 image gyobok = "uniform_day/gyobok.jpg"
 image jjangge = "uniform_day/jjangge.jpg"
 image pizza = "uniform_day/pizza.jpg"
 
-
+# 4월 2일 월요일 교복데이 이벤트
 # month4 week1 day 1
-label uniform:
+label uniform_day:
     "어제는 만우절이었다. 그런데 일요일이었어서 오늘 과 동기들이 다같이 교복을 입고 등교를 했다."
     "과 동기들이 만우절 기념으로 점심식사를 함께 야외에서 배달음식을 먹자고 한다."
     "하지만 약속한 시간에 수업이 있다. 어떻게 할까?"
@@ -18,8 +13,13 @@ label uniform:
     menu:
         "수업을 째고 동기들과 점심을 먹으러 간다":
             #hp & 공부 파라미터-, 과 파라미터 up, 개별 캐릭터와 파라미터는 변함이 없고 과 친밀도가 올라감
+            $ hp -= 20
+            $ study_parameter -= 10
+            $ gwa_parameter += 10
+            call parameter_maxmin_check
+
             "수업을 째고 동기들이랑 점심을 먹으러 캠퍼스 안에 있는 잔디밭에 갔다."
-            scene gyobok at truecenter
+            show gyobok at truecenter
 
             "현재" "얘들아 오늘 점심으로 뭐먹을까??"
             "대현" "야외에서 시켜먹을 때는 중식이지!"
@@ -41,7 +41,10 @@ label uniform:
             menu:
                 "짜장면, 짬뽕":
                     #장중이 + 삼용 파라미터 +
-                    scene jjangge at truecenter
+                    $ jangjung.parameter += 20
+                    $ samyong.parameter += 20
+
+                    show jjangge at truecenter
                     "중국집에서 음식을 시켰다."
                     "서비스로 탕수육과 군만두도 같이 와서 다양한 음식을 먹을 수 있었다."
                     "장중이는 어제 술을 마셨는지 짬뽕으로 해장을 하는 것 같다."
@@ -50,16 +53,16 @@ label uniform:
 
                 "피자":
                     #진일이 파라미터 ++
-                    scene pizza at truecenter
+                    $ jinil.parameter += 40
+
+                    show pizza at truecenter
                     "피자를 시켰다."
                     "여러 종류의 피자를 시켜 먹어서 다양하게 먹을 수 있었다."
                     "진일이는 앞으로 착하게 살기로 한다며 피자를 종류별로 1개씩만 먹는다고 한다."
                     "참고로 피자 종류는 5가지지만 한명당 3조각만 먹을수 있다."
                     "현재가 미래에게 피자를 먹여주는게 보인다. 이래서 피자를 시키자고 한건가? 눈에 습기가 찬다."
 
-
-
         "수업을 듣는다":
-            jump weekday_run
+            return
 
     return

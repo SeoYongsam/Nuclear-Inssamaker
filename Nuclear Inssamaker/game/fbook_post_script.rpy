@@ -60,7 +60,7 @@ label change_fbook_post :
                 $ fbook_post_add("그림자")
 
             elif day == 4 :
-                $ fbook_post_add("본문|동아|2019년 3월 12일|오랜만의 합주. 고향 친구와 함께 해서 재밌었다. 앞으로도 계속 같이 연습하제이~ #밴드 #죽마고우 #파이팅")
+                $ fbook_post_add("본문|이동아|2019년 3월 12일|오랜만의 합주. 고향 친구와 함께 해서 재밌었다. 앞으로도 계속 같이 연습하제이~ #밴드 #죽마고우 #파이팅")
                 $ fbook_post_add("그림자")
 
             elif day == 6 :

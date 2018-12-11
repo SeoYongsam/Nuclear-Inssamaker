@@ -1,14 +1,6 @@
-# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
-
-# 5월 3일 장터 이벤트
-
-#이미지 선언
-image gyobok = "gyobok.jpg"
-
+# 5월 3일 화요일 장터 이벤트
 # month5 week1 day2
 label jangtuh:
-
     "오늘은 어쩔수 없이 수업을 못갔다.
     장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
     "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
@@ -118,7 +110,12 @@ label jangtuh:
             "주인공:응.."
 
             #장중 파라미터 급격히 오름"
+            $ jangjung.parameter += 40
+
             #진일 삼용 파라미터 내림"
+            $ jinil.parameter -= 20
+            $ samyong.parameter -= 20
+            call parameter_maxmin_check
 
         "안간다":
 
@@ -129,6 +126,7 @@ label jangtuh:
             "주인공" "미안 ㅠㅠ 그래도 혹시나 무슨일 생기면 총괄자가 있어야하니깐 나는 여기 있어야할 것 같아 ㅠㅠ"
 
             #장중 파라미터 내림
+            $ jangjung.parameter -= 20
 
     "오후 6시가 되었다. 여러가지 우여곡절이 있었지만 결국 장터는 무사히 끝났다."
 
@@ -168,3 +166,5 @@ label jangtuh:
     "아침 일찍부터 저녁까지 일하고 술을 마신것은 처음이라서 그런가?"
     "나 말고 모두 다 그렇게 느꼈던 건지 예상외로 술자리가 길어지고 술값은 늘어났다."
     "아 모르겠다. 그래도 이번 학기 큰 행사가 막이 내려서 다행이다."
+
+    return
