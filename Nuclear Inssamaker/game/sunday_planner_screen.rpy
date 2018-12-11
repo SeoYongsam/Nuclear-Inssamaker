@@ -1,5 +1,3 @@
-#image highlight = im.Scale("highlight.png",100,100)
-
 image sel_study = im.Alpha("planner/sel_study.png",0.7)
 image sel_club = im.Alpha("planner/sel_club.png",0.7)
 image sel_gwa = im.Alpha("planner/sel_gwa.png",0.7)
@@ -47,21 +45,15 @@ screen planner_UI() :
 
 ## 스케줄러에서 선택화면이 나타나는 노란색 테두리 하이라이트 화면
 screen schedule_highlight():
-#    if day < 7:
-    if day < 6:
+    if day <= 6:
         vbox:
-            xpos (160 + 128*(day-1)) ypos (175 + 128* (week-1) )
+            xpos (160 + 128*(day-1) - 4) ypos (175 + 128* (week-1) - 4)
             add "planner/highlight.png"
-
-    elif day == 6 :
-        vbox:
-            xpos (160 + 128*5) ypos (175 + 128* (week-1) )
-            add "planner/highlight_half.png"
 
     elif day == 7 :
         vbox:
-            xpos (160 + 128*5) ypos (175 + 128* (week-1) + 66 )
-            add "planner/highlight_half.png"
+            xpos (160 + 128 * 5 - 4) ypos (175 + 128* (week-1) - 4 )
+            add "planner/highlight.png"
 
 ## 플래너를 눌렀을 때 나오는 일정짜기 버튼
 screen schedule_button():
@@ -95,12 +87,23 @@ screen schedule_button():
 #                action Notify("쉬었다")
 
 screen month_schedule_icon_show():
+    # 플래너 밑줄
+    for i in range(1, 6) :
+        hbox :
+            if i >= day :
+                xpos 160 + 128*(i-1) + 20 ypos 175 + 128*(week-1) + 104
+                add "planner/underline.png"
+    if 6 >= day :
+        add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 67
+    if 7 >= day :
+        add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 104
+
     for i in range(1, 5) :
         for j in range(1, 6) :
         # 월요일
             if day_schedule[month_for_display][(i-1)*8 + j] != 0:
                 hbox:
-                    xpos 160 + 128*(j-1) ypos 175 + 128*(i-1)
+                    xpos 160 + 128*(j-1) + 15 ypos 175 + 128*(i-1) + 97
                     if day_schedule[month_for_display][(i-1)*8 + j] == 1:
                         add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
@@ -114,30 +117,32 @@ screen month_schedule_icon_show():
                         add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
         vbox:
-            xpos 160 + 128*5 + 4 ypos 175 + 128*(i-1) + 4
+            xpos 160 + 128*5 + 12 ypos 175 + 128*(i-1) + 60
             if day_schedule[month_for_display][(i-1)*8 + 6] == 1:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_study_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 6] == 2:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_club_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 6] == 3:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_gwa_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_gwa.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 6] == 4:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_rest_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+            null height 15
 
             if day_schedule[month_for_display][(i-1)*8 + 7] == 1:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_study_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 7] == 2:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_club_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 7] == 3:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_gwa_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_gwa.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 7] == 4:
-                add im.Alpha(im.MatrixColor(im.Scale("planner/sel_rest_half.png", 124, 62),im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
 #screen schedule_revise_button():
 #    hbox:

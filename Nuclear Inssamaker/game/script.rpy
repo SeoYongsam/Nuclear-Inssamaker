@@ -2,8 +2,8 @@
 
 # image 문을 사용해 이미지를 정의합니다.
 # image eileen happy = "eileen_happy.png"
-image sunday_room_image = im.Scale("room.png",1480,820)
-image phone_night = "phone_night.png"
+image sunday_room_image = "room.png" #im.Scale("room.png",1480,820)
+# image phone_night = "phone_night.png"
 
 # 게임에서 사용할 캐릭터를 정의합니다.
 
@@ -29,16 +29,18 @@ init python:
     club_parameter = 0
     gwa_parameter = 0
 
-    rand_list_for_katlk_list = [1, 2, 3, 4, 5, 6]
+    rand_list_for_katlk_list = [1, 2, 3, 4, 5]
 
     talk_with_who = "그룹"
-#클래스 테스트1
+
+
     class messages :
         def __init__(self) :
             self.message = []
             self.new_message_count = 0
             self.new_message_watch = False
 
+        # messages.add("이름|내용")
         def add(self, data) :
             tmp = data.split("|")
 
@@ -51,46 +53,22 @@ init python:
 
 
             self.message.extend([[tmp[0], tmp[1]]])
-
-#            if renpy.get_screen("phone_UI") :
-#                renpy.pause(1)
-#                renpy.hide_screen("ktalk")
-#                renpy.show_screen("ktalk")
+            if tmp[0] != "날짜" :
+                self.new_message_count += 1
 
         def reset(self) :
             del self.message[:]
 
-#클래스 테스트2
-# 캐릭터 일람 : 장중, 삼용, 현재, 동아, 진일, 미래, 주인공, 0, 1
+    #클래스 테스트2
+    #캐릭터 일람 : 장중, 삼용, 현재, 동아, 진일, 미래, 주인공
     grouptalk = messages()
-
     jangjung = messages()
-    jangjung.message = [["날짜","3월 1일 일요일 뾰로롱"],
-                ["장중", "안녕\n테스트를해보겠다"], ["주인공", "안녕\n퓨우우우우우우우우우우전"]]
-
     samyong = messages()
-    samyong.message = [["날짜","3월 1일 일요일 뾰로롱"],
-                ["삼용", "안녕\n테스트를해보겠다"]]
-
     hyunjae = messages()
-    hyunjae.message = [["날짜","3월 1일 일요일 뾰로롱"],
-                ["현재", "안녕\n테스트를해보겠다"]]
-
     jinil = messages()
-    jinil.message = [["날짜","3월 1일 일요일 뾰로롱"],
-                ["진일", "안녕\n테스트를해보겠다"]]
-
     dongah = messages()
-    dongah.message = [["날짜","3월 1일 일요일 뾰로롱"],
-                ["동아", "안녕\n테스트를해보겠다"]]
 
-    fbook_post = [["본문", "고딩친구", "2018년 2월 28일", "3.1절 끝나면 학기 시작"],["그림자"],
-                  ["본문", "그냥친구","2018년 3월 1일", "수능 끝난 고3 다시 하고 싶다"],["그림자"],
-                  ["본문", "띠용","2018년 3월 1일", "하... 기대된다"],["그림자"],
-                  ["본문", "김범주","2018년 3월 1일", "새로운 학기입니다."],["댓글시작"],["댓글", "김범주","새로어러러러러운 학기입니다."],["댓글종료"],["그림자"],
-                  ["본문", "김범주","2018년 3월 1일", "새로어러러러러\n운 학기입니다."],["댓글시작"],["댓글", "김범주","새로어러러러러운 학\n기입니다."],["댓글종료"],["그림자"],
-                  ["본문", "김범주","2018년 3월 1일", "새로어러러러러\n운 학\n기입니다."],["댓글시작"],["댓글", "김범주","새로어러러러러\n운 학\n기입니다."],["댓글종료"],["그림자"],
-                  ["본문", "김범주","2018년 3월 1일", "새로어러러러러\n운 학\n기입니다."],["댓글시작"],["댓글", "김범주","새로어러\n러러러\n운 학\n기입니다."],["댓글종료"],["그림자"]]
+    fbook_post = []
 
     def fbook_post_add(data) :
         tmp = data.split("|")
@@ -99,16 +77,23 @@ init python:
 #            while fbook_post[0] != "본문" :
 #                del fbook_post[0]
         if tmp[0] == "본문" :
-            #tmplist = list(tmp[3])
-            #for i in range (1, len(tmp[3])/22 + 1) :
-            #    tmplist.insert( 22  * ( len(tmp[3])/22 + 1 - i ), "\n")
-            #if tmplist[len(tmplist) - 1] == "\n" :
-            #    del tmplist[len(tmplist) - 1]
-            #tmp[3] = ''.join(tmplist)
+            tmplist = list(tmp[3])
+            for i in range (1, len(tmp[3])/22 + 1) :
+                tmplist.insert( 22  * ( len(tmp[3])/22 + 1 - i ), "\n")
+            if tmplist[len(tmplist) - 1] == "\n" :
+                del tmplist[len(tmplist) - 1]
+            tmp[3] = ''.join(tmplist)
 
             fbook_post.extend([[tmp[0], tmp[1], tmp[2], tmp[3]]])
 
         elif tmp[0] == "댓글" :
+            tmplist = list(tmp[2])
+            for i in range (1, len(tmp[2])/23 + 1) :
+                tmplist.insert( 23  * ( len(tmp[2])/23 + 1 - i ), "\n")
+            if tmplist[len(tmplist) - 1] == "\n" :
+                del tmplist[len(tmplist) - 1]
+            tmp[2] = ''.join(tmplist)
+
             fbook_post.extend([[tmp[0], tmp[1], tmp[2]]])
         else :
             fbook_post.extend([[tmp[0]]])
@@ -181,20 +166,6 @@ screen upper_right_UI() :
     add im.Scale("parameter_bar.png", 52*(gwa_parameter)/100, 4) xpos 1092 ypos 180
     add im.Scale("parameter_bar.png", 52*(club_parameter)/100, 4) xpos 1192 ypos 180
 
-## 일요일 방과 일정 실행 중에 핸드폰 아이콘
-screen phone_icon():
-    vbox :
-        if day == 0 :
-            xalign 0.34 yalign 0.7
-        else :
-            xalign 0.1 yalign 0.5
-
-        imagebutton:
-            idle "phone_icon.png"
-            # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
-            hover im.Alpha("phone_icon.png",2)
-            # 클릭시 phone label을 실행함
-            action Hide("phone_icon"), Hide("planner_icon"), Call("phone")
 
 # label start에서 넘어옴
 label what_is_your_name:

@@ -4,7 +4,7 @@ label weekday_day :
     scene black #with dissolve
     show screen stats_screen
 
-    show screen phone_icon with vpunch
+    show screen phone_icon
 
     $ YoIl = day_name[day]
     $ day_for_show = (week-1)*8 + day + 1
@@ -12,7 +12,7 @@ label weekday_day :
     if day < 8 :
         $ day_or_evening = "day"
         call weekday_day_event
-
+    
     if hp <= 30 :
         if hp == 0 :
             call hp_0_break_event
@@ -35,9 +35,11 @@ label weekday_day :
     return
 
 label hp_0_break_event :
+
     return
 
 label hp_low_rest_event :
+
     return
 
 label mental_point_100_event :
