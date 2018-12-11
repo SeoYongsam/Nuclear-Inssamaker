@@ -4,13 +4,13 @@
 # 4월 16일 축제 이벤트
 
 #이미지 선언
-image fest_poong = im.Scale("festival/fest_poong.jpg", 480, 320)
-image fest_food = im.Scale("festival/fest_food.jpg", 480, 320)
-image fest_stage = im.Scale("festival/fest_stage.jpg", 480, 320)
-image cuprice = im.Scale("festival/cuprice.jpg", 480, 320)
-image shrimp = im.Scale("festival/shrimp.jpg", 480, 320)
-image steak = im.Scale("festival/steak.jpg", 480, 320)
-image soran = im.Scale("festival/soran.jpg", 480, 320)
+image fest_poong = "festival/fest_poong.jpg"
+image fest_food = "festival/fest_food.jpg"
+image fest_stage = "festival/fest_stage.jpg"
+image cuprice = "festival/cuprice.jpg"
+image shrimp = "festival/shrimp.jpg"
+image steak = "festival/steak.jpg"
+image soran = "festival/soran.jpg"
 
 # week3 day 1
 label festival:

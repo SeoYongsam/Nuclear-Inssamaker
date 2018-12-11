@@ -4,14 +4,14 @@
 # 4월 2일 교복데이 이벤트
 
 #이미지 선언
-image gyobok = im.Scale("uniform_day/gyobok.jpg", 480, 320)
-image jjangge = im.Scale("uniform_day/jjangge.jpg", 480, 320)
-image pizza = im.Scale("uniform_day/pizza.jpg", 480, 320)
+image gyobok = "uniform_day/gyobok.jpg"
+image jjangge = "uniform_day/jjangge.jpg"
+image pizza = "uniform_day/pizza.jpg"
 
 
 # month4 week1 day 1
 label uniform:
-    "오늘은 만우절이다. 과 동기들이 다같이 교복을 입고 등교를 했다."
+    "어제는 만우절이었다. 그런데 일요일이었어서 오늘 과 동기들이 다같이 교복을 입고 등교를 했다."
     "과 동기들이 만우절 기념으로 점심식사를 함께 야외에서 배달음식을 먹자고 한다."
     "하지만 약속한 시간에 수업이 있다. 어떻게 할까?"
 

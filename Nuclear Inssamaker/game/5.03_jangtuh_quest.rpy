@@ -4,7 +4,7 @@
 # 5월 3일 장터 이벤트
 
 #이미지 선언
-image gyobok = im.Scale("gyobok.jpg", 480, 320)
+image gyobok = "gyobok.jpg"
 
 # month5 week1 day2
 label jangtuh:

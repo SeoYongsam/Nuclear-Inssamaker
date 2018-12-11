@@ -4,20 +4,18 @@
 # 3월 9일 동소제 이벤트
 
 #이미지 선언
-image dance = im.Scale("dongsoze/dance.jpg", 480, 320)
-image donga = im.Scale("dongsoze/donga.jpg", 480, 320)
-image perfo = im.Scale("dongsoze/perfo.jpg", 480, 320)
-image dongsoze = im.Scale("dongsoze/dongsoze.jpg", 480, 320)
+image dance = "dongsoze/dance.jpg"
+image donga = "dongsoze/donga.jpg"
+image perfo = "dongsoze/perfo.jpg"
+image dongsoze = "dongsoze/dongsoze.jpg"
 
 # week2 day 1
 label dongsoze:
-
     scene black
 
     "오늘은 동아리 소개제가 있는 날이다. 공강 시간을 이용해 장중, 삼용, 대현이와 함께 동아리 소개제 구경을 가게 되었다."
 
     scene dongsoze at truecenter
-
     "무대 의상을 입은 학생" "여러분 춤 구경하고 가세요~"
     "안경을 쓴 학생" "게임 개발 해보시지 않겠습니까?"
     "가오나시 의상을 입은 학생" "설문 하나만 작성해주세요!!"
@@ -33,7 +31,6 @@ label dongsoze:
     "주인공" "응, 오늘 수업 나보다 일찍 끝나서 먼저 돌아보고 있겠다고 했거든.."
 
     scene dance at truecenter
-
     "그렇게 같이 동소제를 둘러보던 중 앞쪽에 사람들이 모여 있는 모습을 발견하고 그 쪽으로 가보기로 했다."
 
     "대현" "오~ 저 사람 기타 엄청 잘 치는 것 같은데? 뻔대야 밴드부 오래한 너가 보기엔 어때?"
@@ -42,7 +39,6 @@ label dongsoze:
     "주인공" "응 어째서 쟤가 저기서 연주하고 있는지는 모르겠는데 한 번 가봐야겠다."
 
     scene donga at truecenter
-
     "동아" "오 뻔대 친구 아이가? 바쁜 친구가 그래도 오긴 왔네?"
     "주인공" "그래도 약속했는데 당연히 와야지! 근데 니가 왜 여기서 기타치고 있냐?"
     "동아" "음? 그냥 이리저리 둘러보다가 여가 제일 분위기 좋아보여서, 저 짝에 있는 선배랑 얘기하다보니까 자연스럽게? 일케 됐다."
@@ -66,7 +62,6 @@ label dongsoze:
     "주인공" "어엌...뭐 그래 불러줄게~"
 
     scene black
-
     "분위기에 휩쓸려 노래를 불렀다! 사람들의 시선이 느껴진다!"
 
     "노래가 끝난 후"

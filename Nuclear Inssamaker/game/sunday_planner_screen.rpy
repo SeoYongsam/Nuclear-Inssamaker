@@ -6,7 +6,8 @@ image sel_rest = im.Alpha("planner/sel_rest.png",0.7)
 screen planner_UI() :
     add Solid("#000c")
     add "planner/planner_background.png"
-    add "planner/planner_schedule_list.png"
+    if month == month_for_display + 3 :
+        add "planner/planner_schedule_list.png"
 
     # 달력 상단 중앙 3~6월
     vbox xpos 448 ypos 81 :
@@ -88,15 +89,16 @@ screen schedule_button():
 
 screen month_schedule_icon_show():
     # 플래너 밑줄
-    for i in range(1, 6) :
-        hbox :
-            if i >= day :
-                xpos 160 + 128*(i-1) + 20 ypos 175 + 128*(week-1) + 104
-                add "planner/underline.png"
-    if 6 >= day :
-        add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 67
-    if 7 >= day :
-        add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 104
+    if month == month_for_display + 3 :
+        for i in range(1, 6) :
+            hbox :
+                if i >= day :
+                    xpos 160 + 128*(i-1) + 20 ypos 175 + 128*(week-1) + 104
+                    add "planner/underline.png"
+        if 6 >= day :
+            add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 67
+        if 7 >= day :
+            add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 104
 
     for i in range(1, 5) :
         for j in range(1, 6) :
