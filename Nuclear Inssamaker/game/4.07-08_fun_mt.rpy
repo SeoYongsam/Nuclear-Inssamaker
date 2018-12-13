@@ -400,6 +400,7 @@ label fun_morning:
     call change_samyong_talk
     call change_dongah_talk
     $ day_for_show = 7
+    $ day += 1
     $ day_or_evening = "evening"
     jump weekday_SNS
 
