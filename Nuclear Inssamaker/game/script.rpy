@@ -16,10 +16,12 @@ init python:
     hp = 200
     mental_point = 100
 
-    month = 3 # number 0~3 : 3~6월
+    # 게임 시작 시 월, 주, 일
+    month = 3
     month_for_display = month - 3
     week = 1
     day = 0
+
     day_for_show = (week-1)*7 + day + 1
     day_name = ["일","월","화","수","목","금","토","토"]
     YoIl = 0
@@ -39,6 +41,7 @@ init python:
             self.message = []
             self.new_message_count = 0
             self.new_message_watch = False
+            self.parameter = 0
 
         # messages.add("이름|내용")
         def add(self, data) :
@@ -78,8 +81,8 @@ init python:
 #                del fbook_post[0]
         if tmp[0] == "본문" :
             tmplist = list(tmp[3])
-            for i in range (1, len(tmp[3])/22 + 1) :
-                tmplist.insert( 22  * ( len(tmp[3])/22 + 1 - i ), "\n")
+            for i in range (1, len(tmp[3])/21 + 1) :
+                tmplist.insert( 21  * ( len(tmp[3])/21 + 1 - i ), "\n")
             if tmplist[len(tmplist) - 1] == "\n" :
                 del tmplist[len(tmplist) - 1]
             tmp[3] = ''.join(tmplist)
@@ -88,8 +91,8 @@ init python:
 
         elif tmp[0] == "댓글" :
             tmplist = list(tmp[2])
-            for i in range (1, len(tmp[2])/23 + 1) :
-                tmplist.insert( 23  * ( len(tmp[2])/23 + 1 - i ), "\n")
+            for i in range (1, len(tmp[2])/21 + 1) :
+                tmplist.insert( 21  * ( len(tmp[2])/21 + 1 - i ), "\n")
             if tmplist[len(tmplist) - 1] == "\n" :
                 del tmplist[len(tmplist) - 1]
             tmp[2] = ''.join(tmplist)
@@ -214,34 +217,52 @@ screen stats_screen() :
             text "공부: [study_parameter]"
             text "동아리: [club_parameter]"
             text "과: [gwa_parameter]"
+            text "삼용: [samyong.parameter]"
+            text "진일: [jinil.parameter]"
+            text "장중: [jangjung.parameter]"
 
 label parameter_maxmin_check :
     if hp < 0 :
         $ hp = 0
-
-    if hp > 200 :
+    elif hp > 200 :
         $ hp = 200
 
     if mental_point < 0 :
         $ mental_point = 0
-
-    if mental_point > 100 :
+    elif mental_point > 100 :
         $ mental_point = 100
 
     if study_parameter < 0 :
         $ study_parameter = 0
-
-    if study_parameter > 100 :
+    elif study_parameter > 100 :
         $ study_parameter = 100
 
     if club_parameter < 0 :
         $ club_parameter = 0
-
-    if club_parameter > 100 :
+    elif club_parameter > 100 :
         $ club_parameter = 100
 
     if gwa_parameter < 0 :
         $ gwa_parameter = 0
-
-    if gwa_parameter > 100 :
+    elif gwa_parameter > 100 :
         $ gwa_parameter = 100
+
+    if jangjung.parameter < 0 :
+        $ jangjung.parameter = 0
+    elif jangjung.parameter > 100 :
+        $ jangjung.parameter = 100
+
+    if samyong.parameter < 0 :
+        $ samyong.parameter = 0
+    elif samyong.parameter > 100 :
+        $ samyong.parameter = 100
+
+    if jinil.parameter < 0 :
+        $ jinil.parameter = 0
+    elif jinil.parameter > 100 :
+        $ jinil.parameter = 100
+
+    if dongah.parameter < 0 :
+        $ dongah.parameter = 0
+    elif dongah.parameter > 100 :
+        $ dongah.parameter = 100

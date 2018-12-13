@@ -26,7 +26,7 @@ screen phone_icon():
         if day == 0 :
             xpos 428 ypos 360
         else :
-            xpos 128 ypos 360
+            xpos 160 ypos 360
 
         imagebutton:
             idle "phone_icon.png"
@@ -46,8 +46,8 @@ screen phone_icon():
 
     else :
         if grouptalk.new_message_count + jangjung.new_message_count + jinil.new_message_count + samyong.new_message_count + dongah.new_message_count != 0 :
-            add "phone/red_dot.png" xpos 160 ypos 356 at shake
-            vbox xpos 160 ypos 356 xsize 20 ysize 20:
+            add "phone/red_dot.png" xpos 192 ypos 356 at shake
+            vbox xpos 192 ypos 356 xsize 20 ysize 20:
                 text "N" size 18 xalign .6 yalign .5 at shake
 
 transform shake:
@@ -91,9 +91,22 @@ screen fbook :
                         add im.Scale("white.png", 440, tmp_height)
                         null height -tmp_height
                         hbox xsize 440 ysize tmp_height xpos 8 ypos 8:
-                            add "fbook_profile"
+                            if msg[1] == "해장중" :
+                                add "character/profile_jangjung.png"
+                            elif msg[1] == "안금지" :
+                                add "fbook_profile"
+                            elif msg[1] == "동삼용" :
+                                add "character/profile_drummer.png"
+                            elif msg[1] == "김진일" :
+                                add "character/profile_jinil.png"
+                            elif msg[1] == "유현재" :
+                                add "character/profile_hyunjae.png"
+                            elif msg[1] == "박대현" :
+                                add "character/profile_daehyun.png"
 
-                            vbox xsize 380 :
+                            null width 6
+
+                            vbox xsize 374 :
                                 null height 5
                                 text "{color=#000}%s" %msg[1] size 18
                                 null height 2
@@ -123,15 +136,32 @@ screen fbook :
                         add im.Scale("phone/fbook/comment_mid.png", 440, tmp_height)
                         null height -tmp_height
                         hbox xsize 425 ysize tmp_height xpos 15:
-                            add "phone/fbook/comment_profile.png"
+                            if msg[1] == "해장중" :
+                                add "character/profile_jangjung.png"
+                            elif msg[1] == "안금지" :
+                                add "fbook_profile"
+                            elif msg[1] == "동삼용" :
+                                add "character/profile_drummer.png"
+                            elif msg[1] == "김진일" :
+                                add "character/profile_jinil.png"
+                            elif msg[1] == "유현재" :
+                                add "character/profile_hyunjae.png"
+                            elif msg[1] == "박대현" :
+                                add "character/profile_daehyun.png"
+                            elif msg[1] == "오덕현" :
+                                add "character/profile_ohduck.png"
+                            elif msg[1] == "노미래" :
+                                add "character/profile_mirae.png"
+                            else :
+                                add "phone/fbook/comment_profile.png"
                             vbox :
-                                add "phone/fbook/comment_message_topbot.png"
-                                add im.Scale("white.png", 356, tmp_height-15)
+                                add im.Scale("phone/fbook/comment_message_topbot.png", 356 - 20, 4)
+                                add im.Scale("white.png", 356 - 20, tmp_height-15)
                                 null height - (tmp_height-15)
                                 vbox ysize tmp_height-15:
                                     text "{color=#000}%s" %(msg[1]) xpos 12 yalign 0.5 size 17
                                     text "{color=#505050}%s" %(msg[2]) xpos 12 yalign 0.5 size 17
-                                add "phone/fbook/comment_message_topbot.png"
+                                add im.Scale("phone/fbook/comment_message_topbot.png", 356 - 20, 4)
 
                     elif msg[0] == "댓글종료" :
                         add "phone/fbook/comment_bottom.png"
@@ -143,14 +173,52 @@ screen fbook :
 
 screen ktalk:
     if ktalk_mode == 1 :
-        viewport:
-            xpos 420 ypos 40
-            xsize 440 ysize 624
-            draggable True
-            mousewheel True
-            arrowkeys True
+        add "phone/ktalk/ktalk_friends.png" xpos 420 ypos 40
 
-            add "phone/ktalk/ktalk_friends.png" #xpos 420 ypos 40
+        add "character/profile_player.png" xpos 420 + 8 ypos 40 + 108
+        text "{color=#000}주인공{/color}" size 20 xpos 520 ypos 40 + 108 + 20
+#        hbox :
+#            xpos 420 + 624 - 172 - 172 - 16 ypos 40 + 108 + 20
+#            for i in range(1,6) :
+#                add "phone/ktalk/heart_full.png"
+#                null width 4
+
+        #김진일
+        add "character/profile_jinil.png" xpos 420 + 8 ypos 40 + 236
+        text "{color=#000}김진일{/color}" size 20 xpos 520 ypos 40 + 236 + 20
+        hbox :
+            xpos 420 + 624 - 172 - 172 - 16 ypos 40 + 236 + 20
+            for i in range(1,6) :
+                if i*20 <= jinil.parameter :
+                    add "phone/ktalk/heart_full.png"
+                else :
+                    add "phone/ktalk/heart_empty.png"
+                null width 4
+
+        #동삼용
+        add "character/profile_drummer.png" xpos 420 + 8 ypos 40 + 320
+        text "{color=#000}동삼용{/color}" size 20 xpos 520 ypos 40 + 320 + 20
+        hbox :
+            xpos 420 + 624 - 172 - 172 - 16 ypos 40 + 320 + 20
+            for i in range(1,6) :
+                if i*20 <= samyong.parameter :
+                    add "phone/ktalk/heart_full.png"
+                else :
+                    add "phone/ktalk/heart_empty.png"
+                null width 4
+
+        #해장중
+        add "character/profile_jangjung.png" xpos 420 + 8 ypos 40 + 404
+        text "{color=#000}해장중{/color}" size 20 xpos 520 ypos 40 + 404 + 20
+        hbox :
+            xpos 420 + 624 - 172 - 172 - 16 ypos 40 + 404 + 20
+            for i in range(1,6) :
+                if i*20 <= jangjung.parameter :
+                    add "phone/ktalk/heart_full.png"
+                else :
+                    add "phone/ktalk/heart_empty.png"
+                null width 4
+
 
         add "phone/button_friends_sel.png" xpos 420 ypos 588
         imagebutton :
@@ -168,99 +236,167 @@ screen ktalk:
             mousewheel True
             arrowkeys True
             vbox :
-                add "phone/ktalk/ktalk_list.png" #xalign 0.5 #ypos 40
-                null height -572
+                add im.Scale("white.png", 440, 548) #xalign 0.5 #ypos 40
+                null height -548
+                vbox xsize 440 ysize 60 :
+                    text "{color=#000}채팅{/color}" size 24 xpos 20 yalign 0.6
                 for i in rand_list_for_katlk_list :
-                    if i == 1 :
+                    if i == 1 and grouptalk.new_message_count != 0 :
                         imagebutton :
-                            idle "phone/ktalk/talklist1.png"
-                            hover "phone/ktalk/talklist1_on.png"
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
                         null height -92
+                        add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}단톡" xalign 0.5 yalign 0.5
-                            if grouptalk.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[grouptalk.new_message_count]" size 20 xalign 0.84 yalign 0.5
-                        null height -1
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[grouptalk.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                        null height -5
 
-                    elif i == 2 :
+                    elif i == 2 and jangjung.new_message_count != 0 :
                         imagebutton :
-                            idle "phone/ktalk/talklist2.png"
-                            hover "phone/ktalk/talklist2_on.png"
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
                         null height -92
+                        add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}장중" xalign 0.5 yalign 0.5
-                            if jangjung.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[jangjung.new_message_count]" size 20 xalign 0.84 yalign 0.5
-                        null height -1
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[jangjung.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                        null height -5
 
-                    elif i == 3 :
+                    elif i == 3 and jinil.new_message_count != 0:
                         imagebutton :
-                            idle "phone/ktalk/talklist3.png"
-                            hover "phone/ktalk/talklist3_on.png"
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
                         null height -92
+                        add "character/profile_jinil.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}진일" xalign 0.5 yalign 0.5
-                            if jinil.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[jinil.new_message_count]" size 20 xalign 0.84 yalign 0.5
-                        null height -1
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[jinil.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                        null height -5
 
-                    elif i == 4 :
+                    elif i == 4 and samyong.new_message_count != 0 :
                         imagebutton :
-                            idle "phone/ktalk/talklist4.png"
-                            hover "phone/ktalk/talklist4_on.png"
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
                         null height -92
+                        add "character/profile_drummer.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}삼용" xalign 0.5 yalign 0.5
-                            if samyong.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[samyong.new_message_count]" size 20 xalign 0.84 yalign 0.5
-                        null height -1
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[samyong.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                        null height -5
 
-                    elif i == 5 :
+                    elif i == 5 and dongah.new_message_count != 0 :
                         imagebutton :
-                            idle "phone/ktalk/talklist5.png"
-                            hover "phone/ktalk/talklist5_on.png"
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
                         null height -92
+                        add "character/profile_dongah.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
                                 text "{color=#000}동아" xalign 0.5 yalign 0.5
-                            if dongah.new_message_count != 0:
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
-                                null width -440
-                                hbox xsize 440 ysize 92 :
-                                    text "[dongah.new_message_count]" size 20 xalign 0.84 yalign 0.5
-                        null height -1
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                            null width -440
+                            hbox xsize 440 ysize 92 :
+                                text "[dongah.new_message_count]" size 20 xalign 0.84 yalign 0.5
+                        null height -5
 
+
+                for i in rand_list_for_katlk_list :
+                    if i == 1 and grouptalk.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
+                        null height -92
+                        add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
+                        hbox xsize 440 ysize 92 :
+                            text "{color=#000}단톡" xalign 0.5 yalign 0.5
+                        null height -5
+
+                    elif i == 2 and jangjung.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
+                        null height -92
+                        add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
+                        hbox xsize 440 ysize 92 :
+                            text "{color=#000}장중" xalign 0.5 yalign 0.5
+                        null height -5
+
+                    elif i == 3 and jinil.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
+                        null height -92
+                        add "character/profile_jinil.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
+                        hbox xsize 440 ysize 92 :
+                            text "{color=#000}진일" xalign 0.5 yalign 0.5
+                        null height -5
+
+                    elif i == 4 and samyong.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
+                        null height -92
+                        add "character/profile_drummer.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
+                        hbox xsize 440 ysize 92 :
+                            text "{color=#000}삼용" xalign 0.5 yalign 0.5
+                        null height -5
+
+                    elif i == 5 and dongah.new_message_count == 0 :
+                        imagebutton :
+                            idle "phone/ktalk/talklist.png"
+                            hover "phone/ktalk/talklist_on.png"
+                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
+                        null height -92
+                        add "character/profile_dongah.png" xpos 8 + 2 ypos 12 + 2
+                        null height - 64
+                        hbox xsize 440 ysize 92 :
+                            text "{color=#000}동아" xalign 0.5 yalign 0.5
+                        null height -5
 
         imagebutton :
                 xpos 420 ypos 588
@@ -272,6 +408,7 @@ screen ktalk:
 
     # 원래 3, 친구 대화 목록
     elif ktalk_mode == 3 :
+        add "phone/ktalk/ktalk_background.png" xpos 420 ypos 40
         viewport:
             xpos 420 ypos 40
             xsize 440 ysize 624
@@ -279,15 +416,7 @@ screen ktalk:
             draggable True
             mousewheel True
             arrowkeys True
-            #edgescroll (200, 1000)
 
-#            add "phone/ktalk_list.png" #xalign 0.5 #ypos 40
-
-#            vbox : #xalign 0.5 yalign 0.5 :
-#                null height 66
-#                add "phone/ktalk/1.png"
-#                null height 10
-#                add "phone/ktalk/1.png"
             if talk_with_who == "그룹" :
                 vbox : #xalign 0.5 yalign 0.5 :
                     null height 66
@@ -318,14 +447,14 @@ screen ktalk:
 
                                 null height -tmp_height
                                 hbox xsize tmp_width :
-                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                     null width tmp_width -8
-                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                 null height tmp_height - 8
                                 hbox xsize tmp_width :
-                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                     null width tmp_width -8
-                                    add im.Scale("phone/screen_main.png", 4, 4)
+                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                 null height -3 - tmp_height
                                 vbox xpos 6 ypos 8 :
@@ -342,28 +471,34 @@ screen ktalk:
                         else :
                             hbox xpos 4 ypos 4:
                                 if msg[0] != "날짜" and msg[0] != "연속" :
-                                    if msg[0] == "장중" :
-                                        add "phone/ktalk/jangjung.png"
+                                    if msg[0] == "해장중" :
+                                        add "character/profile_jangjung.png" xpos 2 ypos 2
 
-                                    elif msg[0] == "진일" :
-                                        add "phone/ktalk/jinil.png"
+                                    elif msg[0] == "김진일" :
+                                        add "character/profile_jinil.png" xpos 2 ypos 2
 
-                                    elif msg[0] == "삼용" :
-                                        add "phone/ktalk/samyong.png"
+                                    elif msg[0] == "동삼용" :
+                                        add "character/profile_drummer.png" xpos 2 ypos 2
 
-                                    elif msg[0] == "현재" :
-                                        add "phone/ktalk/hyunjae.png"
+                                    elif msg[0] == "유현재" :
+                                        add "character/profile_hyunjae.png" xpos 2 ypos 2
 
-                                    elif msg[0] == "미래" :
-                                        add "phone/ktalk/mirae.png"
+                                    elif msg[0] == "노미래" :
+                                        add "character/profile_mirae.png" xpos 2 ypos 2
 
-                                    elif msg[0] == "동아" :
-                                        add "phone/ktalk/dongah.png"
+                                    elif msg[0] == "이동아" :
+                                        add "character/profile_dongah.png" xpos 2 ypos 2
+
+                                    elif msg[0] == "박대현" :
+                                        add "character/profile_daehyun.png" xpos 2 ypos 2
+
+                                    elif msg[0] == "오덕현" :
+                                        add "character/profile_ohduck.png" xpos 2 ypos 2
 
                                     else :
                                         add "phone/ktalk/1.png"
 
-                                    null width 3
+                                    null width 7
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
@@ -373,35 +508,35 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
                                 elif msg[0] == "연속":
-                                    null width 67
+                                    null width 71
                                     vbox:
                                         #null height -15
                                         add im.Scale("white.png", tmp_width, tmp_height)
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -444,14 +579,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -468,9 +603,9 @@ screen ktalk:
                         else :
                             hbox xpos 4 ypos 4:
                                 if msg[0] != "날짜" and msg[0] != "연속" :
-                                    add "phone/ktalk/jangjung.png"
+                                    add "character/profile_jangjung.png" xpos 2 ypos 2
 
-                                    null width 3
+                                    null width 7
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
@@ -480,35 +615,35 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
                                 elif msg[0] == "연속":
-                                    null width 67
+                                    null width 71
                                     vbox:
                                         #null height -15
                                         add im.Scale("white.png", tmp_width, tmp_height)
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -551,14 +686,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -575,9 +710,9 @@ screen ktalk:
                         else :
                             hbox xpos 4 ypos 4:
                                 if msg[0] != "날짜" and msg[0] != "연속" :
-                                    add "phone/ktalk/jangjung.png"
+                                    add "character/profile_jinil.png" xpos 2 ypos 2
 
-                                    null width 3
+                                    null width 7
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
@@ -587,35 +722,35 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
                                 elif msg[0] == "연속":
-                                    null width 67
+                                    null width 71
                                     vbox:
                                         #null height -15
                                         add im.Scale("white.png", tmp_width, tmp_height)
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -658,14 +793,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -682,9 +817,9 @@ screen ktalk:
                         else :
                             hbox xpos 4 ypos 4:
                                 if msg[0] != "날짜" and msg[0] != "연속" :
-                                    add "phone/ktalk/samyong.png"
+                                    add "character/profile_drummer.png" xpos 2 ypos 2
 
-                                    null width 3
+                                    null width 7
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
@@ -694,35 +829,35 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
                                 elif msg[0] == "연속":
-                                    null width 67
+                                    null width 71
                                     vbox:
                                         #null height -15
                                         add im.Scale("white.png", tmp_width, tmp_height)
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -765,14 +900,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null width tmp_width -8
-                                        add im.Scale("phone/screen_main.png", 4, 4)
+                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -789,9 +924,9 @@ screen ktalk:
                         else :
                             hbox xpos 4 ypos 4:
                                 if msg[0] != "날짜" and msg[0] != "연속" :
-                                    add "phone/ktalk/dongah.png"
+                                    add "character/profile_dongah.png" xpos 2 ypos 2
 
-                                    null width 3
+                                    null width 7
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
@@ -801,35 +936,35 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
                                             text "{color=#000}%s" %msg[1] size 18
 
                                 elif msg[0] == "연속":
-                                    null width 67
+                                    null width 71
                                     vbox:
                                         #null height -15
                                         add im.Scale("white.png", tmp_width, tmp_height)
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
                                             null width tmp_width -8
-                                            add im.Scale("phone/screen_main.png", 4, 4)
+                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
