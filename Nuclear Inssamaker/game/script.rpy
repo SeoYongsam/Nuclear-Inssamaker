@@ -114,7 +114,6 @@ init python:
 # 여기에서부터 게임이 시작합니다.
 label start:
 
-    call jangtuh
     # 플레이어 이름을 묻는 함수 what_is_your_name
     # call what_is_your_name
 

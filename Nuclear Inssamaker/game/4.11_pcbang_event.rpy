@@ -1,6 +1,6 @@
 #이미지 선언
 image pcbang = "pcbang/pcbang.jpg"
-image leagueoflegends = "pcbang/leagueoflegends.jpeg"
+image leagueoflegends = "pcbang/leagueoflegends.jpg"
 image leagueloss = "pcbang/leagueloss.png"
 image kartrider = "pcbang/kartrider.jpg"
 image pcbangstreet = "pcbang/pcbangstreet.jpg"

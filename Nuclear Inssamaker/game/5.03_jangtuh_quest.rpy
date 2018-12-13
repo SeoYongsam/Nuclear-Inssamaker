@@ -1,52 +1,27 @@
-<<<<<<< HEAD
-<<<<<<< HEAD:Nuclear Inssamaker/game/jangtuh_quest.rpy
-=======
-<<<<<<< HEAD:Nuclear Inssamaker/game/5.03_jangtuh_quest.rpy
-# 5월 3일 화요일 장터 이벤트
-# month5 week1 day2
-label jangtuh:
-    "오늘은 어쩔수 없이 수업을 못갔다.
-    장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
-    "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
-    "점심시간까지는 학생들이 학교 캠퍼스에 별로 없었어서 그런지 바쁘지는 않았다."
-=======
->>>>>>> ce08e49bb5a4f6dd119dadec661b84e75e14bd43
 # Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-# 4월 16일 교복데이 이벤트
 
 #이미지 선언
-image college = im.Scale("jangtuh/college.jpg", 1280, 720)
-image jangtuh = im.Scale("jangtuh/jangtuh.jpg", 1280, 720)
-image order = im.Scale("jangtuh/order.jpg", 1280, 720)
-image cooking = im.Scale("jangtuh/cooking.jpg", 1280, 720)
-image other_jangtuh = im.Scale("jangtuh/other_jangtuh.jpg", 1280, 720)
-image after = im.Scale("jangtuh/after.jpg", 1280, 720)
-image cheers = im.Scale("jangtuh/cheers.jpg", 1280, 720)
-image black = im.Scale("black.jpg", 1280, 720)
+image college = "jangtuh/college.png"
+image jangtuh = "jangtuh/jangtuh.png"
+image order = "jangtuh/order.png"
+image cooking = "jangtuh/cooking.png"
+image other_jangtuh = "jangtuh/other_jangtuh.png"
+image after = "jangtuh/after.png"
+image cheers = "jangtuh/cheers.png"
 
-# week5 day 1
-label jangtuh:
 
-    scene college at truecenter
-
-    "오늘은 수업을 못갔다."
-    "장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
-    "아침 일찍부터 하는 장터 준비는 끝났고 장사를 시작했다. 아침에는 학생들이 학교 캠퍼스에 별로 없어서 그런지 바쁘지는 않았다."
-<<<<<<< HEAD
-=======
 # 5월 3일 화요일 장터 이벤트
 # month5 week1 day2
 label jangtuh:
-    "오늘은 어쩔수 없이 수업을 못갔다.
-    장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
+
+    scene college at truecenter
+    "오늘은 어쩔수 없이 수업을 못갔다."
+    "장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
     "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
     "점심시간까지는 학생들이 학교 캠퍼스에 별로 없었어서 그런지 바쁘지는 않았다."
->>>>>>> 5d6cdea9ed913a8188feddc92504f7b69602e315:Nuclear Inssamaker/game/5.03_jangtuh_quest.rpy
-=======
->>>>>>> 87dd1ff1ed6c3392961658b21152e46142d3de66:Nuclear Inssamaker/game/jangtuh_quest.rpy
->>>>>>> ce08e49bb5a4f6dd119dadec661b84e75e14bd43
+
     "하지만 이제 곧 대망의 점심시간! 사람들이 하나 둘 몰려오기 시작한다!"
 
     scene order at truecenter
@@ -83,7 +58,7 @@ label jangtuh:
     "삼용" "일단 알겠어!"
     "진일" "뻔대야 애들 진짜 안오냐?? 거의 우리 셋이서만 일하는데?"
 
-    scene jangtuh
+    scene jangtuh at truecenter
     "장중" "잘 하고 있냐??"
     "주인공" "왜 이렇게 늦게 왔어 ㅠㅠㅠㅠ 얼른 가서 일 도와줘"
     "장중" "ㅋㅋㅋㅋ 잘 하고 있구만 왜"
@@ -101,7 +76,7 @@ label jangtuh:
 
     "오후 4시부터는 고객들이 하나 둘 씩 줄어들면서 장터현장이 한가해졌다."
 
-    scene jangtuh
+    scene jangtuh at truecenter
     "장중" "야 뻔대야 우리 이제 정리할까?"
     "진일" "너네들 일 얼마나 했다고 벌써 정리해"
     "대현" "근데 고객이 없으니까 정리해도 되지 않나?"
@@ -234,9 +209,9 @@ label jangtuh:
 
     #순이익 금액으로 장터가 성공했는지 판단
 
-    ##장터 전 이벤트 5개 다 참여했을 시 순이익 200만원
-    ##장터 전 이벤트 3,4개 참여했을 시 순이익 100만원
-    ##장터 전 이벤트 1,2개 참여했을 시 순이익 50만원
+    ##장터 전 이벤트 4개 다 참여했을 시 순이익 200만원
+    ##장터 전 이벤트 2,3개 참여했을 시 순이익 100만원
+    ##장터 전 이벤트 1개 참여했을 시 순이익 50만원
     ##장터 전 이벤트 0개 참여했을 시 순이익 0원
     ##뒷풀이 비용은 항상 50만원으로 세팅
 
@@ -244,6 +219,6 @@ label jangtuh:
     ###장터 순이익: ___원
     ###뒷풀이 비용: 50만원
     ###장터 후 총 금액: ___원
-    ###장터 성적: A (5개), B (3,4개), C (1,2개),D (0개)
+    ###장터 성적: A (4개), B (2,3개), C (1개),D (0개)
 
     return
