@@ -1,8 +1,9 @@
 #이미지 선언
 image pcbang = "pcbang/pcbang.jpg"
-image leagueoflegends = "pcbang/leagueoflegends.jpeg"
+image leagueoflegends = "pcbang/leagueoflegends.jpg"
 image leagueloss = "pcbang/leagueloss.png"
 image kartrider = "pcbang/kartrider.jpg"
+#image kartrider_end  = "pcbang/kartrider_end.jpg"
 image pcbangstreet = "pcbang/pcbangstreet.jpg"
 
 #피시방 이벤트 4월 11일 month4 week2 day3

@@ -1,5 +1,3 @@
-﻿# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
 define Jinil = Character("진일", color="#ffcccc", image="Jinil")#, window_left_padding = -100)
 #image side Jinil :
 #    "character/cha1.png"

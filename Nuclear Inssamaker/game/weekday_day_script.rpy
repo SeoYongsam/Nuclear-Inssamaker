@@ -1,7 +1,4 @@
-﻿# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
-
-label weekday_day_event :
+﻿label weekday_day_event :
     $ day_or_evening = "day"
 
     if month == 3 and week == 2 and day == 1 :
@@ -9,6 +6,90 @@ label weekday_day_event :
 
     elif month == 3 and week == 2 and day == 5 :
         call all_mt
+
+    elif month == 3 and week == 3 and day == 4 :
+        "과잠 투표 결과 : 1안-8명 / 2안-6명 / 3안-4명"
+        "투표를 하시겠습니까, 과잠을 결정하시겠습니까?"
+        menu :
+            "투표 계속하기" :
+                ""
+
+            "투표 마치고 강제로 선택하기" :
+                "어떤 과잠을 선택하시겠습니까?"
+                menu :
+                    "1안" :
+                        ""
+                    "2안" :
+                        ""
+                    "3안" :
+                        ""
+
+    elif month == 3 and week == 3 and day == 5 :
+        "과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
+        "투표를 더 진행하시겠습니까?"
+        menu :
+            "투표 계속하기" :
+                ""
+
+            "투표 마치고 강제로 선택하기" :
+                "어떤 과잠을 선택하시겠습니까?"
+                menu :
+                    "1안" :
+                        ""
+                    "2안" :
+                        ""
+                    "3안" :
+                        ""
+    elif month == 3 and week == 3 and day == 6 :
+        #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
+        "투표를 더 진행하시겠습니까?"
+        menu :
+            "투표 계속하기" :
+                ""
+
+            "투표 마치고 강제로 선택하기" :
+                "어떤 과잠을 선택하시겠습니까?"
+                menu :
+                    "1안" :
+                        ""
+                    "2안" :
+                        ""
+                    "3안" :
+                        ""
+
+    elif month == 3 and week == 4 and day == 1 :
+        #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
+        "투표를 더 진행하시겠습니까?"
+        menu :
+            "투표 계속하기" :
+                ""
+
+            "투표 마치고 강제로 선택하기" :
+                "어떤 과잠을 선택하시겠습니까?"
+                menu :
+                    "1안" :
+                        ""
+                    "2안" :
+                        ""
+                    "3안" :
+                        ""
+
+    elif month == 3 and week == 4 and day == 2 :
+        #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
+        "투표를 더 진행하시겠습니까?"
+        menu :
+            "투표 계속하기" :
+                ""
+
+            "투표 마치고 강제로 선택하기" :
+                "어떤 과잠을 선택하시겠습니까?"
+                menu :
+                    "1안" :
+                        ""
+                    "2안" :
+                        ""
+                    "3안" :
+                        ""
 
     elif month == 4 and week == 1 and day == 1 :
         call uniform_day

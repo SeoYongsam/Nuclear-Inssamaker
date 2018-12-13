@@ -1,6 +1,3 @@
-﻿# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
-
 label change_group_talk :
     if month == 3 :
         if week == 1 :

@@ -1,5 +1,4 @@
-# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
+image sunday_room_image = "room.png" #im.Scale("room.png",1480,820)
 
 #start 함수에서 넘어옴
 label sunday_room:

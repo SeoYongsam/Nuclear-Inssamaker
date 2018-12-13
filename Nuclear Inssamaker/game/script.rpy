@@ -1,12 +1,3 @@
-# 이 파일에 게임 스크립트를 입력합니다.
-
-# image 문을 사용해 이미지를 정의합니다.
-# image eileen happy = "eileen_happy.png"
-image sunday_room_image = "room.png" #im.Scale("room.png",1480,820)
-# image phone_night = "phone_night.png"
-
-# 게임에서 사용할 캐릭터를 정의합니다.
-
 # 변수 선언
 init python:
     import string
@@ -35,6 +26,8 @@ init python:
 
     talk_with_who = "그룹"
 
+    #event용 스위치
+    gwa_jam_finished = False
 
     class messages :
         def __init__(self) :
@@ -113,8 +106,6 @@ init python:
 
 # 여기에서부터 게임이 시작합니다.
 label start:
-
-    call jangtuh
     # 플레이어 이름을 묻는 함수 what_is_your_name
     # call what_is_your_name
 
