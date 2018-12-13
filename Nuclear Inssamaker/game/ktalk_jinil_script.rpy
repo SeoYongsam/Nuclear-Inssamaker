@@ -49,9 +49,6 @@ label change_jinil_talk :
 
     elif month == 4 :
         if week == 1 :
-            if day == 0 :
-                $ jinil.reset()
-
             if day == 1 :
                 $ jinil.add("날짜|4월 2일 월요일")
                 $ jinil.add("김진일|엠티는 당연히 대별리지~")
@@ -111,10 +108,7 @@ label change_jinil_talk :
 
     elif month == 5 :
         if week == 1 :
-            if day == 0 :
-                $ jinil.reset()
-
-            elif day == 2 :
+            if day == 2 :
                 $ jinil.add("날짜|5월 3일 화요일")
                 $ jinil.add("김진일|애들 왤케 안오냐...")
                 $ jinil.add("주인공|나도 모르겠다...")
@@ -165,10 +159,7 @@ label change_jinil_talk :
 
     elif month == 6 :
         if week == 1 :
-            if day == 0 :
-                $ jinil.reset()
-
-            elif day == 4 :
+            if day == 4 :
                 $ jinil.add("날짜|6월 5일 목요일")
                 $ jinil.add("김진일|나는 공연 보러 못 갈 것 같다")
                 $ jinil.add("연속|미안미안")

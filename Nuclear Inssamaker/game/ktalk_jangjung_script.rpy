@@ -58,9 +58,6 @@ label change_jangjung_talk :
 
     elif month == 4 :
         if week == 1 :
-            if day == 0 :
-                $ jangjung.reset()
-
             if day == 1 :
                 $ jangjung.add("날짜|4월 2일 월요일")
                 $ jangjung.add("진일|엠티는 당연히 대별리지~")
@@ -109,7 +106,6 @@ label change_jangjung_talk :
     elif month == 5 :
         if week == 1 :
             if day == 0 :
-                $ jangjung.reset()
                 $ jangjung.add("날짜|5월 1일 일요일")
                 $ jangjung.add("해장중|우리 내일 장보러 몇시에 가?")
                 $ jangjung.add("연속|나 생각해보니까 수업 때문에 못갈 것 같아서 ㅠㅠ")
@@ -184,7 +180,6 @@ label change_jangjung_talk :
     elif month == 6 :
         if week == 1 :
             if day == 0 :
-                $ jangjung.reset()
                 $ jangjung.add("날짜|6월 1일 일요일")
                 $ jangjung.add("해장중|너는 오늘 못오지??")
                 $ jangjung.add("연속|혹시 올 수 있으면 연락해")

@@ -354,7 +354,7 @@ label fun_morning:
         "아이들을 깨워서 다 같이 집으로 향했다. 머리는 살짝 아팠지만, 친구들과 웃으며 얘기를 하다보니 어느새 집에 거의 도착한 것 같다.."
         #과 패러미터 보통 +
         $ gwa_parameter += 20
-        $ parameter_maxmin_check
+        call parameter_maxmin_check
 
     elif rest_point == 1 :
         "숙취로 머리가 아프다..눈을 떠보니 대부분의 애들이 잠을 자고 있다."

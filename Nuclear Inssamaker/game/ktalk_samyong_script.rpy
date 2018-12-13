@@ -37,9 +37,6 @@ label change_samyong_talk :
 
     elif month == 4 :
         if week == 1 :
-            if day == 0 :
-                $ samyong.reset()
-
             if day == 1 :
                 $ samyong.add("날짜|4월 2일 월요일")
                 $ samyong.add("동삼용|엠티는 가까운데가 최고임")
@@ -125,10 +122,7 @@ label change_samyong_talk :
 
     elif month == 5 :
         if week == 1 :
-            if day == 0 :
-                $ samyong.reset()
-
-            elif day == 2 :
+            if day == 2 :
                 $ samyong.add("날짜|5월 3일 화요일")
                 $ samyong.add("동삼용|나 수업 끝났다")
                 $ samyong.add("연속|지금 갈게!!!")
@@ -152,10 +146,7 @@ label change_samyong_talk :
 
     elif month == 6 :
         if week == 1 :
-            if day == 0 :
-                $ samyong.reset()
-
-            elif day == 1 :
+            if day == 1 :
                 $ samyong.add("날짜|6월 2일 월요일")
                 $ samyong.add("동삼용|너 어제 못와서 아쉽 ㅠ")
                 $ samyong.add("연속|동아리 끝나면 한 잔 해")
