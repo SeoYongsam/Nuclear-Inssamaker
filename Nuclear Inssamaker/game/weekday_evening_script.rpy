@@ -77,14 +77,14 @@ label normal_weekday_evening :
 label evening_study:
     show study at truecenter
     "공부했다\n"
-    extend "체력 -15, 멘탈 -15, 공부 +10, 과 -5, 동아리 -5"
+    extend "체력 -15, 멘탈 -15, 공부 +10, 과 -3, 동아리 -3"
 
     python :
         hp -= 15
         mental_point -= 15
         study_parameter += 10
-        gwa_parameter -= 5
-        club_parameter -= 5
+        gwa_parameter -= 3
+        club_parameter -= 3
 
     call parameter_maxmin_check
 
@@ -94,25 +94,25 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습했다\n"
-        extend "체력 -25, 멘탈 +20, 공부 -5, 과 -5, 동아리 +15"
+        extend "체력 -25, 멘탈 +20, 공부 -3, 과 -3, 동아리 +15"
 
         python :
             hp -= 25
             mental_point += 20
-            study_parameter -= 5
-            gwa_parameter -= 5
+            study_parameter -= 3
+            gwa_parameter -= 3
             club_parameter += 15
 
     else :
         show club_thur at truecenter
         "동아리 정기연습했다\n"
-        extend "체력 -25, 멘탈 +20, 공부 -5, 과 -5, 동아리 +25"
+        extend "체력 -25, 멘탈 +20, 공부 -3, 과 -3, 동아리 +25"
 
         python :
             hp -= 25
             mental_point += 20
-            study_parameter -= 5
-            gwa_parameter -= 5
+            study_parameter -= 3
+            gwa_parameter -= 3
             club_parameter += 25
 
     call parameter_maxmin_check
@@ -123,14 +123,14 @@ label evening_gwa:
     show gwa at truecenter
     "과 활동했다\n"
 
-    extend "체력 -20, 멘탈 -5, 공부 -5, 과 +15, 동아리 -5"
+    extend "체력 -20, 멘탈 -5, 공부 -3, 과 +15, 동아리 -3"
 
     python :
         hp -= 20
         mental_point -= 5
-        study_parameter -= 5
+        study_parameter -= 3
         gwa_parameter += 15
-        club_parameter -= 5
+        club_parameter -= 3
 
     call parameter_maxmin_check
 
@@ -139,13 +139,13 @@ label evening_gwa:
 label evening_rest:
     show rest at truecenter
     "쉬었다\n"
-    extend "체력 +50, 멘탈 +30 과 -5, 동아리 -5"
+    extend "체력 +50, 멘탈 +30 과 -3, 동아리 -3"
 
     python :
         hp += 50
         mental_point += 30
-        gwa_parameter -= 5
-        club_parameter -= 5
+        gwa_parameter -= 3
+        club_parameter -= 3
 
     call parameter_maxmin_check
 

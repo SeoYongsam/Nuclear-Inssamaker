@@ -64,12 +64,23 @@ screen phone_button_in_homescreen() :
         imagebutton :
             idle "phone/icon_fbook.png"
             hover "phone/icon_fbook_on.png"
-            action Hide("phone_button_in_homescreen"), Show("fbook")
+            action Hide("phone_button_in_homescreen"), Show("fbook")#, SetVariable("fbook_count", 0)
 
         imagebutton :
             idle "phone/icon_talk.png"
             hover "phone/icon_talk_on.png"
             action Hide("phone_button_in_homescreen"), Show("ktalk")
+
+#    if fbook_count != 0 :
+#        add "phone/red_dot.png" xpos 500 ypos 560 at shake
+#        vbox xpos 500 ypos 560 xsize 20 ysize 20:
+#            text "N" size 18 xalign .6 yalign .5 at shake
+
+    if grouptalk.new_message_count + jangjung.new_message_count + jinil.new_message_count + samyong.new_message_count + dongah.new_message_count != 0 :
+        add "phone/red_dot.png" xpos 595 ypos 560 at shake
+        vbox xpos 595 ypos 560 xsize 20 ysize 20:
+            text "N" size 18 xalign .6 yalign .5 at shake
+
 
 screen fbook :
     add im.Scale("phone/fbook/fbook_background.png", 440, 624) xpos 420 ypos 40

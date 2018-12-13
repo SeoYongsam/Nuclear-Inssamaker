@@ -32,6 +32,15 @@ label karaoke:
     Jinil "다음에 나다!"
     "친구들" "오 뭔데뭔데"
 
+    "진일이가 노래를 부르는 동안 무엇을 할까?"
+    menu:
+        "점수를 높게 낼 수 있는 노래를 찾는다":
+            $ jinil.parameter -= 20
+            "진일이가 자꾸 리액션을 바라는 것 같은데...?"
+        "진일이가 노래를 부르는 동안 리액션을 한다":
+            $ jinil.parameter += 20
+            "진일이가 기분이 좋아보인다"
+
     show are_you_happy at truecenter
     Jinil "좋니 사랑해서~ 사랑을 시작할 떄~\n"
     extend "네가~ 얼.. (쿨럭) 마 ㄴr... 예쁜지 모르찌이이이~"
@@ -49,13 +58,37 @@ label karaoke:
     extend "그뤠이~\n"
     extend "밤새 모니터에 흐른 침이 마르기도 전에..."
 
+    "장중이랑 같이 랩을 할까?"
+    menu:
+        "친구들이 놀릴 것 같으니 거절한다":
+            $ jangjung.parameter -= 20
+            $ mental_point += 20
+            "장중이가 아쉬워하는 것 같지만, 괜히 같이했다가 점수 낮게 나오면 코노비를 내야할지도 모르니까..."
+        "장중이랑 같이 랩을 한다":
+            $ jangjung.parameter += 20
+            $ mental_point -= 20
+            "장중이가 같이해서 더 신났다고 한다, 근데 나 박치인거 다 들통났네 ㅠㅠ"
+
     show score_95 at truecenter
-    Hyunjae "봤냐? 힙알못들아\n"
+    Jangjung "봤냐? 힙알못들아\n"
     extend "코노비 낼 준비나 해라"
-    Samyong "노래가 뭔지 보여준다 기다려봐"
+    Samyong "나 중국노래 해도 돼???"
+    "친구들" "에이... 에바지"
+
+    "삼용이에게 중국노래 하라고 할까?"
+    menu:
+        "분위기 갑분싸 될 것 같으니 거절한다":
+            $ samyong.parameter -= 20
+            $ gwa_parameter += 20
+            "삼용이는 아쉬워하지만 분위기를 위해서는 어쩔 수 없지"
+
+        "삼용이가 바라는 것 같으니까 부르라고 한다":
+            $ samyong.parameter += 20
+            $ gwa_parameter -= 20
+            "분위기는 쳐졌지만, 삼용이는 행복해하니..."
 
     show kasi at truecenter
-    Samyong "제발 가라고~ 아주 가라고~ 했어도 나를 괴롭히는데에에~"
+    Samyong "우예에에이ㅣ에에이~"
     "친구들" "오~~ 동삼용~~!!"
 
     show score_100 at truecenter

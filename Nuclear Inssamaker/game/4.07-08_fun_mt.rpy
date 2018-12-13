@@ -22,43 +22,49 @@ label fun_mt:
 
     #4/2부터 시작한 장발/후발 투표를 4/3전에 끝낼 경우 1, 그 이후에 끝낼 경우 2의 스크립트
     #1. 장발 투표를 4/3까지 끝냈을 시(4월 2일, 4월 3일에 종료할 경우)
-    show jangbal_s at truecenter
+    if fun_mt_vote_day < 32 :
+        show jangbal_s at truecenter
 
-    Jangjung "오 뻔대 왔냐? 조금 늦었네?"
-    Player "앗..미안미안 내가 조금 늦었네"
-    Samyong "뻔대가 이렇게 늦어서 쓰냐... 장발하는 애들 거의 미리 와서 기다리고 있었는데"
-    Jinil "그러니까 말이야 벌로 오늘 넌 가자마자 병샷이다."
-    Player "으악 그것만은 참아줘..하하하하"
-    Ohduck "오이오이~ 동아리 일정까지 미루고 온 와타시도 있다고~"
-    Hyunjae "그러니까 말이야 그래도 뻔대 왔으니까 다 도착한 거 맞지?"
-    Mirae "그런거 같아~ 그럼 슬슬 출발할까??"
-    Player "오키오키~ 출발하자!!"
+        Jangjung "오 뻔대 왔냐? 조금 늦었네?"
+        Player "앗..미안미안 내가 조금 늦었네"
+        Samyong "뻔대가 이렇게 늦어서 쓰냐... 장발하는 애들 거의 미리 와서 기다리고 있었는데"
+        Jinil "그러니까 말이야 벌로 오늘 넌 가자마자 병샷이다."
+        Player "으악 그것만은 참아줘..하하하하"
+        Ohduck "오이오이~ 동아리 일정까지 미루고 온 와타시도 있다고~"
+        Hyunjae "그러니까 말이야 그래도 뻔대 왔으니까 다 도착한 거 맞지?"
+        Mirae "그런거 같아~ 그럼 슬슬 출발할까??"
+        Player "오키오키~ 출발하자!!"
 
-    #과 파라미터 + / 멘탈 +
-    $ gwa_parameter += 10
-    $ mental_point += 10
-    call parameter_maxmin_check
+        #과 파라미터 + / 멘탈 +
+        "투표를 적당히 마감해서인지, 장발대에 친구들이 많이 왔다."
+        "과 분위기도 좋아진 것 같고 내 마음도 훈훈하다."
+        $ gwa_parameter += 10
+        $ mental_point += 20
+        call parameter_maxmin_check
 
     #2. 장발 투표를 4/4 이후로 끝냈을 시(4월 4일, 4월 5일에 종료 하였을 경우)
-    show jangbal_f at truecenter
-    Player "엥? 나밖에 안 온건가…애들은..?"
+    else :
+        show jangbal_f at truecenter
+        Player "엥? 나밖에 안 온건가…애들은..?"
 
-    "휴대폰을 꺼내서 확인해보니 장발대 중 1명은 급한일이 생겨서 후발대로 바꾼다는 연락이 와있었다…"
+        "휴대폰을 꺼내서 확인해보니 장발대 중 1명은 급한일이 생겨서 후발대로 바꾼다는 연락이 와있었다…"
 
-    Player "하...애들 진짜..그래도 첫 뻔엠인데.."
-    Samyong "엇 미안 조금 늦었네.."
-    Jangjung "죄송 죄송~ 차가 조금 막혀서"
-    Jinil "응? 근데 너 밖에 없냐? 다른 애들은??"
-    Player "방금 전에 한 명 또 연락 와서 후발대로 바꾼대"
-    Jangjung "엑? 진짜? 와 애들 진짜 너무하네…"
-    Player "어쩔 수 없지 뭐…그래도 아 저기 남은 애들 온다. 이 쯤이면 다 모인 것 같으니까 슬슬 출발할까?"
-    Jinil "뭐 그래 어쩔 수 없지. 이렇게 된 거 안주 같은거 우리가 먹고 싶은걸로 다 사자!"
-    Samyong "나는 통큰팝콘~"
+        Player "하...애들 진짜..그래도 첫 뻔엠인데.."
+        Samyong "엇 미안 조금 늦었네.."
+        Jangjung "죄송 죄송~ 차가 조금 막혀서"
+        Jinil "응? 근데 너 밖에 없냐? 다른 애들은??"
+        Player "방금 전에 한 명 또 연락 와서 후발대로 바꾼대"
+        Jangjung "엑? 진짜? 와 애들 진짜 너무하네…"
+        Player "어쩔 수 없지 뭐…그래도 아 저기 남은 애들 온다. 이 쯤이면 다 모인 것 같으니까 슬슬 출발할까?"
+        Jinil "뭐 그래 어쩔 수 없지. 이렇게 된 거 안주 같은거 우리가 먹고 싶은걸로 다 사자!"
+        Samyong "나는 통큰팝콘~"
 
-    #과 파라미터 - / 멘탈 -
-    $ gwa_parameter -= 10
-    $ mental_point -= 20
-    call parameter_maxmin_check
+        #과 파라미터 - / 멘탈 -
+        "투표를 너무 늦게 마감해서인지, 애들이 전부 후발대로 탈주했다."
+        "과 분위기가 이렇게 흉흉했다니... 내 멘탈이 터졌다."
+        $ gwa_parameter -= 10
+        $ mental_point -= 20
+        call parameter_maxmin_check
 
     show naksung at truecenter
     "친구들과 지하철을 타고 엠티 장소와 가까운 마트에 도착해서 장을 보기로 했다. 예산에 맞게 저녁으로 먹을 음식, 안주와 술 등을 사던 도중 낙성대학교 학생들이 과잠을 입고 장을 보고 있는 모습을 보게되었다."
@@ -95,79 +101,57 @@ label fun_mt:
     $ day_or_evening = "evening"
 
     #(장발대가 적을 경우 => 4/4 이후로 투표를 끝냈을 경우 추가 스크립트) (앞의 장발, 후발에서 2번경우)
-    show jangbal_little at truecenter
-    "비록 장발대는 적었지만, 각자 원하는 것을 사다보니 짐이 많아졌다. 많은 짐을 적은 수의 장발대가 옮기느라 생각보다 많은 힘을 소모했다."
-    #체력 파라미터 -
-    $ hp -= 40
-    call parameter_maxmin_check
+    if fun_mt_vote_day >= 32 :
+        show jangbal_little at truecenter
+        "비록 장발대는 적었지만, 각자 원하는 것을 사다보니 짐이 많아졌다. 많은 짐을 적은 수의 장발대가 옮기느라 생각보다 많은 힘을 소모했다."
+        #체력 파라미터 -
+        $ hp -= 40
+        call parameter_maxmin_check
 
     #(여기서부터는 공통 스크립트)
     show big_room at truecenter
     Jangjung "으아아~ 도착했다~!"
     Samyong "하 짐 옮기느라 힘들었어.."
     Jinil "내 말이...그래도 고생했다."
-    Player "음 이제 뭐하지?"
-    Samyong "난 힘드니까 좀 쉴래~"
-    Jangjung "나도 조금만 쉬어야지.."
-    Player "맞다. 우리 통큰팝콘 사왔으니까 먹자! 선배들이 이건 장발의 로망이랬음."
-    Samyong "맞아맞아~ 역시 사길 잘했네!"
-
-    show jangbal_rest at truecenter
-    Jinil "야 너희 거기서 그냥 그렇게 누워만 있을거냐? 엠티왔으면 족구지~ 나랑 같이 놀 사람 나와라!"
-    Jangjung "오오 족구~"
-    Player "적당히 놀고~ 음 배도 고픈데 장발용으로 사온 비빔면이나 끓여먹을까? 먹고 싶은 사람?"
-    Samyong "나 나나나 나나나나나나 솨"
-    Player "와...언제적 나나나 송이야.. 우리 형이 한 때 엄청 부르고 다녔는데, 넌 근데 외특인데 그건 어떻게 아는거냐?"
-    Samyong "응? 최근 예능에 나오던데?"
-    Jinil "그런식이면 한일 월드컵도 최근이겠다...여튼 난 족구하러 나간다."
-    Jangjung "여튼 라면 다 끓이면 말해줘~"
-    Jinil "나도!"
-    Player "오키오키~"
 
     show jangbal_one at truecenter
-    "밖을 보니 진일, 장중이와 몇몇 친구들이 족구를 하고 있었다."
+    "조금 쉬다가 밖을 보니 진일, 장중이와 몇몇 친구들이 족구를 하고 있었다."
 
     scene black
     "몇 시간 뒤, 후발대 친구들이 도착했고 다 같이 고기를 구워 먹게 되었다. 나는 뻔대의 역할을 다하기 위해 자연스럽게 고기를 굽는 역할을 맡게 되었다."
 
     #과 파라미터에 따라 달라지는 스크립트. 5, 6
     #5 과 파라미터가 n 이상일 때
-    show gogi_s at truecenter
-    Jangjung "와 뻔대 최고다! 고기 진짜 잘 굽네."
-    Ohduck "오이시이~ 아리가또 고자이마스. 뻔대쿤"
-    Daehyun "진짜 너무 맛있다. 뻔대야 힘들면 바꿔줄까?"
-    Player "아녀아녀 괜찮아. 맛있다니 다행이네."
-    Mirae "음 또 뭐 필요한 건 없어?"
-    Hyunjae "아 저기 고기 다 떨어진 것 같은데, 꺼내 줘야겠다. (부스럭부스럭) 여기!"
-    Player "오 땡큐~ 일단 앉아있어. 고기 굽는데 조금 더 걸리니까."
-    Samyong "오키오키~"
+    if gwa_parameter >= 40 :
+        show gogi_s at truecenter
+        Jangjung "와 뻔대 최고다! 고기 진짜 잘 굽네."
+        Ohduck "오이시이~ 아리가또 고자이마스. 뻔대쿤"
+        Daehyun "진짜 너무 맛있다. 뻔대야 힘들면 바꿔줄까?"
+        Player "아녀아녀 괜찮아. 맛있다니 다행이네."
+        Hyunjae "아 저기 고기 다 떨어진 것 같은데, 꺼내 줘야겠다. (부스럭부스럭) 여기!"
+        Player "오 땡큐~ 일단 앉아있어. 고기 굽는데 조금 더 걸리니까."
 
-    "친구들이 내가 구운 고기를 맛있게 먹고, 필요할 때 말을 안해도 나의 일을 도와준다. 행복한 기분이 든다."
-    #멘탈 +
-    $ mental_point += 10
-    call parameter_maxmin_check
+        "친구들이 내가 구운 고기를 맛있게 먹고,\n알아서 일을 도와준다. 행복하다."
+        #멘탈 +
+        $ mental_point += 10
+        call parameter_maxmin_check
 
     #6 과 파라미터가 n 미만일 때
-    show gogi_f at truecenter
-    Jinil "오 고기 맛있게 잘 굽는데?"
-    Daehyun "와 진짜 맛있다. 다음 고기 언제 나오냐??"
-    Jangjung "고 기 고 기 고 기 고 기"
-    Player "아 잠시만, 새로 꺼내야 해서 (부스럭 부스럭) 엇!"
+    else :
+        scene black
+        "굽고 있는 고기를 보면서 새 고기를 꺼내다가 땅에 떨어뜨려버렸다!"
 
-    scene black
-    "굽고 있는 고기를 보면서 새 고기를 꺼내다가 땅에 떨어뜨려버렸다!"
+        show gogi_f at truecenter
+        Samyong "아~ 뻔대 뭐하냐."
+        Hyunjae "아 아까운 고기...뻔대야 정신 차리자~!"
+        Geumji "그래 그래 고기는 맛있지만, 돈 아깝게 고기는 왜 떨어뜨리니.."
+        Ohduck "큽...아깝다는.."
+        Player "으아아 미안 미안...으앗 고기 탄다 탄다!!"
 
-    show gogi_f at truecenter
-    Samyong "아~ 뻔대 뭐하냐."
-    Hyunjae "아 아까운 고기...뻔대야 정신 차리자~!"
-    Geumji "그래 그래 고기는 맛있지만, 돈 아깝게 고기는 왜 떨어뜨리니.."
-    Ohduck "큽...아깝다는.."
-    Player "으아아 미안 미안...으앗 고기 탄다 탄다!!"
-
-    "친구들의 구박을 받으면서 고기를 열심히 구웠다. 그래도 나름 열심히 하고 있는데, 아무도 알아주지 않는 것 같아 살짝 서러웠다."
-    #멘탈 -
-    $ mental_point -= 20
-    call parameter_maxmin_check
+        "구박을 받으면서 고기를 열심히 구웠다. 나름 열심히 하고 있는데, 아무도 알아주지 않는 것 같아 살짝 서러웠다."
+        #멘탈 -
+        $ mental_point -= 20
+        call parameter_maxmin_check
 
     show gwa at truecenter
     "친구들과 고기를 맛있게 먹은 후, 엠준위에서 준비한 레크리에이션을 다들 즐겁게 즐겼다. 준비한 보람이 있었다."
@@ -180,7 +164,7 @@ label fun_mt:
     Ohduck "그렇다는~"
     Jangjung "빨리빨리 마시자! 뻔대야 건배사 해~"
     Player "오키오키! 자 문정과 19학번, 오늘 이렇게 우리끼리 엠티 와서 너무 재밌었고, 아직 밤은 기니까 신나게 마셔보자! 자 건배!!"
-    "아이들" "건배!!!!!!"
+    "친구들" "건배!!!!!!"
 
     "자연스럽게 친구들 사이를 돌아다니면서 소주 한 병 정도를 마셨다.."
 
@@ -290,8 +274,8 @@ label fun_morning:
         "밖을 보니 슬슬 첫 차가 다닐 시점이라 몇몇 아이들이 갈 준비를 하는 것 같다."
 
         show big_room at truecenter
-        Geumji "그럼 난 과외가 있어서 먼저 가볼게~"
-        Geumji "못 도와줘서 미안~"
+        Geumji "그럼 난 과외가 있어서 먼저 가볼게~\n"
+        extend "못 도와줘서 미안~"
         Player "뭐야 안금지 갔네?"
         Mirae "아 뻔대 일어났어?? 쟨 총엠때도 그러더니 술도 많이 안 마시면서 첫 차 시간은 칼같이 지키더라"
         Player "뭐 어쩔 수 없지..자! 그럼 슬슬 치워볼까?"

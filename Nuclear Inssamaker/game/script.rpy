@@ -28,6 +28,10 @@ init python:
 
     #event용 스위치
     gwa_jam_finished = False
+    fun_mt_location_finished = False
+    fun_mt_vote_finished = False
+    # 4월 4일 전까지 투표를 끝냈는가 확인하기 위한 변수
+    fun_mt_vote_day = 0
 
     class messages :
         def __init__(self) :
@@ -65,8 +69,10 @@ init python:
     dongah = messages()
 
     fbook_post = []
+#    fbook_count = 0
 
     def fbook_post_add(data) :
+        fbook_count_tmp = 0
         tmp = data.split("|")
 #        if week > 1 or month > 3:
 #            del fbook_post[0]
@@ -81,7 +87,8 @@ init python:
             tmp[3] = ''.join(tmplist)
 
             fbook_post.extend([[tmp[0], tmp[1], tmp[2], tmp[3]]])
-            fbook_count += 1
+#            fbook_count_tmp += 1
+#            fbook_count = fbook_count_tmp
 
         elif tmp[0] == "댓글" :
             tmplist = list(tmp[2])
@@ -95,7 +102,6 @@ init python:
         else :
             fbook_post.extend([[tmp[0]]])
 
-    fbook_count = 0
 
     #카톡모드 1 = 친구목록, 2 = 대화목록
     ktalk_mode = 1
@@ -106,6 +112,7 @@ init python:
                      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
     for_day_schedule_select = 0
+
 
 # 여기에서부터 게임이 시작합니다.
 label start:
@@ -179,8 +186,6 @@ label what_is_your_name:
     p "내 이름은 [povname]!"
 
     return
-
-
 
 
 # label start에서 호출됨

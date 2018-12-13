@@ -135,30 +135,82 @@ label weekday_day_event :
         call uniform_day
 
     elif month == 4 and week == 1 and day == 2 :
-        "장소 투표 결과 대별리8 / 신숲8 / 보류4"
+        "지난밤 카톡에서 뻔엠 장소와 장발후발 관련 얘기가 나왔습니다. 확인해주세요."
+        "장소 투표 결과 대별리8 / 신숲8 / 미투표4"
         "투표를 더 진행하시겠습니까?"
         menu :
             "투표 계속하기" :
-                ""
+                "투표를 계속 진행합니다."
 
             "투표 마치고 결정하기" :
                 "투표가 동률이 나왔습니다. 당신은 무엇을 선택하시겠습니까?"
                 menu :
-                    "대별리" :
-                        ""
-                    "신숲" :
-                        ""
+                    "장중이와 진일이가 미는 '대별리'" :
+                        "투표를 마감했다. 장중이와 진일이가 좋아한다"
+                        $ jangjung.parameter += 20
+                        $ jinil.parameter += 20
+
+                    "삼용이가 미는 '신숲'" :
+                        "투표를 마감했다. 삼용이가 좋아한다."
+                        $ samyong.parameter += 20
+
+                call parameter_maxmin_check
+                $ fun_mt_location_finished = True
 
         "장발후발 투표 결과 장발대10 / 후발대6"
         "투표를 더 진행하시겠습니까?"
         menu :
             "투표 계속하기" :
-                ""
+                "투표를 계속 진행합니다."
 
-            "투표 마치고 결정하기" :
-                ""
+            "투표 종료하기" :
+                $ fun_mt_vote_finished = True
+                # 4/4 전까지 끝냈는가?를 세기 위한 변수
+                $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
+
+    elif month == 4 and week == 1 and day == 3 :
+        if fun_mt_location_finished == False :
+            "장소 투표 결과 대별리10 / 신숲10"
+            "투표가 동률이 나왔습니다. 당신은 무엇을 선택하시겠습니까?"
+            menu :
+                "장중이와 진일이가 미는 '대별리'" :
+                    "투표를 마감했다. 장중이와 진일이가 좋아한다"
+                    $ jangjung.parameter += 20
+                    $ jinil.parameter += 20
+
+                "삼용이가 미는 '신숲'" :
+                    "투표를 마감했다. 삼용이가 좋아한다."
+                    $ samyong.parameter += 20
+
+        if fun_mt_vote_finished == False :
+            "장발후발 투표 결과 장발대 9 / 후발대 11"
+            "투표를 더 진행하시겠습니까?"
+                menu :
+                    "투표 계속하기" :
+                        "투표를 계속 진행합니다."
+
+                    "투표 종료하기" :
+                        $ fun_mt_vote_finished = True
+                        $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
+
+    elif month == 4 and week == 1 and day == 4
+        if fun_mt_vote_finished == False :
+            "장발후발 투표 결과 장발대 8 / 후발대 14"
+            "점점 장발대가 줄어들고 있습니다.\n투표를 더 진행하시겠습니까?"
+                menu :
+                    "투표 계속하기" :
+                        "투표를 계속 진행합니다."
+
+                    "투표 종료하기" :
+                        $ fun_mt_vote_finished = True
+                        $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
+
 
     elif month == 4 and week == 1 and day == 5 :
+        if fun_mt_vote_finished == False :
+            "장발후발 투표 결과 장발대 8 / 후발대 14"
+            "투표가 종료되었습니다."
+
         call fun_mt
 
     elif month == 5 and week == 1 and day == 2 :
