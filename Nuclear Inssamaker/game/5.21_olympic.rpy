@@ -196,7 +196,7 @@ label olympic:
     extend "빨리 종강이나 했으면 좋겠다"
 
     # HP -30, MP -30
-    $ hp -= 30
+    $ hp -= 60
     $ mental_point -= 30
     call parameter_maxmin_check
 

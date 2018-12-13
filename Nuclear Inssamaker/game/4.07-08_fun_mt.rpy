@@ -54,9 +54,10 @@ label fun_mt:
     Player "어쩔 수 없지 뭐…그래도 아 저기 남은 애들 온다. 이 쯤이면 다 모인 것 같으니까 슬슬 출발할까?"
     Jinil "뭐 그래 어쩔 수 없지. 이렇게 된 거 안주 같은거 우리가 먹고 싶은걸로 다 사자!"
     Samyong "나는 통큰팝콘~"
+
     #과 파라미터 - / 멘탈 -
     $ gwa_parameter -= 10
-    $ mental_point -= 10
+    $ mental_point -= 20
     call parameter_maxmin_check
 
     show naksung at truecenter
@@ -97,7 +98,7 @@ label fun_mt:
     show jangbal_little at truecenter
     "비록 장발대는 적었지만, 각자 원하는 것을 사다보니 짐이 많아졌다. 많은 짐을 적은 수의 장발대가 옮기느라 생각보다 많은 힘을 소모했다."
     #체력 파라미터 -
-    $ hp -= 20
+    $ hp -= 40
     call parameter_maxmin_check
 
     #(여기서부터는 공통 스크립트)
@@ -165,7 +166,7 @@ label fun_mt:
 
     "친구들의 구박을 받으면서 고기를 열심히 구웠다. 그래도 나름 열심히 하고 있는데, 아무도 알아주지 않는 것 같아 살짝 서러웠다."
     #멘탈 -
-    $ mental_point -= 10
+    $ mental_point -= 20
     call parameter_maxmin_check
 
     show gwa at truecenter

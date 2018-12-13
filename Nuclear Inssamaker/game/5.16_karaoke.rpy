@@ -12,14 +12,14 @@ image kasi = "karaoke/kasi.jpg"
 # 노래방 5월 16일 월요일 month == 5 and week == 3 and day == 1 저녁
 label karaoke:
     show school2 at truecenter
-    Player "우리 오늘 공부도 안되는데 코노고?\n"
-    Samyong "좋은데? 오랜만에 첨밀밀 한 번 불러봐야지\n"
+    Player "우리 오늘 공부도 안되는데 코노고?"
+    Samyong "좋은데? 오랜만에 첨밀밀 한 번 불러봐야지"
     Jinil "오... 나도 껴줘!"
     Hyunjae "녹두 ㄱㄱ"
 
     show karaoke at truecenter
-    "노래방 기계" "박효신 야생화 예약하셨습니다.\n"
-    "친구들" "오오... 누구냐?\n"
+    "노래방 기계" "박효신 야생화 예약하셨습니다."
+    "친구들" "오오... 누구냐?"
     Player "흠흠... 목 좀 풀어볼까?"
     "친구들" "노래방 점수로 밥 내기!"
 

@@ -2,22 +2,15 @@
 image dance = "dongsoze/dance.jpg"
 image donga = "dongsoze/donga.jpg"
 image perfo = "dongsoze/perfo.jpg"
-image dongsoze = "dongsoze/dongsoze.jpg"
+# image dongsoze = "dongsoze/dongsoze.jpg"
 
 # 3월 9일 동소제 이벤트
 # month3 week2 day 1
 label dongsoze:
     scene black
-    "오늘은 동아리 소개제가 있는 날이다. 공강 시간을 이용해 장중, 삼용, 대현이와 함께 동아리 소개제 구경을 가게 되었다."
+    "오늘은 동아리 소개제가 있는 날이다.\n공강 시간을 이용해 동아리 소개제 구경을 가게 되었다."
 
     scene black
-    show dongsoze at truecenter
-    "무대 의상을 입은 학생" "여러분 춤 구경하고 가세요~"
-    "안경을 쓴 학생" "게임 개발 해보시지 않겠습니까?"
-    "가오나시 의상을 입은 학생" "설문 하나만 작성해주세요!!"
-    "롱패딩을 입은 학생" "공연 보고 가세요~~"
-    "웅성 웅성"
-
     "동소제를 둘러보던 중 앞쪽에 사람들이 모여 있는 모습을 발견하고 그 쪽으로 가보기로 했다."
 
     show donga at truecenter
@@ -28,10 +21,6 @@ label dongsoze:
     Player "맞나? 그래도 분위기 꽤 좋나보네?"
     Dongah "엉, 선배들끼리도 되게 화목해보이고 실력도 다들 출중하셔가지고 괜찮드라"
     Dongah "어? 근데 뒤에는 친구들이가? 그럼 친구들도 있는데 노래 한 곡 해줘야지 않겠나?"
-    Player "엥? 그래도 되나? 동아리 사람들이 뭐라 안하나?"
-    Dongah "안한다 안한다~ 마 걍 불러줘라~"
-    Dongah "애들이 저러는데 한 번 불러야지!"
-    Player "어엌...뭐 그래 불러줄게~"
 
     scene black
     "분위기에 휩쓸려 노래를 불렀다! 사람들의 시선이 느껴진다!"

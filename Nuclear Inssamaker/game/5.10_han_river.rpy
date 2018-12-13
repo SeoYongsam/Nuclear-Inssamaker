@@ -8,11 +8,9 @@ image school = "han_river/school.JPG"
 # 한강 5월 10일 화요일 month == 5 and week == 2 and day == 2 낮-저녁
 label han_river:
     show school at truecenter
-    Jangjung "날씨도 좋은데 오늘 한강 놀러 갈까?\n"
-    Player "좋은데? 우리 한강 뻔모 한 번 할까?\n"
+    Jangjung "날씨도 좋은데 오늘 한강 놀러 갈까?"
+    Player "좋은데? 우리 한강 뻔모 한 번 할까?"
     Samyong "하오하오 따자하오"
-    Hyunjae "가면 진일이 오토바이 타고 있는거 아니냐 ㅋㅋㅋㅋ"
-    Mirae "ㅋㅋㅋㅋㅋ 태워달라고 해야겠다"
 
     "한강에 가시겠습니까?"
     menu:
@@ -24,44 +22,30 @@ label han_river:
             Player "와 날씨 대박이다"
             Hyunjae "미래야 유채꽃 진짜 예쁘다!!"
             Mirae "진짜로... 너랑 같이 와서 너무 좋다"
-            Samyong "너네는 따로 가서 놀아라...."
-            Hyunjae "ㅋㅋㅋㅋ 이따가 알아서 사라질게"
-            Daehyun "야 근데 저기 킥보드 타는 애 진일이 아니냐?ㅋㅋㅋㅋ"
-            "친구들" "어디어디???"
-            Daehyun "넝ㅋ담ㅋ"
-            Jinil "대현아 죽고싶냐 ㅋㅋㅋㅋㅋ"
-            "친구들" "참아참아 ㅋㅋㅋㅋ"
             Player "우리 돗자리 깔고 어디 앉아서 놀자!!"
-            "친구들" "콜콜\n"
-            extend "저기로 가자 ㅋㅋㅋ"
+            "과 분위기가 좋아진 것 같다. 내 마음도 따뜻해진다."
+
             #과 파라미터 + / 멘탈 + / 체력 -
             $ gwa_parameter += 10
             $ mental_point += 10
             $ hp -= 20
             call parameter_maxmin_check
 
-            show han_river_image2 at truecenter
-            Jangjung "와 날씨 죽인다\n"
-            extend "치맥고?"
-            Jinil "완전 콜이지"
-            Samyong "근데 여기까지 배달이 와?"
-
             show chicken at truecenter
             "(열심히 치킨을 먹는다.)"
             Samyong "한국 배달 문화 진짜 짱이다...."
             Player "와 진짜 JMT"
             Jinil "JMT가 뭐냐??!"
-            "친구들" "으 김진일 문찐이네.\n"
-            extend "갑분싸 만드네"
+            "친구들" "으 김진일 문찐이네."
             Jinil "야이씨... 모를 수도 있지(발끈)"
 
-            "친구들을 말리겠습니까?"
+            "진일이를 못 놀리게 친구들을 말리겠습니까?"
             menu:
                 "말린다":
                     show chicken at truecenter
                     Player "어 JMT가 뭐야??"
                     "친구들" "아 너도 모르냐 ㅋㅋㅋ"
-                    Jinil "ㅋㅋㅋㅋ 얘도 모르네\n"
+                    Jinil "ㅋㅋㅋㅋ 얘도 모르네"
                     extend "얘가 나보다 더하네 ㅋㅋㅋ"
                     Player "김진일 너는 나한테 그런말 하면 안되지 ㅋㅋㅋ"
                     Jinil "와 진짜 너무 고였다 ㅉㅉ"
@@ -72,12 +56,14 @@ label han_river:
                     extend "(나는 제대로 놀지도 못하고 분위기만 좋게하려고 노력하네)"
                     "친구들" "오늘 너무 즐거웠어! 잘 들어가~"
                     Player "응응 너도!!!"
+
+                    "진일이가 나한테 내심 고마워하는 것 같긴 한데, 어쩐지 난 기분이 찝찝하다."
                     #김진일과의 파라미터 ++ // 멘탈 -
                     $ jinil.parameter += 40
-                    $ mental_point -= 10
+                    $ mental_point -= 20
                     call parameter_maxmin_check
 
-                "일진이를 놀리는 것에 동참한다":
+                "진일이를 놀리는 것에 동참한다":
                     show chicken at truecenter
 
                     Player "김진일 진짜 갑분싸 지렸다\n"
@@ -88,7 +74,10 @@ label han_river:
 
                     show back at truecenter
 
-                    "친구들" "야 일진아... 일진아"
+                    "친구들" "야 진일아... 진일아"
+
+                    "진일이가 많이 속상해한다. 괜히 미안해진다."
+                    "...그래도 진일이의 희생으로 과 분위기가 좋아진 것 같은데...?"
 
                     #일진 파라미타 -- / 과 ++
                     $ jinil.parameter -= 40

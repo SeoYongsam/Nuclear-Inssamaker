@@ -34,6 +34,7 @@ label jangtuh_event:
 
 
         "계획한 대로 오후를 보낸다":
+            ""
 
     return
 
@@ -59,6 +60,7 @@ label jangtuh_event:
             "애들이 열정이 많아서인지 무모해서인지는 모르겠지만 메뉴를 정할때 회의가 산으로 갈 뻔한 적이 많았다."
 
         "계획한 대로 오후를 보낸다":
+            ""
 
     return
 
@@ -83,6 +85,7 @@ label jangtuh_event:
 
 
         "계획한 대로 오후를 보낸다":
+            ""
 
     return
 
@@ -107,5 +110,6 @@ label jangtuh_event:
 
 
         "계획한 대로 오후를 보낸다":
+            ""
 
     return

@@ -111,7 +111,10 @@ screen month_schedule_icon_show():
                         add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
                     elif day_schedule[month_for_display][(i-1)*8 + j] == 2:
-                        add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                        if j != 4 :
+                            add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                        else :
+                            add im.Alpha(im.MatrixColor("planner/sel_club_thur.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
                     elif day_schedule[month_for_display][(i-1)*8 + j] == 3:
                         add im.Alpha(im.MatrixColor("planner/sel_gwa.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
