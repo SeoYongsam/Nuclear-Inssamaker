@@ -66,7 +66,7 @@ label change_jangjung_talk :
                 $ jangjung.add("진일|엠티는 당연히 대별리지~")
                 $ jangjung.add("연속|신숲은 무슨 거기로 하면 술마시다가 애들 다 도망간다니까?")
                 $ jangjung.add("연속|뻔대야 너도 대별리가 좋지??")
-                $ jangjung.add("연속|대별리 뽑아줰ㅋㅋㅋㅋ")
+                $ jangjung.add("연속|대별리 뽑아줘ㅋㅋㅋㅋ")
 
             elif day == 6 :
                 $ jangjung.add("날짜|4월 7일 토요일")

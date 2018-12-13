@@ -19,7 +19,7 @@ label change_fbook_post :
                 $ fbook_post_add("본문|해장중|2019년 3월 4일|오늘은 간맥~ 나라고 언제나 죽을 때까지 마시는 건 아니다~ 이 말이야!! #간맥 #절주 #간파이팅")
                 $ fbook_post_add("댓글시작")
                 $ fbook_post_add("댓글|박대현|이 분 500잔에 소주 반 병 타고 마시고 있답니다. 글 내려주시죠")
-                $ fbook_post_add("댓글|해장중|으엨ㅋ 나 아짘ㅋ ㅓㄷ 마실ㄹㄹ거ㅇㅁㅣㅋㅌㅋㅋㅋㅌㅋㅌㅋㄱㅋㅌㅌㅋ ㅡㅏㅏㅏ깁ㅜㄴㄴ 좋탘ㅋㅋㅋㅌㅌㅋㄱㅋㄱㄲㅋ")
+                $ fbook_post_add("댓글|해장중|으에ㅋㅋ 나 아지ㅋㅋㅋ ㅓㄷ 마실ㄹㄹ거ㅇㅁㅣㅋㅌㅋㅋㅋㅌㅋㅌㅋㄱㅋㅌㅌㅋ ㅡㅏㅏㅏ깁ㅜㄴㄴ 좋타ㅋㅋㅋㅌㅌㅋㄱㅋㄱㄲㅋ")
                 $ fbook_post_add("댓글|김진일|아 얘도 나랑 마시기엔 많이 약하네;; 나랑 대작할 사람 없냐...;;")
                 $ fbook_post_add("댓글종료")
                 $ fbook_post_add("그림자")
@@ -54,8 +54,8 @@ label change_fbook_post :
             elif day == 2 :
                 $ fbook_post_add("본문|동삼용|2019년 3월 10일|문정과 19학번 대학생활 로망조지기~ 함께 마셔주는 친구들이 있어 행복하다~ #그리고 #당연하게 #존재하는 #뻔대님 #파이팅")
                 $ fbook_post_add("댓글시작")
-                $ fbook_post_add("댓글|유현재|아닠ㅋㅋㅋㅋㅋ결국 저깄네ㅋㅋㅋㅋ 예상에서 벗어나질 않앜ㅋㅋ")
-                $ fbook_post_add("댓글|해장중|내 말잌ㅋㅋ 이럴 거면 단톡에서 한숨 쉬지를 말던갘ㅋㅋㅋ")
+                $ fbook_post_add("댓글|유현재|아니ㅋㅋㅋㅋㅋ결국 저깄네ㅋㅋㅋㅋ 예상에서 벗어나질 않앜ㅋㅋ")
+                $ fbook_post_add("댓글|해장중|내 말잌ㅋㅋ 이럴 거면 단톡에서 한숨 쉬지를 말던가ㅋㅋㅋ")
                 $ fbook_post_add("댓글종료")
                 $ fbook_post_add("그림자")
 
@@ -105,10 +105,6 @@ label change_fbook_post :
                 $ fbook_post_add("본문|안금지|2019년 3월 19일|우리 과잠 더 예뻤으면 좋겠다...")
                 $ fbook_post_add("그림자")
 
-            elif day == 5 :
-                $ fbook_post_add("본문|유현재|2019년 3월 20일| {color=#808080}유현재님이 노미래님과 {color=#ff0000}연애중{color=#808080}입니다.")
-                $ fbook_post_add("그림자")
-
             elif day == 6 :
                 $ fbook_post_add("본문|유현재|2019년 3월 21일|날씨가 아직 춥다... 하지만 마음은 따뜻따뜻 ~~~ <3 - 현재님은 지금 매우 행복해요")
                 $ fbook_post_add("댓글시작")
@@ -130,12 +126,12 @@ label change_fbook_post :
                 $ fbook_post_add("본문|동삼용|2019년 3월 24일|과잠 얼른 입어보고 싶다~~ 기대된다~~ ㅎㅎ")
                 $ fbook_post_add("댓글시작")
                 $ fbook_post_add("댓글|해장중|과 잠 과 잠 과 잠")
-                $ fbook_post_add("댓글|박대현|저 과잠무새진짴ㅋㅋㅋㅋ")
+                $ fbook_post_add("댓글|박대현|저 과잠무새진짜ㅋㅋㅋㅋㅋ")
                 $ fbook_post_add("댓글종료")
                 $ fbook_post_add("그림자")
 
             elif day == 3 :
-                $ fbook_post_add("본문|유현재|2019년 3월 25일|유현재님은 노미래님과 연애중♥입니다.")
+                $ fbook_post_add("본문|유현재|2019년 3월 25일|{color=#808080}유현재님이 노미래님과 {color=#ff0000}연애중{color=#808080}입니다.")
                 $ fbook_post_add("댓글시작")
                 $ fbook_post_add("댓글|해장중|미친ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 뭐냨ㅋㅋㅋㅋㅋㅋㅋ")
                 $ fbook_post_add("댓글|박대현|와 대박.. 축하해 ㅋㅋㅋㅋ")
@@ -157,7 +153,7 @@ label change_fbook_post :
                 $ fbook_post_add("본문|김진일|2019년 3월 27일|공략건다 얘들아. 나 뻔엠가서 소주 3병 못마시면 다 형 누나라고 불러드림")
                 $ fbook_post_add("댓글시작")
                 $ fbook_post_add("댓글|해장중|오케이 박제한다 딴말하면 애슐리 퀸즈 ㄱ")
-                $ fbook_post_add("댓글|김진일|@해장중 ㅋㅋㅋㅋㅋㅋㅋ 어디서 제자녀석이 스승한테 덤비냨ㅋㅋ")
+                $ fbook_post_add("댓글|김진일|@해장중 ㅋㅋㅋㅋㅋㅋㅋ 어디서 제자녀석이 스승한테 덤비냐ㅋㅋ")
                 $ fbook_post_add("댓글|해장중|@김진일 청출어람이란 말 못들어보셨습니까 스승님? 이 제자 뻔엠에서는 이겨드리겠습니다")
                 $ fbook_post_add("댓글|동삼용|ㅋㅋㅋ 지켜봐야지~")
                 $ fbook_post_add("댓글종료")
@@ -473,7 +469,7 @@ label change_fbook_post :
                 $ fbook_post_add("본문|김진일|2019년 6월 12일|누구인가? 지금 누가 종강소리를 내었어? 누가 종강소리를 내었는가 말이야!! /n 참으로 딱하구나! 저 자의 머릿속에는 마구니가 가득하다! 과제로 때려 죽여라.")
                 $ fbook_post_add("댓글시작")
                 $ fbook_post_add("댓글|해장중|엌ㅋㅋㅋㅋㅋㅋ 미친ㅋㅋㅋㅋㅋㅋ")
-                $ fbook_post_add("댓글|박대현|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ시험기간 드립 오지넼ㅋㅋ")
+                $ fbook_post_add("댓글|박대현|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ시험기간 드립 오지네ㅋㅌㅋㅋㅋ")
                 $ fbook_post_add("댓글|유현재|ㄹㅇㅋㅋㅋㅋㅋㅋㅋ")
                 $ fbook_post_add("댓글종료")
                 $ fbook_post_add("그림자")

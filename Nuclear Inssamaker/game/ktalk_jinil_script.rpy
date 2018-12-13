@@ -57,7 +57,7 @@ label change_jinil_talk :
                 $ jinil.add("김진일|엠티는 당연히 대별리지~")
                 $ jinil.add("연속|신숲은 무슨 거기로 하면 술마시다가 애들 다 도망간다니까?")
                 $ jinil.add("연속|뻔대야 너도 대별리가 좋지??")
-                $ jinil.add("연속|대별리 뽑아줰ㅋㅋㅋㅋ")
+                $ jinil.add("연속|대별리 뽑아줘ㅋㅋㅋㅋ")
 
             elif day == 6 :
                 $ jinil.add("날짜|4월 7일 토요일")
@@ -91,8 +91,8 @@ label change_jinil_talk :
                 $ jinil.add("연속|시험 끝나고 함 가실??")
                 $ jinil.add("주인공|엌ㅋㅋㅋㅋㅋㅋ 나야 좋지")
                 $ jinil.add("주인공|날 잡아!!")
-                $ jinil.add("김진일|무슨 코노에 날까지 잡냨ㅋㅋ 그냥 땡기면")
-                $ jinil.add("연속|가면 되는거지 뭨ㅋㅋㅋ")
+                $ jinil.add("김진일|무슨 코노에 날까지 잡냐ㅋㅋ 그냥 땡기면")
+                $ jinil.add("연속|가면 되는거지 뭐ㅋㅋㅋ")
                 $ jinil.add("주인공|ㅇㅈㅇㅈ~ 담에 갠톡하삼")
 
         elif week == 3 :
