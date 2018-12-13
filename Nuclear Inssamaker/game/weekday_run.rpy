@@ -7,7 +7,8 @@ label weekday_day :
     show screen phone_icon
 
     $ YoIl = day_name[day]
-    $ day_for_show = (week-1)*8 + day + 1
+    if day < 7 :
+        $ day_for_show = (week-1)*7 + day + 1
 
     if hp <= 30 :
         if hp == 0 :

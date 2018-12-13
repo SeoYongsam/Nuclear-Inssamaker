@@ -26,27 +26,6 @@ image rest :
     pause 0.3
     repeat
 
-define Jinil = Character("진일", color="#ffcccc", image="Jinil")#, window_left_padding = -100)
-#image side Jinil :
-#    "character/cha1.png"
-#    xzoom -1
-
-define Player = Character("주인공", color="#ffcccc", image="Player")
-#image side Player :
-#    "character/cha2.png"
-#    xzoom -1
-
-define Jangjung = Character("장중", color="#ffcccc", image="Jangjung")
-#image side Jangjung :
-#    "character/cha3.png"
-#    xzoom -1
-
-define Samyong = Character("삼용", color="#ffcccc", image="Samyong")
-#image side Samyong :
-#    "character/cha4.png"
-#    xzoom -1
-
-
 label weekday_evening_event :
     $ day_or_evening = "evening"
 
