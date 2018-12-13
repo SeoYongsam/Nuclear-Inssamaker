@@ -27,7 +27,7 @@
 
 
     elif month == 3 and week == 3 and day == 5 :
-        if gwa_jam_finished = False :
+        if gwa_jam_finished == False :
             "과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
             "투표를 더 진행하시겠습니까?"
             menu :
@@ -47,7 +47,7 @@
 
 
     elif month == 3 and week == 3 and day == 6 :
-        if gwa_jam_finished = False :
+        if gwa_jam_finished == False :
             #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
             "투표를 더 진행하시겠습니까?"
             menu :
@@ -66,7 +66,7 @@
                     $ gwa_jam_finished = True
 
     elif month == 3 and week == 4 and day == 1 :
-        if gwa_jam_finished = False :
+        if gwa_jam_finished == False :
             #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
             "투표를 더 진행하시겠습니까?"
             menu :
@@ -85,7 +85,7 @@
                     $ gwa_jam_finished = True
 
     elif month == 3 and week == 4 and day == 2 :
-        if gwa_jam_finished = False :
+        if gwa_jam_finished == False :
             #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
             "투표를 더 진행하시겠습니까?"
             menu :
@@ -129,7 +129,7 @@
 
             "투표 마치고 결정하기" :
                 ""
-                
+
     elif month == 4 and week == 1 and day == 5 :
         call fun_mt
 

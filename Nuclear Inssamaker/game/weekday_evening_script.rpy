@@ -1,3 +1,31 @@
+image study :
+    "study/1.png"
+    pause 0.3
+    "study/2.png"
+    pause 0.3
+    repeat
+
+image club :
+    "club/1.png"
+    pause 0.3
+    "club/2.png"
+    pause 0.3
+    repeat
+
+image gwa :
+    "gwa/1.png"
+    pause 0.3
+    "gwa/2.png"
+    pause 0.3
+    repeat
+
+image rest :
+    "rest/1.png"
+    pause 0.3
+    "rest/2.png"
+    pause 0.3
+    repeat
+
 define Jinil = Character("진일", color="#ffcccc", image="Jinil")#, window_left_padding = -100)
 #image side Jinil :
 #    "character/cha1.png"
@@ -56,7 +84,7 @@ label evening_study:
     #$ renpy.scene()
     #$ renpy.show("study/%d.jpg" %rand)
 #임시
-    show expression ("study/%d.png" %rand) at truecenter
+    show study at truecenter
     "공부했다\n"
     extend "체력 -5, 멘탈 -5, 공부 +10, 과 -5, 동아리 -5"
 
@@ -73,7 +101,7 @@ label evening_study:
 
 label evening_club:
     $ rand = renpy.random.randint(1, 2)
-    show expression ("club/%d.png" %rand) at truecenter
+    show club at truecenter
     "동아리 활동했다\n"
     extend "체력 -15, 멘탈 +10, 공부 -5, 과 -5, 동아리 +15"
 
@@ -90,7 +118,7 @@ label evening_club:
 
 label evening_gwa:
 #    $ rand = renpy.random.randint(1, 6)
-    show expression ("gwa/1.png") at truecenter
+    show gwa at truecenter
     "과 활동했다\n"
 
     extend "체력 -10, 공부 -5, 과 +15, 동아리 -5"
@@ -108,7 +136,7 @@ label evening_gwa:
 
 label evening_rest:
 #    $ rand = renpy.random.randint(1, 6)
-    show expression ("rest/1.png") at truecenter
+    show rest at truecenter
     "쉬었다\n"
     extend "체력 +20, 과 -5, 동아리 -5"
 

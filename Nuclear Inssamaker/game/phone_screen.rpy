@@ -94,9 +94,9 @@ screen fbook :
                             if msg[1] == "해장중" :
                                 add "character/profile_jangjung.png"
                             elif msg[1] == "안금지" :
-                                add "fbook_profile"
+                                add "character/profile_geumji.png"
                             elif msg[1] == "동삼용" :
-                                add "character/profile_drummer.png"
+                                add "character/profile_samyong.png"
                             elif msg[1] == "김진일" :
                                 add "character/profile_jinil.png"
                             elif msg[1] == "유현재" :
@@ -139,9 +139,9 @@ screen fbook :
                             if msg[1] == "해장중" :
                                 add "character/profile_jangjung.png"
                             elif msg[1] == "안금지" :
-                                add "fbook_profile"
+                                add "character/profile_geumji.png"
                             elif msg[1] == "동삼용" :
-                                add "character/profile_drummer.png"
+                                add "character/profile_samyong.png"
                             elif msg[1] == "김진일" :
                                 add "character/profile_jinil.png"
                             elif msg[1] == "유현재" :
@@ -168,12 +168,18 @@ screen fbook :
 
                     elif msg[0] == "그림자" :
                         add "phone/fbook/fbook_post_shadow.png"
+                        null height 8
 
     add "fbook_screen_tab" xpos 420 ypos 40
 
 screen ktalk:
     if ktalk_mode == 1 :
         add "phone/ktalk/ktalk_friends.png" xpos 420 ypos 40
+
+        text "{color=#000}친구{/color}" size 24 xpos 420 + 20 ypos 40 + 13
+        text "{color=#000}내 프로필{/color}" size 16 xpos 420 + 20 - 10 ypos 40 + 62 + 10
+        text "{color=#000}즐겨찾기{/color}" size 16 xpos 420 + 20 - 10 ypos 40 + 190 + 10
+        text "{color=#000}친구{/color}" size 16 xpos 420 + 20 - 10 ypos 40 + 480 + 5 + 10
 
         add "character/profile_player.png" xpos 420 + 8 ypos 40 + 108
         text "{color=#000}주인공{/color}" size 20 xpos 520 ypos 40 + 108 + 20
@@ -196,7 +202,7 @@ screen ktalk:
                 null width 4
 
         #동삼용
-        add "character/profile_drummer.png" xpos 420 + 8 ypos 40 + 320
+        add "character/profile_samyong.png" xpos 420 + 8 ypos 40 + 320
         text "{color=#000}동삼용{/color}" size 20 xpos 520 ypos 40 + 320 + 20
         hbox :
             xpos 420 + 624 - 172 - 172 - 16 ypos 40 + 320 + 20
@@ -247,7 +253,7 @@ screen ktalk:
                             hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
                         null height -92
-                        add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
+                        add "character/profile_group.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
@@ -304,7 +310,7 @@ screen ktalk:
                             hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
                         null height -92
-                        add "character/profile_drummer.png" xpos 8 + 2 ypos 12 + 2
+                        add "character/profile_samyong.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
@@ -380,7 +386,7 @@ screen ktalk:
                             hover "phone/ktalk/talklist_on.png"
                             action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
                         null height -92
-                        add "character/profile_drummer.png" xpos 8 + 2 ypos 12 + 2
+                        add "character/profile_samyong.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             text "{color=#000}삼용" xalign 0.5 yalign 0.5
@@ -478,7 +484,7 @@ screen ktalk:
                                         add "character/profile_jinil.png" xpos 2 ypos 2
 
                                     elif msg[0] == "동삼용" :
-                                        add "character/profile_drummer.png" xpos 2 ypos 2
+                                        add "character/profile_samyong.png" xpos 2 ypos 2
 
                                     elif msg[0] == "유현재" :
                                         add "character/profile_hyunjae.png" xpos 2 ypos 2
@@ -494,6 +500,9 @@ screen ktalk:
 
                                     elif msg[0] == "오덕현" :
                                         add "character/profile_ohduck.png" xpos 2 ypos 2
+
+                                    elif msg[0] == "안금지" :
+                                        add "character/profile_geumji.png" xpos 2 ypos 2
 
                                     else :
                                         add "phone/ktalk/1.png"
@@ -817,7 +826,7 @@ screen ktalk:
                         else :
                             hbox xpos 4 ypos 4:
                                 if msg[0] != "날짜" and msg[0] != "연속" :
-                                    add "character/profile_drummer.png" xpos 2 ypos 2
+                                    add "character/profile_samyong.png" xpos 2 ypos 2
 
                                     null width 7
                                     vbox :
