@@ -75,6 +75,8 @@ label mental_point_0_event :
     $ club_parameter -= 10
     call parameter_maxmin_check
 
+    jump weekday_SNS
+
     return
 
 label weekday_evening :
@@ -126,7 +128,8 @@ label weekday_SNS :
 
 label weekday_schedule_reset :
     if (week - 1) * 8 + day + 1 == 32:
-        "[month]월이 되었습니다."
+        $ tmp = month + 1
+        "[tmp]월이 되었습니다."
         $ month += 1
         $ week = 1
     else :

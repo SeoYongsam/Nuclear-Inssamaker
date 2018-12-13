@@ -1,6 +1,8 @@
-# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
-
+#pre_event 이미지 선언
+image poster = "jangtuh/poster.png"
+image meeting = "jangtuh/meeting.png"
+image menu_pan = "jangtuh/menu_pan.png"
+image shopping = "jangtuh/shopping.png"
 
 #이미지 선언
 image college = "jangtuh/college.png"
@@ -18,8 +20,8 @@ label jangtuh:
 
     show college at truecenter
     "오늘은 어쩔수 없이 수업을 못갔다."
-    "장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
-    "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
+    "장터를 총괄하는 역할을 뻔대인 내가 맡기로 했기 때문이다."
+    "장터 준비는 어제 전부 끝났고 장사를 시작했다."
     "점심시간까지는 학생들이 학교 캠퍼스에 별로 없었어서 그런지 바쁘지는 않았다."
 
     "하지만 이제 곧 대망의 점심시간! 사람들이 하나 둘 몰려오기 시작한다!"
@@ -206,6 +208,39 @@ label jangtuh:
     "아 모르겠다. 그래도 이번 학기 큰 행사가 막이 내려서 다행이다."
 
     scene black
+    "정산을 했다. 장터가 성공적이었길 바라면서... 두근두근한 마음을 감출수가 없다."
+    if jangtuh_pre_event == 4 :
+        "장터 준비를 빠짐없이 참여하고 체계적으로 준비해서인 엄청난 흑자가 났다."
+
+        "장터 순이익 : 200만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 150만원"
+        "장터 성적 : A, 과 분위기가 아주 좋아졌다."
+        $ gwa_parameter += 30
+        call parameter_maxmin_check
+
+    elif jangtuh_pre_event == 3 or jangtuh_pre_event == 2 :
+        "장터 준비를 조금 빠졌지만 겨우 흑자가 났다."
+
+        "장터 순이익 : 100만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 50만원"
+        "장터 성적 : B, 과 분위기가 좋아졌다."
+        $ gwa_parameter += 20
+        call parameter_maxmin_check
+
+    elif jangtuh_pre_event == 1 :
+        "장터 준비를 많이 빠져서 본전만 뽑았다."
+
+        "장터 순이익 : 50만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 0원"
+        "장터 성적 : C, 흑자는 아니지만 과 사람들이 서로 돈독해진 것 같다."
+        $ gwa_parameter += 10
+        call parameter_maxmin_check
+
+    else :
+        "뻔대 주제에 장터 준비를 다 빠져서인지 망했다."
+
+        "장터 순이익 : 0원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : -50만원"
+        "장터 성적 : D, 과 분위기 망했다."
+        $ gwa_parameter -= 20
+        call parameter_maxmin_check
+
 
     #순이익 금액으로 장터가 성공했는지 판단
 

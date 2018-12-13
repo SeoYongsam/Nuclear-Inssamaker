@@ -11,7 +11,7 @@ screen phone_UI() :
         imagebutton :
             idle "phone/exitButton.png"
             hover "phone/exitButton_on.png"
-            action Jump("phone_close")
+            action SetVariable("ktalk_mode", 1), Jump("phone_close")
 
     #홈버튼
     vbox xpos 620 ypos 672 :

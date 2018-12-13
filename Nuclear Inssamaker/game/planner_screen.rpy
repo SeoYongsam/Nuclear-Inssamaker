@@ -108,7 +108,10 @@ screen month_schedule_icon_show():
                 hbox:
                     xpos 160 + 128*(j-1) + 15 ypos 175 + 128*(i-1) + 97
                     if day_schedule[month_for_display][(i-1)*8 + j] == 1:
-                        add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                        if (month_for_display == 1 and i == 3 and j >= 5) or (month_for_display == 1 and i == 4 and j <= 4) or (month_for_display == 3 and i == 2 and j >= 4) or (month_for_display == 3 and i == 3 and j <= 3) :
+                            add im.Alpha(im.MatrixColor("planner/sel_study_hard.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                        else :
+                            add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
                     elif day_schedule[month_for_display][(i-1)*8 + j] == 2:
                         if j != 4 :
@@ -125,7 +128,10 @@ screen month_schedule_icon_show():
         vbox:
             xpos 160 + 128*5 + 12 ypos 175 + 128*(i-1) + 60
             if day_schedule[month_for_display][(i-1)*8 + 6] == 1:
-                add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                if (month_for_display == 1 and i == 3) or (month_for_display == 3 and i == 2) :
+                    add im.Alpha(im.MatrixColor("planner/sel_study_hard.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                else :
+                    add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 6] == 2:
                 add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
@@ -139,7 +145,10 @@ screen month_schedule_icon_show():
             null height 15
 
             if day_schedule[month_for_display][(i-1)*8 + 7] == 1:
-                add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                if (month_for_display == 1 and i == 3) or (month_for_display == 3 and i == 2):
+                    add im.Alpha(im.MatrixColor("planner/sel_study_hard.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+                else :
+                    add im.Alpha(im.MatrixColor("planner/sel_study.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
             elif day_schedule[month_for_display][(i-1)*8 + 7] == 2:
                 add im.Alpha(im.MatrixColor("planner/sel_club.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)

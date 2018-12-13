@@ -1,11 +1,3 @@
-#4.24-5.02
-
-#이미지 선언
-image poster = "jangtuh/poster.png"
-image meeting = "jangtuh/meeting.png"
-image menu_pan = "jangtuh/menu_pan.png"
-image shopping = "jangtuh/shopping.png"
-
 #저녁 이벤트
 
 # 4월 24,25,26일 + 5월 2일 장터 이벤트
@@ -18,8 +10,7 @@ label jangtuh_event:
     scene black
     "오늘은 장터 준비위원회끼리 모여서 포스터 디자인을 하기로 했다."
 
-    "내가 없어도 회의가 잘 돌아갈 것 같지만...
-    \n 갈까 말까?"
+    "내가 없어도 회의가 잘 돌아갈 것 같지만...\n갈까 말까?"
 
     menu:
         "회의에 참여한다":

@@ -19,8 +19,11 @@ init python:
     day_or_evening = "day"
 
     study_parameter = 0
+    study_count = 0
     club_parameter = 0
+    club_count = 0
     gwa_parameter = 0
+    gwa_count = 0
 
     rand_list_for_katlk_list = [1, 2, 3, 4, 5]
 
@@ -32,6 +35,8 @@ init python:
     fun_mt_vote_finished = False
     # 4월 4일 전까지 투표를 끝냈는가 확인하기 위한 변수
     fun_mt_vote_day = 0
+    # 장터 사전이벤트 한 갯수
+    jangtuh_pre_event = 0
 
     class messages :
         def __init__(self) :
