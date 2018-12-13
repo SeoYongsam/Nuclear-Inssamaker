@@ -92,7 +92,7 @@ label change_samyong_talk :
                 $ samyong.add("동삼용|엌ㅋㅋㅋ 난 뻔대 너라면 알 거라고 생각은 했는데")
                 $ samyong.add("연속|진짜 알고 있네")
                 $ samyong.add("주인공|ㅋㅋㅋㅋㅋ 당연하지")
-                $ samyong.add("주인공|라이브 너무 잘하셔서 유튭에서 맨날 보고 있다고")
+                $ samyong.add("주인공|라이브 너무 잘하셔서 유툽에서 맨날 보고 있다고")
                 $ samyong.add("동삼용|내말이 ㅋㅋㅋㅋㅋㅋ")
                 $ samyong.add("연속|진짜 음원 씹어드신 것 같다니까")
                 $ samyong.add("연속|세션들도 너무 잘하고")
