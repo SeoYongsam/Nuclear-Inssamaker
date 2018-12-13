@@ -274,114 +274,121 @@ label change_group_talk :
                 $ grouptalk.add ("안금지|어, 생각보다 별론데….?나 안사고 싶은데ㅠㅠ")
                 $ grouptalk.add ("주인공|애들아 최대한 빨리 투표 해주라!")
                 $ grouptalk.add ("노미래|ㅇㅋㅇㅋ")
-                $ grouptalk.add ("SYSTEM|투표 결과 1안 | 8 /  2안 | 6 / 3안 | 4")
-                $ grouptalk.add ("SYSTEM|투표를 더 진행하시겠습니까? 투표 / 선택하기")
-                $ grouptalk.add ("SYSTEM|어떤 과잠을 선택하시겠습니까?")
 
             elif day == 5 :
                 # (강제 선택한 경우)
-                $ grouptalk.add ("안금지|ㅠㅠ 나는 안 살래… 돈이 너무 없어 ㅠ")
-                $ grouptalk.add ("유현재|음…. 그래도 고생했어 과준위 ㅎㅎㅎ")
-                $ grouptalk.add ("노미래|맞아맞아 ㅠㅠㅠ")
-                $ grouptalk.add ("김진일|야 진짜 어떻게 이러지 ㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("박대현|에이....금지야ㅠㅠ 그래도 ㅠㅠ 첫 과잠인데 사자")
+                if gwa_jam_finished = True :
+                    $ grouptalk.add ("안금지|ㅠㅠ 나는 안 살래… 돈이 너무 없어 ㅠ")
+                    $ grouptalk.add ("유현재|음…. 그래도 고생했어 과준위 ㅎㅎㅎ")
+                    $ grouptalk.add ("노미래|맞아맞아 ㅠㅠㅠ")
+                    $ grouptalk.add ("김진일|야 진짜 어떻게 이러지 ㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("박대현|에이....금지야ㅠㅠ 그래도 ㅠㅠ 첫 과잠인데 사자")
                 # (투표 연장한 경우)
-                $ grouptalk.add ("주인공|애들아 그래도 최대한 민주적으로 가려고 의견 수렴하니까 투표 빨리 해줘 ㅠㅠ 부탁할게!")
-                $ grouptalk.add ("김진일|빨리빨리 하자.")
-                $ grouptalk.add ("해장중|과잠위 고생했으니까 빨리 해주세요!!")
-                $ grouptalk.add ("동삼용|하오하오!")
-                $ grouptalk.add ("노미래|ㅋㅋㅋㅋ 근데 현재야 너 저거 잘 어울리겠는데?")
-                $ grouptalk.add ("유현재|ㅋㅋㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("박대현|아 진짜 나가서 연애질해라 ㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("노미래|근데 대현이 모쏠 실화냐??ㅋㅋㅋㅋ")
-                $ grouptalk.add ("박대현|야 아니야 ㅋㅋㅋㅋ 나 연애해봤어 ㅋㅋㅋㅋ 어이가 없다")
-                $ grouptalk.add ("김진일|ㅋㅋㅋㅋㅋ 니들이 사랑을 아냐? ")
-                $ grouptalk.add ("해장중|와 진일이 갬성 빼앰~~~ ")
-                $ grouptalk.add ("SYSTEM | 투표 결과 1안 | 11 /  2안 | 8 / 3안 | 5")
-                $ grouptalk.add ("SYSTEM | 투표를 연장하시겠습니까? Y/ N ")
+                else :
+                    $ grouptalk.add ("주인공|애들아 그래도 최대한 민주적으로 가려고 의견 수렴하니까 투표 빨리 해줘 ㅠㅠ 부탁할게!")
+                    $ grouptalk.add ("김진일|빨리빨리 하자.")
+                    $ grouptalk.add ("해장중|과잠위 고생했으니까 빨리 해주세요!!")
+                    $ grouptalk.add ("동삼용|하오하오!")
+                    $ grouptalk.add ("노미래|ㅋㅋㅋㅋ 근데 현재야 너 저거 잘 어울리겠는데?")
+                    $ grouptalk.add ("유현재|ㅋㅋㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("박대현|아 진짜 나가서 연애질해라 ㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("노미래|근데 대현이 모쏠 실화냐??ㅋㅋㅋㅋ")
+                    $ grouptalk.add ("박대현|야 아니야 ㅋㅋㅋㅋ 나 연애해봤어 ㅋㅋㅋㅋ 어이가 없다")
+                    $ grouptalk.add ("김진일|ㅋㅋㅋㅋㅋ 니들이 사랑을 아냐? ")
+                    $ grouptalk.add ("해장중|와 진일이 갬성 빼앰~~~ ")
+                    $ grouptalk.add ("SYSTEM | 투표 결과 1안 | 11 /  2안 | 8 / 3안 | 5")
+                    $ grouptalk.add ("SYSTEM | 투표를 연장하시겠습니까? Y/ N ")
 
             elif day == 6 :
                 # 강제 종료
-                $ grouptalk.add ("해장중|술~ 이 한잔 생각 나~는 밤")
-                $ grouptalk.add ("유현재|마치~ 있는 것 같아요~")
-                $ grouptalk.add ("박대현|그~ 좋았던 시~절들")
-                $ grouptalk.add ("노미래|이젠 모~두 한숨만 되네요~")
-                $ grouptalk.add ("김진일|??? 다들 갑자기 왜이래… 장중이 술 땡기면 ㄱㄱ?")
-                $ grouptalk.add ("해장중|이거 노래임 ㅋㅋㅋ")
-                $ grouptalk.add ("동삼용|오 이거 무슨 노래야???")
-                $ grouptalk.add ("주인공|임창정의 소주한잔!!!")
+                if gwa_jam_finished = True :
+                    $ grouptalk.add ("해장중|술~ 이 한잔 생각 나~는 밤")
+                    $ grouptalk.add ("유현재|마치~ 있는 것 같아요~")
+                    $ grouptalk.add ("박대현|그~ 좋았던 시~절들")
+                    $ grouptalk.add ("노미래|이젠 모~두 한숨만 되네요~")
+                    $ grouptalk.add ("김진일|??? 다들 갑자기 왜이래… 장중이 술 땡기면 ㄱㄱ?")
+                    $ grouptalk.add ("해장중|이거 노래임 ㅋㅋㅋ")
+                    $ grouptalk.add ("동삼용|오 이거 무슨 노래야???")
+                    $ grouptalk.add ("주인공|임창정의 소주한잔!!!")
 
                 # 투표 할 시에
-                $ grouptalk.add ("주인공|근데 님들아 투표좀~~~~")
-                $ grouptalk.add ("동삼용|투표 가즈아~!!!!")
-                $ grouptalk.add ("김진일|아직도 B가 안될거라고 생각하는 흑두루미들 없재?")
-                $ grouptalk.add ("박대현|자하연 물 온도 몇도냐 ㅋㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("노미래|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("유현재|ㅋㅋㅋㅋㅋㅋ")
+                else :
+                    $ grouptalk.add ("주인공|근데 님들아 투표좀~~~~")
+                    $ grouptalk.add ("동삼용|투표 가즈아~!!!!")
+                    $ grouptalk.add ("김진일|아직도 B가 안될거라고 생각하는 흑두루미들 없재?")
+                    $ grouptalk.add ("박대현|자하연 물 온도 몇도냐 ㅋㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("노미래|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("유현재|ㅋㅋㅋㅋㅋㅋ")
 
         elif week == 4 :
             if day == 0 :
-            # 투표 진행시
-                $ grouptalk.add ("김진일|역시 내게 제일 멋있네, b안이 제일 높네")
-                $ grouptalk.add ("해장중|투표 실화냐….")
-                $ grouptalk.add ("유현재|저걸 어떻게 입냐 ㅠㅠ")
-                $ grouptalk.add ("동삼용|애들아 a안 밀면 b안 이길 수 있어, 영차영차 외치자!, 영")
-                $ grouptalk.add ("박대현|차")
-                $ grouptalk.add ("박대현|영")
-                $ grouptalk.add ("해장중|차")
-                $ grouptalk.add ("김진일|영차한다고 되겠다 ㅉㅉ")
-                $ grouptalk.add ("주인공|에이 진일아~")
-            # 투표 강제 종료시
-                $ grouptalk.add ("박대현|우리 과잠은 언제 나오지??")
-                $ grouptalk.add ("주인공|아마 곧 나올 것 같은데 ㅋㅋㅋ 우리 과잠 진짜 예쁜 것 같아!")
-                $ grouptalk.add ("안금지|아닌 것 같은데….ㅠ")
-                $ grouptalk.add ("김진일|에이 입어보면 다르다 진짜 ㅋㅋㅋ")
-                $ grouptalk.add ("노미래|그래 ㅋㅋㅋ 예뻐도 안 예뻐도 우리가 같이 입는게 의미가 있지")
-                $ grouptalk.add ("유현재|역시 미래다 ㅋㅋㅋㅋ")
-                $ grouptalk.add ("해장중|으~ 진짜 너네 적당히해라")
-                $ grouptalk.add ("유현재|싫은데 싫은데???ㅋㅋㅋㅋ")
+                # 투표 강제 종료시
+                if gwa_jam_finished = True :
+                    $ grouptalk.add ("박대현|우리 과잠은 언제 나오지??")
+                    $ grouptalk.add ("주인공|아마 곧 나올 것 같은데 ㅋㅋㅋ 우리 과잠 진짜 예쁜 것 같아!")
+                    $ grouptalk.add ("안금지|아닌 것 같은데….ㅠ")
+                    $ grouptalk.add ("김진일|에이 입어보면 다르다 진짜 ㅋㅋㅋ")
+                    $ grouptalk.add ("노미래|그래 ㅋㅋㅋ 예뻐도 안 예뻐도 우리가 같이 입는게 의미가 있지")
+                    $ grouptalk.add ("유현재|역시 미래다 ㅋㅋㅋㅋ")
+                    $ grouptalk.add ("해장중|으~ 진짜 너네 적당히해라")
+                    $ grouptalk.add ("유현재|싫은데 싫은데???ㅋㅋㅋㅋ")
+
+                # 투표 진행시
+                else :
+                    $ grouptalk.add ("김진일|역시 내게 제일 멋있네, b안이 제일 높네")
+                    $ grouptalk.add ("해장중|투표 실화냐….")
+                    $ grouptalk.add ("유현재|저걸 어떻게 입냐 ㅠㅠ")
+                    $ grouptalk.add ("동삼용|애들아 a안 밀면 b안 이길 수 있어, 영차영차 외치자!, 영")
+                    $ grouptalk.add ("박대현|차")
+                    $ grouptalk.add ("박대현|영")
+                    $ grouptalk.add ("해장중|차")
+                    $ grouptalk.add ("김진일|영차한다고 되겠다 ㅉㅉ")
+                    $ grouptalk.add ("주인공|에이 진일아~")
 
             elif day == 1 :
-            # 투표 종료시
-                $ grouptalk.add ("주인공|애들아 우리 이제 우리끼리도 밥약하자 ㅋㅋㅋ")
-                $ grouptalk.add ("동삼용|오 또 뻔대가 일한다 ㅋㅋㅋㅋ 나 완전 좋아 ㅋㅋㅋ 나는 이번주 월,화, 수, 목 12시 반 가능해")
-                $ grouptalk.add ("해장중|나도나도 ㅋㅋㅋㅋ 근데 나는 화, 수만 학교 와서 ㅋㅋㅋ 그때만 될 것 같아")
-                $ grouptalk.add ("김진일|와 장중이 주2 실화야??? 수요일 저녁에 출국하면 4박 5일로 여행가겠다 ㅋㅋㅋ")
-                $ grouptalk.add ("유현재|ㅋㅋㅋㅋ 미래랑 나도 갈까? 갈 수 있을 것 같아")
-                $ grouptalk.add ("박대현|수 ㄱㄱㄱㄱ, 장중이 엄마한테 18학점이라고 하고, 절반 등록금깡한거 아니야?")
-                $ grouptalk.add ("해장중|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
+                # 투표 종료시
+                if gwa_jam_finished = True :
+                    $ grouptalk.add ("주인공|애들아 우리 이제 우리끼리도 밥약하자 ㅋㅋㅋ")
+                    $ grouptalk.add ("동삼용|오 또 뻔대가 일한다 ㅋㅋㅋㅋ 나 완전 좋아 ㅋㅋㅋ 나는 이번주 월,화, 수, 목 12시 반 가능해")
+                    $ grouptalk.add ("해장중|나도나도 ㅋㅋㅋㅋ 근데 나는 화, 수만 학교 와서 ㅋㅋㅋ 그때만 될 것 같아")
+                    $ grouptalk.add ("김진일|와 장중이 주2 실화야??? 수요일 저녁에 출국하면 4박 5일로 여행가겠다 ㅋㅋㅋ")
+                    $ grouptalk.add ("유현재|ㅋㅋㅋㅋ 미래랑 나도 갈까? 갈 수 있을 것 같아")
+                    $ grouptalk.add ("박대현|수 ㄱㄱㄱㄱ, 장중이 엄마한테 18학점이라고 하고, 절반 등록금깡한거 아니야?")
+                    $ grouptalk.add ("해장중|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
 
-            # 투표 지속시
-                $ grouptalk.add ("김진일|애들아 곧 24일에 투표 마감인데 투표 아직 안한 사람은 해줘!")
-                $ grouptalk.add ("주인공|지금까지 투표 안하면 뻔대가 곤란하다는게 학계의 정설")
-                $ grouptalk.add ("해장중|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("동삼용|과준위가 힘빠진다는 것도 유력한 가설")
-                $ grouptalk.add ("박대현|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("유현재|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
-                $ grouptalk.add ("노미래|빨리 해주자 애들아 ㅋㅋㅋㅋ")
-                $ grouptalk.add ("주인공|저녁까지 안해주시면 갠톡들어갑니다~")
-
+                # 투표 지속시
+                else :
+                    $ grouptalk.add ("김진일|애들아 곧 24일에 투표 마감인데 투표 아직 안한 사람은 해줘!")
+                    $ grouptalk.add ("주인공|지금까지 투표 안하면 뻔대가 곤란하다는게 학계의 정설")
+                    $ grouptalk.add ("해장중|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("동삼용|과준위가 힘빠진다는 것도 유력한 가설")
+                    $ grouptalk.add ("박대현|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("유현재|ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
+                    $ grouptalk.add ("노미래|빨리 해주자 애들아 ㅋㅋㅋㅋ")
+                    $ grouptalk.add ("주인공|저녁까지 안해주시면 갠톡들어갑니다~")
 
             elif day == 2 :
             #   투표 마감시
-                $ grouptalk.add ("유현재|우리 과잠은 언제오지 ㅋㅋㅋ 빨리 입고 싶은데")
-                $ grouptalk.add ("김진일|ㅋㅋㅋ 진짜 간지다 누가 봐도 눈에 띌듯 ㅋㅋㅋㅋ")
-                $ grouptalk.add ("안금지|그게 문제지….ㅠㅠ")
-                $ grouptalk.add ("주인공|에이 아직 안 입어봤는데 그러지 말자 ㅋㅋㅋㅋ")
-                $ grouptalk.add ("해장중|우리 내일 점모 맞지?")
-                $ grouptalk.add ("박대현|뭐 먹지?? 중국음식?")
-                $ grouptalk.add ("동삼용|헐… 개좋아")
-                $ grouptalk.add ("주인공|ㅋㅋㅋㅋ 삼용이 배려로 내일은 중식먹자!")
-                $ grouptalk.add ("유현재|좋아!!")
+                if gwa_jam_finished = True :
+                    $ grouptalk.add ("유현재|우리 과잠은 언제오지 ㅋㅋㅋ 빨리 입고 싶은데")
+                    $ grouptalk.add ("김진일|ㅋㅋㅋ 진짜 간지다 누가 봐도 눈에 띌듯 ㅋㅋㅋㅋ")
+                    $ grouptalk.add ("안금지|그게 문제지….ㅠㅠ")
+                    $ grouptalk.add ("주인공|에이 아직 안 입어봤는데 그러지 말자 ㅋㅋㅋㅋ")
+                    $ grouptalk.add ("해장중|우리 내일 점모 맞지?")
+                    $ grouptalk.add ("박대현|뭐 먹지?? 중국음식?")
+                    $ grouptalk.add ("동삼용|헐… 개좋아")
+                    $ grouptalk.add ("주인공|ㅋㅋㅋㅋ 삼용이 배려로 내일은 중식먹자!")
+                    $ grouptalk.add ("유현재|좋아!!")
 
             # 투표 지속시
-                $ grouptalk.add ("주인공|오늘이 투표 마지막 날입니다! 예쁜 과잠을 선택해주세요~")
-                $ grouptalk.add ("해장중|진짜 과준위 4일동안 회의하고 정한 과잠입니다ㅠ 여러분 투표 부탁드려요!")
-                $ grouptalk.add ("김진일|그래 애들아 투표 좀 해라")
-                $ grouptalk.add ("동삼용|지금 투표하면 내가 원하는 걸로 할 수 있어 애들아!!!")
-                $ grouptalk.add ("안금지|음…..")
-                $ grouptalk.add ("박대현|나는 했어 과준위 ㅠㅠ 너무 고생한다 애들아 투표하자!!")
-                $ grouptalk.add ("주인공| 고마워 다들 ㅋㅋㅋㅋ 다들 후보들이 너무 예뻐서 고민하는거지 뭐 ㅋㅋㅋ 내가 봐도 어렵다 ㅋㅋㅋ 여튼 저녁까지는 투표 마감할게요! ")
+                else :
+                    $ grouptalk.add ("주인공|오늘이 투표 마지막 날입니다! 예쁜 과잠을 선택해주세요~")
+                    $ grouptalk.add ("해장중|진짜 과준위 4일동안 회의하고 정한 과잠입니다ㅠ 여러분 투표 부탁드려요!")
+                    $ grouptalk.add ("김진일|그래 애들아 투표 좀 해라")
+                    $ grouptalk.add ("동삼용|지금 투표하면 내가 원하는 걸로 할 수 있어 애들아!!!")
+                    $ grouptalk.add ("안금지|음…..")
+                    $ grouptalk.add ("박대현|나는 했어 과준위 ㅠㅠ 너무 고생한다 애들아 투표하자!!")
+                    $ grouptalk.add ("주인공| 고마워 다들 ㅋㅋㅋㅋ 다들 후보들이 너무 예뻐서 고민하는거지 뭐 ㅋㅋㅋ 내가 봐도 어렵다 ㅋㅋㅋ 여튼 저녁까지는 투표 마감할게요! ")
 
 
             elif day == 3 :
@@ -481,7 +488,7 @@ label change_group_talk :
 
             elif day == 2 :
                 $ grouptalk.add("날짜|4월 3일 화요일")
-
+                #(강제 종료 한 경우)
                 $ grouptalk.add("주인공|자 투표 결과 장소는 (선택) 엠티비는 (선택)으로 결정되었습니다!")
                 $ grouptalk.add("주인공|시간이 별로 없으니 생협 123-456-789102 여기로 빠르게 엠티비 보내주세요~")
                 $ grouptalk.add("안금지|아..나 돈 별로 없는데...")
@@ -491,7 +498,7 @@ label change_group_talk :
                 $ grouptalk.add("오덕현|송.금. 해버렸다...")
                 $ grouptalk.add("동삼용|그리고 엠준위에서 열심히 프로그램들 짜고 있으니까 기대해도 좋을걸??")
                 $ grouptalk.add("박대현|오옹 기대할겤ㅋㅋㅋ")
-
+                #(연장 경우)
                 $ grouptalk.add("주인공|투표 마감 오늘까지입니다~ 최대한 의견 반영하려고 하니까 많이 참여해줘!!")
                 $ grouptalk.add("김진일|대별리 고다고~ 산택가기도 좋고 별도 예쁘고 얼마나 좋아")
                 $ grouptalk.add("해장중|대 별 리 대 별 리")
@@ -500,7 +507,6 @@ label change_group_talk :
                 $ grouptalk.add("박대현|아;;; 미안 나 그날 갑자기 약속 생겨서 장발 못할듯 ㅈㅅㅈㅅ ㅠㅜ")
                 $ grouptalk.add("주인공|아 ㅠㅜㅠㅜ 어쩔 수 없지 뭐..ㅠㅜ")
                 $ grouptalk.add("SYSTEM|장소 투표 결과 대별리 10 / 신숲 10")
-                $ grouptalk.add("SYSTEM|엠티비 투표 결과 2만원 6 / 3만원 6 / 4만원 6 / 보류 2")
                 $ grouptalk.add("SYSTEM|투표가 동률이 나왔습니다. 당신은 무엇을 선택하겠습니까?")
                 $ grouptalk.add("SYSTEM|장발후발 투표 결과 장발대 9 / 후발대 11")
                 $ grouptalk.add("SYSTEM|투표를 연장하시겠습니까? Y / N")
@@ -516,13 +522,13 @@ label change_group_talk :
                 $ grouptalk.add("오덕현|송.금. 해버렸다...")
                 $ grouptalk.add("동삼용|그리고 엠준위에서 열심히 프로그램들 짜고 있으니까 기대해도 좋을걸??")
                 $ grouptalk.add("박대현|오옹 기대할겤ㅋㅋㅋ")
-
+                #(장발/후발 투표 마감시)
                 $ grouptalk.add("주인공|그리고 장발 지원해준 사람들 고마워!! ㅋㅋㅋㅋ 맛있는 거 많이 사봅시다!")
                 $ grouptalk.add("해장중|굿굿ㅋㅋㅋ 근데 뻔대야 일단 회식 왔으면 술이나 더 마셔")
                 $ grouptalk.add("김진일|인정 누가 술자리에서 폰하냐;;")
                 $ grouptalk.add("동삼용|인정 22222")
                 $ grouptalk.add("박대현|저 친구들 또 술 마시냐..")
-
+                #(마감 안했을 시)
                 $ grouptalk.add("주인공|장소와 가격은 투표 마감했지만, 장발/후발은 아직 안했으니 투표 계속 부탁해요!")
                 $ grouptalk.add("오덕현|큿..와타시...급작스러운 동아리 일정상 장발..못한달까..? 고멘...")
                 $ grouptalk.add("주인공|엌ㅋㅋㅠㅜ 아냐 어쩔 수 없지..ㅠㅜㅠㅜ 일정 잘 끝내고 오렴..")
@@ -534,7 +540,7 @@ label change_group_talk :
 
             elif day == 4 :
                 $ grouptalk.add("날짜|4월 5일 목요일")
-
+                #(마감 안 했을 시)
                 $ grouptalk.add("주인공|오늘이 장발후발 마감날입니다!! 내일 뻔엠이니까 빠른 투표 고다고~")
                 $ grouptalk.add("유현재|저 뻔대야..미안한데..")
                 $ grouptalk.add("연속|그날 장발 못할 것 같아 ㅠㅜㅠㅜ")
@@ -546,7 +552,7 @@ label change_group_talk :
                 $ grouptalk.add("주인공|일단 ㅇㅋ...")
                 $ grouptalk.add("SYSTEM|장발후발 투표 결과 장발대 6 / 후발대 18")
                 $ grouptalk.add("SYSTEM|투표가 종료되었습니다.")
-
+                #(투표 마감 했을시)
                 $ grouptalk.add("주인공|으아아아아 드이어 내일 뻔엠!!!")
                 $ grouptalk.add("동삼용|마셔마셔!! 먹고 뒤져!!")
                 $ grouptalk.add("유현재|와..선배들 없이 엠티라니")
