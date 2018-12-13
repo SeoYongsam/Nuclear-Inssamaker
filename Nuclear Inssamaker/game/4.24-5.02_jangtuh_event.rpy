@@ -26,7 +26,7 @@ label jangtuh_event:
 
             "회의에 참여했다."
 
-            scene poster at truecenter
+            show poster at truecenter
 
             "포스터 디자인은 심플하게 가기로 했다."
             "사실 심플 할지는 모르겠지만 포토샵을 다룰 줄 아는 현재가 알아서 하기로 했다."
@@ -51,7 +51,7 @@ label jangtuh_event:
 
             "회의에 참여했다."
 
-            scene meeting at truecenter
+            show meeting at truecenter
 
             "예산은 적당하게 50만원으로 잡았다."
             "메뉴는 다른 장터와 차별을 두고 싶었지만 예산에 맞춰 재료를 준비해야했기
@@ -77,7 +77,7 @@ label jangtuh_event:
 
             "회의에 참여했다."
 
-            scene menu_pan at truecenter
+            show menu_pan at truecenter
 
             "메뉴판은 정말 쉽게 정했다."
             "이미 메뉴를 정했기 때문에 장터날에 붙일 것만 만들면 됐기 때문이다."
@@ -101,7 +101,7 @@ label jangtuh_event:
 
             "장을 보러 갔다."
 
-            scene shopping at truecenter
+            show shopping at truecenter
 
             "오늘은 내가 장을 보러 왔어야 했다."
             "애들의 상태가 의심스럽기 때문이다. 중간고사가 끝난지 얼마 안돼서 모든 것을 놓은 것만 같다."

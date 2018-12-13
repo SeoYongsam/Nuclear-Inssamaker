@@ -81,6 +81,7 @@ init python:
             tmp[3] = ''.join(tmplist)
 
             fbook_post.extend([[tmp[0], tmp[1], tmp[2], tmp[3]]])
+            fbook_count += 1
 
         elif tmp[0] == "댓글" :
             tmplist = list(tmp[2])
@@ -93,6 +94,8 @@ init python:
             fbook_post.extend([[tmp[0], tmp[1], tmp[2]]])
         else :
             fbook_post.extend([[tmp[0]]])
+
+    fbook_count = 0
 
     #카톡모드 1 = 친구목록, 2 = 대화목록
     ktalk_mode = 1

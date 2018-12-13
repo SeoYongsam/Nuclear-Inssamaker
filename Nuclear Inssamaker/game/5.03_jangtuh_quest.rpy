@@ -16,7 +16,7 @@ image cheers = "jangtuh/cheers.png"
 # month5 week1 day2
 label jangtuh:
 
-    scene college at truecenter
+    show college at truecenter
     "오늘은 어쩔수 없이 수업을 못갔다."
     "장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
     "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
@@ -24,7 +24,7 @@ label jangtuh:
 
     "하지만 이제 곧 대망의 점심시간! 사람들이 하나 둘 몰려오기 시작한다!"
 
-    scene order at truecenter
+    show order at truecenter
     Jinil "이랏샤이마세~ 주문 뭘로 하실건가요??"
     "고객1" "저는 파전이랑 막걸리 하나씩이요!"
     Jinil "네~ 6000원이요~ 감사합니다! 다음이요!"
@@ -37,7 +37,7 @@ label jangtuh:
     Jinil "누구는 수업 없냐~"
     Player "ㅋㅋ"
 
-    scene jangtuh at truecenter
+    show jangtuh at truecenter
     Samyong "얘들아 나 왔어!!! 뭐하면 돼??"
     Player "얼른 와!! 지금 요리하는 사람이 별로 없어서 주문이 밀리고 있어 ㅠㅠ
     \n 너가 요리 좀 해줘!"
@@ -49,7 +49,7 @@ label jangtuh:
     "점심시간 이후로도 우리 장터에 사람들은 계속 많았다. 삼용이는 정말로 요리를 잘했다. "
     "어디서 준비를 해온지는 모르겠지만 자신이 쓰던 웤을 들고 온 후 사람들이 보는 앞에서 불쇼도 하며 고객들을 더욱 끌어모았다."
 
-    scene cooking at truecenter
+    show cooking at truecenter
     Jinil "아 애들 진짜 언제 오는거냐 바빠 죽겠는데"
     Samyong "진일아 다음 메뉴!!!"
     Jinil "김치전 넷, 파전 다섯, 봉골레 하나 빨리빨리 안하냐~!"
@@ -58,7 +58,7 @@ label jangtuh:
     Samyong "일단 알겠어!"
     Jinil "뻔대야 애들 진짜 안오냐?? 거의 우리 셋이서만 일하는데?"
 
-    scene jangtuh at truecenter
+    show jangtuh at truecenter
     Jangjung "잘 하고 있냐??"
     Player "왜 이렇게 늦게 왔어 ㅠㅠㅠㅠ 얼른 가서 일 도와줘"
     Jangjung "ㅋㅋㅋㅋ 잘 하고 있구만 왜"
@@ -76,7 +76,7 @@ label jangtuh:
 
     "오후 4시부터는 고객들이 하나 둘 씩 줄어들면서 장터현장이 한가해졌다."
 
-    scene jangtuh at truecenter
+    show jangtuh at truecenter
     Jangjung "야 뻔대야 우리 이제 정리할까?"
     Jinil "너네들 일 얼마나 했다고 벌써 정리해"
     Daehyun "근데 고객이 없으니까 정리해도 되지 않나?"
@@ -112,7 +112,7 @@ label jangtuh:
             그리고 거기서 술 싸게 팔면 사서 우리 애들이랑 같이 마시게 사오자.
             애들도 엄청 좋아할듯!"
 
-            scene other_jangtuh at truecenter
+            show other_jangtuh at truecenter
 
             "장중이와 술을 마시고 있는데 갑자기 전화가 울린다. 진일이다."
             Jinil "야 너 어디냐? 이제 곧 정리 할려고 하는데 얼른 와."
@@ -166,7 +166,7 @@ label jangtuh:
 
     #장터 뒷풀이"
 
-    scene cheers at truecenter
+    show cheers at truecenter
     "장터현장을 정리하고 우리는 다같이 뒷풀이를 하러 술집에 왔다"
     "장터에 도와주지 못한 친구들도 하나 둘씩 나타나며 뒷풀이에 참가하여 꽤 많은 인원이 모였다."
 
@@ -184,7 +184,7 @@ label jangtuh:
 
     "모두" "화이팅!!!!!!"
 
-    scene after at truecenter
+    show after at truecenter
 
     Jinil "뻔대야 진짜 수고했다 ㅋㅋㅋ 너, 나 그리고 삼용이 아침부터 하느라 힘들었는데 마시고 죽자"
 
