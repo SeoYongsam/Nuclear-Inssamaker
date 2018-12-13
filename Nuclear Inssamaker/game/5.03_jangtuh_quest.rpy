@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #이미지 선언
 image college = "jangtuh/college.jpg"
 image jangtuh = "jangtuh/jangtuh.jpg"
@@ -12,60 +11,10 @@ image cheers = "jangtuh/cheers.jpg"
 # month5 week1 day2
 label jangtuh:
     show college at truecenter
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD:Nuclear Inssamaker/game/jangtuh_quest.rpy
-=======
-<<<<<<< HEAD:Nuclear Inssamaker/game/5.03_jangtuh_quest.rpy
-# 5월 3일 화요일 장터 이벤트
-# month5 week1 day2
-label jangtuh:
     "오늘은 어쩔수 없이 수업을 못갔다.
     장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
     "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
     "점심시간까지는 학생들이 학교 캠퍼스에 별로 없었어서 그런지 바쁘지는 않았다."
-=======
->>>>>>> ce08e49bb5a4f6dd119dadec661b84e75e14bd43
-# Ren'Py automatically loads all script files ending with .rpy. To use this
-# file, define a label and jump to it from another file.
-
-# 4월 16일 교복데이 이벤트
-
-#이미지 선언
-image college = im.Scale("jangtuh/college.jpg", 1280, 720)
-image jangtuh = im.Scale("jangtuh/jangtuh.jpg", 1280, 720)
-image order = im.Scale("jangtuh/order.jpg", 1280, 720)
-image cooking = im.Scale("jangtuh/cooking.jpg", 1280, 720)
-image other_jangtuh = im.Scale("jangtuh/other_jangtuh.jpg", 1280, 720)
-image after = im.Scale("jangtuh/after.jpg", 1280, 720)
-image cheers = im.Scale("jangtuh/cheers.jpg", 1280, 720)
-image black = im.Scale("black.jpg", 1280, 720)
-
-# week5 day 1
-label jangtuh:
-
-    scene college at truecenter
->>>>>>> ef44c6777c483947f5664ad78cc2dd34fdb4cc09
-
-    "오늘은 수업을 못갔다."
-    "장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
-    "아침 일찍부터 하는 장터 준비는 끝났고 장사를 시작했다. 아침에는 학생들이 학교 캠퍼스에 별로 없어서 그런지 바쁘지는 않았다."
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-# 5월 3일 화요일 장터 이벤트
-# month5 week1 day2
-label jangtuh:
-    "오늘은 어쩔수 없이 수업을 못갔다.
-    장터를 계속해서 총괄하는 사람이 선배 1명과 신입생 1명이 있어야하는데 뻔대인 내가 신입생 중 이 역할을 맡기로 했기 때문이다."
-    "일찍부터 하는 장터 준비는 끝났고 장사를 시작했다."
-    "점심시간까지는 학생들이 학교 캠퍼스에 별로 없었어서 그런지 바쁘지는 않았다."
->>>>>>> 5d6cdea9ed913a8188feddc92504f7b69602e315:Nuclear Inssamaker/game/5.03_jangtuh_quest.rpy
-=======
->>>>>>> 87dd1ff1ed6c3392961658b21152e46142d3de66:Nuclear Inssamaker/game/jangtuh_quest.rpy
->>>>>>> ce08e49bb5a4f6dd119dadec661b84e75e14bd43
->>>>>>> ef44c6777c483947f5664ad78cc2dd34fdb4cc09
     "하지만 이제 곧 대망의 점심시간! 사람들이 하나 둘 몰려오기 시작한다!"
 
     show order at truecenter
