@@ -34,18 +34,6 @@ label change_jinil_talk :
                 # 강제 종료
                 $ jinil.add("김진일|과잠 예쁜 것 같아 빨리 입고 싶다ㅋㅋㅋㅋ")
 
-            elif day == 3 :
-                $ jinil.add("장중|테스트")
-
-            elif day == 4 :
-                $ jinil.add("장중|테스트")
-
-            elif day == 5 :
-                $ jinil.add("장중|테스트")
-
-            elif day == 6 :
-                $ jinil.add("장중|테스트")
-
 
     elif month == 4 :
         if week == 1 :

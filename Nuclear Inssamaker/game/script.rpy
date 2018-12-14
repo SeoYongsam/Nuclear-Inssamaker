@@ -19,8 +19,11 @@ init python:
     day_or_evening = "day"
 
     study_parameter = 0
+    study_count = 0
     club_parameter = 0
+    club_count = 0
     gwa_parameter = 0
+    gwa_count = 0
 
     rand_list_for_katlk_list = [1, 2, 3, 4, 5]
 
@@ -28,6 +31,12 @@ init python:
 
     #event용 스위치
     gwa_jam_finished = False
+    fun_mt_location_finished = False
+    fun_mt_vote_finished = False
+    # 4월 4일 전까지 투표를 끝냈는가 확인하기 위한 변수
+    fun_mt_vote_day = 0
+    # 장터 사전이벤트 한 갯수
+    jangtuh_pre_event = 0
 
     class messages :
         def __init__(self) :
@@ -65,8 +74,10 @@ init python:
     dongah = messages()
 
     fbook_post = []
+#    fbook_count = 0
 
     def fbook_post_add(data) :
+        fbook_count_tmp = 0
         tmp = data.split("|")
 #        if week > 1 or month > 3:
 #            del fbook_post[0]
@@ -81,6 +92,8 @@ init python:
             tmp[3] = ''.join(tmplist)
 
             fbook_post.extend([[tmp[0], tmp[1], tmp[2], tmp[3]]])
+#            fbook_count_tmp += 1
+#            fbook_count = fbook_count_tmp
 
         elif tmp[0] == "댓글" :
             tmplist = list(tmp[2])
@@ -94,6 +107,7 @@ init python:
         else :
             fbook_post.extend([[tmp[0]]])
 
+
     #카톡모드 1 = 친구목록, 2 = 대화목록
     ktalk_mode = 1
 
@@ -103,6 +117,7 @@ init python:
                      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
     for_day_schedule_select = 0
+
 
 # 여기에서부터 게임이 시작합니다.
 label start:
@@ -176,8 +191,6 @@ label what_is_your_name:
     p "내 이름은 [povname]!"
 
     return
-
-
 
 
 # label start에서 호출됨
@@ -257,3 +270,43 @@ label parameter_maxmin_check :
         $ dongah.parameter = 0
     elif dongah.parameter > 100 :
         $ dongah.parameter = 100
+
+define Player = Character("주인공", color="#ffcccc", image="Player")
+image side Player :
+    "character/cha_player.png"
+
+define Jinil = Character("진일", color="#ffcccc", image="Jinil")#, window_left_padding = -100)
+image side Jinil :
+    "character/cha_jinil.png"
+
+define Jangjung = Character("장중", color="#ffcccc", image="Jangjung")
+image side Jangjung :
+    "character/cha_jangjung.png"
+
+define Samyong = Character("삼용", color="#ffcccc", image="Samyong")
+image side Samyong :
+    "character/cha_samyong.png"
+
+define Daehyun = Character("대현", color="#ffcccc", image="Daehyun")
+image side Daehyun :
+    "character/cha_daehyun.png"
+
+define Hyunjae = Character("현재", color="#ffcccc", image="Hyunjae")
+image side Hyunjae :
+    "character/cha_hyunjae.png"
+
+define Mirae = Character("미래", color="#ffcccc", image="Mirae")
+image side Mirae :
+    "character/cha_mirae.png"
+
+define Dongah = Character("동아", color="#ffcccc", image="Dongah")
+image side Dongah :
+    "character/cha_dongah.png"
+
+define Ohduck = Character("덕현", color="#ffcccc", image="Ohduck")
+image side Ohduck :
+    "character/cha_ohduck.png"
+
+define Geumji = Character("금지", color="#ffcccc", image="Geumji")
+image side Geumji :
+    "character/cha_geumji.png"

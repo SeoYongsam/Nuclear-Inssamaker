@@ -6,7 +6,8 @@ label sunday_room:
     scene sunday_room_image at truecenter
 
     $ YoIl = day_name[day]
-    $ day_for_show = (week-1)*7 + day + 1
+    if day < 7 :
+        $ day_for_show = (week-1)*7 + day + 1
 
     show screen dateShow
 

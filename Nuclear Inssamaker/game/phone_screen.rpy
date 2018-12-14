@@ -11,7 +11,7 @@ screen phone_UI() :
         imagebutton :
             idle "phone/exitButton.png"
             hover "phone/exitButton_on.png"
-            action Jump("phone_close")
+            action SetVariable("ktalk_mode", 1), Jump("phone_close")
 
     #홈버튼
     vbox xpos 620 ypos 672 :
@@ -64,12 +64,23 @@ screen phone_button_in_homescreen() :
         imagebutton :
             idle "phone/icon_fbook.png"
             hover "phone/icon_fbook_on.png"
-            action Hide("phone_button_in_homescreen"), Show("fbook")
+            action Hide("phone_button_in_homescreen"), Show("fbook")#, SetVariable("fbook_count", 0)
 
         imagebutton :
             idle "phone/icon_talk.png"
             hover "phone/icon_talk_on.png"
             action Hide("phone_button_in_homescreen"), Show("ktalk")
+
+#    if fbook_count != 0 :
+#        add "phone/red_dot.png" xpos 500 ypos 560 at shake
+#        vbox xpos 500 ypos 560 xsize 20 ysize 20:
+#            text "N" size 18 xalign .6 yalign .5 at shake
+
+    if grouptalk.new_message_count + jangjung.new_message_count + jinil.new_message_count + samyong.new_message_count + dongah.new_message_count != 0 :
+        add "phone/red_dot.png" xpos 595 ypos 560 at shake
+        vbox xpos 595 ypos 560 xsize 20 ysize 20:
+            text "N" size 18 xalign .6 yalign .5 at shake
+
 
 screen fbook :
     add im.Scale("phone/fbook/fbook_background.png", 440, 624) xpos 420 ypos 40
@@ -103,6 +114,8 @@ screen fbook :
                                 add "character/profile_hyunjae.png"
                             elif msg[1] == "박대현" :
                                 add "character/profile_daehyun.png"
+                            elif msg[1] == "이동아" :
+                                add "character/profile_dongah.png"
 
                             null width 6
 
@@ -453,14 +466,14 @@ screen ktalk:
 
                                 null height -tmp_height
                                 hbox xsize tmp_width :
-                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                    add "phone/ktalk/ktalk_dot.png"
                                     null width tmp_width -8
-                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                    add "phone/ktalk/ktalk_dot.png"
                                 null height tmp_height - 8
                                 hbox xsize tmp_width :
-                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                    add "phone/ktalk/ktalk_dot.png"
                                     null width tmp_width -8
-                                    add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                    add "phone/ktalk/ktalk_dot.png"
 
                                 null height -3 - tmp_height
                                 vbox xpos 6 ypos 8 :
@@ -517,14 +530,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -538,14 +551,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -588,14 +601,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -624,14 +637,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -645,14 +658,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -695,14 +708,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -731,14 +744,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -752,14 +765,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -802,14 +815,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -838,14 +851,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -859,14 +872,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -909,14 +922,14 @@ screen ktalk:
 
                                     null height -tmp_height
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                     null height tmp_height - 8
                                     hbox xsize tmp_width :
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
                                         null width tmp_width -8
-                                        add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                        add "phone/ktalk/ktalk_dot.png"
 
                                     null height -3 - tmp_height
                                     vbox xpos 6 ypos 8 :
@@ -945,14 +958,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
@@ -966,14 +979,14 @@ screen ktalk:
 
                                         null height -tmp_height
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                         null height tmp_height - 8
                                         hbox xsize tmp_width :
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
                                             null width tmp_width -8
-                                            add im.Scale("phone/ktalk/ktalk_background.png", 4, 4)
+                                            add "phone/ktalk/ktalk_dot.png"
 
                                         null height -tmp_height
                                         hbox xpos 6 ypos 6 :
