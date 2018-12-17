@@ -44,9 +44,11 @@ init python:
     class messages :
         def __init__(self) :
             self.message = []
+            # self.message_temp = []
             self.new_message_count = 0
-            self.new_message_watch = False
             self.parameter = 0
+            self.denominator_length = 1.0 #분모
+            self.numerator_length = 0.0 #분자
 
         # messages.add("이름|내용")
         def add(self, data) :
@@ -59,13 +61,29 @@ init python:
                 del tmplist[len(tmplist) - 1]
             tmp[1] = ''.join(tmplist)
 
+            if tmp[0] == "주인공" :
+                self.denominator_length += 44 + tmp[1].count("\n") * 24
+
+            elif tmp[0] == "연속":
+                self.denominator_length += 44 + tmp[1].count("\n") * 24
+
+            elif tmp[0] == "날짜":
+                self.denominator_length += 44
+
+            else :
+                self.denominator_length += 75 + tmp[1].count("\n") * 24
 
             self.message.extend([[tmp[0], tmp[1]]])
-            if tmp[0] != "날짜" :
+#            self.message_temp.extend([[tmp[0], tmp[1]]])
+
+            if tmp[0] != "날짜" and tmp[0] != "주인공" :
                 self.new_message_count += 1
 
         def reset(self) :
             del self.message[:]
+
+        #def reset_temp(self) :
+        #    del self.message_temp[:]
 
     #클래스 테스트2
     #캐릭터 일람 : 장중, 삼용, 현재, 동아, 진일, 미래, 주인공
@@ -135,13 +153,7 @@ label start:
 
     "일요일에는.\n핸드폰을 이용해 SNS를 확인하거나,\n달력를 이용해 다음주 일정을 짜세요."
 
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
 
     # sunday_room_label의 sunday_room label 호출
     jump sunday_room
@@ -170,11 +182,36 @@ screen dateShow() :
 screen upper_right_UI() :
     ## 일단 여기다가 background 때려 박았음"
     add "parameter_UI.png"
-    add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
-    add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64
-    add im.Scale("parameter_bar.png", 52*(study_parameter)/100, 4) xpos 992 ypos 180
-    add im.Scale("parameter_bar.png", 52*(gwa_parameter)/100, 4) xpos 1092 ypos 180
-    add im.Scale("parameter_bar.png", 52*(club_parameter)/100, 4) xpos 1192 ypos 180
+    vbox :
+        xpos 1016 ypos 16
+        xsize 244 ysize 28
+        bar value AnimatedValue(244*hp/200, 244, 0.5) style "HP_bar"
+
+    vbox :
+        xpos 1016 ypos 64
+        xsize 244 ysize 28
+        bar value AnimatedValue(244*hp/100, 244, 0.5) style "MP_bar"
+
+    #add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
+    #add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64
+    vbox :
+        xpos 992 ypos 180
+        xsize 52 ysize 4
+        bar value AnimatedValue(52*study_parameter/100 , 52, 0.5) style "bar"
+
+    vbox :
+        xpos 1092 ypos 180
+        xsize 52 ysize 4
+        bar value AnimatedValue(52*gwa_parameter/100 , 52, 0.5) style "bar"
+
+    vbox :
+        xpos 1192 ypos 180
+        xsize 52 ysize 4
+        bar value AnimatedValue(52*club_parameter/100 , 52, 0.5) style "bar"
+
+    #add im.Scale("parameter_bar.png", 52*(study_parameter)/100, 4) xpos 992 ypos 180
+    #add im.Scale("parameter_bar.png", 52*(gwa_parameter)/100, 4) xpos 1092 ypos 180
+    #add im.Scale("parameter_bar.png", 52*(club_parameter)/100, 4) xpos 1192 ypos 180
 
 
 # label start에서 넘어옴

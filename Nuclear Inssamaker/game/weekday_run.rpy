@@ -1,8 +1,55 @@
+screen weekday_schedule_show :
+    hbox :
+        xalign 0.5 yalign 0.15
+        for i in range (1, 8) :
+            vbox :
+                if day_schedule[month - 3][(week - 1) * 8 + i] == 1:
+                    add "weekday_study.png"
+
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 2:
+                    add "weekday_club.png"
+
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 3:
+                    add "weekday_gwa.png"
+
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 4:
+                    add "weekday_rest.png"
+
+                if i == 1 :
+                    text "M" xalign 0.5
+
+                elif i == 2 :
+                    text "T" xalign 0.5
+
+                elif i == 3 :
+                    text "W" xalign 0.5
+
+                elif i == 4 :
+                    text "T" xalign 0.5
+
+                elif i == 5 :
+                    text "F" xalign 0.5
+
+                elif i == 6 :
+                    text "{color=#2CB8D6}S{/color}" xalign 0.5
+
+                elif i == 7 :
+                    text "{color=#2F4FF4}S{/color}" xalign 0.5
+
+            if day == i :
+                null width -39
+                add "weekday_today.png"
+                null width -3
+
+            if i != 7 :
+                null width 30
+
 label weekday_day :
     scene black #with dissolve
     show screen stats_screen
 
     show screen phone_icon
+    show screen weekday_schedule_show
 
     $ YoIl = day_name[day]
     if day < 7 :
@@ -101,13 +148,7 @@ label weekday_SNS :
 
 #    scene black with vpunch
 
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
 
     pause
 
@@ -136,6 +177,27 @@ label weekday_schedule_reset :
         $ week += 1
     $ day = 0
 
+    call change_SNS
+
+    $ for_day_schedule_select = 0
+
+    hide screen weekday_schedule_show
+
+#    scene black with dissolve
+#    pause
+    return
+
+label change_SNS :
+    if grouptalk.new_message_count == 0 :
+        $ grouptalk.numerator_length = grouptalk.denominator_length
+    if jangjung.new_message_count == 0 :
+        $ jangjung.numerator_length = jangjung.denominator_length
+    if jinil.new_message_count == 0 :
+        $ jinil.numerator_length = jinil.denominator_length
+    if samyong.new_message_count == 0 :
+        $ samyong.numerator_length = samyong.denominator_length
+    if dongah.new_message_count == 0 :
+        $ dongah.numerator_length = dongah.denominator_length
     $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
     call change_group_talk
@@ -144,8 +206,4 @@ label weekday_schedule_reset :
     call change_samyong_talk
     call change_dongah_talk
 
-    $ for_day_schedule_select = 0
-
-#    scene black with dissolve
-#    pause
     return

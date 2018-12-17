@@ -263,13 +263,7 @@ label rest:
     return
 
 label fun_morning:
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
     $ day += 1
     $ day_or_evening = "day"
 
@@ -356,13 +350,7 @@ label fun_morning:
         show subway at truecenter
         "집까지 갈 길이 아주 먼 것 같다.."
 
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
     $ day_for_show = 7
     $ day += 1
     $ day_or_evening = "evening"

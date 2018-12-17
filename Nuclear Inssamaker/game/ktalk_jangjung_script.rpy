@@ -44,7 +44,7 @@ label change_jangjung_talk :
 
         elif week == 4 :
             if day == 0 :
-                $ grouptalk.add("날짜|3월 22일 일요일")
+                $ jangjung.add("날짜|3월 22일 일요일")
                 if gwazam_finished == False :
                     # 투표 진행
                     $ jangjung.add("해장중|이거 투표로 되면 진짜 할거야? 하…. 걱정되네")

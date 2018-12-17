@@ -41,8 +41,18 @@ style prompt_text is gui_text:
 
 
 style bar:
-    ysize gui.bar_size
+    ysize 4
     left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+
+style HP_bar:
+    ysize 28
+    left_bar Frame("gui/bar/HP_bar.png", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+
+style MP_bar:
+    ysize 28
+    left_bar Frame("gui/bar/MP_bar.png", gui.bar_borders, tile=gui.bar_tile)
     right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
 
 style vbar:

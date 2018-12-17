@@ -200,13 +200,7 @@ label olympic:
     $ mental_point -= 30
     call parameter_maxmin_check
 
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
     $ day += 1
     jump weekday_SNS
 

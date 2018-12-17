@@ -431,7 +431,18 @@ screen ktalk:
         viewport:
             xpos 420 ypos 40
             xsize 440 ysize 624
-            yinitial 1.0
+            if talk_with_who == "그룹" :
+                yinitial (grouptalk.numerator_length / grouptalk.denominator_length)
+            elif talk_with_who == "장중" :
+                yinitial (jangjung.numerator_length / jangjung.denominator_length)
+            elif talk_with_who == "진일" :
+                yinitial (jinil.numerator_length / jinil.denominator_length)
+            elif talk_with_who == "삼용" :
+                yinitial (samyong.numerator_length / samyong.denominator_length)
+            elif talk_with_who == "동아" :
+                yinitial (dongah.numerator_length / dongah.denominator_length)
+            else :
+                yinitial 1.0
             draggable True
             mousewheel True
             arrowkeys True
@@ -486,6 +497,7 @@ screen ktalk:
 
                                         text "{color=#000}%s" %tmp size 18
                             null height 12
+
 
                         else :
                             hbox xpos 4 ypos 4:
@@ -1003,3 +1015,8 @@ screen ktalk:
             xpos 420 ypos 40
             idle im.Alpha(im.Scale("white.png", 40, 50), 0)
             action SetVariable("ktalk_mode", 2)
+
+#label grouptalk_refresh :
+#    $ grouptalk.message.extend(grouptalk.message_temp)
+#    $ grouptalk.reset_temp()
+#    return
