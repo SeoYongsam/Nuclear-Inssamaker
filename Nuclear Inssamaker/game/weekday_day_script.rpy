@@ -57,7 +57,7 @@ label weekday_day_event :
                 $ zinil.parameter += 20
                 $ gwazam_store = False
 
-    elif month == 3 and week == 3 and day == 3 and gwazamstore == True :
+    elif month == 3 and week == 3 and day == 3 and gwazam_store == True :
         # 3/18
         # month = 3, week = 3, day = 3
         # 업체 방문 안할 경우, 정한 일정, 업체 방문 할 경우 아래의 스크립트.
@@ -233,6 +233,11 @@ label weekday_day_event :
                     call parameter_maxmin_check
 
                     $ gwazam_finished = True
+
+    elif month == 3 and week == 4 and day == 3 and gwazam_finished == False :
+            "기간이 다 되어서 투표가 마감되었다."
+            "다수결에 따라서 보라, 흰색 과잠으로 과잠 디자인이 결정되었다."
+            $ gwazam_finished == True
 
     elif month == 4 and week == 1 and day == 1 :
         call uniform_day
