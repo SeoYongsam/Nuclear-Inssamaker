@@ -193,7 +193,7 @@ label weekday_day_event :
                     $ fun_mt_vote_finished = True
                     $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
 
-    elif month == 4 and week == 1 and day == 4 : 
+    elif month == 4 and week == 1 and day == 4 :
         if fun_mt_vote_finished == False :
             "장발후발 투표 결과 장발대 8 / 후발대 14"
             "점점 장발대가 줄어들고 있습니다.\n투표를 더 진행하시겠습니까?"
