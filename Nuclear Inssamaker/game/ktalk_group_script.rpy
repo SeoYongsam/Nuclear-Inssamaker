@@ -279,7 +279,7 @@ label change_group_talk :
 
             elif day == 5 :
                 # (강제 선택한 경우)
-                if gwa_jam_finished == True :
+                if gwazam_finished == True :
                     $ grouptalk.add("날짜|3월 20일 금요일")
                     $ grouptalk.add ("안금지|ㅠㅠ 나는 안 살래… 돈이 너무 없어 ㅠ")
                     $ grouptalk.add ("유현재|음…. 그래도 고생했어 과준위 ㅎㅎㅎ")
@@ -305,7 +305,7 @@ label change_group_talk :
 
             #elif day == 6 :
                 # 강제 종료
-                # if gwa_jam_finished == True :
+                # if gwazam_finished == True :
                 #     $ grouptalk.add ("해장중|술~ 이 한잔 생각 나~는 밤")
                 #     $ grouptalk.add ("유현재|마치~ 있는 것 같아요~")
                 #     $ grouptalk.add ("박대현|그~ 좋았던 시~절들")
@@ -327,7 +327,7 @@ label change_group_talk :
         elif week == 4 :
             #if day == 0 :
                 # 투표 강제 종료시
-                # if gwa_jam_finished == True :
+                # if gwazam_finished == True :
                 #     $ grouptalk.add ("박대현|우리 과잠은 언제 나오지??")
                 #     $ grouptalk.add ("주인공|아마 곧 나올 것 같은데 ㅋㅋㅋ 우리 과잠 진짜 예쁜 것 같아!")
                 #     $ grouptalk.add ("안금지|아닌 것 같은데….ㅠ")
@@ -351,7 +351,7 @@ label change_group_talk :
 
             #elif day == 1 :
                 # 투표 종료시
-                # if gwa_jam_finished == True :
+                # if gwazam_finished == True :
                 #     $ grouptalk.add ("주인공|애들아 우리 이제 우리끼리도 밥약하자 ㅋㅋㅋ")
                 #     $ grouptalk.add ("동삼용|오 또 뻔대가 일한다 ㅋㅋㅋㅋ 나 완전 좋아 ㅋㅋㅋ 나는 이번주 월,화, 수, 목 12시 반 가능해")
                 #     $ grouptalk.add ("해장중|나도나도 ㅋㅋㅋㅋ 근데 나는 화, 수만 학교 와서 ㅋㅋㅋ 그때만 될 것 같아")
@@ -373,7 +373,7 @@ label change_group_talk :
 
             if day == 2 :
             #   투표 마감시
-                if gwa_jam_finished == True :
+                if gwazam_finished == True :
                     $ grouptalk.add("날짜|3월 24일 화요일")
                     $ grouptalk.add ("유현재|우리 과잠은 언제오지 ㅋㅋㅋ 빨리 입고 싶은데")
                     $ grouptalk.add ("김진일|ㅋㅋㅋ 진짜 간지다 누가 봐도 눈에 띌듯 ㅋㅋㅋㅋ")

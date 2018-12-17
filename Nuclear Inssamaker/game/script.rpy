@@ -30,7 +30,10 @@ init python:
     talk_with_who = "그룹"
 
     #event용 스위치
-    gwa_jam_finished = False
+    gwazam_finished = False
+    gwazam_store = False
+    gwazam_hidden = False
+
     fun_mt_location_finished = False
     fun_mt_vote_finished = False
     # 4월 4일 전까지 투표를 끝냈는가 확인하기 위한 변수
@@ -130,7 +133,7 @@ label start:
     Player "으으 머리야...분명히 금요일에 병샷을 한 것 까지는 기억나는데..."
     Player "아 핸드폰 어딨지? 핸드폰 한 번 확인해봐야겠다."
 
-    "일요일에는.\n핸드폰을 이용해 SNS를 확인하거나,\n달력을 이용해 다음주 일정을 짜세요."
+    "일요일에는.\n핸드폰을 이용해 SNS를 확인하거나,\n달력를 이용해 다음주 일정을 짜세요."
 
     $ random.shuffle(rand_list_for_katlk_list)
     call change_fbook_post
