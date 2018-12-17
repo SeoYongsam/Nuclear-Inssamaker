@@ -54,10 +54,10 @@ label weekday_day_event :
                 "진일이와의 관계가 좋아진 것 같다."
 
                 #진일 파라미터 증가, 업체 방문 여부 x
-                $ zinil.parameter += 20
+                $ jinil.parameter += 20
                 $ gwazam_store = False
 
-    elif month == 3 and week == 3 and day == 3 and gwazamstore == True :
+    elif month == 3 and week == 3 and day == 3 and gwazam_store == True :
         # 3/18
         # month = 3, week = 3, day = 3
         # 업체 방문 안할 경우, 정한 일정, 업체 방문 할 경우 아래의 스크립트.
