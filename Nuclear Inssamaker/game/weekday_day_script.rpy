@@ -10,6 +10,7 @@ label weekday_day_event :
 
     elif month == 3 and week == 2 and day == 1 :
         call dongsoze
+        $ club_open = True
 
     elif month == 3 and week == 2 and day == 5 :
         call all_mt
@@ -99,7 +100,7 @@ label weekday_day_event :
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "생각보다 반응이 싸늘했다..분위기가 살짝 안 좋아진것 같다.."
-                        $ gwa_parameter -= 10
+                        $ gwa_parameter -= 2
                         call parameter_maxmin_check
 
                     "삼용이가 제안한 보라, 흰색":
@@ -111,8 +112,8 @@ label weekday_day_event :
                         $ samyong.parameter += 20
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
-                        "열렬한 반응이 돌아왔다! 과 친구들 모두 마음에 드는 것 같다!"
-                        $ gwa_parameter += 20
+                        "열렬한 반응이 돌아왔다! 과 친구들 모두 마음에 들어하는 것 같다!"
+                        $ gwa_parameter += 4
                         call parameter_maxmin_check
 
                     "장중이가 제안한 검검":
@@ -125,7 +126,7 @@ label weekday_day_event :
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "별다른 반응이 없지만, 과잠을 맞춘 것 만으로도 만족하는 분위기이다."
-                        $ gwa_parameter += 10
+                        $ gwa_parameter += 4
                         call parameter_maxmin_check
 
             "과 친구들에게 투표를 받는다.":
@@ -151,7 +152,7 @@ label weekday_day_event :
 
                 "최다 표를 얻은 검검 과잠 선택하기" :
                     "친구들이 좋아하는 것 같긴 한데, 너무 빨리 정한 것 같은 느낌이 든다."
-                    $ gwa_parameter += 10
+                    $ gwa_parameter += 3
                     call parameter_maxmin_check
 
                     $ gwazam_hidden = True
@@ -170,7 +171,7 @@ label weekday_day_event :
 
                 "최다 표를 얻은 검검 과잠 선택하기" :
                     "의견을 적당히 모은 것 같다. 과 분위기가 좋아진 것 같다."
-                    $ gwa_parameter += 20
+                    $ gwa_parameter += 6
                     call parameter_maxmin_check
 
                     $ gwazam_hidden = True
@@ -189,7 +190,7 @@ label weekday_day_event :
 
                 "최다 표를 얻은 검검 과잠 선택하기" :
                     "오랫동안 의견을 수렴해서 불만이 거의 안나온다. 과 분위기가 많이 좋아졌다."
-                    $ gwa_parameter += 30
+                    $ gwa_parameter += 10
                     call parameter_maxmin_check
 
                     $ gwazam_finished = True
@@ -229,7 +230,7 @@ label weekday_day_event :
 
                 "최다 표를 얻은 검검 과잠 선택하기" :
                     "다 같이 만족하는 결과가 나왔다. 과 분위기가 아주 아주 좋아졌다."
-                    $ gwa_parameter += 40
+                    $ gwa_parameter += 7
                     call parameter_maxmin_check
 
                     $ gwazam_finished = True

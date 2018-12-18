@@ -214,7 +214,7 @@ label jangtuh:
 
         "장터 순이익 : 200만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 150만원"
         "장터 성적 : A, 과 분위기가 아주 좋아졌다."
-        $ gwa_parameter += 30
+        $ gwa_parameter += 5
         call parameter_maxmin_check
 
     elif jangtuh_pre_event == 3 or jangtuh_pre_event == 2 :
@@ -222,7 +222,7 @@ label jangtuh:
 
         "장터 순이익 : 100만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 50만원"
         "장터 성적 : B, 과 분위기가 좋아졌다."
-        $ gwa_parameter += 20
+        $ gwa_parameter += 3
         call parameter_maxmin_check
 
     elif jangtuh_pre_event == 1 :
@@ -230,7 +230,7 @@ label jangtuh:
 
         "장터 순이익 : 50만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 0원"
         "장터 성적 : C, 흑자는 아니지만 과 사람들이 서로 돈독해진 것 같다."
-        $ gwa_parameter += 10
+        $ gwa_parameter += 1
         call parameter_maxmin_check
 
     else :
@@ -238,7 +238,7 @@ label jangtuh:
 
         "장터 순이익 : 0원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : -50만원"
         "장터 성적 : D, 과 분위기 망했다."
-        $ gwa_parameter -= 20
+        $ gwa_parameter -= 3
         call parameter_maxmin_check
 
 

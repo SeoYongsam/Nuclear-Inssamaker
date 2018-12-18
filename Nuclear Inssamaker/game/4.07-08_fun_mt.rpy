@@ -39,7 +39,7 @@ label fun_mt:
         #과 파라미터 + / 멘탈 +
         "투표를 적당히 마감해서인지, 장발대에 친구들이 많이 왔다."
         "과 분위기도 좋아진 것 같고 내 마음도 훈훈하다."
-        $ gwa_parameter += 10
+        $ gwa_parameter += 3
         $ mental_point += 20
         call parameter_maxmin_check
 
@@ -63,7 +63,7 @@ label fun_mt:
         #과 파라미터 - / 멘탈 -
         "투표를 너무 늦게 마감해서인지, 애들이 전부 후발대로 탈주했다."
         "과 분위기가 이렇게 흉흉했다니... 내 멘탈이 터졌다."
-        $ gwa_parameter -= 10
+        $ gwa_parameter -= 3
         $ mental_point -= 20
         call parameter_maxmin_check
 
@@ -126,7 +126,7 @@ label fun_mt:
 
     #과 파라미터에 따라 달라지는 스크립트. 5, 6
     #5 과 파라미터가 n 이상일 때
-    if gwa_parameter >= 40 :
+    if gwa_parameter >= 20 :
         show gogi_s at truecenter
         Jangjung "와 뻔대 최고다! 고기 진짜 잘 굽네."
         Ohduck "오이시이~ 아리가또 고자이마스. 뻔대쿤"
@@ -293,7 +293,7 @@ label fun_morning:
         show subway at truecenter
         "아이들을 깨워서 다 같이 집으로 향했다. 몸 상태도 생각보다 괜찮고, 친구들과 웃으며 얘기를 하다보니 어느새 집에 거의 도착한 것 같다.."
         #과 파라미터 많이 +
-        $ gwa_parameter += 30
+        $ gwa_parameter += 5
         call parameter_maxmin_check
 
     elif rest_point == 2 :
@@ -322,7 +322,7 @@ label fun_morning:
         show subway at truecenter
         "아이들을 깨워서 다 같이 집으로 향했다. 머리는 살짝 아팠지만, 친구들과 웃으며 얘기를 하다보니 어느새 집에 거의 도착한 것 같다.."
         #과 패러미터 보통 +
-        $ gwa_parameter += 20
+        $ gwa_parameter += 3
         call parameter_maxmin_check
 
     elif rest_point == 1 :
@@ -339,7 +339,7 @@ label fun_morning:
         show subway at truecenter
         "아이들을 깨워서 다 같이 집으로 향했다. 술을 많이 마셔서 머리는 살짝 아팠지만, 친구들과 얘기를 하다보니 어느새 집에 거의 도착한 것 같다.."
         #과 파라미터 조금 +
-        $ gwa_parameter += 10
+        $ gwa_parameter += 1
         call parameter_maxmin_check
 
     else :

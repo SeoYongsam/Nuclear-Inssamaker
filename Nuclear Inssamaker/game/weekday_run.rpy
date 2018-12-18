@@ -55,14 +55,17 @@ label weekday_day :
     if day < 7 :
         $ day_for_show = (week-1)*7 + day + 1
 
-    if mental_point == 0 :
+    if hp == 0 :
+        call hp_0_break_event
+
+    elif mental_point == 0 :
         call mental_point_0_event
 
-    elif hp <= 50 :
-        if hp == 0 :
-            call hp_0_break_event
-        else :
-            call hp_low_rest_event
+#    elif hp <= 50 :
+#        if hp == 0 :
+#            call hp_0_break_event
+#        else :
+#            call hp_low_rest_event
 
     elif day < 8 :
         call weekday_day_event
@@ -85,9 +88,9 @@ label hp_0_break_event :
     Player "몸이 너무 안좋아 하루동안 병원에 입원했다."
     extend "\n모든 면에서 멍청해진 것 같다."
     $ hp += 80
-    $ study_parameter -= 20
-    $ gwa_parameter -= 20
-    $ club_parameter -= 20
+    $ study_parameter -= -2
+    $ gwa_parameter -= 2
+    $ club_parameter -= 2
     call parameter_maxmin_check
 
     jump weekday_SNS
@@ -103,9 +106,9 @@ label hp_low_rest_event :
         else :
             Player "몸이 너무 안좋다. 낮에 집에서 잤다."
         $ hp += 40
-        $ study_parameter -= 15
-        $ gwa_parameter -= 5
-        $ club_parameter -= 5
+        $ study_parameter -= 3
+        $ gwa_parameter -= 1
+        $ club_parameter -= 1
         call parameter_maxmin_check
 
         jump weekday_evening
@@ -117,9 +120,9 @@ label mental_point_0_event :
     extend "\n하루 일정을 날리긴 했지만, 멘탈을 좀 회복했다."
 
     $ mental_point += 40
-    $ study_parameter -= 10
-    $ gwa_parameter -= 10
-    $ club_parameter -= 10
+    $ study_parameter -= 1
+    $ gwa_parameter -= 1
+    $ club_parameter -= 1
     call parameter_maxmin_check
 
     jump weekday_SNS

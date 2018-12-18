@@ -22,6 +22,7 @@ init python:
     study_count = 0
     club_parameter = 0
     club_count = 0
+    club_open = False
     gwa_parameter = 0
     gwa_count = 0
 
@@ -190,7 +191,7 @@ screen upper_right_UI() :
     vbox :
         xpos 1016 ypos 64
         xsize 244 ysize 28
-        bar value AnimatedValue(244*hp/100, 244, 0.5) style "MP_bar"
+        bar value AnimatedValue(244*mental_point/100, 244, 0.5) style "MP_bar"
 
     #add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
     #add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64

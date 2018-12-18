@@ -86,7 +86,7 @@ label pcbang:
         "정중히 거절하고 예정된 계획대로 하루를 보낸다" :
             ""
             #과활동 패러미터 DOWN
-            $ gwa_parameter -= 10
+            $ gwa_parameter -= 3
             call parameter_maxmin_check
 
     return

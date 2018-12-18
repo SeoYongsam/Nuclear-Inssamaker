@@ -79,12 +79,12 @@ label karaoke:
     menu:
         "분위기 갑분싸 될 것 같으니 거절한다":
             $ samyong.parameter -= 20
-            $ gwa_parameter += 20
+            $ gwa_parameter += 2
             "삼용이는 아쉬워하지만 분위기를 위해서는 어쩔 수 없지"
 
         "삼용이가 바라는 것 같으니까 부르라고 한다":
             $ samyong.parameter += 20
-            $ gwa_parameter -= 20
+            $ gwa_parameter -= 2
             "분위기는 쳐졌지만, 삼용이는 행복해하니..."
 
     show kasi at truecenter

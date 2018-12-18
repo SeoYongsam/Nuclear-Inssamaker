@@ -49,7 +49,7 @@ label olympic:
             extend "일단 알겠어!!!"
 
             #과 파라미터 - / 장중 파라미터 +
-            $ gwa_parameter -= 10
+            $ gwa_parameter -= 2
             $ jangjung.parameter += 20
             call parameter_maxmin_check
 
@@ -94,7 +94,7 @@ label olympic:
             extend "10명대 11명으로 하시죠"
 
             #과 파라미터 -
-            $ gwa_parameter -= 10
+            $ gwa_parameter -= 2
             call parameter_maxmin_check
 
         "거절한다":
@@ -107,7 +107,7 @@ label olympic:
             Player "야 노미래! 노미래!!!!!!"
 
             #과 파라미터 --
-            $ gwa_parameter -= 20
+            $ gwa_parameter -= 4
             call parameter_maxmin_check
 
     show playground at truecenter
@@ -138,7 +138,7 @@ label olympic:
             #진일 +, 장중 -, 과 -
             $ jinil.parameter += 20
             $ jangjung.parameter -= 20
-            $ gwa_parameter -= 10
+            $ gwa_parameter -= 2
             call parameter_maxmin_check
 
         "거절한다":
@@ -153,7 +153,7 @@ label olympic:
             extend "어휴 난 모르겠다..."
             #진일 -, 과 -
             $ jinil.parameter -= 20
-            $ gwa_parameter -= 10
+            $ gwa_parameter -= 2
             call parameter_maxmin_check
 
     $ day_or_evening = "evening"

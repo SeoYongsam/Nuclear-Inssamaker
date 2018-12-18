@@ -14,8 +14,8 @@ label uniform_day:
         "수업을 째고 동기들과 점심을 먹으러 간다":
             #hp & 공부 파라미터-, 과 파라미터 up, 개별 캐릭터와 파라미터는 변함이 없고 과 친밀도가 올라감
             $ hp -= 20
-            $ study_parameter -= 10
-            $ gwa_parameter += 10
+            $ study_parameter -= 1
+            $ gwa_parameter += 3
             call parameter_maxmin_check
 
             "수업을 째고 동기들이랑 점심을 먹으러 캠퍼스 안에 있는 잔디밭에 갔다."

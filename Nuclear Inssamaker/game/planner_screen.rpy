@@ -74,7 +74,8 @@ screen schedule_button():
                 action SetVariable("for_day_schedule_select", 3), Jump("planner")
 
             imagebutton :
-                if month != 3 or week > 2 :
+                # if month != 3 or week > 2 :
+                if club_open == True :
                     idle "planner/button_club.png"
                     hover "planner/button_club_on.png"
                     action SetVariable("for_day_schedule_select", 2), Jump("planner")
@@ -103,7 +104,6 @@ screen month_schedule_icon_show():
 
     for i in range(1, 5) :
         for j in range(1, 6) :
-        # 월요일
             if day_schedule[month_for_display][(i-1)*8 + j] != 0:
                 hbox:
                     xpos 160 + 128*(j-1) + 15 ypos 175 + 128*(i-1) + 97

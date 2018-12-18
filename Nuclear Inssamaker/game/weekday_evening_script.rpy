@@ -168,30 +168,27 @@ label evening_study:
     show study at truecenter
     if (month == 4 and week == 3 and day >= 5) or (month == 4 and week == 4 and day <= 4) or (month == 6 and week == 2 and day >= 4) or (month == 6 and week == 3 and day <= 3) :
         "시험을 대비해서 열심히 공부했다\n"
-        extend "체력 -15, 멘탈 -15, 공부 +15, 과 -3, 동아리 -3"
+        extend "체력 -15, 멘탈 -15, 공부 +5, 과 -1, 동아리 -1"
 
         python :
             hp -= 15
             mental_point -= 15
-            study_parameter += 10
-            gwa_parameter -= 3
-            club_parameter -= 3
-
-            study_count += 1
+            study_parameter += 5
+            gwa_parameter -= 1
+            club_parameter -= 1
 
     else :
         "공부했다\n"
-        extend "체력 -15, 멘탈 -15, 공부 +8, 과 -3, 동아리 -3"
+        extend "체력 -15, 멘탈 -15, 공부 +3, 과 -1, 동아리 -1"
 
         python :
             hp -= 15
             mental_point -= 15
-            study_parameter += 8
-            gwa_parameter -= 3
-            club_parameter -= 3
+            study_parameter += 3
+            gwa_parameter -= 1
+            club_parameter -= 1
 
-            study_count += 1
-
+    $ study_count += 1
     call parameter_maxmin_check
 
     return
@@ -200,31 +197,49 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습했다\n"
-        extend "체력 -25, 멘탈 +20, 공부 -3, 과 -3, 동아리 +15"
+        extend "체력 -25, 멘탈 +20, 공부 -1, 과 -1, 동아리 +3"
 
         python :
             hp -= 25
             mental_point += 20
-            study_parameter -= 3
-            gwa_parameter -= 3
-            club_parameter += 15
-
-            club_count += 1
+            study_parameter -= 1
+            gwa_parameter -= 1
+            club_parameter += 3
 
     else :
         show club_thur at truecenter
-        "동아리 정기연습했다\n"
-        extend "체력 -25, 멘탈 +20, 공부 -3, 과 -3, 동아리 +25"
+        if club_count < 10 :
+            "동아리 정기연습했다\n"
+            extend "체력 -25, 멘탈 +10, 공부 -1, 과 -1, 동아리 +5"
 
-        python :
-            hp -= 25
-            mental_point += 20
-            study_parameter -= 3
-            gwa_parameter -= 3
-            club_parameter += 25
+            python :
+                hp -= 25
+                mental_point += 10
+                study_parameter -= 1
+                gwa_parameter -= 1
+                club_parameter += 5
 
-            club_count += 1
+        elif club_count < 20 :
+            "동아리에서 간단하게 버스킹을 했다\n"
+            extend "체력 -20, 멘탈 +20, 공부 -1, 과 -1, 동아리 +7"
+            python :
+                hp -= 20
+                mental_point += 20
+                study_parameter -= 1
+                gwa_parameter -= 1
+                club_parameter += 7
 
+        else :
+            "동아리 선배들과 친해져서 맛집 탐방을 가기로 했다.\n맛있는 것을 먹으니 힘이 조금 나는 것 같다!\n"
+            extend "체력 +15, 멘탈 +30, 공부 -1, 과 -1, 동아리 +10"
+            python :
+                hp += 15
+                mental_point += 30
+                study_parameter -= 1
+                gwa_parameter -= 1
+                club_parameter += 10
+
+    $ club_count += 1
     call parameter_maxmin_check
 
     return
@@ -233,14 +248,14 @@ label evening_gwa:
     show gwa at truecenter
     "과 활동했다\n"
 
-    extend "체력 -20, 멘탈 -5, 공부 -3, 과 +15, 동아리 -3"
+    extend "체력 -20, 멘탈 -5, 공부 -1, 과 +3, 동아리 -1"
 
     python :
         hp -= 20
         mental_point -= 5
-        study_parameter -= 3
-        gwa_parameter += 15
-        club_parameter -= 3
+        study_parameter -= 1
+        gwa_parameter += 3
+        club_parameter -= 1
 
         gwa_count += 1
 
@@ -251,13 +266,13 @@ label evening_gwa:
 label evening_rest:
     show rest at truecenter
     "쉬었다\n"
-    extend "체력 +50, 멘탈 +30 과 -3, 동아리 -3"
+    extend "체력 +50, 멘탈 +30 과 -1, 동아리 -1"
 
     python :
         hp += 50
         mental_point += 30
-        gwa_parameter -= 3
-        club_parameter -= 3
+        gwa_parameter -= 1
+        club_parameter -= 1
 
     call parameter_maxmin_check
 
