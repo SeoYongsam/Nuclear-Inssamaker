@@ -161,10 +161,9 @@ label weekday_SNS :
         $ day += 1
         jump weekday_day
     else :
-        "일요일 화면으로 돌아갑니다. 체력을 20 회복합니다.\n멘탈이 5 깎입니다."
+        "일요일 화면으로 돌아갑니다. 체력을 20 회복합니다."
         call weekday_schedule_reset
         $ hp += 20
-        $ mental_point -= 5
         call parameter_maxmin_check
 
         jump sunday_room

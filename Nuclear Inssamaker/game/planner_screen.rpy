@@ -90,8 +90,9 @@ screen schedule_button():
                 action SetVariable("for_day_schedule_select", 4), Jump("planner")
 
 screen month_schedule_icon_show():
-    # 플래너 밑줄
     if month == month_for_display + 3 :
+        text "{color=#DC143C}Today!{/color}" xpos 160 - 128 + 12 ypos 175 + 128*(week-1) + 30
+
         for i in range(1, 6) :
             hbox :
                 if i >= day :
