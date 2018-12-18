@@ -1,3 +1,10 @@
+image home :
+    "home1.png"
+    pause 0.3
+    "home2.png"
+    pause 0.3
+    repeat
+
 screen weekday_schedule_show :
     hbox :
         xalign 0.5 yalign 0.15
@@ -14,6 +21,15 @@ screen weekday_schedule_show :
 
                 elif day_schedule[month - 3][(week - 1) * 8 + i] == 4:
                     add "weekday_rest.png"
+
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 5:
+                    add "weekday_event.png"
+
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 6:
+                    add "weekday_hospital.png"
+
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 7:
+                    add "weekday_home.png"
 
                 if i == 1 :
                     text "M" xalign 0.5
@@ -83,10 +99,12 @@ label weekday_day :
     return
 
 label hp_0_break_event :
+    $ day_schedule[month - 3][(week - 1) * 8 + day] = 6
     scene black
     "[YoIl]요일"
     Player "몸이 너무 안좋아 하루동안 병원에 입원했다."
     extend "\n모든 면에서 멍청해진 것 같다."
+
     $ hp += 80
     $ study_parameter -= -2
     $ gwa_parameter -= 2
@@ -115,7 +133,9 @@ label hp_low_rest_event :
     return
 
 label mental_point_0_event :
-    scene black
+    $ day_schedule[month - 3][(week - 1) * 8 + day] = 7
+
+    show home at truecenter
     Player "정신적으로 너무 힘들어서 집에 다녀왔다."
     extend "\n하루 일정을 날리긴 했지만, 멘탈을 좀 회복했다."
 
@@ -166,6 +186,7 @@ label weekday_SNS :
         $ hp += 20
         call parameter_maxmin_check
 
+        call event_schedule_set
         jump sunday_room
     return
 

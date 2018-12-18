@@ -155,6 +155,7 @@ label start:
     "일요일에는.\n핸드폰을 이용해 SNS를 확인하거나,\n달력를 이용해 다음주 일정을 짜세요."
 
     call change_SNS
+    call event_schedule_set
 
     # sunday_room_label의 sunday_room label 호출
     jump sunday_room

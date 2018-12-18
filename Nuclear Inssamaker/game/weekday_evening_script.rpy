@@ -70,6 +70,7 @@ label weekday_evening_event :
                 $ samyong.parameter += 20
                 $ jangjung.parameter += 20
                 $ gwazam_store = True
+                $ day_schedule[0][19] = 5
 
             "그럴 시간 없다. 그냥 인터넷으로 주문한다" :
                 Player "에이 요새 인터넷도 좋은데, 찾아갈 시간 없어."
@@ -161,7 +162,7 @@ label weekday_evening_event :
                 Samyong "아니야 내 디자인이 뽑힐 듯?"
                 Jangjung "잘 모르네, 검검이 갑임 ㅋㅋㅋㅋ"
                 Player "ㅋㅋㅋㅋ 일단 친구들에게 물어보자"
-                
+
     elif month == 4 and week == 2 and day == 3 :
         call pcbang
 

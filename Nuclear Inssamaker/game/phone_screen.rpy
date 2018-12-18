@@ -59,6 +59,23 @@ transform shake:
     repeat
 
 screen phone_button_in_homescreen() :
+    #핸드폰 메인화면 TO DO LIST
+    vbox :
+        xpos 465 ypos 130
+        text "{color=#000000}TO DO LIST{/color}" size 35
+
+        # 3월
+        if (month-3) * 32 + (week-1)*8 + day <= 12 :
+            text "{color=#000000}- 총MT 잊지 말고 가기"
+        if (month-3) * 32 + (week-1)*8 + day >= 4 and (month-3) * 32 + (week-1)*8 + day <= 25 :
+            text "{color=#000000}- 언시리어스 게임 퀴즈 대비 공부"
+        if (month-3) * 32 + (week-1)*8 + day >= 4 and (month-3) * 32 + (week-1)*8 + day <= 9 :
+            text "{color=#000000}- 동아하고 동소제 구경하기"
+        if (month-3) * 32 + (week-1)*8 + day >= 13 and (month-3) * 32 + (week-1)*8 + day <= 20 :
+            text "{color=#000000}- 과잠 준비 하기"
+
+    text "{color=#000000}- 끝나지 않는 시리어스 게임" xpos 465 ypos 420
+
     hbox xpos 428 ypos 564 :
         spacing 8
         imagebutton :

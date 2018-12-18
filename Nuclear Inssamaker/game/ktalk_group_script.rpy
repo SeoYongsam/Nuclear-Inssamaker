@@ -300,8 +300,8 @@ label change_group_talk :
                     $ grouptalk.add ("박대현|야 아니야 ㅋㅋㅋㅋ 나 연애해봤어 ㅋㅋㅋㅋ 어이가 없다")
                     $ grouptalk.add ("김진일|ㅋㅋㅋㅋㅋ 니들이 사랑을 아냐? ")
                     $ grouptalk.add ("해장중|와 진일이 갬성 빼앰~~~ ")
-                    $ grouptalk.add ("SYSTEM | 투표 결과 1안 | 11 /  2안 | 8 / 3안 | 5")
-                    $ grouptalk.add ("SYSTEM | 투표를 연장하시겠습니까? Y/ N ")
+                    # $ grouptalk.add ("SYSTEM | 투표 결과 1안 | 11 /  2안 | 8 / 3안 | 5")
+                    # $ grouptalk.add ("SYSTEM | 투표를 연장하시겠습니까? Y/ N ")
 
             #elif day == 6 :
                 # 강제 종료
@@ -485,7 +485,7 @@ label change_group_talk :
                 $ grouptalk.add("해장중|그거 ㄹㅇ 인정~ 가까우면 술 마시다 다 도망치겠다")
                 $ grouptalk.add("연속|그러니 님들 대별리 ㄱㄱ")
                 $ grouptalk.add("동삼용|ㄴㄴㄴ 저번에 대별리 갔다가 뻔대 친구 2호선 한 바퀴 도는 거 못봤어?")
-                $ grouptalk.add("연속 |그런 걸 방지하기 위해서라도 가까운 곳이 최고다~ 이 말이야")
+                $ grouptalk.add("연속|그런 걸 방지하기 위해서라도 가까운 곳이 최고다~ 이 말이야")
                 $ grouptalk.add("박대현|ㅋㅋㅋㅋㅋ음 어디로 가지...")
                 $ grouptalk.add("안금지|엠티비 2만원부터인 건 너무 비싼거 아냐??;;;")
 

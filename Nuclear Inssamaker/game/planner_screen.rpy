@@ -95,12 +95,12 @@ screen month_schedule_icon_show():
 
         for i in range(1, 6) :
             hbox :
-                if i >= day :
+                if i >= day and day_schedule[month - 3][(week - 1) * 8 + i] == 0:
                     xpos 160 + 128*(i-1) + 20 ypos 175 + 128*(week-1) + 104
                     add "planner/underline.png"
-        if 6 >= day :
+        if 6 >= day and day_schedule[month - 3][(week - 1) * 8 + 6] == 0:
             add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 67
-        if 7 >= day :
+        if 7 >= day and day_schedule[month - 3][(week - 1) * 8 + 7] == 0:
             add "planner/underline.png" xpos 160 + 128*5 + 20 ypos 175 + 128*(week-1) + 104
 
     for i in range(1, 5) :
@@ -126,6 +126,16 @@ screen month_schedule_icon_show():
                     elif day_schedule[month_for_display][(i-1)*8 + j] == 4:
                         add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
+                    elif day_schedule[month_for_display][(i-1)*8 + j] == 5:
+                         add im.Alpha(im.MatrixColor("planner/sel_event.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+                    elif day_schedule[month_for_display][(i-1)*8 + j] == 6:
+                         add im.Alpha(im.MatrixColor("planner/sel_hospital.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+                    elif day_schedule[month_for_display][(i-1)*8 + j] == 7:
+                         add im.Alpha(im.MatrixColor("planner/sel_home.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+
         vbox:
             xpos 160 + 128*5 + 12 ypos 175 + 128*(i-1) + 60
             if day_schedule[month_for_display][(i-1)*8 + 6] == 1:
@@ -143,6 +153,16 @@ screen month_schedule_icon_show():
             elif day_schedule[month_for_display][(i-1)*8 + 6] == 4:
                 add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
 
+            elif day_schedule[month_for_display][(i-1)*8 + 6] == 5:
+                add im.Alpha(im.MatrixColor("planner/sel_event.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+            elif day_schedule[month_for_display][(i-1)*8 + 6] == 6:
+                 add im.Alpha(im.MatrixColor("planner/sel_hospital.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+            elif day_schedule[month_for_display][(i-1)*8 + 6] == 7:
+                 add im.Alpha(im.MatrixColor("planner/sel_home.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+
             null height 15
 
             if day_schedule[month_for_display][(i-1)*8 + 7] == 1:
@@ -159,6 +179,40 @@ screen month_schedule_icon_show():
 
             elif day_schedule[month_for_display][(i-1)*8 + 7] == 4:
                 add im.Alpha(im.MatrixColor("planner/sel_rest.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+            elif day_schedule[month_for_display][(i-1)*8 + 7] == 5:
+                add im.Alpha(im.MatrixColor("planner/sel_event.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+            elif day_schedule[month_for_display][(i-1)*8 + 7] == 6:
+                 add im.Alpha(im.MatrixColor("planner/sel_hospital.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+            elif day_schedule[month_for_display][(i-1)*8 + 7] == 7:
+                 add im.Alpha(im.MatrixColor("planner/sel_home.png",im.matrix.saturation( 0.1+(( (i/week) * ((month_for_display+3)/month)) ))), 0.8)
+
+
+    # layer 레이어
+    if month_for_display == 0 :
+        add "planner/3.13-14_MT.png" xpos 0 ypos -9
+
+        if month != 3 or week != 1 :
+            add "planner/3.09_dongsoze.png" xpos 0 ypos -9
+            add "planner/3.23_quiz.png" xpos 0 ypos -9
+
+        if month != 3 or week > 2 :
+            add "planner/3.17-19_gwazam.png" xpos 0 ypos -9
+
+        if gwazam_store == True :
+            add "planner/3.18_gwazam_store.png" xpos 0 ypos -12
+
+#    elif month_for_display == 1 :
+#        return
+
+#    elif month_for_display == 2 :
+#        return
+
+#    elif month_for_display == 3 :
+#        return
+
 
 #screen schedule_revise_button():
 #    hbox:
