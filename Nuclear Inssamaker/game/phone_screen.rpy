@@ -90,7 +90,7 @@ screen phone_button_in_homescreen() :
         if (month-3) * 32 + (week-1)*8 + day >= 73 and (month-3) * 32 + (week-1)*8 + day <= 74 :
             text "{color=#000000}- 한강모임 추진...?"
         if (month-3) * 32 + (week-1)*8 + day >= 75 and (month-3) * 32 + (week-1)*8 + day <= 87 :
-            text "{color=#000000}- 운동회 준비해야 된다..."           
+            text "{color=#000000}- 운동회 준비해야 된다..."
 
     text "{color=#000000}- 끝나지 않는 시리어스 게임" xpos 465 ypos 420
 
@@ -678,7 +678,7 @@ screen ktalk:
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
-                                            text "{color=#000}장중" size 18
+                                            text "{color=#000}해장중" size 18
                                         null height 4
                                         add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
 
@@ -785,7 +785,7 @@ screen ktalk:
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
-                                            text "{color=#000}진일" size 18
+                                            text "{color=#000}김진일" size 18
                                         null height 4
                                         add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
 
@@ -892,7 +892,7 @@ screen ktalk:
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
-                                            text "{color=#000}삼용" size 18
+                                            text "{color=#000}동삼용" size 18
                                         null height 4
                                         add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
 
@@ -999,7 +999,7 @@ screen ktalk:
                                     vbox :
                                         null height 3
                                         hbox xpos 6:
-                                            text "{color=#000}동아" size 18
+                                            text "{color=#000}이동아" size 18
                                         null height 4
                                         add im.Scale("white.png", tmp_width, tmp_height) # 33+24x
 

@@ -352,38 +352,38 @@ define Player = Character("주인공", color="#ffcccc", image="Player")
 image side Player :
     "character/cha_player.png"
 
-define Jinil = Character("진일", color="#ffcccc", image="Jinil")#, window_left_padding = -100)
+define Jinil = Character("김진일", color="#ffcccc", image="Jinil")#, window_left_padding = -100)
 image side Jinil :
     "character/cha_jinil.png"
 
-define Jangjung = Character("장중", color="#ffcccc", image="Jangjung")
+define Jangjung = Character("해장중", color="#ffcccc", image="Jangjung")
 image side Jangjung :
     "character/cha_jangjung.png"
 
-define Samyong = Character("삼용", color="#ffcccc", image="Samyong")
+define Samyong = Character("동삼용", color="#ffcccc", image="Samyong")
 image side Samyong :
     "character/cha_samyong.png"
 
-define Daehyun = Character("대현", color="#ffcccc", image="Daehyun")
+define Daehyun = Character("박대현", color="#ffcccc", image="Daehyun")
 image side Daehyun :
     "character/cha_daehyun.png"
 
-define Hyunjae = Character("현재", color="#ffcccc", image="Hyunjae")
+define Hyunjae = Character("유현재", color="#ffcccc", image="Hyunjae")
 image side Hyunjae :
     "character/cha_hyunjae.png"
 
-define Mirae = Character("미래", color="#ffcccc", image="Mirae")
+define Mirae = Character("노미래", color="#ffcccc", image="Mirae")
 image side Mirae :
     "character/cha_mirae.png"
 
-define Dongah = Character("동아", color="#ffcccc", image="Dongah")
+define Dongah = Character("이동아", color="#ffcccc", image="Dongah")
 image side Dongah :
     "character/cha_dongah.png"
 
-define Ohduck = Character("덕현", color="#ffcccc", image="Ohduck")
+define Ohduck = Character("오덕현", color="#ffcccc", image="Ohduck")
 image side Ohduck :
     "character/cha_ohduck.png"
 
-define Geumji = Character("금지", color="#ffcccc", image="Geumji")
+define Geumji = Character("안금지", color="#ffcccc", image="Geumji")
 image side Geumji :
     "character/cha_geumji.png"
