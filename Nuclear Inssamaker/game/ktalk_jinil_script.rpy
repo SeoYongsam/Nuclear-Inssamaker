@@ -30,7 +30,7 @@ label change_jinil_talk :
                 $ jinil.add("날짜|3월 22일 일요일")
                 if gwazam_finished == False :
                     # 투표 진행
-                    $ jinil.add("김진일| ㅋㅋㅋㅋㅋ 내가 애들이 이거 좋아할거라고 했지? 아.. 근데 혹시 내가 단톡방에서 좀 오버했나??")
+                    $ jinil.add("김진일| ㅋㅋㅋㅋㅋ 내가 애들이 이거 좋아할거라고 했지? 아.. 근데 혹시 내가 단톡방에서 좀 오버했나??	")
 
                 else :
                     # 강제 종료
@@ -39,14 +39,14 @@ label change_jinil_talk :
 
     elif month == 4 :
         if week == 1 :
-            if day == 1 :
-                $ jinil.add("날짜|4월 2일 월요일")
-                $ jinil.add("김진일|엠티는 당연히 대별리지~")
-                $ jinil.add("연속|신숲은 무슨 거기로 하면 술마시다가 애들 다 도망간다니까?")
-                $ jinil.add("연속|뻔대야 너도 대별리가 좋지??")
-                $ jinil.add("연속|대별리 뽑아줘ㅋㅋㅋㅋ")
+            # if day == 1 :
+            #     $ jinil.add("날짜|4월 2일 월요일")
+            #     $ jinil.add("김진일|엠티는 당연히 대별리지~")
+            #     $ jinil.add("연속|신숲은 무슨 거기로 하면 술마시다가 애들 다 도망간다니까?")
+            #     $ jinil.add("연속|뻔대야 너도 대별리가 좋지??")
+            #     $ jinil.add("연속|대별리 뽑아줘ㅋㅋㅋㅋ")
 
-            elif day == 6 :
+            if day == 6 :
                 $ jinil.add("날짜|4월 7일 토요일")
                 $ jinil.add("김진일|야 어제는 찾아줘서 고맙다")
                 $ jinil.add("연속|답례로 다음에 술이나 한 번 살게")
@@ -58,8 +58,8 @@ label change_jinil_talk :
                 $ jinil.add("김진일|ㅋㅋㅋㅋㅋㅋ 그래 여튼 너도 고생했고")
                 $ jinil.add("연속|내일 일요일이니까 푹 쉬삼")
 
-        # elif week == 2 :
-        #     if day == 2 :
+        elif week == 2 :
+            # if day == 2 :
                 # $ jinil.add("날짜|4월 10일 화요일")
                 # $ jinil.add("김진일|와 해장중 실화냐..")
                 # $ jinil.add("연속|자기가 먼저 같이 듣자고 해서 같이 넣었는데")
@@ -72,35 +72,35 @@ label change_jinil_talk :
                 # $ jinil.add("연속|신기하네 ㅋㅋㅋㅋㅋㅋ")
                 # $ jinil.add("주인공|뭐.. 어쩌다 보니? ㅋㅋㅋㅋ")
 
-            # elif day == 4 :
-                # $ jinil.add("날짜|4월 12일 금요일")
-                # $ jinil.add("김진일|아 영화보니까 괜히 코노 가고 싶네")
-                # $ jinil.add("연속|시험 끝나고 함 가실??")
-                # $ jinil.add("주인공|엌ㅋㅋㅋㅋㅋㅋ 나야 좋지")
-                # $ jinil.add("주인공|날 잡아!!")
-                # $ jinil.add("김진일|무슨 코노에 날까지 잡냐ㅋㅋ 그냥 땡기면")
-                # $ jinil.add("연속|가면 되는거지 뭐ㅋㅋㅋ")
-                # $ jinil.add("주인공|ㅇㅈㅇㅈ~ 담에 갠톡하삼")
-        #
-        # elif week == 3 :
-        #     if day == 4 :
-                # $ jinil.add("날짜|4월 19일 목요일")
-                # $ jinil.add("김진일|아 공부 하기 진짜 싫다")
-                # $ jinil.add("연속|그냥 술이나 마시고 싶다")
-                # $ jinil.add("주인공|ㅠㅜ 시험 끝나고 같이 마시러 가자")
-                # $ jinil.add("김진일|뭐 그거야 당연한거고")
-                # $ jinil.add("연속|넌 공부 잘하고 있냐")
-                # $ jinil.add("주인공|아니..")
-                # $ jinil.add("김진일|ㅎ...")
-                # $ jinil.add("주인공|ㅎ...")
-                # $ jinil.add("김진일|여튼 파이팅..")
-                # $ jinil.add("주인공|너도..")
+            if day == 4 :
+                $ jinil.add("날짜|4월 12일 금요일")
+                $ jinil.add("김진일|아 오늘 괜히 코노 가고 싶네")
+                $ jinil.add("연속|시험 끝나고 함 가실??")
+                $ jinil.add("주인공|엌ㅋㅋㅋㅋㅋㅋ 나야 좋지")
+                $ jinil.add("주인공|날 잡아!!")
+                $ jinil.add("김진일|무슨 코노에 날까지 잡냐ㅋㅋ 그냥 땡기면")
+                $ jinil.add("연속|가면 되는거지 뭐ㅋㅋㅋ")
+                $ jinil.add("주인공|ㅇㅈㅇㅈ~ 담에 갠톡하삼")
+
+        elif week == 3 :
+            if day == 4 :
+                $ jinil.add("날짜|4월 19일 목요일")
+                $ jinil.add("김진일|아 공부 하기 진짜 싫다")
+                $ jinil.add("연속|그냥 술이나 마시고 싶다")
+                $ jinil.add("주인공|ㅠㅜ 시험 끝나고 같이 마시러 가자")
+                $ jinil.add("김진일|뭐 그거야 당연한거고")
+                $ jinil.add("연속|넌 공부 잘하고 있냐")
+                $ jinil.add("주인공|아니..")
+                $ jinil.add("김진일|ㅎ...")
+                $ jinil.add("주인공|ㅎ...")
+                $ jinil.add("김진일|여튼 파이팅..")
+                $ jinil.add("주인공|너도..")
 
     elif month == 5 :
         if week == 1 :
             if day == 2 :
                 $ jinil.add("날짜|5월 3일 화요일")
-                $ jinil.add("김진일|애들 왜 안오냐...")
+                $ jinil.add("김진일|애들 왤케 안오냐...")
                 $ jinil.add("주인공|나도 모르겠다...")
 
             elif day == 3 :
@@ -115,24 +115,24 @@ label change_jinil_talk :
                 $ jinil.add("김진일|애들 왜이렇게 투표 안하냐")
                 $ jinil.add("연속|쪼아봐 ㅋㅋ")
 
-            # elif day == 6 :
-            #     $ jinil.add("날짜|5월 14일 토요일")
-            #     $ jinil.add("김진일|밤에 장중이랑 술 ㄱㄱ?")
-            #     $ jinil.add("연속|운동회 얘기도 조금 해야할 것 같은데")
+            elif day == 6 :
+                $ jinil.add("날짜|5월 14일 토요일")
+                $ jinil.add("김진일|밤에 장중이랑 술 ㄱㄱ?")
+                $ jinil.add("연속|운동회 얘기도 조금 해야할 것 같은데")
 
         elif week == 3 :
-            # if day == 1 :
-            #     $ jinil.add("날짜|5월 16일 월요일")
-            #     $ jinil.add("김진일|야")
-            #     $ jinil.add("연속|너는 거기서 나를 놀리는데")
-            #     $ jinil.add("연속|보고만 있냐?")
-            #     $ jinil.add("연속|뻔대가 말려야지")
+            if day == 1 :
+                $ jinil.add("날짜|5월 16일 월요일")
+                $ jinil.add("김진일|야")
+                $ jinil.add("연속|너는 거기서 나를 놀리는데")
+                $ jinil.add("연속|보고만 있냐?")
+                $ jinil.add("연속|뻔대가 말려야지")
 
-            if day == 3 :
+            elif day == 3 :
                 $ jinil.add("날짜|5월 18일 수요일")
                 $ jinil.add("김진일|야 내가 그래도")
                 $ jinil.add("연속|너 생각해서 준비위 해준다 ")
-                # $ jinil.add("연속|너도 내 편이지??")
+                $ jinil.add("연속|너도 내 편이지??")
 
         elif week == 4 :
             if day == 1 :
@@ -160,19 +160,19 @@ label change_jinil_talk :
                 $ jinil.add("김진일|뻔대야")
                 $ jinil.add("연속|너 혹시 경원 족보있냐?")
                 $ jinil.add("연속|공부 하나도 안했네 ㅋㅋㅋ")
-            #
-            # elif day == 5 :
-            #     $ jinil.add("날짜|6월 13일 목요일")
-            #     $ jinil.add("김진일|경원 족보 아직도 못구했다...")
+
+            elif day == 5 :
+                $ jinil.add("날짜|6월 13일 목요일")
+                $ jinil.add("김진일|경원 족보 아직도 못구했다...")
 
         elif week == 3 :
-            # if day == 0 :
-            #     $ jinil.add("날짜|6월 15일 일요일")
-            #     $ jinil.add("김진일|뻔대야")
-            #     $ jinil.add("연속|공부 안되지 ㅋㅋㅋㅋ")
-            #     $ jinil.add("연속|방학때 삼용이 집 가는거 기획해볼래 ㅋㅋㅋ")
+            if day == 0 :
+                $ jinil.add("날짜|6월 15일 일요일")
+                $ jinil.add("김진일|뻔대야")
+                $ jinil.add("연속|공부 안되지 ㅋㅋㅋㅋ")
+                $ jinil.add("연속|방학때 삼용이 집 가는거 기획해볼래 ㅋㅋㅋ")
 
-            if day == 4 :
+            elif day == 4 :
                 $ jinil.add("날짜|6월 19일 목요일")
                 $ jinil.add("김진일|오덕현 개웃기지 않냐 ㅋㅋㅋ")
                 $ jinil.add("연속|나도 저 말투 빠지겠닼ㅋㅋㅋㅋ")
