@@ -28,6 +28,7 @@ label karaoke:
     show wild_flower at truecenter
     Player "나 피우리라.... 라.... 라..."
 
+    play sound "sound/fanfare.mp3"
     show score_83 at truecenter
     "친구들" "이거 뭐냐 ㅋㅋㅋㅋㅋ"
     Player "코노비 확정이네... 하..."
@@ -48,6 +49,7 @@ label karaoke:
     extend "네가~ 얼.. (쿨럭) 마 ㄴr... 예쁜지 모르찌이이이~"
     "친구들" "ㅋㅋㅋㅋ 김진일 목 나갔다 ㅋㅋㅋㅋㅋ"
 
+    play sound "sound/fanfare.mp3"
     show score_30 at truecenter
     "친구들" "ㅋㅋㅋㅋㅋㅋ 이게 뭐냐\n"
     extend "너 코노비 확정이다"
@@ -71,6 +73,7 @@ label karaoke:
             $ mental_point -= 20
             "장중이가 같이해서 더 신났다고 한다, 근데 나 박치인거 다 들통났네 ㅠㅠ"
 
+    play sound "sound/fanfare.mp3"
     show score_95 at truecenter
     Jangjung "봤냐? 힙알못들아\n"
     extend "코노비 낼 준비나 해라"
@@ -93,6 +96,7 @@ label karaoke:
     Samyong "우예에에이ㅣ에에이~"
     "친구들" "오~~ 동삼용~~!!"
 
+    play sound "sound/fanfare.mp3"
     show score_100 at truecenter
     Samyong "(거만한 표정)\n"
     extend "뭐 이 정도 ㅎ"

@@ -15,6 +15,7 @@ image subway = "all_mt/subway.jpg"
 # 3월 13일-14일 금-토 총엠 이벤트
 # month3 week2 day5
 label all_mt:
+    play music "music/3.14-15_all_mt.mp3"
     scene black
     "오늘은 과 총MT가 있는 날이다.\n"
     extend "나는 아침부터 MT에서 먹을 음식, 과자, 술을 사는 역할인 장발대로 나왔다."
@@ -106,6 +107,7 @@ label all_mt:
 
     menu:
         "식기 셋팅":
+            play sound "sound/dishes.mp3" loop
             show setting at truecenter
             Jangjung "뻔대야 얼른 와 식기 셋팅 개꿀임 ㅋㅋㅋ"
 #            Player" 응? 뭐가 개꿀이야??"
@@ -115,12 +117,14 @@ label all_mt:
             extend "빨리 셋팅하고 저기 고기 불판 쪽으로 가자"
             Jangjung "가즈아~"
             "장중이하고 좀 친해진 것 같다."
+            stop sound fadeout 1.0
 
             # 장중 파라미터 +
             $ jangjung.parameter += 20
             call parameter_maxmin_check
 
         "고기 굽기":
+            play sound "sound/bbq.mp3"
             show gogi at truecenter
             Jinil "마침 사람 부족했는데 잘됐다\n"
             extend "뻔대야 여기 와서 같이 고기나 굽자"
@@ -130,12 +134,14 @@ label all_mt:
             Jinil "너라도 여기 와서 그래도 좀 낫네\n"
             extend "역시 뻔대는 다르다"
             "진일이하고 좀 친해진 것 같다."
+            stop sound fadeout 1.0
 
             # 진일 파라미터 +
             $ jinil.parameter += 20
             call parameter_maxmin_check
 
         "밥/반찬 준비하기":
+            play sound "sound/vegetable_chopping.mp3"
             show rice_kimchi at truecenter
 #            Samyong "아무나 여기 김치랑 밥좀 가져가~"
 #            Player "삼용아 이리 줘 내가 애들한테 전달할게!"
@@ -146,6 +152,7 @@ label all_mt:
             extend "혼자 하려니까 너무 힘드네"
 #           Player "알겠어!"
             "삼용이하고 좀 친해진 것 같다."
+            stop sound fadeout 1.0
 
             # 삼용 파라미터 +
             $ samyong.parameter += 20
@@ -198,6 +205,7 @@ label all_mt:
         "해장하러 간다":
             Player "가자... 나도 해장해야할 것 같아"
 
+            play sound "sound/gookbap.mp3"
             show soondae at truecenter
             Jangjung "으어어~~ 시원하다~~"
             Jinil "으!!! 이거지"
@@ -205,6 +213,8 @@ label all_mt:
             Player "으아~ 너무 좋다"
 
             "집에 바로 가서 쉬지 못해서 좀 힘들었지만 친구들하고 다같이 친해졌다."
+            stop sound fadeout 1.0
+
             #선택 간다 = 친구 파라미터 모두 업 + 체력 소모
             $ jangjung.parameter += 20
             $ jinil.parameter += 20
@@ -228,6 +238,7 @@ label all_mt:
     "그냥 순간이동 하고 싶다…"
 
     scene black
+    stop music fadeout 1.0
 
     call change_SNS
     $ day += 1

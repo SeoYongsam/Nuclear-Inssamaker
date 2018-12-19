@@ -16,6 +16,7 @@ label han_river:
     "한강에 가시겠습니까?"
     menu:
         "간다" :
+            play music "music/5.10_han_river.mp3"
             $ day_or_evening = "evening"
             show han_river_image at truecenter
 
@@ -79,6 +80,7 @@ label han_river:
                     "진일이가 많이 속상해한다. 괜히 미안해진다."
                     "...그래도 진일이의 희생으로 과 분위기가 좋아진 것 같은데...?"
 
+                    stop music fadeout 1.0
                     #일진 파라미타 -- / 과 ++
                     $ jinil.parameter -= 40
                     $ gwa_parameter += 4

@@ -15,6 +15,7 @@ label dongsoze:
     scene black
     "동소제를 둘러보던 중 앞쪽에 사람들이 모여 있는 모습을 발견하고 그 쪽으로 가보기로 했다."
 
+    # play sound "sound/dongsoze_dongah.mp3"
     show donga at truecenter
     Player "어 동아다! 하이하이!"
     Dongah "오 뻔대 친구 아이가?\n"
@@ -35,6 +36,7 @@ label dongsoze:
 
     show perfo at truecenter
 
+    play sound "sound/people_waaaa.mp3"
     "와아아아아아! 최고다~"
 
     "동아리 선배" "와 새내기 노래 진짜 잘 부르시네요\n"
@@ -46,6 +48,7 @@ label dongsoze:
     extend "당장 이번주 목요일이 이번 학기 첫 정기 연습이니까 꼭 와주세요~!"
     Player "아 네넵!\n"
     extend "그럼 그 날 뵙겠습니다!"
+    stop sound fadeout 1.0
 
     scene black
 

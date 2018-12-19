@@ -6,6 +6,7 @@ image conversation = "olympic/conversation.jpg"
 
 # 노래방 5월 21일 토요일 month == 5 and week == 3 and day == 6 낮-저녁
 label olympic:
+    play music "music/olympic.mp3"
     show playground at truecenter
     Player "오늘 날씨 진짜 좋다!!! 오늘 심리학과 발라버리자~~\n"
     Jinil "가즈아~~~~\n"
@@ -32,6 +33,7 @@ label olympic:
     "장중이의 부탁을 들어 주시겠습니까?"
     menu:
         "들어준다":
+            play sound "sound/olympic_sound.mp3"
             show conversation at truecenter
 
             Player "저기 현재야...\n"
@@ -154,6 +156,7 @@ label olympic:
             $ gwa_parameter -= 2
             call parameter_maxmin_check
 
+    stop music fadeout 1.0
     $ day_or_evening = "evening"
     show sool at truecenter
     Player "오늘 다들 수고 너무 많았어!!\n"

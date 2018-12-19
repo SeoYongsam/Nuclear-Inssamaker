@@ -20,6 +20,7 @@ label pcbang:
 
             menu:
                 "진일이가 추천한 '리그 오브 전설'을 한다":
+                    play music "music/4.11_pcbang_league_of_legends.mp3"
                     show leagueoflegends at truecenter
                     Jinil "좋았으~ 역시 게임은 '리그 오브 전설'이지~"
                     Hyunjae "ㅋㅋ 알겠어"
@@ -39,6 +40,7 @@ label pcbang:
                     scene black
                     "2시간 뒤"
 
+                    stop music fadeout 1.0
                     show pcbangstreet at truecenter
                     Daehyun "아~ 그래도 피시방 오랜만에 오니까 재밌네"
                     Jinil "뻔대야 게임 잘 못하면 말하지~\n"
@@ -55,6 +57,7 @@ label pcbang:
                     call parameter_maxmin_check
 
                 "현재가 좋아하는 '쇼핑카트 라이더'를 한다":
+                    play music "music/4.11_pcbang_kartrider.mp3"
                     show kartrider at truecenter
                     Hyunjae "오케이~ '쇼핑카트 라이더' 가즈아~~~!"
 
@@ -69,6 +72,7 @@ label pcbang:
                     extend "개못하던데 ㅋㅋㅋㅋ"
                     Jinil "..."
 
+                    stop music fadeout 1.0
                     scene pcbangstreet at truecenter
                     Mirae "ㅋㅋㅋㅋ 내 운전실력 다시는 무시하지마라~"
                     Hyunjae "와 근데 뻔대도 진짜 잘하던데??\n"

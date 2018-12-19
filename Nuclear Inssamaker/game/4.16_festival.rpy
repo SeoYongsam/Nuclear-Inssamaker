@@ -14,6 +14,7 @@ label festival:
     "오늘은 축제가 있는 날!"
     "소란 공연을 같이 보기로 한 친구들과 저녁을 같이 먹기로 하였다."
 
+    play sound "sound/HULLABALOO.mp3"
     show fest_stage at truecenter
     Player "으음 뭐 먹지?\n"
     extend "축제니까 주변에 있는 노점상에서 먹을까?"
@@ -78,8 +79,11 @@ label festival:
     Player "아~ 배부르다~\n"
     extend "그럼 슬슬 공연장으로 갈까?"
     Mirae "맞아 맞아 곧 공연 시작하겠다!!"
+    stop sound fadeout 1.0
 
+    play sound "sound/people_waaaa.mp3"
     show fest_poong at truecenter
     "친구들과 함께 열심히 소리 지르면서 공연을 볼 수 있었다."
+    stop sound fadeout 1.0
 
     return
