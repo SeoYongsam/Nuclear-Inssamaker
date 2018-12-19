@@ -43,7 +43,7 @@ style prompt_text is gui_text:
 style bar:
     ysize 4
     left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame(im.Alpha("gui/bar/right.png",0.5), gui.bar_borders, tile=gui.bar_tile)
 
 style HP_bar:
     ysize 28
@@ -336,7 +336,7 @@ screen navigation():
 
             textbutton _("저장하기") action ShowMenu("save")
 
-            null width 50
+            null width 40
 
 
         # textbutton _("환경 설정") action ShowMenu("preferences")
@@ -642,16 +642,16 @@ screen file_slots(title):
             order_reverse True
 
             ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
+            #button:
+            #    style "page_label"
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+            #    key_events True
+            #    xalign 0.5
+            #    action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+            #    input:
+            #        style "page_label_text"
+            #        value page_name_value
 
             ## 파일 슬롯 그리드.
             grid gui.file_slot_cols gui.file_slot_rows:

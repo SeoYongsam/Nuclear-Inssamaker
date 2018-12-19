@@ -235,8 +235,8 @@ define config.thumbnail_width = 256
 define config.thumbnail_height = 144
 
 ## 저장 슬롯의 그리드(grid)에서 행(rows)과 열(columns)의 갯수입니다.
-define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_cols = 1
+define gui.file_slot_rows = 1
 
 
 ## 위치와 간격 ######################################################################
@@ -271,7 +271,7 @@ define gui.page_spacing = 0
 define gui.slot_spacing = 10
 
 ## The position of the main menu text.
-define gui.main_menu_text_xalign = 0
+define gui.main_menu_text_xalign = 1.0
 
 
 ## 프레임들 ########################################################################

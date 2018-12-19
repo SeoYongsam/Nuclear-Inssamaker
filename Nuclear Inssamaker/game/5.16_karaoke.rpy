@@ -11,6 +11,7 @@ image kasi = "karaoke/kasi.jpg"
 
 # 노래방 5월 16일 월요일 저녁 month == 5 and week == 3 and day == 1 저녁
 label karaoke:
+    $ day_schedule[2][17] = 5
     show school2 at truecenter
     Player "우리 오늘 공부도 안되는데 코노 ㄱ?"
     Samyong "좋은데?\ㅜ"

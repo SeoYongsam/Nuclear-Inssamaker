@@ -207,14 +207,14 @@ screen month_schedule_icon_show():
 
     # layer 레이어
     if month_for_display == 0 :
-        add "planner/3_quest.png"
+#        add "planner/3_quest.png"
         add "planner/3.13-14_MT.png" xpos 0 ypos -9
 
-        if month != 3 or week != 1 :
+        if (month-3) * 32 + (week-1)*8 + day >= 8 :
             add "planner/3.09_dongsoze.png" xpos 0 ypos -9
             add "planner/3.23_quiz.png" xpos 0 ypos -9
 
-        if month != 3 or week > 2 :
+        if (month-3) * 32 + (week-1)*8 + day >= 16 :
             add "planner/3.17-19_gwazam.png" xpos 0 ypos -9
 
         if gwazam_store == True :
@@ -222,17 +222,22 @@ screen month_schedule_icon_show():
 
     elif month_for_display == 1 :
         add "planner/4_midtermexam.png"
-        add "planner/4.02_school.png"
-        add "planner/4.16_festival.png"
-
-        add "planner/4.06-07_mt.png"
-        add "planner/4.27_meeting.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 32 :
+            add "planner/4.02_school.png"
+            add "planner/4.06-07_mt.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 48 :
+            add "planner/4.16_festival.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 64 :
+            add "planner/4.27_meeting.png"
 
     elif month_for_display == 2 :
-        add "planner/5.03_market.png"
-        add "planner/5.10_hanriver.png"
-        add "planner/5.16_garaoke.png"
-        add "planner/5.21_olympic.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 64 :
+            add "planner/5.03_market.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 80 :
+            add "planner/5.10_hanriver.png"
+            add "planner/5.21_olympic.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 88 :
+            add "planner/5.16_garaoke.png"
 
     elif month_for_display == 3 :
         add "planner/6.06_club.png"

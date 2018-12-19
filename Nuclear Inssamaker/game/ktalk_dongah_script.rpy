@@ -98,8 +98,6 @@ label change_dongah_talk :
                 $ grouptalk.add("주인공|ㅋㅋㅋㅋ 이따 야식이나 먹자")
                 $ grouptalk.add("이동아|ㅋㅋㅋ 그래그래")
 
-        elif week == 4 :
-
     elif month == 5 :
         if week == 1 :
             if day == 2 :

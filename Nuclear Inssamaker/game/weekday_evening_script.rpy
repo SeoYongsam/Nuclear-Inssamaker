@@ -180,7 +180,7 @@ label weekday_evening_event :
 
         menu:
             "회의에 참여한다":
-
+                $ day_schedule[1][26] = 5
                 "회의에 참여했다."
 
                 show poster at truecenter
@@ -201,6 +201,7 @@ label weekday_evening_event :
         "내가 없어도 회의가 잘 돌아갈 것 같지만...\n갈까 말까?"
         menu:
             "회의에 참여한다":
+                $ day_schedule[1][27] = 5
                 "회의에 참여했다."
 
                 show meeting at truecenter
@@ -223,6 +224,7 @@ label weekday_evening_event :
 
         menu:
             "회의에 참여한다":
+                $ day_schedule[1][28] = 5
                 "회의에 참여했다."
 
                 show menu_pan at truecenter
@@ -242,6 +244,7 @@ label weekday_evening_event :
 
         menu:
             "장을 보러 간다":
+                $ day_schedule[1][29] = 5
                 "장을 보러 갔다."
 
                 show shopping at truecenter

@@ -74,6 +74,24 @@ screen phone_button_in_homescreen() :
         if (month-3) * 32 + (week-1)*8 + day >= 13 and (month-3) * 32 + (week-1)*8 + day <= 20 :
             text "{color=#000000}- 과잠 준비 하기"
 
+        # 4월
+        if (month-3) * 32 + (week-1)*8 + day >= 29 and (month-3) * 32 + (week-1)*8 + day <= 39 :
+            text "{color=#000000}- 뻔엠 준비 잘해서 재밌게 놀기"
+        if (month-3) * 32 + (week-1)*8 + day >= 32 and (month-3) * 32 + (week-1)*8 + day <= 33 :
+            text "{color=#000000}- 교복 데이에 교복 꼭 입기"
+        if (month-3) * 32 + (week-1)*8 + day >= 41 and (month-3) * 32 + (week-1)*8 + day <= 49 :
+            text "{color=#000000}- 축제 까먹지 말고 가기"
+        if (month-3) * 32 + (week-1)*8 + day >= 57 and (month-3) * 32 + (week-1)*8 + day <= 66 :
+            text "{color=#000000}- 장터준비 회의 및 일하기"
+        if (month-3) * 32 + (week-1)*8 + day >= 32 and (month-3) * 32 + (week-1)*8 + day <= 60 :
+            text "{color=#000000}- 중간고사 대비 공부"
+
+        # 5월
+        if (month-3) * 32 + (week-1)*8 + day >= 73 and (month-3) * 32 + (week-1)*8 + day <= 74 :
+            text "{color=#000000}- 한강모임 추진...?"
+        if (month-3) * 32 + (week-1)*8 + day >= 75 and (month-3) * 32 + (week-1)*8 + day <= 87 :
+            text "{color=#000000}- 운동회 준비해야 된다..."           
+
     text "{color=#000000}- 끝나지 않는 시리어스 게임" xpos 465 ypos 420
 
     hbox xpos 428 ypos 564 :

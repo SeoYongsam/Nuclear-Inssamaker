@@ -119,15 +119,6 @@ label show_next_month :
             show screen schedule_button
     return
 
-#label button_reset(number) :
-#    if day_schedule[number] != 0:
-#        $ day_schedule[number] = 0
-#        $ day = number
-##    while day_schedule[day]
-##    if day_schedule[day] != 0
-##        $ day += 1
-#    return
-
 label event_schedule_set :
     # 3월 이벤트 설정
     if (month-3) * 32 + (week-1)*8 + day >= 8:
@@ -147,4 +138,30 @@ label event_schedule_set :
     if gwazam_store == True :
         if day_schedule[0][19] <= 5 :
             $ day_schedule[0][19] = 5
+
+    # 4월 이벤트 설정
+    if (month-3) * 32 + (week-1)*8 + day >= 32 :
+        if day_schedule[1][5] <= 5 :
+            $ day_schedule[1][5] = 5
+        if day_schedule[1][6] <= 5 :
+            $ day_schedule[1][6] = 5
+        if day_schedule[1][7] <= 5 :
+            $ day_schedule[1][7] = 5
+
+    if (month-3) * 32 + (week-1)*8 + day >= 48 :
+        if day_schedule[1][17] <= 5 :
+            $ day_schedule[1][17] = 5
+
+    # 5월 이벤트 설정
+    if (month-3) * 32 + (week-1)*8 + day >= 64 :
+        if day_schedule[2][2] <= 5 :
+            $ day_schedule[2][2] = 5
+    if (month-3) * 32 + (week-1)*8 + day >= 72 :
+        if day_schedule[2][10] <= 5 :
+            $ day_schedule[2][10] = 5
+    if (month-3) * 32 + (week-1)*8 + day >= 80 :
+        if day_schedule[2][22] <= 5 :
+            $ day_schedule[2][22] = 5
+        if day_schedule[2][23] <= 5 :
+            $ day_schedule[2][23] = 5
     return
