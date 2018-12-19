@@ -65,51 +65,6 @@ label olympic:
             $ jangjung.parameter -= 20
             call parameter_maxmin_check
 
-    show pigoo at truecenter
-    Player  "미래 안오나\n"
-    extend "벌써 짝피구 할 시간인데...\n"
-    extend "어어 저기 미래 온다 휴…"
-    Mirae "아직 시작 안했지?\n"
-    extend "나 딱 맞춰서 오려고했어 ㅋㅋㅋ\n"
-    extend "앞에는 내가 너무 할 게 없어서 ㅠ"
-    Player "좀 늦긴 했지...\n"
-    extend "여튼 빨리 하자"
-    Mirae "근데 나 현재가 짝피구 하지 말라는데 어쩌지?\n"
-    extend "다른 사람이랑 붙어 있는 거 싫다고 해서 ㅠ\n"
-    extend "혹시 나 빠질 수 있을까?\n"
-
-    screen schedule_highlight
-    "미래의 부탁을 들어 주시겠습니까?"
-    menu:
-        "들어준다":
-            show pigoo at truecenter
-            Player "심리학과 과대님....\n"
-            extend "혹시 저희 피구 인원 1명 줄일 수 있을까요?\n"
-            extend "참여한다고 한 친구가 남친이 못하게 한다네요 ㅠㅠ\n"
-            extend "정말 죄송합니다..."
-            "심리학과 과대" "그건 좀 곤란한데...\n"
-            extend "저희 짝피구하려고 지금까지 기다린 친구들이 있어서요\n"
-            extend "갑자기 이렇게 바꾸려고 하시면 저희도 좀 당황스럽네요;;;\n"
-            "심리학과 과대" "죄송하지만 안될 것 같아요\n"
-            extend "10명대 11명으로 하시죠"
-
-            #과 파라미터 -
-            $ gwa_parameter -= 2
-            call parameter_maxmin_check
-
-        "거절한다":
-            show playground at truecenter
-            Player "그러면 애초에 지원을 하지 말았어야지\n"
-            extend "다른 과하고 다 얘기 해 놓은건데 갑자기 이러면 어떡해\n"
-            extend "나는 못빼줘"
-            Mirae "아 그럼 몰라 나도 안해\n"
-            extend "나 그냥 집 갈래"
-            Player "야 노미래! 노미래!!!!!!"
-
-            #과 파라미터 --
-            $ gwa_parameter -= 4
-            call parameter_maxmin_check
-
     show playground at truecenter
     Jinil "아... 우리 계속 지네\n"
     extend "우리 달리기라도 꼭 이기고 싶다\n"
