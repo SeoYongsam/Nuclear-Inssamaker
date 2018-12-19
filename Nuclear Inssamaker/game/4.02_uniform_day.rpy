@@ -3,7 +3,7 @@ image gyobok = "uniform_day/gyobok.jpg"
 image jjangge = "uniform_day/jjangge.jpg"
 image pizza = "uniform_day/pizza.jpg"
 
-# 4월 2일 월요일 교복데이 이벤트
+# 4월 2일 월요일 낮 교복데이 이벤트
 # month4 week1 day 1
 label uniform_day:
     "어제는 만우절이었다. 그런데 일요일이었어서 오늘 과 동기들이 다같이 교복을 입고 등교를 했다."

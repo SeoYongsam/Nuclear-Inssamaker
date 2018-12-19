@@ -219,8 +219,7 @@ label weekday_evening_event :
         scene black
         "오늘은 장터 준비위원회끼리 모여서 메뉴판을 만들기로 했다."
 
-        "내가 없어도 메뉴판을 잘 만들 것 같지만...
-        \n 갈까 말까?"
+        "내가 없어도 메뉴판을 잘 만들 것 같지만...\n갈까 말까?"
 
         menu:
             "회의에 참여한다":
@@ -239,8 +238,7 @@ label weekday_evening_event :
         scene black
         "오늘은 장터 준비위원회끼리 장터 전날 모여서 장을 보기로 했다."
 
-        "내가 없어도 장을 잘 볼 수 있을지 의심스럽지만...
-        \n 갈까 말까?"
+        "내가 없어도 장을 잘 볼 수 있을지 의심스럽지만...\n갈까 말까?"
 
         menu:
             "장을 보러 간다":
@@ -256,8 +254,14 @@ label weekday_evening_event :
             "계획한 대로 오후를 보낸다":
                 call normal_weekday_evening
 
+    elif month == 5 and week == 2 and day == 2 :
+        call han_river
+
     elif month == 5 and week == 3 and day == 1 :
         call karaoke
+
+    elif month == 6 and week == 1 and day == 5 :
+        call club_concert
 
     elif month == 6 and week == 3 and (day == 6 or day == 7) :
         call jongpa
@@ -297,7 +301,7 @@ label evening_study:
         python :
             hp -= 15
             mental_point -= 15
-            study_parameter += 5
+            study_parameter += 4
             # gwa_parameter -= 1
             # club_parameter -= 1
 
@@ -308,7 +312,7 @@ label evening_study:
         python :
             hp -= 15
             mental_point -= 15
-            study_parameter += 3
+            study_parameter += 2.7
             # gwa_parameter -= 1
             # club_parameter -= 1
 
@@ -328,7 +332,7 @@ label evening_club:
             mental_point += 20
             # study_parameter -= 1
             # gwa_parameter -= 1
-            club_parameter += 3
+            club_parameter += 2.7
 
     else :
         show club_thur at truecenter
@@ -341,7 +345,7 @@ label evening_club:
                 mental_point += 10
                 # study_parameter -= 1
                 # gwa_parameter -= 1
-                club_parameter += 5
+                club_parameter += 4
 
         elif club_count < 20 :
             "동아리에서 간단하게 버스킹을 했다\n"
@@ -351,7 +355,7 @@ label evening_club:
                 mental_point += 20
                 # study_parameter -= 1
                 # gwa_parameter -= 1
-                club_parameter += 7
+                club_parameter += 5
 
         else :
             "동아리 선배들과 친해져서 맛집 탐방을 가기로 했다.\n맛있는 것을 먹으니 힘이 조금 나는 것 같다!\n"
@@ -361,7 +365,7 @@ label evening_club:
                 mental_point += 30
                 # study_parameter -= 1
                 # gwa_parameter -= 1
-                club_parameter += 10
+                club_parameter += 6
 
     $ club_count += 1
     call parameter_maxmin_check
@@ -378,7 +382,7 @@ label evening_gwa:
         hp -= 20
         mental_point -= 5
         #study_parameter -= 1
-        gwa_parameter += 3
+        gwa_parameter += 2.7
         #club_parameter -= 1
 
         gwa_count += 1

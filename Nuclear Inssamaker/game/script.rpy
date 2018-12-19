@@ -18,12 +18,15 @@ init python:
     YoIl = 0
     day_or_evening = "day"
 
-    study_parameter = 0
+    study_parameter = 0.0
     study_count = 0
-    club_parameter = 0
+    mid_term_grade = 0
+    final_term_grade = 0
+
+    club_parameter = 0.0
     club_count = 0
     club_open = False
-    gwa_parameter = 0
+    gwa_parameter = 0.0
     gwa_count = 0
 
     rand_list_for_katlk_list = [1, 2, 3, 4, 5]

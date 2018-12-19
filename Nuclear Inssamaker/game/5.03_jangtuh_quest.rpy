@@ -14,7 +14,7 @@ image after = "jangtuh/after.png"
 image cheers = "jangtuh/cheers.png"
 
 
-# 5월 3일 화요일 장터 이벤트
+# 5월 3일 화요일 낮밤 장터 이벤트
 # month5 week1 day2
 label jangtuh:
 
@@ -164,6 +164,7 @@ label jangtuh:
             #장중 파라미터 내림
             $ jangjung.parameter -= 20
 
+    $ day_or_evening = "evening"
     "오후 6시가 되었다. 여러가지 우여곡절이 있었지만 결국 장터는 무사히 끝났다."
 
     #장터 뒷풀이"
@@ -256,4 +257,5 @@ label jangtuh:
     ###장터 후 총 금액: ___원
     ###장터 성적: A (4개), B (2,3개), C (1개),D (0개)
 
+    call weekday_SNS
     return

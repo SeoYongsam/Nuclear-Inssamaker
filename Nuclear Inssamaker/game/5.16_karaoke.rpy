@@ -9,7 +9,7 @@ image are_you_happy = "karaoke/are_you_happy.jpg"
 image sicha = "karaoke/sicha.jpg"
 image kasi = "karaoke/kasi.jpg"
 
-# 노래방 5월 16일 월요일 month == 5 and week == 3 and day == 1 저녁
+# 노래방 5월 16일 월요일 저녁 month == 5 and week == 3 and day == 1 저녁
 label karaoke:
     show school2 at truecenter
     Player "우리 오늘 공부도 안되는데 코노고?"

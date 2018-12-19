@@ -121,7 +121,6 @@ label olympic:
     Player "아직 순서 제출 안하기는 했는데..."
 
     "진일이의 부탁을 들어 주시겠습니까?"
-
     menu:
         "들어준다":
             show playground at truecenter
@@ -200,8 +199,6 @@ label olympic:
     $ mental_point -= 30
     call parameter_maxmin_check
 
-    call change_SNS
-    $ day += 1
     jump weekday_SNS
 
     return

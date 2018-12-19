@@ -2,7 +2,7 @@
 # file, define a label and jump to it from another file.
 
 #6월 6일
-## month 6 week 1 day 5
+## month 6 week 1 day 5 저녁
 label club_concert :
     "오늘은 동아리 공연 날이다."
     "동아리 활동을 하면서 연습을 했지만 그래도 조금씩 긴장된다."

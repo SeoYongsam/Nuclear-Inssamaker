@@ -4,7 +4,7 @@ image donga = "dongsoze/donga.jpg"
 image perfo = "dongsoze/perfo.jpg"
 # image dongsoze = "dongsoze/dongsoze.jpg"
 
-# 3월 9일 동소제 이벤트
+# 3월 9일 닞 동소제 이벤트
 # month3 week2 day 1
 label dongsoze:
     scene black

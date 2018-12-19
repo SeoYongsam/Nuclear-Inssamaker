@@ -5,7 +5,7 @@ image leagueloss = "pcbang/leagueloss.png"
 image kartrider = "pcbang/kartrider.jpg"
 image pcbangstreet = "pcbang/pcbangstreet.jpg"
 
-#피시방 이벤트 4월 11일 month4 week2 day3
+#피시방 이벤트 저녁 4월 11일 month4 week2 day3
 label pcbang:
     scene black
     "갑자기 대현이가 현재, 미래, 그리고 진일이와 함께 게임을 하러 PC방에 가자고 한다."

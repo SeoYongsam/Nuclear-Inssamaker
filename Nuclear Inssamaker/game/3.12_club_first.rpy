@@ -18,9 +18,11 @@ label club_first :
     "동아리 선배들" "와아~!"
     Player "앗 넵 좋아요!"
     "동아리 선배" "노래 한번 해볼까요??"
-    
+
     show prac at truecenter
     "동아리원들과 즐겁게 합주를 하였다!"
+    "멘탈을 회복했다."
+    $ mental_point += 20
 
     scene black
 

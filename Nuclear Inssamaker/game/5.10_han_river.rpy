@@ -5,7 +5,7 @@ image back = "han_river/back.jpg"
 image goodbye = "han_river/goodbye.jpg"
 image school = "han_river/school.JPG"
 
-# 한강 5월 10일 화요일 month == 5 and week == 2 and day == 2 낮-저녁
+# 한강 5월 10일 화요일 month == 5 and week == 2 and day == 2 저녁
 label han_river:
     show school at truecenter
     Jangjung "날씨도 좋은데 오늘 한강 놀러 갈까?"
@@ -16,7 +16,6 @@ label han_river:
     menu:
         "간다" :
             $ day_or_evening = "evening"
-
             show han_river_image at truecenter
 
             Player "와 날씨 대박이다"
@@ -85,9 +84,11 @@ label han_river:
                     call parameter_maxmin_check
 
         "거절한다":
-            jump weekday_SNS
-            #체력 + / 외로움 +
-            return
+            # 체력 + / 멘탈 --
+            "애들이 한강에 갈 시간에 원래 일정을 소화했다."
+            # $ hp += 20
+            # $ mental_point -= 5
+            call normal_weekday_evening
 
     jump weekday_SNS
     return
