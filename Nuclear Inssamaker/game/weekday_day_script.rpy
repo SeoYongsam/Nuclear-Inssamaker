@@ -222,7 +222,7 @@ label weekday_day_event :
     elif month == 4 and week == 4 and day == 2 :
         show lecture_room at truecenter
         "중간시험 둘째 날이다. 오늘은 잘 볼 수 있을까?"
-        if study_parameter >= 16.2 :
+        if study_parameter >= 2.7 * 6 :
             "{color=#6495ED}문제 : 24절기 중 낮이 가장 짧고 밤이 가장 긴 절기는?{/color}"
         else :
             "{color=#6495ED}문제 : XXXXX X 낮XXX XXX XXX XX XX X XXX?{/color}"
@@ -247,7 +247,7 @@ label weekday_day_event :
     elif month == 4 and week == 4 and day == 3 :
         show lecture_room at truecenter
         "중간시험 셋째 날이다. 빨리 시험 끝났으면 좋겠다..."
-        if study_parameter >= 32.4 :
+        if study_parameter >= 2.7 * 12 :
             "{color=#6495ED}문제 : 영국의 소설가 골딩이 지은 장편소설은?{/color}"
         else :
             "{color=#6495ED}문제 : XXXX XX가 XXXX XXX XXXX은?{/color}\n"
@@ -272,7 +272,7 @@ label weekday_day_event :
     elif month == 4 and week == 4 and day == 4 :
         show lecture_room at truecenter
         "중간시험 마지막 날이다. 시험 마지막날 개꿀~"
-        if study_parameter >= 48.6 :
+        if study_parameter >= 2.7 * 18 :
             "{color=#6495ED}문제 : 보기 중 농구 선수인 사람은?{/color}"
         else :
             "{color=#6495ED}문제 : XXXXX XXXXX 선수X XXX XXX?{/color}\n"
@@ -324,7 +324,7 @@ label weekday_day_event :
     elif month == 6 and week == 3 and day == 2 :
         show lecture_room at truecenter
         "기말 고사 둘째 날이다. 계속 떨린다."
-        if study_parameter >= 27 :
+        if study_parameter >= 2.7 * 10 :
             "{color=#6495ED}문제 : 보기 중 목관 악기인 것은?{/color}"
         else :
             "{color=#6495ED}문제 : XXX XXXX XX XXXXXX XXXX 것은?{/color}\n"
@@ -349,7 +349,7 @@ label weekday_day_event :
     elif month == 6 and week == 3 and day == 3 :
         show lecture_room at truecenter
         "기말 고사 셋째 날이다. 곧 종강이다. 조금만 힘내자"
-        if study_parameter >= 54 :
+        if study_parameter >= 2.7 * 20 :
             "{color=#6495ED}문제 : 보기 중 꽃 이름인 것은?{/color}"
         else :
             "{color=#6495ED}문제 : XXX X X 이름X XX X XXXX XXXX XX?{/color}\n"
@@ -374,7 +374,7 @@ label weekday_day_event :
     elif month == 6 and week == 3 and day == 4 :
         show lecture_room at truecenter
         "기말 고사 마지막날이다. 유종의 미를 거두자."
-        if study_parameter >= 81 :
+        if study_parameter >= 2.7 * 30 :
             "{color=#6495ED}문제 : 보기 중 철자가 가장 긴 단어는?{/color}"
         else :
             "{color=#6495ED}문제 : XXX XX XX 가장 XXX XXX?{/color}\n"
