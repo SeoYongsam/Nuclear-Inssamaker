@@ -66,6 +66,8 @@ screen weekday_schedule_show :
 
             if i != 7 :
                 null width 30
+            else :
+                null width 5
 
 label weekday_day :
     scene black #with dissolve

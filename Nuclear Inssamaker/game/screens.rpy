@@ -315,7 +315,7 @@ screen navigation():
             yalign 0.98
 
         else :
-            xalign 0.8
+            xalign 0.5
             yalign 0.95
 
         spacing gui.navigation_spacing
@@ -324,7 +324,7 @@ screen navigation():
 
             textbutton _("시작하기") action Start()
 
-            null width 70
+            null width 40
 
             textbutton _("로드") action ShowMenu("load")
 
@@ -530,12 +530,13 @@ style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 280
+    # xsize 280
+    xsize 0
     yfill True
 
 style game_menu_content_frame:
-    left_margin 40
-    right_margin 20
+    #left_margin 40
+    #right_margin 20
     top_margin 10
 
 style game_menu_viewport:
@@ -548,7 +549,8 @@ style game_menu_side:
     spacing 10
 
 style game_menu_label:
-    xpos 50
+    # xpos 50
+    xalign 0.5
     ysize 120
 
 style game_menu_label_text:
@@ -615,16 +617,16 @@ screen save():
 
     tag menu
 
-    use file_slots(_(" "))
-    # use file_slots(_("저장하기"))
+    #use file_slots(_(" "))
+    use file_slots(_("저장하기"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_(" "))
-    # use file_slots(_("로드하기"))
+    #use file_slots(_(" "))
+    use file_slots(_("로드하기"))
 
 
 screen file_slots(title):
@@ -714,8 +716,8 @@ style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
 style page_label:
-    xpadding 50
-    ypadding 3
+    xpadding 0
+    ypadding 0
 
 style page_label_text:
     text_align 0.5
