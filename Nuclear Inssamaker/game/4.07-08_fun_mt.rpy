@@ -116,7 +116,7 @@ label fun_mt:
     $ day_or_evening = "evening"
 
     #(장발대가 적을 경우 => 4/4 이후로 투표를 끝냈을 경우 추가 스크립트) (앞의 장발, 후발에서 2번경우)
-    if fun_mt_vote_day >= 32 :
+    if fun_mt_vote_day >= 33 :
         show jangbal_little at truecenter
         "비록 장발대는 적었지만, 각자 원하는 것을 사다보니 짐이 많아졌다."
         "많은 짐을 적은 수의 장발대가 옮기느라 생각보다 많은 힘을 소모했다."

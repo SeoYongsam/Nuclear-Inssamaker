@@ -22,6 +22,7 @@ label change_samyong_talk :
                 $ samyong.add("동삼용|이거 애들이 좋아할까?? 난 진짜 모르겠어 ㅋㅋㅋ 내가 투표 안한 애들 물어봤는데 지금 별로라서 투표 안하는거라던데")
 
             elif day == 1 :
+                $ samyong.add("날짜|3월 23일 월요일")
                 if gwazam_finished == True :
                     # 투표 종료
                     $ samyong.add("동삼용|뻔대야 우리끼리 조만간 같이 놀러 가자 ㅋㅋㅋ")
@@ -31,6 +32,7 @@ label change_samyong_talk :
                     $ samyong.add("동삼용|투표 안한 애들이 이거 별로라고 생각한다는데 어떡하지 하…. 다시 만들어야하나?")
 
             elif day == 2 :
+                $ samyong.add("날짜|3월 24일 화요일")
                 if gwazam_finished == True :
                     # 투표 종료
                     $ samyong.add("동삼용|내일 점모 중식 너무 좋다 ㅋㅋㅋ 나 배려해줘서 고마워")
@@ -52,7 +54,7 @@ label change_samyong_talk :
 
             if day == 4 :
                 # 장발 마감 안했을 시
-                if fun_mt_vote_day > 32 :
+                if fun_mt_vote_day > 33 :
                     $ samyong.add("날짜|4월 5일 목요일")
                     $ samyong.add("동삼용|와..애들 진짜 너무한 거 아니냐...")
                     $ samyong.add("연속|아무리 일이 생겨도 그렇지 장발 저렇게 쉽게 포기해도 되는거냐;;")
