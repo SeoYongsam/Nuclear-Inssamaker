@@ -294,10 +294,12 @@ label normal_weekday_evening :
     else :
         extend "에러"
 
+    stop sound
     return
 
 label evening_study:
     show study at truecenter
+    play sound "music/study.mp3"
     if (month == 4 and week == 3 and day >= 5) or (month == 4 and week == 4 and day <= 4) or (month == 6 and week == 2 and day >= 4) or (month == 6 and week == 3 and day <= 3) :
         "시험을 대비해서 공부를 열심히 했다.\n"
         extend "체력 -15, 멘탈 -15, 공부 +4"
@@ -326,6 +328,7 @@ label evening_study:
     return
 
 label evening_club:
+    play sound "music/club.mp3"
     if day != 4 :
         show club at truecenter
         "동아리 개인연습을 했다.\n"
@@ -377,6 +380,7 @@ label evening_club:
     return
 
 label evening_gwa:
+    play sound "music/gwa.mp3"
     show gwa at truecenter
     "과 활동을 했다.\n"
 
@@ -392,10 +396,10 @@ label evening_gwa:
         gwa_count += 1
 
     call parameter_maxmin_check
-
     return
 
 label evening_rest:
+    play sound "music/rest.mp3"
     show rest at truecenter
     "쉬었다.\n"
     extend "체력 +50, 멘탈 +30"

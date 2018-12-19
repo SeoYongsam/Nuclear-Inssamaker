@@ -3,7 +3,7 @@ label change_group_talk :
         if week == 1 :
             if day == 0 :
                 $ grouptalk.add("날짜|2월 27일 금요일")
-                $ grouptalk.add("주인공|문화정보학과 OO학번 단톡방입니다!!")
+                $ grouptalk.add("주인공|문화정보학과 19학번 단톡방입니다!!")
                 $ grouptalk.add("해장중|오올 뻔대! 술 그렇게 마시고도 일 잘하는데?")
                 $ grouptalk.add("유현재|캬 단톡방 빠르게 파는 클라스~~")
                 $ grouptalk.add("김진일|역시 내가 사람 보는 눈은 있지ㅋㅋㅋㅋ")

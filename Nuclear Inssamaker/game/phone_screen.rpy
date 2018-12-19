@@ -33,7 +33,7 @@ screen phone_icon():
             # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
             hover "phone_icon_sel.png"
             # 클릭시 phone label을 실행함
-            action Hide("phone_icon"), Hide("planner_icon"), Call("phone")
+            action Hide("phone_icon"), Hide("planner_icon"), Play("sound", "music/phone_sel.mp3"), Call("phone")
 
             #at shake
 

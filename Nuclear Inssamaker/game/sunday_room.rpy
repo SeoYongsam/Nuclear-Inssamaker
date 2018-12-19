@@ -5,7 +5,7 @@ label sunday_room:
     $ day = 0
     $ hp_for_show = hp
     $ mental_point_for_show = mental_point
-    
+
     scene sunday_room_image at truecenter
 
     $ YoIl = day_name[day]
@@ -39,4 +39,5 @@ screen planner_icon() :
             action [Hide("phone_icon"), Hide("planner_icon"),
                     SetVariable("month_for_display", month - 3),
                     SetVariable("day", 1),
-                    Hide("dateShow"), Jump("planner")]
+                    Hide("dateShow"), Play("sound", "music/planner_sel.mp3"),
+                    Jump("planner")]

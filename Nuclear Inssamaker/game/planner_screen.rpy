@@ -25,14 +25,14 @@ screen planner_UI() :
         imagebutton :
             idle "planner/arrow_left.png"
             hover "planner/arrow_left_on.png"
-            action Call("show_previous_month")
+            action Play("sound", "music/in_planner.mp3"), Call("show_previous_month")
 
     #플래너 다음 달로 가는 화살표
     vbox xpos 564 ypos 88 :
         imagebutton :
             idle "planner/arrow_right.png"
             hover "planner/arrow_right_on.png"
-            action Call("show_next_month")
+            action Play("sound", "music/in_planner.mp3"), Call("show_next_month")
 
     #플래너 종료창
     vbox xpos 896 ypos 72 :
@@ -40,7 +40,7 @@ screen planner_UI() :
             idle "planner/exitButton.png"
             hover "planner/exitButton_on.png"
             #플래너 X버튼 누르면 플래너 화면들을 전부 숨기고, 일요일 방으로 간다.
-            action Jump("planner_close")
+            action Play("sound", "music/in_planner.mp3"), Jump("planner_close")
             #아래 코드는 위와 똑같지만 작동하지 않는 코드. Call이 호출되면 뒷 액션들은 호출되지 않는 것 같다.
             #action Call("hide_planner_button"), Jump("sunday_room")
 
@@ -67,7 +67,7 @@ screen schedule_button():
                 idle "planner/button_study.png"
                 hover "planner/button_study_on.png"
                 if day <= 7 :
-                    action SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
+                    action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
                 #else :
                 #    action Null
 
@@ -75,7 +75,7 @@ screen schedule_button():
                 idle "planner/button_gwa.png"
                 hover "planner/button_gwa_on.png"
                 if day <= 7 :
-                    action SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
+                    action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
 
             imagebutton :
                 # if month != 3 or week > 2 :
@@ -84,14 +84,14 @@ screen schedule_button():
                     hover "planner/button_club_on.png"
                     if day <= 7 :
                         if day != 4 :
-                            action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
+                            action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
                         else :
                             if club_count < 10 :
-                                action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+10), Jump("planner")
+                                action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+10), Jump("planner")
                             elif club_count < 20 :
-                                action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
+                                action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
                             else :
-                                action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show+15), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
+                                action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show+15), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
 
                 else :
                     idle im.Alpha("planner/button_club.png", 0.2)
@@ -102,7 +102,7 @@ screen schedule_button():
                 idle "planner/button_rest.png"
                 hover "planner/button_rest_on.png"
                 if day <= 7 :
-                    action SetVariable("for_day_schedule_select", 4), SetVariable("hp_for_show", hp_for_show+50), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
+                    action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 4), SetVariable("hp_for_show", hp_for_show+50), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
 
 screen month_schedule_icon_show():
     if month == month_for_display + 3 :
@@ -210,11 +210,11 @@ screen month_schedule_icon_show():
 #        add "planner/3_quest.png"
         add "planner/3.13-14_MT.png" xpos 0 ypos -9
 
-        if (month-3) * 32 + (week-1)*8 + day >= 8 :
+        if (month-3) * 32 + (week-1)*8 + day >= 8 + 1 :
             add "planner/3.09_dongsoze.png" xpos 0 ypos -9
             add "planner/3.23_quiz.png" xpos 0 ypos -9
 
-        if (month-3) * 32 + (week-1)*8 + day >= 16 :
+        if (month-3) * 32 + (week-1)*8 + day >= 16 + 1 :
             add "planner/3.17-19_gwazam.png" xpos 0 ypos -9
 
         if gwazam_store == True :
@@ -222,25 +222,25 @@ screen month_schedule_icon_show():
 
     elif month_for_display == 1 :
         add "planner/4_mid_term_exam.png"
-        if (month-3) * 32 + (week-1)*8 + day >= 32 :
+        if (month-3) * 32 + (week-1)*8 + day >= 32 + 1 :
             add "planner/4.02_school.png"
             add "planner/4.06-07_mt.png"
-        if (month-3) * 32 + (week-1)*8 + day >= 48 :
+        if (month-3) * 32 + (week-1)*8 + day >= 48 + 1 :
             add "planner/4.16_festival.png"
-        if (month-3) * 32 + (week-1)*8 + day >= 64 :
+        if (month-3) * 32 + (week-1)*8 + day >= 64 + 1 :
             add "planner/4.27_meeting.png"
 
     elif month_for_display == 2 :
-        if (month-3) * 32 + (week-1)*8 + day >= 64 :
+        if (month-3) * 32 + (week-1)*8 + day >= 64 + 1 :
             add "planner/5.03_market.png"
-        if (month-3) * 32 + (week-1)*8 + day >= 80 :
+        if (month-3) * 32 + (week-1)*8 + day >= 80 + 1 :
             add "planner/5.10_hanriver.png"
             add "planner/5.21_olympic.png"
-        if (month-3) * 32 + (week-1)*8 + day >= 88 :
+        if (month-3) * 32 + (week-1)*8 + day >= 88 + 1 :
             add "planner/5.16_garaoke.png"
 
     elif month_for_display == 3 :
-        if (month-3) * 32 + (week-1)*8 + day >= 96 :
+        if (month-3) * 32 + (week-1)*8 + day >= 96 + 1 :
             add "planner/6.06_club.png"
         add "planner/6.final_term_exam.png"
         add "planner/6.21_end.png"
