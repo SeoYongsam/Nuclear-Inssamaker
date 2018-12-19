@@ -459,8 +459,7 @@ label change_fbook_post :
             if day == 0 :
                 $ fbook_post_add("본문|해장중|2019년 6월 8일|기말고사 공부 집중안되서 중도간다~~~ 같이 공부할사람 여기여기 모여라~  - @김진일님과 함께 있습니다")
                 $ fbook_post_add("댓글시작")
-                $ fbook_post_add("댓글|유현재|어지간히도 공부 되겠다 ㅋㅋㅋㅋㅋㅋ")
-                $ fbook_post_add("댓글|연속|ㄱㄷ 좀있다 감")
+                $ fbook_post_add("댓글|유현재|어지간히도 공부 되겠다 ㅋㅋㅋㅋㅋㅋ ㄱㄷ 좀있다 감")
                 $ fbook_post_add("댓글|노미래|@유현재 뭐냐 ㅋㅋㅋㅋㅋ")
                 $ fbook_post_add("댓글종료")
                 $ fbook_post_add("그림자")
@@ -480,8 +479,7 @@ label change_fbook_post :
                 $ fbook_post_add("댓글시작")
                 $ fbook_post_add("댓글|동삼용|나도 ㅋㅋㅋㅋㅋㅋ 시험 끝나고 중국 갈 생각밖에 없어 ㅋㅋㅋ")
                 $ fbook_post_add("댓글|김진일|아... 진짜 노답이다")
-                $ fbook_post_add("댓글|해장중|@진일 군대가자")
-                $ fbook_post_add("댓글|연속|싸나이면 해병대 ㄱㄱ")
+                $ fbook_post_add("댓글|해장중|@진일 군대가자 싸나이면 해병대 ㄱㄱ")
                 $ fbook_post_add("댓글종료")
 
             elif day == 5 :

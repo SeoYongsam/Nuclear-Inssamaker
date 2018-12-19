@@ -36,6 +36,107 @@ label change_dongah_talk :
                 $ dongah.add("주인공|그럼 내일 수업마치고 톡할게, 그때 보제이~")
                 $ dongah.add("이동아|오키도키~")
 
+            elif day == 6 :
+                $ grouptalk.add("날짜|3월 14일 토요일")
+                $ grouptalk.add("이동아|니 아직도 엠티가?")
+                $ grouptalk.add("연속|에? 밥도 묵고")
+                $ grouptalk.add("연속|사우나도 하고")
+
+        elif week == 3 :
+            if day == 2 :
+                $ grouptalk.add("날짜|3월 17일 수요일")
+                $ grouptalk.add("이동아|니 동아리 과잠 맞출거가?")
+                $ grouptalk.add("연속|맞출거면 이번주까지 알려도")
+                $ grouptalk.add("주인공|ㅇㅋㅇㅋ")
+                $ grouptalk.add("연속|그리고 이번주에 술 한잔 할래?")
+                $ grouptalk.add("연속|오랜만에 둘이 한잔 해야재")
+                $ grouptalk.add("주인공|이번 주 과 행사 끝나면 연락할게")
+
+        elif week == 4 :
+            if day == 1 :
+                $ grouptalk.add("날짜|3월 23일 월요일")
+                $ grouptalk.add("이동아|이번에 고향 애들 서울 올라온다는데")
+                $ grouptalk.add("연속|한 번 만나야재")
+                $ grouptalk.add("주인공|ㅇㅋㅇㅋ 한 번 만나야재")
+                $ grouptalk.add("주인공|내가 연락할게")
+
+    elif month == 4 :
+        if week == 1 :
+            if day == 2 :
+                $ grouptalk.add("날짜|4월 3일 화요일")
+                $ grouptalk.add("이동아|우리 학기말에 동아리 공연있는거 알재?")
+                $ grouptalk.add("연속|해운대 나얼 어디 안가게 목관리 잘해라")
+                $ grouptalk.add("연속|선배들이 니 엄청 기대하고 있다")
+                $ grouptalk.add("주인공|레알?ㅋㅋㅋ 긴장되네ㅠㅠ")
+                $ grouptalk.add("주인공|니가 많이 도와줘 ㅋㅋㅋㅋ")
+
+        elif week == 2 :
+            if day == 0:
+                $ grouptalk.add("날짜|4월 8일 일요일")
+                $ grouptalk.add("이동아|이번 주에 집에 갈래?")
+                $ grouptalk.add("연속|시험보기 전에 고등학교 애들 보고 오자 ㅋㅋㅋ")
+                $ grouptalk.add("주인공|오... 좋다!")
+                $ grouptalk.add("주인공|언제 갈거야?")
+                $ grouptalk.add("이동아|금요일 오후에 가자 ㅋㅋㅋ")
+                $ grouptalk.add("주인공|나 일정 봐보고 연락할게 ㅋㅋㅋ")
+
+        elif week == 3 :
+            if day == 1 :
+                $ grouptalk.add("날짜|4월 16일 월요일")
+                $ grouptalk.add("주인공|오늘 축제 가? 네가 좋아하는 소란 오던데 ㅋㅋㅋ")
+                $ grouptalk.add("주인공|나 과 얘들이랑 가기는 하는데 혹시 너 가면 같이 놀자 ㅋㅋㅋ")
+                $ grouptalk.add("이동아|됐다 ㅋㅋㅋ 과 얘들이랑 놀아라")
+                $ grouptalk.add("주인공|ㅋㅋㅋㅋ 그래도 혹시 오면 이따 연락해")
+                $ grouptalk.add("이동아|ㅇㅋㅇㅋ")
+
+            elif day == 5 :
+                $ grouptalk.add("날짜|4월 20일 금요일")
+                $ grouptalk.add("이동아|이따 같이 시험공부 할래?")
+                $ grouptalk.add("주인공|나는 과 친구들이랑 할 것 같은데 ㅋㅋㅋ")
+                $ grouptalk.add("주인공|어디야 ㅋㅋㅋ 글로 갈까?")
+                $ grouptalk.add("이동아|아 그럼 그냥 다음에 같이 하자 ㅋㅋㅋ")
+                $ grouptalk.add("주인공|ㅋㅋㅋㅋ 이따 야식이나 먹자")
+                $ grouptalk.add("이동아|ㅋㅋㅋ 그래그래")
+
+        elif week == 4 :
+
+    elif month == 5 :
+        if week == 1 :
+            if day == 2 :
+                $ grouptalk.add("날짜|5월 3일 화요일")
+                $ grouptalk.add("이동아|오늘 장터 하대?")
+                $ grouptalk.add("연속|수업 끝나고 갈게 ㅋㅋㅋㅋ")
+                $ grouptalk.add("주인공|올... 어떻게 알았냐 ㅋㅋㅋ")
+                $ grouptalk.add("이동아|페북 봤다 ㅋㅋㅋ 좋아요도 눌렀다")
+                $ grouptalk.add("연속|동아리 애들 데리고 갈게")
+                $ grouptalk.add("주인공|와 감사감사!!!")
+                $ grouptalk.add("주인공|내가 서비스도 많이 줄게 ㅋㅋㅋㅋ")
+                $ grouptalk.add("이동아|적자 볼 각오해라 ㅋㅋㅋㅋ")
+
+        elif week == 2 :
+            if day == 2 :
+                $ grouptalk.add("날짜|5월 10일 화요일")
+                $ grouptalk.add("이동아|이따가 동아리 점모 올거?")
+                $ grouptalk.add("주인공|아.. 나 오늘 과 행사 있어 ㅠㅠ")
+                $ grouptalk.add("이동아|핵인싸 고향친구 보기 힘드네 ㅋㅋㅋㅋ")
+                $ grouptalk.add("주인공|ㅠㅠㅠ 내가 다음에 밥 살게")
+
+        # elif week == 3 :
+
+        elif week == 4 :
+            if day == 0 :
+                $ grouptalk.add("날짜|5월 22일 일요일")
+                $ grouptalk.add("이동아|야 너 잘 들어간거가?")
+                $ grouptalk.add("연속|갑자기 전화해서 이상한 소리하던데")
+                $ grouptalk.add("연속|어디 장기 털린데는 없나?")
+                $ grouptalk.add("주인공|자고 일어났는데 몸이 가벼워...")
+                $ grouptalk.add("주인공|다 털린듯 영혼까지")
+                $ grouptalk.add("이동아|ㅋㅋㅋㅋㅋ 그래도 살아있네")
+                $ grouptalk.add("주인공|먹은거 다 토하니까 그나마 낫다ㅋㅋㅋㅋ")
+                $ grouptalk.add("주인공|지금 술병나서 계속 누워있음")
+                $ grouptalk.add("이동아|장기 있으면 됐지 ㅋㅋㅋㅋ")
+                $ grouptalk.add("연속|몸 조리 잘해라 ㅋㅋㅋ")
+                $ grouptalk.add("주인공|ㅇㅋ 감사요")
     elif month == 6 :
         if week == 1 :
             if day == 1 :
