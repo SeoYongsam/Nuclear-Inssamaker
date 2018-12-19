@@ -104,7 +104,7 @@ init python:
     dongah = messages()
 
     fbook_post = []
-#    fbook_count = 0
+    fbook_count = 0
 
     def fbook_post_add(data) :
         fbook_count_tmp = 0
