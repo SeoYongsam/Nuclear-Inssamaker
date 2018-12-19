@@ -845,7 +845,7 @@ label change_group_talk :
                 $ grouptalk.add("해장중|다른 과는 벌써 장터도 하던데 ㅠㅠㅠ 거긴 시험 끝나서 그런건가?")
                 $ grouptalk.add("김진일|오 장터?? 내일 장터가서 술이나 ㄱㄱ?")
                 $ grouptalk.add("오덕현|야레야레 와타시...아시타 시험이 있달까..? ㅠㅠ")
-                $ grouptalk.add("해장중 |진일이 내일 ㄱㄱ?")
+                $ grouptalk.add("해장중|진일이 내일 ㄱㄱ?")
                 $ grouptalk.add("박대현|난 모르겠다~ 내일 장터나 가자~")
                 $ grouptalk.add("노미래|우리도 시험 끝나고 얼른 장터하자!!!")
                 $ grouptalk.add("주인공|ㅋㅋㅋ 그러자")
@@ -865,7 +865,7 @@ label change_group_talk :
                 $ grouptalk.add("박대현|나도333333")
                 $ grouptalk.add("노미래|난 시험 때문에 ㅠㅠㅠ 장터 당일에 열심히 도와줄게")
                 $ grouptalk.add("김진일|사람 부족하면 나도 장준위 해드릴게")
-                $ grouptalk.add("오덕현|큿...민나..아름다운 토모다치들이군....")
+                $ grouptalk.add("오덕현|큽...민나..아름다운 토모다치들이군....")
 
             #elif day == 2 :
                 # $ grouptalk.add("날짜|4월 24일 화요일")

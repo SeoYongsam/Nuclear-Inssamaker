@@ -56,7 +56,7 @@ label change_jangjung_talk :
             elif day == 4 :
                 $ jangjung.add("날짜|3월 26일 목요일")
                 $ jangjung.add("해장중|우리 뻔엠가자아아아아")
-                $ jangjung.add("연속|뻔엠 지금쯤 추진하는거 어떄 ㅋㅋㅋㅋ")
+                $ jangjung.add("연속|뻔엠 지금쯤 추진하는거 어때 ㅋㅋㅋㅋ")
 
     elif month == 4 :
         if week == 1 :
