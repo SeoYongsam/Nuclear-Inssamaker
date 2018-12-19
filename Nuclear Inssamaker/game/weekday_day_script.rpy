@@ -4,8 +4,9 @@ label weekday_day_event :
     $ day_or_evening = "day"
     if month == 3 and week == 1 and day == 3 :
         show lecture_room at truecenter
-        "김범준" "안녕하십니까. 언시리어스 게임 강의를 맡은 김범준입니다.!@#$!@#"
-        "김범준" "퀴즈는 이번달 넷째주 월요일, 23일에 보겠습니다."
+        "김범준" "안녕하십니까\n"
+        extend "언시리어스 게임 강의를 맡은 김범준입니다\n"
+        "김범준" "퀴즈는 이번달 넷째주 월요일, 23일에 보겠습니다"
         Player "퀴즈 대비해서 공부를 열심히 해야겠다"
 
     elif month == 3 and week == 2 and day == 1 :
@@ -73,7 +74,7 @@ label weekday_day_event :
 
         scene black with dissolve
         show lecture_room at truecenter
-        "김범준" "언시리어스게임 퀴즈를 시작하겠습니다."
+        "김범준" "언시리어스게임 퀴즈를 시작하겠습니다"
         "김범준" "초성퀴즈!"
         "김범준" "ㅅㅂ"
         Player "퀴즈가 너무 어려웠다."
@@ -120,8 +121,9 @@ label weekday_day_event :
         call uniform_day
 
     elif month == 4 and week == 1 and day == 2 :
-        "지난밤 카톡에서 뻔엠 장소와 장발후발 관련 얘기가 나왔습니다. 확인해주세요."
-        "장소 투표 결과 대별리8 / 신숲8 / 미투표4"
+        "지난밤 카톡에서 뻔엠 장소와 장발후발 관련 얘기가 나왔습니다.\n"
+        "확인해주세요."
+        "장소 투표 결과 대별리8 / 신숲8 / 미투표4\n"
         "투표를 더 진행하시겠습니까?"
         menu :
             "투표 계속하기" :
@@ -142,7 +144,7 @@ label weekday_day_event :
                 call parameter_maxmin_check
                 $ fun_mt_location_finished = True
 
-        "장발후발 투표 결과 장발대10 / 후발대6"
+        "장발후발 투표 결과 장발대10 / 후발대6\n"
         "투표를 더 진행하시겠습니까?"
         menu :
             "투표 계속하기" :
@@ -155,7 +157,7 @@ label weekday_day_event :
 
     elif month == 4 and week == 1 and day == 3 :
         if fun_mt_location_finished == False :
-            "장소 투표 결과 대별리10 / 신숲10"
+            "장소 투표 결과 대별리10 / 신숲10\n"
             "투표가 동률이 나왔습니다. 당신은 무엇을 선택하시겠습니까?"
             menu :
                 "장중이와 진일이가 미는 '대별리'" :
@@ -168,7 +170,7 @@ label weekday_day_event :
                     $ samyong.parameter += 20
 
         if fun_mt_vote_finished == False :
-            "장발후발 투표 결과 장발대 9 / 후발대 11"
+            "장발후발 투표 결과 장발대 9 / 후발대 11\n"
             "투표를 더 진행하시겠습니까?"
             menu :
                 "투표 계속하기" :
@@ -180,8 +182,9 @@ label weekday_day_event :
 
     elif month == 4 and week == 1 and day == 4 :
         if fun_mt_vote_finished == False :
-            "장발후발 투표 결과 장발대 8 / 후발대 14"
-            "점점 장발대가 줄어들고 있습니다.\n투표를 더 진행하시겠습니까?"
+            "장발후발 투표 결과 장발대 8 / 후발대 14\n"
+            "점점 장발대가 줄어들고 있습니다.\n"
+            "투표를 더 진행하시겠습니까?"
             menu :
                 "투표 계속하기" :
                     "투표를 계속 진행합니다."
@@ -193,7 +196,7 @@ label weekday_day_event :
 
     elif month == 4 and week == 1 and day == 5 :
         if fun_mt_vote_finished == False :
-            "장발후발 투표 결과 장발대 8 / 후발대 14"
+            "장발후발 투표 결과 장발대 8 / 후발대 14\n"
             "투표가 종료되었습니다."
 
         call fun_mt

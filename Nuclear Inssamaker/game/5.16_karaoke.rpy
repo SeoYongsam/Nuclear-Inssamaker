@@ -12,13 +12,14 @@ image kasi = "karaoke/kasi.jpg"
 # 노래방 5월 16일 월요일 저녁 month == 5 and week == 3 and day == 1 저녁
 label karaoke:
     show school2 at truecenter
-    Player "우리 오늘 공부도 안되는데 코노고?"
-    Samyong "좋은데? 오랜만에 첨밀밀 한 번 불러봐야지"
+    Player "우리 오늘 공부도 안되는데 코노 ㄱ?"
+    Samyong "좋은데?\ㅜ"
+    extend "오랜만에 첨밀밀 한 번 불러봐야지"
     Jinil "오... 나도 껴줘!"
     Hyunjae "녹두 ㄱㄱ"
 
     show karaoke at truecenter
-    "노래방 기계" "박효신 야생화 예약하셨습니다."
+    "노래방 기계" "박효신 야생화 예약하셨습니다"
     "친구들" "오오... 누구냐?"
     Player "흠흠... 목 좀 풀어볼까?"
     "친구들" "노래방 점수로 밥 내기!"
@@ -36,7 +37,7 @@ label karaoke:
     menu:
         "점수를 높게 낼 수 있는 노래를 찾는다":
             $ jinil.parameter -= 20
-            "진일이가 자꾸 리액션을 바라는 것 같은데...?"
+            "진일이가 자꾸 리액션을 바라는 것 같은데..?"
         "진일이가 노래를 부르는 동안 리액션을 한다":
             $ jinil.parameter += 20
             "진일이가 기분이 좋아보인다"

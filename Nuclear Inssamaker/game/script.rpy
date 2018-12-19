@@ -153,9 +153,10 @@ label start:
     show screen stats_button_screen
 
     Player "으으 머리야...분명히 금요일에 병샷을 한 것 까지는 기억나는데..."
-    Player "아 핸드폰 어딨지? 핸드폰 한 번 확인해봐야겠다."
+    Player "아 핸드폰 어딨지?\n"
+    extend "핸드폰 한 번 확인해봐야겠다."
 
-    "일요일에는.\n핸드폰을 이용해 SNS를 확인하거나,\n달력를 이용해 다음주 일정을 짜세요."
+    "일요일에는\n핸드폰을 이용해 SNS를 확인하거나\n달력를 이용해 다음주 일정을 짜세요."
 
     call change_SNS
     call event_schedule_set
