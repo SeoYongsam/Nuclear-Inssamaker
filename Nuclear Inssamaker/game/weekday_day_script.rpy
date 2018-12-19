@@ -425,6 +425,9 @@ label weekday_day_event :
                 $ mental_point -= 10
         stop music fadeout 1.0
 
+    elif month == 6 and week == 3 and day == 6 :
+        call jongpa from _call_jongpa
+
     elif day == 6 :
         "토요일 낮이 되었다."
         call normal_weekday_evening from _call_normal_weekday_evening

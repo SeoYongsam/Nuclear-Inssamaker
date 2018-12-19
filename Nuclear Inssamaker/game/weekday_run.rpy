@@ -72,7 +72,7 @@ screen weekday_schedule_show :
 label weekday_day :
     stop music fadeout 1.0
     scene black #with dissolve
-    show screen stats_screen
+    # show screen stats_screen
 
     show screen phone_icon
     show screen weekday_schedule_show

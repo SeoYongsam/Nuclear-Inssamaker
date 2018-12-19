@@ -42,7 +42,7 @@ label jongpa :
     #적게 왔을 때
     else :
         extend "종파 장소에 가보니 아이들이 생각보다 적게 모여있었다."
-        show bar_small at truecenter
+        show bar_less at truecenter
 
         Jinil "뭐야 왜 사람이 없어?"
         Jangjung "우리 종파 망했는데? ㅋㅋㅋㅋ"

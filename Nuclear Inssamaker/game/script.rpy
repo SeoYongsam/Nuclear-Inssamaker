@@ -157,6 +157,8 @@ label start:
     # 화면 우측 위 '스탯'버튼. 클릭하면 스탯창이 나온다.
     # show screen stats_button_screen
 
+    stop music fadeout 1.0
+
     Player "으으 머리야...분명히 금요일에 병샷을 한 것 까지는 기억나는데..."
     Player "아 핸드폰 어딨지?\n"
     extend "핸드폰 한 번 확인해봐야겠다."

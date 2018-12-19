@@ -267,9 +267,6 @@ label weekday_evening_event :
     elif month == 6 and week == 1 and day == 5 :
         call club_concert from _call_club_concert
 
-    elif month == 6 and week == 3 and (day == 6 or day == 7) :
-        call jongpa from _call_jongpa
-
     else :
         call normal_weekday_evening from _call_normal_weekday_evening_7
 
