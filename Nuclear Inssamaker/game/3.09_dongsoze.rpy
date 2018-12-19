@@ -9,7 +9,7 @@ image perfo = "dongsoze/perfo.jpg"
 label dongsoze:
     scene black
     "오늘은 동아리 소개제가 있는 날이다.\n"
-    "공강 시간을 이용해 동아리 소개제 구경을 가게 되었다."
+    extend "공강 시간을 이용해 동아리 소개제 구경을 가게 되었다."
 
     scene black
     "동소제를 둘러보던 중 앞쪽에 사람들이 모여 있는 모습을 발견하고 그 쪽으로 가보기로 했다."
@@ -34,8 +34,7 @@ label dongsoze:
 
     show perfo at truecenter
 
-    "와아아아아아~\n"
-    "최고다~"
+    "와아아아아아! 최고다~"
 
     "동아리 선배" "와 새내기 노래 진짜 잘 부르시네요\n"
     extend "혹시 밴드에 관심있어요?"

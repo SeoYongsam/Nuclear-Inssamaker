@@ -8,11 +8,11 @@ image clubroom = "club_first/clubroom.jpg"
 label club_first :
     scene black
     "오늘은 동아리 첫 연습이 있는 날이다.\n"
-    "수업을 마친 동아와 만나 동아리 연습실로 찾아가게 되었다."
+    extend "수업을 마친 동아와 만나 동아리 연습실로 찾아가게 되었다."
 
     show clubroom at truecenter
     "동아와 동아리 연습실에 들어갔다.\n"
-    "먼저 와 있는 선배들이 악기를 만지고 있는 모습이 보였다."
+    extend "먼저 와 있는 선배들이 악기를 만지고 있는 모습이 보였다."
 
     "동아리 선배" "오~ 새내기들 오셨네요!! 반가워요!"
     Player "안녕하세요! 이번에 새로 들어온 문정과 19학번 신입입니다! 잘 부탁드려요!"
