@@ -131,12 +131,20 @@ label show_next_month :
 label event_schedule_set :
     # 3월 이벤트 설정
     if (month-3) * 32 + (week-1)*8 + day >= 8:
-        $ day_schedule[0][13] = 5
-        $ day_schedule[0][14] = 5
-        $ day_schedule[0][15] = 5
+        if day_schedule[0][13] <= 5 :
+            $ day_schedule[0][13] = 5
+        if day_schedule[0][14] <= 5 :
+            $ day_schedule[0][14] = 5
+        if day_schedule[0][15] <= 5 :
+            $ day_schedule[0][15] = 5
+
     if (month-3) * 32 + (week-1)*8 + day >= 16 :
-        $ day_schedule[0][18] = 5
-        $ day_schedule[0][20] = 5
+        if day_schedule[0][18] <= 5 :
+            $ day_schedule[0][18] = 5
+        if day_schedule[0][20] <= 5 :
+            $ day_schedule[0][20] = 5
+
     if gwazam_store == True :
-        $ day_schedule[0][19] = 5
+        if day_schedule[0][19] <= 5 :
+            $ day_schedule[0][19] = 5
     return

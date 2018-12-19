@@ -307,11 +307,16 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        if main_menu :
+            xalign 0.5
+            yalign 0.98
+
+        else :
+            xalign 0.8
+            yalign 0.95
 
         spacing gui.navigation_spacing
 
@@ -319,13 +324,19 @@ screen navigation():
 
             textbutton _("시작하기") action Start()
 
+            null width 70
+
             textbutton _("로드") action ShowMenu("load")
+
+            null width 0
 
         else:
 
             # textbutton _("History") action ShowMenu("history")
 
             textbutton _("저장하기") action ShowMenu("save")
+
+            null width 50
 
 
         # textbutton _("환경 설정") action ShowMenu("preferences")
@@ -337,6 +348,8 @@ screen navigation():
         elif not main_menu:
 
             textbutton _("메인 메뉴") action MainMenu()
+
+            null width 50
 
         # textbutton _("렌파이란") action ShowMenu("about")
 
@@ -403,7 +416,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -603,6 +616,7 @@ screen save():
     tag menu
 
     use file_slots(_(" "))
+    # use file_slots(_("저장하기"))
 
 
 screen load():
@@ -610,6 +624,7 @@ screen load():
     tag menu
 
     use file_slots(_(" "))
+    # use file_slots(_("로드하기"))
 
 
 screen file_slots(title):
@@ -664,28 +679,28 @@ screen file_slots(title):
 
                         key "save_delete" action FileDelete(slot)
 
-            ## 페이지 이동 버튼.
-            hbox:
-                style_prefix "page"
+            ### 페이지 이동 버튼.
+            #hbox:
+            #    style_prefix "page"
+            #
+            #    xalign 0.5
+            #    yalign 1.0
+            #
+            #    spacing gui.page_spacing
+            #
+            #    textbutton _("<") action FilePagePrevious()
 
-                xalign 0.5
-                yalign 1.0
+            #    if config.has_autosave:
+            #        textbutton _("{#auto_page}자동") action FilePage("auto")
 
-                spacing gui.page_spacing
+            #    if config.has_quicksave:
+            #        textbutton _("{#quick_page}퀵") action FilePage("quick")
 
-                textbutton _("<") action FilePagePrevious()
+            #    ## range(1, 10) gives the numbers from 1 to 9.
+            #    for page in range(1, 10):
+            #        textbutton "[page]" action FilePage(page)
 
-                if config.has_autosave:
-                    textbutton _("{#auto_page}자동") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}퀵") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
+            #    textbutton _(">") action FilePageNext()
 
 
 style page_label is gui_label

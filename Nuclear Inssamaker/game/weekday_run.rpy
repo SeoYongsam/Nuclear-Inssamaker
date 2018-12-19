@@ -5,6 +5,13 @@ image home :
     pause 0.3
     repeat
 
+image hospital :
+    "hospital1.png"
+    pause 0.3
+    "hospital2.png"
+    pause 0.3
+    repeat
+
 screen weekday_schedule_show :
     hbox :
         xalign 0.5 yalign 0.15
@@ -100,7 +107,8 @@ label weekday_day :
 
 label hp_0_break_event :
     $ day_schedule[month - 3][(week - 1) * 8 + day] = 6
-    scene black
+
+    show hospital at truecenter
     "[YoIl]요일"
     Player "몸이 너무 안좋아 하루동안 병원에 입원했다."
     extend "\n모든 면에서 멍청해진 것 같다."
