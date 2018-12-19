@@ -300,7 +300,7 @@ label evening_study:
     show study at truecenter
     if (month == 4 and week == 3 and day >= 5) or (month == 4 and week == 4 and day <= 4) or (month == 6 and week == 2 and day >= 4) or (month == 6 and week == 3 and day <= 3) :
         "시험을 대비해서 공부를 열심히 했다.\n"
-        extend "체력 -15, 멘탈 -15, 공부 +5"
+        extend "체력 -15, 멘탈 -15, 공부 +4"
 
         python :
             hp -= 15
@@ -311,7 +311,7 @@ label evening_study:
 
     else :
         "공부를 했다.\n"
-        extend "체력 -15, 멘탈 -15, 공부 +3"
+        extend "체력 -15, 멘탈 -15, 공부 +2.7"
 
         python :
             hp -= 15
@@ -329,7 +329,7 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습을 했다.\n"
-        extend "체력 -25, 멘탈 +20, 동아리 +3"
+        extend "체력 -25, 멘탈 +20, 동아리 +2.7"
 
         python :
             hp -= 25
@@ -380,7 +380,7 @@ label evening_gwa:
     show gwa at truecenter
     "과 활동을 했다.\n"
 
-    extend "체력 -20, 멘탈 -5, 과 +3"
+    extend "체력 -20, 멘탈 -5, 과 +2.7"
 
     python :
         hp -= 20

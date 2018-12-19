@@ -164,4 +164,9 @@ label event_schedule_set :
             $ day_schedule[2][22] = 5
         if day_schedule[2][23] <= 5 :
             $ day_schedule[2][23] = 5
+
+    # 6월 이벤트 설정
+    if (month-3) * 32 + (week-1)*8 + day >= 96 :
+        $ day_schedule[3][5] = 5
+    $ day_schedule[3][23] = 8
     return

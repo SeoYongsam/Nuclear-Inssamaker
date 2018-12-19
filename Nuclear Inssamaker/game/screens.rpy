@@ -658,7 +658,7 @@ screen file_slots(title):
                 style_prefix "slot"
 
                 xalign 0.5
-                yalign 0.5
+                yalign 0.65
 
                 spacing gui.slot_spacing
 

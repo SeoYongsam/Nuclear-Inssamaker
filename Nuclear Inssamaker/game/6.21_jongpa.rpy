@@ -9,7 +9,7 @@ image pcbang = "jongpa/table2.png"
 image pcbang = "jongpa/bar_street.png"
 
 
-label jongpa
+label jongpa :
     "오늘은 종파가 있는 날. 다들 단톡에서는 종파에 대한 말은 없었지만,\n"
 
     #많이 왔을 때(과 파라미터 75 이상)

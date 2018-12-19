@@ -281,7 +281,7 @@ label change_fbook_post :
             elif day == 1 :
                 $ fbook_post_add("본문|동삼용|2019년 4월 23일|5월 3일 문정과 장터합니다~~~ 많이 와주세요!!!포스터 coming soon~")
                 $ fbook_post_add("댓글시작")
-                $ fbook_post_add("댓글||장중: 문정과 좋아 랄랄라라~")
+                $ fbook_post_add("댓글|장중|문정과 좋아 랄랄라라~")
                 $ fbook_post_add("댓글종료")
                 $ fbook_post_add("그림자")
 

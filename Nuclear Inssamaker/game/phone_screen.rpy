@@ -42,13 +42,13 @@ screen phone_icon():
         if grouptalk.new_message_count + jangjung.new_message_count + jinil.new_message_count + samyong.new_message_count + dongah.new_message_count != 0 :
             add "phone/red_dot.png" xpos 460 ypos 356 at shake
             vbox xpos 460 ypos 356 xsize 20 ysize 20:
-                text "N" size 18 xalign .6 yalign .5 at shake
+                text "N" size 16 xalign .6 yalign .5 at shake
 
     else :
         if grouptalk.new_message_count + jangjung.new_message_count + jinil.new_message_count + samyong.new_message_count + dongah.new_message_count != 0 :
             add "phone/red_dot.png" xpos 192 ypos 356 at shake
             vbox xpos 192 ypos 356 xsize 20 ysize 20:
-                text "N" size 18 xalign .6 yalign .5 at shake
+                text "N" size 16 xalign .6 yalign .5 at shake
 
 transform shake:
     linear 0.045 xoffset 2 #yoffset -6
@@ -92,6 +92,16 @@ screen phone_button_in_homescreen() :
         if (month-3) * 32 + (week-1)*8 + day >= 75 and (month-3) * 32 + (week-1)*8 + day <= 87 :
             text "{color=#000000}- 운동회 준비해야 된다..."
 
+        # 6월
+        if (month-3) * 32 + (week-1)*8 + day >= 89 and (month-3) * 32 + (week-1)*8 + day <= 101 :
+            text "{color=#000000}- 동아리 공연 잘하기"
+
+        if (month-3) * 32 + (week-1)*8 + day >= 104 and (month-3) * 32 + (week-1)*8 + day <= 116 :
+            text "{color=#000000}- 1학기 끝까지 공부 열심히 하기"
+
+        if (month-3) * 32 + (week-1)*8 + day >= 104 :
+            text "{color=#000000}- 종강파티 해야겠다."
+
     text "{color=#000000}- 끝나지 않는 시리어스 게임" xpos 465 ypos 420
 
     hbox xpos 428 ypos 564 :
@@ -114,7 +124,7 @@ screen phone_button_in_homescreen() :
     if grouptalk.new_message_count + jangjung.new_message_count + jinil.new_message_count + samyong.new_message_count + dongah.new_message_count != 0 :
         add "phone/red_dot.png" xpos 595 ypos 560 at shake
         vbox xpos 595 ypos 560 xsize 20 ysize 20:
-            text "N" size 18 xalign .6 yalign .5 at shake
+            text "N" size 16 xalign .6 yalign .5 at shake
 
 
 screen fbook :
@@ -186,6 +196,8 @@ screen fbook :
                         hbox xsize 425 ysize tmp_height xpos 15:
                             if msg[1] == "해장중" :
                                 add "character/profile_jangjung.png"
+                            elif msg[1] == "주인공" :
+                                add "character/profile_player.png"
                             elif msg[1] == "안금지" :
                                 add "character/profile_geumji.png"
                             elif msg[1] == "동삼용" :
@@ -308,7 +320,7 @@ screen ktalk:
                                 text "{color=#000}단톡" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[grouptalk.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -327,7 +339,7 @@ screen ktalk:
                                 text "{color=#000}장중" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[jangjung.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -346,7 +358,7 @@ screen ktalk:
                                 text "{color=#000}진일" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[jinil.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -365,7 +377,7 @@ screen ktalk:
                                 text "{color=#000}삼용" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[samyong.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -384,7 +396,7 @@ screen ktalk:
                                 text "{color=#000}동아" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectanguler.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[dongah.new_message_count]" size 20 xalign 0.84 yalign 0.5

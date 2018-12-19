@@ -221,7 +221,7 @@ screen month_schedule_icon_show():
             add "planner/3.18_gwazam_store.png" xpos 0 ypos -12
 
     elif month_for_display == 1 :
-        add "planner/4_midtermexam.png"
+        add "planner/4_mid_term_exam.png"
         if (month-3) * 32 + (week-1)*8 + day >= 32 :
             add "planner/4.02_school.png"
             add "planner/4.06-07_mt.png"
@@ -240,7 +240,9 @@ screen month_schedule_icon_show():
             add "planner/5.16_garaoke.png"
 
     elif month_for_display == 3 :
-        add "planner/6.06_club.png"
+        if (month-3) * 32 + (week-1)*8 + day >= 96 :
+            add "planner/6.06_club.png"
+        add "planner/6.final_term_exam.png"
         add "planner/6.21_end.png"
 
 #    elif month_for_display == 1 :
