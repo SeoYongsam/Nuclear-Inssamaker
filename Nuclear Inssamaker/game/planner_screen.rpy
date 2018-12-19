@@ -207,6 +207,7 @@ screen month_schedule_icon_show():
 
     # layer 레이어
     if month_for_display == 0 :
+        add "planner/3_quest.png"
         add "planner/3.13-14_MT.png" xpos 0 ypos -9
 
         if month != 3 or week != 1 :
@@ -218,6 +219,24 @@ screen month_schedule_icon_show():
 
         if gwazam_store == True :
             add "planner/3.18_gwazam_store.png" xpos 0 ypos -12
+
+    elif month_for_display == 1 :
+        add "planner/4_midtermexam.png"
+        add "planner/4.02_school.png"
+        add "planner/4.16_festival.png"
+
+        add "planner/4.06-07_mt.png"
+        add "planner/4.27_meeting.png"
+
+    elif month_for_display == 2 :
+        add "planner/5.03_market.png"
+        add "planner/5.10_hanriver.png"
+        add "planner/5.16_garaoke.png"
+        add "planner/5.21_olympic.png"
+
+    elif month_for_display == 3 :
+        add "planner/6.06_club.png"
+        add "planner/6.21_end.png"
 
 #    elif month_for_display == 1 :
 #        return
