@@ -48,11 +48,21 @@ style bar:
 style HP_bar:
     ysize 28
     left_bar Frame("gui/bar/HP_bar.png", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame(im.Alpha("gui/bar/right.png",0.2), gui.bar_borders, tile=gui.bar_tile)
+
+style HP_for_show_bar:
+    ysize 28
+    left_bar Frame(im.Alpha("gui/bar/HP_bar.png",0.5), gui.bar_borders, tile=gui.bar_tile)
     right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
 
 style MP_bar:
     ysize 28
     left_bar Frame("gui/bar/MP_bar.png", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame(im.Alpha("gui/bar/right.png",0.2), gui.bar_borders, tile=gui.bar_tile)
+
+style MP_for_show_bar:
+    ysize 28
+    left_bar Frame(im.Alpha("gui/bar/MP_bar.png",0.5), gui.bar_borders, tile=gui.bar_tile)
     right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
 
 style vbar:

@@ -473,6 +473,7 @@ label change_group_talk :
                 # $ grouptalk.add("주인공|넌 진짜 열심히 하고있잖아 ㅋㅋㅋㅋ")
 
             if day == 1 :
+                $ grouptalk.reset()
                 $ grouptalk.add("날짜|4월 2일 월요일")
                 $ grouptalk.add("주인공|공지하나만 할게요~")
                 $ grouptalk.add("주인공|얘들아 뻔엠이 이번주 금토인건 알지?")
@@ -958,6 +959,7 @@ label change_group_talk :
                 # $ grouptalk.add("노미래|뻔대 그만 괴롭혀 ㅋㅋㅋㅋㅋ")
 
             if day == 1 :
+                $ grouptalk.reset()
                 $ grouptalk.add("날짜|5월 2일 월요일")
                 $ grouptalk.add("김진일|와 오늘 장 개많이 봤다")
                 $ grouptalk.add("연속|어깨 뻐근하네")
@@ -1382,6 +1384,7 @@ label change_group_talk :
     elif month == 6 :
         if week == 1 :
             if day == 0 :
+                $ grouptalk.reset()
                 $ grouptalk.add("날짜|6월 1일 일요일")
                 $ grouptalk.add("해장중|오늘 뻔모 ㄱㄱ?")
                 $ grouptalk.add("연속|곧 기말인데 한 번 모이자 ㅋㅋㅋ")

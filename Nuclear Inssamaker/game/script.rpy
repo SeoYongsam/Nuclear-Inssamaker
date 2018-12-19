@@ -88,6 +88,8 @@ init python:
 
         def reset(self) :
             del self.message[:]
+            self.denominator_length = 1.0 #분모
+            self.numerator_length = 0.0 #분자
 
         #def reset_temp(self) :
         #    del self.message_temp[:]
@@ -195,18 +197,29 @@ screen upper_right_UI() :
         xpos 1016 ypos 16
         xsize 244 ysize 28
         if renpy.get_screen("planner_UI") :
-            bar value AnimatedValue(244*hp_for_show/200, 244, 0.5) style "HP_bar"
+            bar value AnimatedValue(244*hp/200, 244, 0.5) style "HP_for_show_bar"
         else :
             bar value AnimatedValue(244*hp/200, 244, 0.5) style "HP_bar"
+
+    if renpy.get_screen("planner_UI") :
+        vbox :
+            xpos 1016 ypos 16
+            xsize 244 ysize 28
+            bar value AnimatedValue(244*hp_for_show/200, 244, 0.5) style "HP_bar"
 
     vbox :
         xpos 1016 ypos 64
         xsize 244 ysize 28
         if renpy.get_screen("planner_UI") :
-            bar value AnimatedValue(244*mental_point_for_show/100, 244, 0.5) style "MP_bar"
-
+            bar value AnimatedValue(244*mental_point/100, 244, 0.5) style "MP_for_show_bar"
         else :
             bar value AnimatedValue(244*mental_point/100, 244, 0.5) style "MP_bar"
+
+    if renpy.get_screen("planner_UI") :
+        vbox :
+            xpos 1016 ypos 64
+            xsize 244 ysize 28
+            bar value AnimatedValue(244*mental_point_for_show/100, 244, 0.5) style "MP_bar"
 
     #add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
     #add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64

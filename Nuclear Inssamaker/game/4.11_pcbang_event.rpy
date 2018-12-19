@@ -94,5 +94,6 @@ label pcbang:
             #과활동 패러미터 DOWN
             $ gwa_parameter -= 3
             call parameter_maxmin_check
+            call normal_weekday_evening
 
     return
