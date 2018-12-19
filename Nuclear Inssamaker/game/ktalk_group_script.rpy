@@ -226,7 +226,7 @@ label change_group_talk :
 
         elif week == 3 :
             if day == 0 :
-                $ grouptalk.add("날짜|3월 15일 월요일")
+                $ grouptalk.add("날짜|3월 15일 일요일")
                 $ grouptalk.add ("유현재|아 총엠에서 마신 술 아직도 안깬듯 ㅠㅠ")
                 $ grouptalk.add ("노미래|그러게 조절하며 마시지 현재야아아아~~~ ㅠㅠㅠ")
                 $ grouptalk.add ("안금지|얘들아 나 벌써 과제 나왔어…")
@@ -237,7 +237,7 @@ label change_group_talk :
                 $ grouptalk.add ("주인공|와 진짜 총엠 다녀오자마자 부려먹는다고? 하… 도비는 일해야지")
 
             elif day == 1 :
-                $ grouptalk.add("날짜|3월 16일 화요일")
+                $ grouptalk.add("날짜|3월 16일 월요일")
                 $ grouptalk.add ("해장중|우리 그래서 과잠은 언제 맞추나여ㅕㅕㅕㅕㅕ")
                 $ grouptalk.add ("김진일|과잠준비위원회라는 걸 따로 만드는게 좋지 않을까?")
                 $ grouptalk.add ("박대현|오! 그게 좋을듯")
