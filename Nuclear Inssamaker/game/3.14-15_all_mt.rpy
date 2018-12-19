@@ -59,7 +59,7 @@ label all_mt:
             Jangjung "나 그냥 핸드폰으로 우리 동기들끼리 나중에 할 수 있는거 찾아보고 있었어 ㅋㅋㅋ"
             Player "벌써부터 다음에 놀거 생각하고 있어??\n"
             extend "대단하다..."
-            Jangjung "우리의 청춘을 허되게 낭비할수는 없으니깐!!!"
+            Jangjung "우리의 청춘을 헛되게 낭비할수는 없으니깐!!!"
 
             # 장중 파라미터 +
             $ jangjung.parameter += 20

@@ -11,9 +11,9 @@ init python:
     mental_point_for_show = mental_point
 
     # 게임 시작 시 월, 주, 일
-    month = 3
+    month = 5
     month_for_display = month - 3
-    week = 1
+    week = 4
     day = 0
 
     day_for_show = (week-1)*7 + day + 1

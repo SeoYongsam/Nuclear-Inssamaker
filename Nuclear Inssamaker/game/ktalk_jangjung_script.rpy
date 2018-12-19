@@ -79,30 +79,31 @@ label change_jangjung_talk :
                 $ jangjung.add("해장중|그렇냐...뭐 일단 푹 쉬어~")
                 $ jangjung.add("연속|고생했슈~~")
 
-        elif week == 3 :
-            if day == 2 :
-                $ jangjung.add("날짜|4월 17일 화요일")
-                $ jangjung.add("해장중|으아아아아아아 공부 하기 싫어")
-                $ jangjung.add("연속|으아아아아아")
-                $ jangjung.add("연속|으아.아아아아아아.아아")
-                $ jangjung.add("주인공|그만.")
-                $ jangjung.add("해장중|ㅇㅋ")
-                $ jangjung.add("주인공|공부해.")
-                $ jangjung.add("해장중|ㅇㅋ")
-                $ jangjung.add("주인공|ㅋㅋㅋㅋㅋㅋㅋ공부 안되면")
-                $ jangjung.add("주인공 |잠깐 숨 좀 돌릴겸 CU가실?")
-                $ jangjung.add("해장중|좋지좋지 곧 나감 ㄱㄷ")
-                $ jangjung.add("주인공|ㅇㅋㅇㅋ")
+        # elif week == 3 :
+            # if day == 2 :
+                # $ jangjung.add("날짜|4월 17일 화요일")
+                # $ jangjung.add("해장중|으아아아아아아 공부 하기 싫어")
+                # $ jangjung.add("연속|으아아아아아")
+                # $ jangjung.add("연속|으아.아아아아아아.아아")
+                # $ jangjung.add("주인공|그만.")
+                # $ jangjung.add("해장중|ㅇㅋ")
+                # $ jangjung.add("주인공|공부해.")
+                # $ jangjung.add("해장중|ㅇㅋ")
+                # $ jangjung.add("주인공|ㅋㅋㅋㅋㅋㅋㅋ공부 안되면")
+                # $ jangjung.add("주인공 |잠깐 숨 좀 돌릴겸 CU가실?")
+                # $ jangjung.add("해장중|좋지좋지 곧 나감 ㄱㄷ")
+                # $ jangjung.add("주인공|ㅇㅋㅇㅋ")
 
         elif week == 4 :
             if day == 0 :
+                $ jangjung.add("날짜|4월 22일 일요일")
                 $ jangjung.add("해장중|우리 과도 장터 하지??")
                 $ jangjung.add("주인공|아마 그럴 것 같은데?")
                 $ jangjung.add("해장중|아 ㅇㅋㅇㅋ")
-                $ jangjung.add("|다른 과 벌써 장터 시작한것 같아서")
-                $ jangjung.add("|우리는 언제하나 해서 ㅋㅋ")
+                $ jangjung.add("연속|다른 과 벌써 장터 시작한것 같아서")
+                $ jangjung.add("연속|우리는 언제하나 해서 ㅋㅋ")
                 $ jangjung.add("주인공|내가 한번 알아보고")
-                $ jangjung.add("|내일 단톡에 말할게 ㅋㅋㅋ")
+                $ jangjung.add("연속|내일 단톡에 말할게 ㅋㅋㅋ")
                 $ jangjung.add("해장중|오케이~")
 
     elif month == 5 :
@@ -125,15 +126,15 @@ label change_jangjung_talk :
                 $ jangjung.add("해장중|정확히 언제?")
                 $ jangjung.add("주인공|그냥 비는 시간 다... 일손이 계속 부족해 ㅠㅠ")
 
-            elif day == 5 :
-                $ jangjung.add("날짜|5월 6일 금요일")
-                $ jangjung.add("해장중|오늘 술 레알로 ㄱㄱ?")
-                $ jangjung.add("연속|우리 최근에 안마셔서")
-                $ jangjung.add("연속|오늘 달리게 ㅋㅋㅋ")
-                $ jangjung.add("주인공|나 오늘은 이미 늦은듯 ㅠㅠ")
-                $ jangjung.add("해장중|꼭 그렇게...")
-                $ jangjung.add("연속|단칼에 거절해야만 했....냐!!!!!!!!!!")
-                $ jangjung.add("주인공|ㅋㅋㅋㅋ 술 맛있게 먹어")
+            # elif day == 5 :
+            #     $ jangjung.add("날짜|5월 6일 금요일")
+            #     $ jangjung.add("해장중|오늘 술 레알로 ㄱㄱ?")
+            #     $ jangjung.add("연속|우리 최근에 안마셔서")
+            #     $ jangjung.add("연속|오늘 달리게 ㅋㅋㅋ")
+            #     $ jangjung.add("주인공|나 오늘은 이미 늦은듯 ㅠㅠ")
+            #     $ jangjung.add("해장중|꼭 그렇게...")
+            #     $ jangjung.add("연속|단칼에 거절해야만 했....냐!!!!!!!!!!")
+            #     $ jangjung.add("주인공|ㅋㅋㅋㅋ 술 맛있게 먹어")
 
         elif week == 2 :
             if day == 3 :
@@ -144,9 +145,9 @@ label change_jangjung_talk :
                 $ jangjung.add("주인공|하고 싶은거 있어??")
                 $ jangjung.add("해장중|나 그냥 운동을 별로 안좋아함 ㅋㅋㅋ")
 
-            elif day == 6 :
-                $ jangjung.add("날짜|5월 14일 토요일")
-                $ jangjung.add("해장중|오늘 밤에 술 ㄱㄱ?")
+            # elif day == 6 :
+            #     $ jangjung.add("날짜|5월 14일 토요일")
+            #     $ jangjung.add("해장중|오늘 밤에 술 ㄱㄱ?")
 
         elif week == 3 :
             if day == 0 :
@@ -154,13 +155,14 @@ label change_jangjung_talk :
                 $ jangjung.add("해장중|뻔대야 우리 꼭 뒷풀이 다른 과 애들이랑 같이 해야돼?")
                 $ jangjung.add("연속|나는 그냥 우리끼리 마셨으면 좋겠는데")
 
-            elif day == 1 :
-                $ jangjung.add("해장중|김진일 백퍼 갠톡해서 우리 뭐라했지?")
-                $ jangjung.add("연속|나한테도 왔더라 ㅋㅋㅋ")
+            # elif day == 1 :
+            #     $ jinil.add("날짜|5월 16일 월요일")
+            #     $ jangjung.add("해장중|김진일 백퍼 갠톡해서 우리 뭐라했지?")
+            #     $ jangjung.add("연속|나한테도 왔더라 ㅋㅋㅋ")
 
-            elif day == 5 :
-                $ jangjung.add("날짜|5월 20일 금요일")
-                $ jangjung.add("해장중|내일 둘이 한 잔 하자... 할 말도 있고")
+            # elif day == 5 :
+            #     $ jangjung.add("날짜|5월 20일 금요일")
+            #     $ jangjung.add("해장중|내일 둘이 한 잔 하자... 할 말도 있고")
 
         elif week == 4 :
             if day == 0 :
@@ -192,12 +194,12 @@ label change_jangjung_talk :
                 $ jangjung.add("연속|미안해")
 
         elif week == 2 :
-            if day == 0 :
-                $ jangjung.add("날짜|6월 8일 일요일")
-                $ jangjung.add("해장중|너도 같이 공부할래??")
-                $ jangjung.add("연속|아 인생 노답 진짜...")
+            # if day == 0 :
+            #     $ jangjung.add("날짜|6월 8일 일요일")
+            #     $ jangjung.add("해장중|너도 같이 공부할래??")
+            #     $ jangjung.add("연속|아 인생 노답 진짜...")
 
-            elif day == 4 :
+            if day == 4 :
                 $ jangjung.add("날짜|6월 12일 목요일")
                 $ jangjung.add("해장중|너 혹시 심개 족보 있냐 ㅋㅋㅋ")
                 $ jangjung.add("연속|관악 족보 암기 대회라는데")

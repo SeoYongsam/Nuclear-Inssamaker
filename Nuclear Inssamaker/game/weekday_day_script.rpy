@@ -65,7 +65,7 @@ label weekday_day_event :
                     "아직 의견이 충분히 모인 것 같지 않다.\n시간을 더 두고 친구들의 의견을 모아보자."
                     # $ gwazam_finished = False
 
-                "최다 표를 얻은 검검 과잠 선택하기" :
+                "최다 표를 얻은 보라색 과잠 선택하기" :
                     "오랫동안 의견을 수렴해서 불만이 거의 안나온다. 과 분위기가 많이 좋아졌다."
                     $ gwa_parameter += 10
                     call parameter_maxmin_check
