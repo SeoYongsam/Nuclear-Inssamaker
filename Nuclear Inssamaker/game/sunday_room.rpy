@@ -3,6 +3,9 @@ image sunday_room_image = "room.png" #im.Scale("room.png",1480,820)
 #start 함수에서 넘어옴
 label sunday_room:
     $ day = 0
+    $ hp_for_show = hp
+    $ mental_point_for_show = mental_point
+    
     scene sunday_room_image at truecenter
 
     $ YoIl = day_name[day]

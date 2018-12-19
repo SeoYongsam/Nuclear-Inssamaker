@@ -7,6 +7,9 @@ init python:
     hp = 200
     mental_point = 100
 
+    hp_for_show = hp
+    mental_point_for_show = mental_point
+
     # 게임 시작 시 월, 주, 일
     month = 3
     month_for_display = month - 3
@@ -191,13 +194,20 @@ screen upper_right_UI() :
     vbox :
         xpos 1016 ypos 16
         xsize 244 ysize 28
-        bar value AnimatedValue(244*hp/200, 244, 0.5) style "HP_bar"
+        if renpy.get_screen("planner_UI") :
+            bar value AnimatedValue(244*hp_for_show/200, 244, 0.5) style "HP_bar"
+        else :
+            bar value AnimatedValue(244*hp/200, 244, 0.5) style "HP_bar"
 
     vbox :
         xpos 1016 ypos 64
         xsize 244 ysize 28
-        bar value AnimatedValue(244*mental_point/100, 244, 0.5) style "MP_bar"
+        if renpy.get_screen("planner_UI") :
+            bar value AnimatedValue(244*mental_point_for_show/100, 244, 0.5) style "MP_bar"
 
+        else :
+            bar value AnimatedValue(244*mental_point/100, 244, 0.5) style "MP_bar"
+        
     #add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
     #add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64
     vbox :

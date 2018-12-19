@@ -274,7 +274,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -309,15 +309,16 @@ screen navigation():
 
             textbutton _("시작하기") action Start()
 
+            textbutton _("로드") action ShowMenu("load")
+
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            # textbutton _("History") action ShowMenu("history")
 
             textbutton _("저장하기") action ShowMenu("save")
 
-        textbutton _("로드") action ShowMenu("load")
 
-        textbutton _("환경 설정") action ShowMenu("preferences")
+        # textbutton _("환경 설정") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -327,12 +328,12 @@ screen navigation():
 
             textbutton _("메인 메뉴") action MainMenu()
 
-        textbutton _("렌파이란") action ShowMenu("about")
+        # textbutton _("렌파이란") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
             ## 도움말 메뉴는 모바일 디바이스와 맞지 않아 불필요합니다.
-            textbutton _("도움말") action ShowMenu("help")
+            # textbutton _("도움말") action ShowMenu("help")
 
             ## 종료 버튼은 iOS 규정에 어긋나고 안드로이드에는 불필요합니다.
             textbutton _("끝내기") action Quit(confirm=not main_menu)
@@ -591,14 +592,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("저장하기"))
+    use file_slots(_(" "))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("로드"))
+    use file_slots(_(" "))
 
 
 screen file_slots(title):

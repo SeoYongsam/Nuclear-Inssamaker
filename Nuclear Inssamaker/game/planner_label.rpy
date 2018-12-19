@@ -23,6 +23,9 @@ label planner:
 
             "처음부터":
                 $ day = 1
+                $ hp_for_show = hp
+                $ mental_point_for_show = mental_point
+
                 $ i = 1
                 while i < 8:
                     $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
