@@ -17,7 +17,7 @@ label karaoke:
     Samyong "좋은데?\ㅜ"
     extend "오랜만에 첨밀밀 한 번 불러봐야지"
     Jinil "오... 나도 껴줘!"
-    Hyunjae "녹두 ㄱㄱ"
+    Jangjung "녹두 ㄱㄱ"
 
     show karaoke at truecenter
     "노래방 기계" "박효신 야생화 예약하셨습니다"
@@ -54,9 +54,9 @@ label karaoke:
     Jinil "와... 기계가 이상한 것 같은데"
 
     show sicha at truecenter
-    Hyunjae "Love & Peace"
+    Jangjung "Love & Peace"
     "친구들" "욜~ 힙찔이네"
-    Hyunjae "mic check 1,2... 1,2...\n"
+    Jangjung "mic check 1,2... 1,2...\n"
     extend "그뤠이~\n"
     extend "밤새 모니터에 흐른 침이 마르기도 전에..."
 

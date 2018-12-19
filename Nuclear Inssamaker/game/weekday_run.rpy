@@ -113,7 +113,7 @@ label hp_0_break_event :
     show hospital at truecenter
     "[YoIl]요일"
     Player "몸이 너무 안좋아 하루동안 병원에 입원했다."
-    extend "\n모든 면에서 멍청해진 것 같다."
+    extend "\n오늘 해야 할 일을 하지 못했다."
 
     $ hp += 80
     $ study_parameter -= -2
