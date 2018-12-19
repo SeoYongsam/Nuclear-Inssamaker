@@ -105,7 +105,7 @@ label weekday_day_event :
                     "아직 의견이 충분히 모인 것 같지 않다.\n시간을 더 두고 친구들의 의견을 모아보자."
                     # $ gwazam_finished = False
 
-                "최다 표를 얻은 검검 과잠 선택하기" :
+                "최다 표를 얻은 보라색 과잠 선택하기" :
                     "다 같이 만족하는 결과가 나왔다. 과 분위기가 아주 아주 좋아졌다."
                     $ gwa_parameter += 7
                     call parameter_maxmin_check
@@ -121,29 +121,8 @@ label weekday_day_event :
         call uniform_day
 
     elif month == 4 and week == 1 and day == 2 :
-        "지난밤 카톡에서 뻔엠 장소와 장발후발 관련 얘기가 나왔습니다.\n"
+        "지난밤 카톡에서 뻔엠 관련 얘기가 나왔습니다.\n"
         "확인해주세요."
-        "장소 투표 결과 대별리8 / 신숲8 / 미투표4\n"
-        "투표를 더 진행하시겠습니까?"
-        menu :
-            "투표 계속하기" :
-                "투표를 계속 진행합니다."
-
-            "투표 마치고 결정하기" :
-                "투표가 동률이 나왔습니다. 당신은 무엇을 선택하시겠습니까?"
-                menu :
-                    "장중이와 진일이가 미는 '대별리'" :
-                        "투표를 마감했다. 장중이와 진일이가 좋아한다"
-                        $ jangjung.parameter += 20
-                        $ jinil.parameter += 20
-
-                    "삼용이가 미는 '신숲'" :
-                        "투표를 마감했다. 삼용이가 좋아한다."
-                        $ samyong.parameter += 20
-
-                call parameter_maxmin_check
-                $ fun_mt_location_finished = True
-
         "장발후발 투표 결과 장발대10 / 후발대6\n"
         "투표를 더 진행하시겠습니까?"
         menu :
@@ -156,22 +135,9 @@ label weekday_day_event :
                 $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
 
     elif month == 4 and week == 1 and day == 3 :
-        if fun_mt_location_finished == False :
-            "장소 투표 결과 대별리10 / 신숲10\n"
-            "투표가 동률이 나왔습니다. 당신은 무엇을 선택하시겠습니까?"
-            menu :
-                "장중이와 진일이가 미는 '대별리'" :
-                    "투표를 마감했다. 장중이와 진일이가 좋아한다"
-                    $ jangjung.parameter += 20
-                    $ jinil.parameter += 20
-
-                "삼용이가 미는 '신숲'" :
-                    "투표를 마감했다. 삼용이가 좋아한다."
-                    $ samyong.parameter += 20
-
         if fun_mt_vote_finished == False :
             "장발후발 투표 결과 장발대 9 / 후발대 11\n"
-            "투표를 더 진행하시겠습니까?"
+            "장발대 한명이 후발대로 변경했습니다..투표를 더 진행하시겠습니까?"
             menu :
                 "투표 계속하기" :
                     "투표를 계속 진행합니다."
@@ -193,11 +159,30 @@ label weekday_day_event :
                     $ fun_mt_vote_finished = True
                     $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
 
+        if gwazam_hidden == True :
+            "과잠 업체에서 연락이 와, 오늘 과잠을 받게 되었다."
+            "우리 학번만의 과잠을 가지게 되어서인지, 과의 분위기가 좋아졌다."
+            $ gwa_parameter += 3
+            call parameter_maxmin_check
+
+            if gwazam_store == True :
+                "업체를 직접 방문해서 그런지, 옷 핏이 딱 맞아 떨어졌다."
+                "친구들이 더욱 만족하는 것 같다. 과 분위기가 더 좋아졌다."
+                $ gwa_parameter += 3
+                call parameter_maxmin_check
+
+            else :
+                "인터넷에서 주문해서 그런지, 옷 핏이 살짝 이상하다."
+                "친구들의 만족도가 살짝 떨어진 것 같다. 과 분위기가 약간 안 좋아졌다."
+                $ gwa_parameter -= 2
+                call parameter_maxmin_check
+
 
     elif month == 4 and week == 1 and day == 5 :
         if fun_mt_vote_finished == False :
             "장발후발 투표 결과 장발대 8 / 후발대 14\n"
             "투표가 종료되었습니다."
+            $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
 
         call fun_mt
 
