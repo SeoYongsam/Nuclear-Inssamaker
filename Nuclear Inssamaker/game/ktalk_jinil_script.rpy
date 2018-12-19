@@ -100,7 +100,7 @@ label change_jinil_talk :
         if week == 1 :
             if day == 2 :
                 $ jinil.add("날짜|5월 3일 화요일")
-                $ jinil.add("김진일|애들 왤케 안오냐...")
+                $ jinil.add("김진일|애들 왜 이렇게 안오냐...")
                 $ jinil.add("주인공|나도 모르겠다...")
 
             elif day == 3 :
@@ -175,8 +175,8 @@ label change_jinil_talk :
             elif day == 4 :
                 $ jinil.add("날짜|6월 19일 목요일")
                 $ jinil.add("김진일|오덕현 개웃기지 않냐 ㅋㅋㅋ")
-                $ jinil.add("연속|나도 저 말투 빠지겠닼ㅋㅋㅋㅋ")
-                $ jinil.add("연속|오이오이라닠ㅋㅋㅋㅋㅋ")
+                $ jinil.add("연속|나도 저 말투 빠지겠다ㅋㅋㅋㅋ")
+                $ jinil.add("연속|오이오이라니ㅋㅋㅋㅋㅋ")
                 $ jinil.add("연속|미친거 아니냐 진짜 ㅋㅋㅋㅋㅋ")
 
             elif day == 5 :

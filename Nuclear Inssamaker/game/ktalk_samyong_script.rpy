@@ -124,7 +124,7 @@ label change_samyong_talk :
             elif day == 6 :
                 $ samyong.add("날짜|4월 28일 토요일")
                 $ samyong.add("동삼용|우리 월요일에 장보는거 맞지?")
-                $ samyong.add("주인공 |ㅇㅇ 장터가 화요일이니까 그 전날!!")
+                $ samyong.add("주인공|ㅇㅇ 장터가 화요일이니까 그 전날!!")
                 $ samyong.add("동삼용|아 ㅇㅋㅇㅋ 잘못알고 있나 해서 ㅋㅋㅋ")
                 $ samyong.add("연속|수고한다 ㅋㅋㅋ 조금만 더 힘내자!")
 
