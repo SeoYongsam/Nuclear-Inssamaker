@@ -2,9 +2,9 @@
 # file, define a label and jump to it from another file.
 
 label planner:
-    call parameter_maxmin_check
-    call show_planner
-    call planner_icon_select
+    call parameter_maxmin_check from _call_parameter_maxmin_check
+    call show_planner from _call_show_planner
+    call planner_icon_select from _call_planner_icon_select
 
     # 토요일까지 선택을 완료하고 day가 7이 되면,
     if day == 8:
@@ -14,7 +14,7 @@ label planner:
             "실행한다":
                 play sound "sound/in_planner.mp3"
                 $ day = 1
-                call hide_planner_button
+                call hide_planner_button from _call_hide_planner_button
                 hide screen upper_right_UI
 
                 $ renpy.transition(dissolve)
@@ -33,7 +33,7 @@ label planner:
                 while i < 8:
                     $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
                     $ i += 1
-                call event_schedule_set
+                call event_schedule_set from _call_event_schedule_set
 
 
     # 버튼 만악의 근원이었지만 해결함
@@ -72,7 +72,7 @@ label planner_close :
         $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
         $ i += 1
 
-    call event_schedule_set
+    call event_schedule_set from _call_event_schedule_set_1
 
     jump sunday_room
     return

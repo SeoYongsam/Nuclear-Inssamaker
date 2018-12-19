@@ -49,7 +49,7 @@ label festival:
             "삼용이가 무척이나 기뻐한다."
             #삼용 파라미터 업
             $ samyong.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_14
 
         "난 새우~" :
             show shrimp at truecenter
@@ -61,7 +61,7 @@ label festival:
             "장중이가 무척이나 기뻐한다."
             #장중 파라미터 업
             $ jangjung.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_15
 
         "오늘은 컵밥이 땡기네~" :
             show cuprice at truecenter
@@ -73,7 +73,7 @@ label festival:
             "진일이가 특히 맛있게 먹었다."
             #진일 파라미터 업
             $ jinil.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_16
 
     show fest_food at truecenter
     Player "아~ 배부르다~\n"

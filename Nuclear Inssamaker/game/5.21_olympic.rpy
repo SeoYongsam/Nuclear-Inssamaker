@@ -53,7 +53,7 @@ label olympic:
             #과 파라미터 - / 장중 파라미터 +
             $ gwa_parameter -= 2
             $ jangjung.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_17
 
         "거절한다":
             show soccer_bench at truecenter
@@ -65,7 +65,7 @@ label olympic:
 
             #장중 파라미터 -
             $ jangjung.parameter -= 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_18
 
     # show pigoo at truecenter
     # Player  "미래 안오나\n"
@@ -139,7 +139,7 @@ label olympic:
             $ jinil.parameter += 20
             $ jangjung.parameter -= 20
             $ gwa_parameter -= 2
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_19
 
         "거절한다":
             show playground at truecenter
@@ -154,7 +154,7 @@ label olympic:
             #진일 -, 과 -
             $ jinil.parameter -= 20
             $ gwa_parameter -= 2
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_20
 
     stop music fadeout 1.0
     $ day_or_evening = "evening"
@@ -200,7 +200,7 @@ label olympic:
     # HP -30, MP -30
     $ hp -= 60
     $ mental_point -= 30
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_21
 
     jump weekday_SNS
 

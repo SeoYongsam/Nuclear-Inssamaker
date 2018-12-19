@@ -153,7 +153,7 @@ label jangtuh:
             #진일 삼용 파라미터 내림"
             $ jinil.parameter -= 20
             $ samyong.parameter -= 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_1
 
         "안간다":
 
@@ -218,7 +218,7 @@ label jangtuh:
         "장터 순이익 : 200만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 150만원"
         "장터 성적 : A, 과 분위기가 아주 좋아졌다."
         $ gwa_parameter += 5
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_2
 
     elif jangtuh_pre_event == 3 or jangtuh_pre_event == 2 :
         "장터 준비를 조금 빠져서인지 겨우 흑자가 났다."
@@ -226,7 +226,7 @@ label jangtuh:
         "장터 순이익 : 100만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 50만원"
         "장터 성적 : B, 과 분위기가 좋아졌다."
         $ gwa_parameter += 3
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_3
 
     elif jangtuh_pre_event == 1 :
         "장터 준비를 많이 빠져서인지 본전만 뽑았다."
@@ -234,7 +234,7 @@ label jangtuh:
         "장터 순이익 : 50만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 0원"
         "장터 성적 : C, 흑자는 아니지만 과 사람들이 서로 돈독해진 것 같다."
         $ gwa_parameter += 1
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_4
 
     else :
         "뻔대 주제에 장터 준비를 다 빠져서인지 망했다."
@@ -242,7 +242,7 @@ label jangtuh:
         "장터 순이익 : 0원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : -50만원"
         "장터 성적 : D, 과 분위기 망했다."
         $ gwa_parameter -= 3
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_5
 
     stop music fadeout 1.0
     #순이익 금액으로 장터가 성공했는지 판단
@@ -259,5 +259,5 @@ label jangtuh:
     ###장터 후 총 금액: ___원
     ###장터 성적: A (4개), B (2,3개), C (1개),D (0개)
 
-    call weekday_SNS
+    call weekday_SNS from _call_weekday_SNS
     return

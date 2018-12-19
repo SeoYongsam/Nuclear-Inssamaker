@@ -30,7 +30,7 @@ label han_river:
             $ gwa_parameter += 2
             $ mental_point += 10
             $ hp -= 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_33
 
             show chicken at truecenter
             "(열심히 치킨을 먹는다.)"
@@ -62,7 +62,7 @@ label han_river:
                     #김진일과의 파라미터 ++ // 멘탈 -
                     $ jinil.parameter += 40
                     $ mental_point -= 20
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_34
 
                 "진일이를 놀리는 것에 동참한다":
                     show chicken at truecenter
@@ -84,14 +84,14 @@ label han_river:
                     #일진 파라미타 -- / 과 ++
                     $ jinil.parameter -= 40
                     $ gwa_parameter += 4
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_35
 
         "거절한다":
             # 체력 + / 멘탈 --
             "애들이 한강에 갈 시간에 원래 일정을 소화했다."
             # $ hp += 20
             # $ mental_point -= 5
-            call normal_weekday_evening
+            call normal_weekday_evening from _call_normal_weekday_evening_2
 
     jump weekday_SNS
     return

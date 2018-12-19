@@ -82,10 +82,10 @@ label weekday_day :
         $ day_for_show = (week-1)*7 + day + 1
 
     if hp == 0 :
-        call hp_0_break_event
+        call hp_0_break_event from _call_hp_0_break_event
 
     elif mental_point == 0 :
-        call mental_point_0_event
+        call mental_point_0_event from _call_mental_point_0_event
 
 #    elif hp <= 50 :
 #        if hp == 0 :
@@ -94,7 +94,7 @@ label weekday_day :
 #            call hp_low_rest_event
 
     elif day < 8 :
-        call weekday_day_event
+        call weekday_day_event from _call_weekday_day_event
 
 #    $ j = renpy.random.randint(1,3)
 #    if j == 1:
@@ -121,7 +121,7 @@ label hp_0_break_event :
     $ study_parameter -= -2
     $ gwa_parameter -= 2
     $ club_parameter -= 2
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_53
 
     stop sound fadeout 1.0
 
@@ -141,7 +141,7 @@ label hp_low_rest_event :
         $ study_parameter -= 3
         $ gwa_parameter -= 1
         $ club_parameter -= 1
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_54
 
         jump weekday_evening
     return
@@ -158,7 +158,7 @@ label mental_point_0_event :
     $ study_parameter -= 1
     $ gwa_parameter -= 1
     $ club_parameter -= 1
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_55
 
     stop sound fadeout 1.0
 
@@ -170,7 +170,7 @@ label weekday_evening :
     if day != 6 :
         scene black
         "[YoIl]요일 저녁이 되었다.\n"
-        call weekday_evening_event
+        call weekday_evening_event from _call_weekday_evening_event
 
     #window hide
     #pause
@@ -187,7 +187,7 @@ label weekday_SNS :
 
 #    scene black with vpunch
 
-    call change_SNS
+    call change_SNS from _call_change_SNS_5
 
     pause
 
@@ -198,11 +198,11 @@ label weekday_SNS :
         jump weekday_day
     else :
         "일요일 화면으로 돌아갑니다. 체력을 20 회복합니다."
-        call weekday_schedule_reset
+        call weekday_schedule_reset from _call_weekday_schedule_reset
         $ hp += 20
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_56
 
-        call event_schedule_set
+        call event_schedule_set from _call_event_schedule_set_3
         if month == 3 or month == 4 :
             play music "music/sunday_3and4.mp3"
         else :
@@ -220,7 +220,7 @@ label weekday_schedule_reset :
         $ week += 1
     $ day = 0
 
-    call change_SNS
+    call change_SNS from _call_change_SNS_6
 
     $ for_day_schedule_select = 0
 
@@ -242,12 +242,12 @@ label change_SNS :
     if dongah.new_message_count == 0 :
         $ dongah.numerator_length = dongah.denominator_length
     $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_fbook_post from _call_change_fbook_post
+    call change_group_talk from _call_change_group_talk
+    call change_jangjung_talk from _call_change_jangjung_talk
+    call change_jinil_talk from _call_change_jinil_talk
+    call change_samyong_talk from _call_change_samyong_talk
+    call change_dongah_talk from _call_change_dongah_talk
     # play sound "sound/phone_vibrate.mp3"
 
     return

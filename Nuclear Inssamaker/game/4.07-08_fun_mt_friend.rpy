@@ -48,7 +48,7 @@ label friend_5:
 
     #과 파라미터 감소
     $ gwa_parameter -= 2
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_22
 
     $rest_point -= 1
     return

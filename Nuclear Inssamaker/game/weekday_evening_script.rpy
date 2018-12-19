@@ -37,7 +37,7 @@ label weekday_evening_event :
     $ day_or_evening = "evening"
 
     if month == 3 and week == 2 and day == 4 :
-        call club_first
+        call club_first from _call_club_first
 
     elif month == 3 and week == 3 and day == 2 :
         #3/17
@@ -127,7 +127,7 @@ label weekday_evening_event :
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "생각보다 반응이 싸늘했다..분위기가 살짝 안 좋아진것 같다.."
                         $ gwa_parameter -= 2
-                        call parameter_maxmin_check
+                        call parameter_maxmin_check from _call_parameter_maxmin_check_45
 
                     "삼용이가 제안한 보라, 흰색":
                         Player "보라 흰색이 제일 예쁠 것 같아~"
@@ -140,7 +140,7 @@ label weekday_evening_event :
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "열렬한 반응이 돌아왔다! 과 친구들 모두 마음에 들어하는 것 같다!"
                         $ gwa_parameter += 4
-                        call parameter_maxmin_check
+                        call parameter_maxmin_check from _call_parameter_maxmin_check_46
 
                     "장중이가 제안한 검검":
                         Player "제일 무난한 건 검검이지!"
@@ -153,7 +153,7 @@ label weekday_evening_event :
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "별다른 반응이 없지만, 과잠을 맞춘 것 만으로도 만족하는 분위기이다."
                         $ gwa_parameter += 4
-                        call parameter_maxmin_check
+                        call parameter_maxmin_check from _call_parameter_maxmin_check_47
 
             "과 친구들에게 투표를 받는다.":
                 # $ gwazam_finished = False
@@ -165,10 +165,10 @@ label weekday_evening_event :
                 Player "ㅋㅋㅋㅋ 일단 친구들에게 물어보자"
 
     elif month == 4 and week == 2 and day == 3 :
-        call pcbang
+        call pcbang from _call_pcbang
 
     elif month == 4 and week == 3 and day == 1 :
-        call festival
+        call festival from _call_festival
 
     elif month == 4 and week == 4 and day == 2 :
         "장터 관련해서 카톡에서 얘기가 나오고 있다. 확인해보자."
@@ -191,7 +191,7 @@ label weekday_evening_event :
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
-                call normal_weekday_evening
+                call normal_weekday_evening from _call_normal_weekday_evening_3
 
     elif month == 4 and week == 4 and day == 3 :
         #4월 25일 예산 및 메뉴 정하기
@@ -213,7 +213,7 @@ label weekday_evening_event :
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
-                call normal_weekday_evening
+                call normal_weekday_evening from _call_normal_weekday_evening_4
 
     elif month == 4 and week == 4 and day == 4 :
         #4월 26일 메뉴판 만들기
@@ -234,7 +234,7 @@ label weekday_evening_event :
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
-                call normal_weekday_evening
+                call normal_weekday_evening from _call_normal_weekday_evening_5
 
     elif month == 5 and week == 1 and day == 1 :
         scene black
@@ -256,22 +256,22 @@ label weekday_evening_event :
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
-                call normal_weekday_evening
+                call normal_weekday_evening from _call_normal_weekday_evening_6
 
     elif month == 5 and week == 2 and day == 2 :
-        call han_river
+        call han_river from _call_han_river
 
     elif month == 5 and week == 3 and day == 1 :
-        call karaoke
+        call karaoke from _call_karaoke
 
     elif month == 6 and week == 1 and day == 5 :
-        call club_concert
+        call club_concert from _call_club_concert
 
     elif month == 6 and week == 3 and (day == 6 or day == 7) :
-        call jongpa
+        call jongpa from _call_jongpa
 
     else :
-        call normal_weekday_evening
+        call normal_weekday_evening from _call_normal_weekday_evening_7
 
     return
 
@@ -280,16 +280,16 @@ label weekday_evening_event :
 
 label normal_weekday_evening :
     if day_schedule[month - 3][(week - 1) * 8 + day] == 1:
-        call evening_study
+        call evening_study from _call_evening_study
 
     elif day_schedule[month - 3][(week - 1) * 8 + day] == 2:
-        call evening_club
+        call evening_club from _call_evening_club
 
     elif day_schedule[month - 3][(week - 1) * 8 + day] == 3:
-        call evening_gwa
+        call evening_gwa from _call_evening_gwa
 
     elif day_schedule[month - 3][(week - 1) * 8 + day] == 4:
-        call evening_rest
+        call evening_rest from _call_evening_rest
 
     else :
         extend "에러"
@@ -323,7 +323,7 @@ label evening_study:
             # club_parameter -= 1
 
     $ study_count += 1
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_48
 
     return
 
@@ -375,7 +375,7 @@ label evening_club:
                 club_parameter += 6
 
     $ club_count += 1
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_49
 
     return
 
@@ -395,7 +395,7 @@ label evening_gwa:
 
         gwa_count += 1
 
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_50
     return
 
 label evening_rest:
@@ -410,6 +410,6 @@ label evening_rest:
         #gwa_parameter -= 1
         #club_parameter -= 1
 
-    call parameter_maxmin_check
+    call parameter_maxmin_check from _call_parameter_maxmin_check_51
 
     return

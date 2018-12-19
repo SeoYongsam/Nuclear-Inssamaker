@@ -10,11 +10,11 @@ label weekday_day_event :
         Player "퀴즈 대비해서 공부를 열심히 해야겠다"
 
     elif month == 3 and week == 2 and day == 1 :
-        call dongsoze
+        call dongsoze from _call_dongsoze
         $ club_open = True
 
     elif month == 3 and week == 2 and day == 5 :
-        call all_mt
+        call all_mt from _call_all_mt
 
     elif month == 3 and week == 3 and day == 5 :
         # 3/20
@@ -30,7 +30,7 @@ label weekday_day_event :
                 "최다 표를 얻은 검검 과잠 선택하기" :
                     "친구들이 좋아하는 것 같긴 한데, 너무 빨리 정한 것 같은 느낌이 든다."
                     $ gwa_parameter += 3
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_6
 
                     $ gwazam_hidden = True
                     $ gwazam_finished = True
@@ -49,7 +49,7 @@ label weekday_day_event :
                 "최다 표를 얻은 검검 과잠 선택하기" :
                     "의견을 적당히 모은 것 같다. 과 분위기가 좋아진 것 같다."
                     $ gwa_parameter += 6
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_7
 
                     $ gwazam_hidden = True
                     $ gwazam_finished = True
@@ -68,7 +68,7 @@ label weekday_day_event :
                 "최다 표를 얻은 보라색 과잠 선택하기" :
                     "오랫동안 의견을 수렴해서 불만이 거의 안나온다. 과 분위기가 많이 좋아졌다."
                     $ gwa_parameter += 10
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_8
 
                     $ gwazam_finished = True
 
@@ -108,7 +108,7 @@ label weekday_day_event :
                 "최다 표를 얻은 보라색 과잠 선택하기" :
                     "다 같이 만족하는 결과가 나왔다. 과 분위기가 아주 아주 좋아졌다."
                     $ gwa_parameter += 7
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_9
 
                     $ gwazam_finished = True
 
@@ -118,7 +118,7 @@ label weekday_day_event :
             $ gwazam_finished == True
 
     elif month == 4 and week == 1 and day == 1 :
-        call uniform_day
+        call uniform_day from _call_uniform_day
 
     elif month == 4 and week == 1 and day == 2 :
         "지난밤 카톡에서 뻔엠 관련 얘기가 나왔습니다.\n"
@@ -163,19 +163,19 @@ label weekday_day_event :
             "과잠 업체에서 연락이 와, 오늘 과잠을 받게 되었다."
             "우리 학번만의 과잠을 가지게 되어서인지, 과의 분위기가 좋아졌다."
             $ gwa_parameter += 3
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_10
 
             if gwazam_store == True :
                 "업체를 직접 방문해서 그런지, 옷 핏이 딱 맞아 떨어졌다."
                 "친구들이 더욱 만족하는 것 같다. 과 분위기가 더 좋아졌다."
                 $ gwa_parameter += 3
-                call parameter_maxmin_check
+                call parameter_maxmin_check from _call_parameter_maxmin_check_11
 
             else :
                 "인터넷에서 주문해서 그런지, 옷 핏이 살짝 이상하다."
                 "친구들의 만족도가 살짝 떨어진 것 같다. 과 분위기가 약간 안 좋아졌다."
                 $ gwa_parameter -= 2
-                call parameter_maxmin_check
+                call parameter_maxmin_check from _call_parameter_maxmin_check_12
 
 
     elif month == 4 and week == 1 and day == 5 :
@@ -184,7 +184,7 @@ label weekday_day_event :
             "투표가 종료되었습니다."
             $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
 
-        call fun_mt
+        call fun_mt from _call_fun_mt
 
     elif month == 4 and week == 4 and day == 1 :
         play music "music/exams.mp3"
@@ -304,10 +304,10 @@ label weekday_day_event :
         stop music fadeout 1.0
 
     elif month == 5 and week == 1 and day == 2 :
-        call jangtuh
+        call jangtuh from _call_jangtuh
 
     elif month == 5 and week == 3 and day == 6 :
-        call olympic
+        call olympic from _call_olympic
 
     elif month == 6 and week == 3 and day == 1 :
         play music "music/exams.mp3"
@@ -427,7 +427,7 @@ label weekday_day_event :
 
     elif day == 6 :
         "토요일 낮이 되었다."
-        call normal_weekday_evening
+        call normal_weekday_evening from _call_normal_weekday_evening
 
     else :
         $ day_or_evening = "evening"

@@ -51,7 +51,7 @@ label all_mt:
 
             # 진일 파라미터 +
             $ jinil.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_23
 
         "장중이 옆":
             show bus_inside at truecenter
@@ -64,7 +64,7 @@ label all_mt:
 
             # 장중 파라미터 +
             $ jangjung.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_24
 
         "삼용이 옆":
             show bus_inside at truecenter
@@ -77,7 +77,7 @@ label all_mt:
 
             # 삼용 파라미터 +
             $ samyong.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_25
 
     show arriving at truecenter
 
@@ -121,7 +121,7 @@ label all_mt:
 
             # 장중 파라미터 +
             $ jangjung.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_26
 
         "고기 굽기":
             play sound "sound/bbq.mp3"
@@ -138,7 +138,7 @@ label all_mt:
 
             # 진일 파라미터 +
             $ jinil.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_27
 
         "밥/반찬 준비하기":
             play sound "sound/vegetable_chopping.mp3"
@@ -156,13 +156,13 @@ label all_mt:
 
             # 삼용 파라미터 +
             $ samyong.parameter += 20
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_28
 
     show big_room at truecenter
     "저녁식사는 엠티 분위기 덕분에 평소보다 더 맛있었던 것 같았다."
     "잠시 쉬다가 레크리에이션을 하고 술을 마시러 가볼까?!"
 
-    call change_SNS
+    call change_SNS from _call_change_SNS
     $ day += 1
     if day < 7 :
         $ day_for_show = (week-1)*7 + day + 1
@@ -220,7 +220,7 @@ label all_mt:
             $ jinil.parameter += 20
             $ samyong.parameter += 20
             $ hp -= 50
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_29
 
         "집에 바로 간다":
             Player "아 나는 집에 빨리 들어가서 쉴래 ㅠㅠㅠ"
@@ -240,7 +240,7 @@ label all_mt:
     scene black
     stop music fadeout 1.0
 
-    call change_SNS
+    call change_SNS from _call_change_SNS_1
     $ day += 1
     if day < 7 :
         $ day_for_show = (week-1)*7 + day + 1

@@ -54,7 +54,7 @@ label pcbang:
                     #진일이와의 친밀도 UP, 멘탈 DOWN
                     $ jinil.parameter += 20
                     $ mental_point -= 20
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_30
 
                 "현재가 좋아하는 '쇼핑카트 라이더'를 한다":
                     play music "music/4.11_pcbang_kartrider.mp3"
@@ -90,14 +90,14 @@ label pcbang:
                     #진일이와의 친밀도 DOWN, 멘탈 UP
                     $ jinil.parameter -= 10
                     $ mental_point += 10
-                    call parameter_maxmin_check
+                    call parameter_maxmin_check from _call_parameter_maxmin_check_31
 
 
         "정중히 거절하고 예정된 계획대로 하루를 보낸다" :
             ""
             #과활동 패러미터 DOWN
             $ gwa_parameter -= 3
-            call parameter_maxmin_check
-            call normal_weekday_evening
+            call parameter_maxmin_check from _call_parameter_maxmin_check_32
+            call normal_weekday_evening from _call_normal_weekday_evening_1
 
     return

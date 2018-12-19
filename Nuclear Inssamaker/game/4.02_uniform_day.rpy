@@ -16,7 +16,7 @@ label uniform_day:
             $ hp -= 20
             $ study_parameter -= 1
             $ gwa_parameter += 3
-            call parameter_maxmin_check
+            call parameter_maxmin_check from _call_parameter_maxmin_check_52
 
             "수업을 째고 동기들이랑 점심을 먹으러 캠퍼스 안에 있는 잔디밭에 갔다."
             show gyobok at truecenter

@@ -163,8 +163,8 @@ label start:
 
     "일요일에는\n핸드폰을 이용해 SNS를 확인하거나\n달력를 이용해 다음주 일정을 짜세요."
 
-    call change_SNS
-    call event_schedule_set
+    call change_SNS from _call_change_SNS_4
+    call event_schedule_set from _call_event_schedule_set_2
 
     if month == 3 or month == 4 :
         play music "music/sunday_3and4.mp3"

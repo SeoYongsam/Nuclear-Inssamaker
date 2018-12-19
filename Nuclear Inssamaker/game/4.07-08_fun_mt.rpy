@@ -47,7 +47,7 @@ label fun_mt:
         "과 분위기도 좋아진 것 같고 내 마음도 훈훈하다."
         $ gwa_parameter += 3
         $ mental_point += 20
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_36
 
     #2. 장발 투표를 4/4 이후로 끝냈을 시(4월 4일, 4월 5일에 종료 하였을 경우)
     else :
@@ -76,7 +76,7 @@ label fun_mt:
         "과 분위기가 이렇게 흉흉했다니...\n내 멘탈이 터졌다."
         $ gwa_parameter -= 3
         $ mental_point -= 20
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_37
 
     show naksung at truecenter
     "친구들과 지하철을 타고 엠티 장소와 가까운 마트에 도착해서 장을 보기로 했다."
@@ -110,7 +110,7 @@ label fun_mt:
         "과 분위기가 우울해졌다..."
         #과 파라미터 -
         $ gwa_parameter -= 10
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_38
 
     "장발대와 힘을 합쳐 장을 본 뒤, 엠티 장소로 이동했다."
 
@@ -123,7 +123,7 @@ label fun_mt:
         "많은 짐을 적은 수의 장발대가 옮기느라 생각보다 많은 힘을 소모했다."
         #체력 파라미터 -
         $ hp -= 40
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_39
 
     #(여기서부터는 공통 스크립트)
     show big_room at truecenter
@@ -157,7 +157,7 @@ label fun_mt:
         "친구들이 내가 구운 고기를 맛있게 먹고,\n알아서 일을 도와준다. 행복하다."
         #멘탈 +
         $ mental_point += 10
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_40
 
     #6 과 파라미터가 n 미만일 때
     else :
@@ -174,7 +174,7 @@ label fun_mt:
         "구박을 받으면서 고기를 열심히 구웠다. 나름 열심히 하고 있는데, 아무도 알아주지 않는 것 같아 살짝 서러웠다."
         #멘탈 -
         $ mental_point -= 20
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_41
     stop sound
 
     show gwa at truecenter
@@ -199,10 +199,10 @@ label fun_mt:
     $ rest_point = 3
     menu:
         "과 친구들과 마신다":
-            call gwa_2
+            call gwa_2 from _call_gwa_2
 
         "삼용이와 마신다":
-            call friend_2
+            call friend_2 from _call_friend_2
 
         "방에서 쉰다":
             #체력 파라미터 증가
@@ -213,10 +213,10 @@ label fun_mt:
     "살짝 취했지만, 아직은 좀 더 마실 수 있을 것 같다.\n마당에서 장중이가 나를 부르는 게 들린다.\n어떻게 할까?"
     menu :
         "과 친구들과 마신다":
-            call gwa_3
+            call gwa_3 from _call_gwa_3
 
         "장중이와 마신다":
-            call friend_3
+            call friend_3 from _call_friend_3
 
         "방에서 쉰다":
             #체력 파라미터 변화 없음
@@ -238,10 +238,10 @@ label fun_mt:
     "여기서 술을 더 마시면 내일 많이 못 도와줄 것 같다.\n진일이가 또 자리를 비운 것 같다.\n어떻게 할까?"
     menu :
         "과 친구들과 마신다":
-            call gwa_4
+            call gwa_4 from _call_gwa_4
 
         "진일이를 찾으러 간다":
-            call friend_4
+            call friend_4 from _call_friend_4
 
         "방에서 쉰다":
             #체력 파라미터 변화 없음
@@ -253,10 +253,10 @@ label fun_mt:
     "이제 슬슬 버티기 힘들다. 술을 너무 많이 마신 것 같다.\n장중, 진일, 용삼이 한 쪽에서 따로 술을 마시고 있다.\n어떻게 할까?"
     menu :
         "과 친구들과 마신다":
-            call gwa_5
+            call gwa_5 from _call_gwa_5
             #체력, 과 파라미터 감소
         "장중, 진일, 용삼의 술자리에 합류한다":
-            call friend_5
+            call friend_5 from _call_friend_5
             #체력, 과 파라미터 감소
         "방에서 쉰다":
             jump rest
@@ -285,7 +285,7 @@ label rest:
     return
 
 label fun_morning:
-    call change_SNS
+    call change_SNS from _call_change_SNS_2
     $ day += 1
     $ day_or_evening = "day"
 
@@ -317,7 +317,7 @@ label fun_morning:
         "몸 상태도 생각보다 괜찮고, 친구들과 웃으며 얘기를 하다보니 어느새 집에 거의 도착한 것 같다.."
         #과 파라미터 많이 +
         $ gwa_parameter += 5
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_42
 
     elif rest_point == 2 :
         "머리가 살짝 아프지만 생각보다 괜찮은 듯하다.."
@@ -348,7 +348,7 @@ label fun_morning:
         "머리는 살짝 아팠지만, 친구들과 웃으며 얘기를 하다보니 어느새 집에 거의 도착한 것 같다.."
         #과 패러미터 보통 +
         $ gwa_parameter += 3
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_43
 
     elif rest_point == 1 :
         "숙취로 머리가 아프다.. 눈을 떠보니 대부분의 애들이 잠을 자고 있다."
@@ -367,7 +367,7 @@ label fun_morning:
         "술을 많이 마셔서 머리는 살짝 아팠지만, 친구들과 얘기를 하다보니 어느새 집에 거의 도착한 것 같다."
         #과 파라미터 조금 +
         $ gwa_parameter += 1
-        call parameter_maxmin_check
+        call parameter_maxmin_check from _call_parameter_maxmin_check_44
 
     else :
         "머리가 너무 아프다.. 눈을 떠보니 대부분의 애들은 집에 간 것 같다."
@@ -380,7 +380,7 @@ label fun_morning:
 
     stop music fadeout 1.0
 
-    call change_SNS
+    call change_SNS from _call_change_SNS_3
     $ day_for_show = 7
     $ day += 1
     $ day_or_evening = "evening"
