@@ -207,7 +207,7 @@ screen upper_right_UI() :
 
         else :
             bar value AnimatedValue(244*mental_point/100, 244, 0.5) style "MP_bar"
-        
+
     #add im.Scale("HP_bar.png", 244*hp/200, 28) xpos 1016 ypos 16
     #add im.Scale("MP_bar.png", 244*(mental_point)/100, 28) xpos 1016 ypos 64
     vbox :
@@ -285,10 +285,20 @@ label parameter_maxmin_check :
     elif hp > 200 :
         $ hp = 200
 
+    if hp_for_show < 0 :
+        $ hp_for_show = 0
+    elif hp_for_show > 200 :
+        $ hp_for_show = 200
+
     if mental_point < 0 :
         $ mental_point = 0
     elif mental_point > 100 :
         $ mental_point = 100
+
+    if mental_point_for_show < 0 :
+        $ mental_point_for_show = 0
+    elif mental_point_for_show > 100 :
+        $ mental_point_for_show = 100
 
     if study_parameter < 0 :
         $ study_parameter = 0

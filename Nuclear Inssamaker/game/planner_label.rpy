@@ -2,6 +2,7 @@
 # file, define a label and jump to it from another file.
 
 label planner:
+    call parameter_maxmin_check
     call show_planner
     call planner_icon_select
 

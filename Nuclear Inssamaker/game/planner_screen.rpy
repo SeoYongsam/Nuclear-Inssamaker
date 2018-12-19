@@ -66,19 +66,33 @@ screen schedule_button():
             imagebutton :
                 idle "planner/button_study.png"
                 hover "planner/button_study_on.png"
-                action SetVariable("for_day_schedule_select", 1), Jump("planner")
+                if day <= 7 :
+                    action SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
+                #else :
+                #    action Null
 
             imagebutton :
                 idle "planner/button_gwa.png"
                 hover "planner/button_gwa_on.png"
-                action SetVariable("for_day_schedule_select", 3), Jump("planner")
+                if day <= 7 :
+                    action SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
 
             imagebutton :
                 # if month != 3 or week > 2 :
                 if club_open == True :
                     idle "planner/button_club.png"
                     hover "planner/button_club_on.png"
-                    action SetVariable("for_day_schedule_select", 2), Jump("planner")
+                    if day <= 7 :
+                        if day != 4 :
+                            action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
+                        else :
+                            if club_count < 10 :
+                                action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+10), Jump("planner")
+                            elif club_count < 20 :
+                                action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
+                            else :
+                                action SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show+15), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
+
                 else :
                     idle im.Alpha("planner/button_club.png", 0.2)
                     hover im.Alpha("planner/button_club.png", 0.2)
@@ -87,7 +101,8 @@ screen schedule_button():
             imagebutton :
                 idle "planner/button_rest.png"
                 hover "planner/button_rest_on.png"
-                action SetVariable("for_day_schedule_select", 4), Jump("planner")
+                if day <= 7 :
+                    action SetVariable("for_day_schedule_select", 4), SetVariable("hp_for_show", hp_for_show+50), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
 
 screen month_schedule_icon_show():
     if month == month_for_display + 3 :
