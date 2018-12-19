@@ -23,14 +23,15 @@ label pcbang:
                     show leagueoflegends at truecenter
                     Jinil "좋았으~ 역시 게임은 '리그 오브 전설'이지~"
                     Hyunjae "ㅋㅋ 알겠어"
-                    Daehyun "뻔대 넌 처음 하는거지? 내가 옆에서 도와줄게 ㅋㅋ"
+                    Daehyun "뻔대 넌 처음 하는거지? 내가 옆에서 도와줄게!"
 
                     scene black
                     "30분 뒤..."
 
                     show leagueloss at truecenter
-                    Jinil "아 니네들 진짜 뭐하냐. 숟가락을 입에 넣어줘도 못 받아먹네.\n
-                    게임 하고 싶은거 맞아?"
+                    Jinil "아 니네들 진짜 뭐하냐\n"
+                    extend "숟가락을 입에 넣어줘도 못 받아먹네.\n"
+                    extend "게임 하고 싶은거 맞아?"
                     Mirae "왜 그래 진일아... 그냥 게임이잖아"
                     Hyunjae "진정해 ㅋㅋ 다음판 이기면 되지"
                     Daehyun "그래 다음판은 꼭 이기자"
@@ -39,8 +40,9 @@ label pcbang:
                     "2시간 뒤"
 
                     show pcbangstreet at truecenter
-                    Daehyun "아~ 그래도 피방 오랜만에 가니까 개재밌다"
-                    Jinil "뻔대야 게임 잘 못하면 말하지~ 내가 다음번엔 제대로 가르쳐줄게"
+                    Daehyun "아~ 그래도 피시방 오랜만에 오니까 재밌네"
+                    Jinil "뻔대야 게임 잘 못하면 말하지~\n"
+                    extend "내가 다음번엔 제대로 가르쳐줄게"
                     Mirae "... 뻔대야 너무 신경쓰지마!"
 
                     scene black at truecenter
@@ -63,14 +65,18 @@ label pcbang:
                     Daehyun "아 치사하게 마지막에 아이템 쓰는거 뭐냐"
                     Mirae "ㅋㅋㅋㅋ 이것도 실력이라구~"
                     Hyunjae "와 미래 뭐야? 엄청 잘하네"
-                    Daehyun "근데 진일이는 카트 오늘 처음함? 개못하던데 ㅋㅋㅋㅋ"
+                    Daehyun "근데 진일이는 카트 오늘 처음함?\n"
+                    extend "개못하던데 ㅋㅋㅋㅋ"
                     Jinil "..."
 
                     scene pcbangstreet at truecenter
                     Mirae "ㅋㅋㅋㅋ 내 운전실력 다시는 무시하지마라~"
-                    Hyunjae "와 근데 뻔대도 진짜 잘하던데?? 오늘 나 한번도 1등 못함 얘 때문에!"
-                    Mirae "맞아맞아 장난 아니더라. 프로 게이머인줄?"
-                    Jinil "'쇼핑카트 라이더'도 재밌네. '리그 오브 전설'했으면 더 재밌었겠지만."
+                    Hyunjae "와 근데 뻔대도 진짜 잘하던데??\n"
+                    extend "오늘 나 한번도 1등 못함 얘 때문에!"
+                    Mirae "맞아맞아 장난 아니더라\n"
+                    extend "프로 게이머인줄?"
+                    Jinil "'쇼핑카트 라이더'도 재밌네\n"
+                    extend "'리그 오브 전설'했으면 더 재밌었겠지만"
 
                     scene black
                     "오늘 카트라이더를 오랜만에 해서 너무 재밌었다.\n

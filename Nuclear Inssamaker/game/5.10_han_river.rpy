@@ -9,7 +9,8 @@ image school = "han_river/school.JPG"
 label han_river:
     show school at truecenter
     Jangjung "날씨도 좋은데 오늘 한강 놀러 갈까?"
-    Player "좋은데? 우리 한강 뻔모 한 번 할까?"
+    Player "좋은데?\n"
+    extend "우리 한강 뻔모 한 번 할까?"
     Samyong "하오하오 따자하오"
 
     "한강에 가시겠습니까?"
@@ -33,10 +34,10 @@ label han_river:
 
             show chicken at truecenter
             "(열심히 치킨을 먹는다.)"
-            Samyong "한국 배달 문화 진짜 짱이다...."
+            Samyong "한국 배달 문화 진짜 짱이다..."
             Player "와 진짜 JMT"
             Jinil "JMT가 뭐냐??!"
-            "친구들" "으 김진일 문찐이네."
+            "친구들" "으 김진일 문찐이네"
             Jinil "야이씨... 모를 수도 있지(발끈)"
 
             "진일이를 못 놀리게 친구들을 말리겠습니까?"
@@ -48,7 +49,7 @@ label han_river:
                     Jinil "ㅋㅋㅋㅋ 얘도 모르네"
                     extend "얘가 나보다 더하네 ㅋㅋㅋ"
                     Player "김진일 너는 나한테 그런말 하면 안되지 ㅋㅋㅋ"
-                    Jinil "와 진짜 너무 고였다 ㅉㅉ"
+                    Jinil "와 진짜 뻔대 너무 고였다 ㅉㅉ"
                     Player "(자기 편 들어줬더니....)"
 
                     show goodbye at truecenter
@@ -69,7 +70,7 @@ label han_river:
                     Player "김진일 진짜 갑분싸 지렸다\n"
                     extend "진짜 너랑 같이 못다니겠다"
                     "친구들" "ㅋㅋㅋ 그러니까 김진일 부끄럽다 집에 가라"
-                    Jinil "야 너네 너무하다 진짜....\n"
+                    Jinil "야 너네 너무하다 진짜...\n"
                     extend "나 먼저 간다 재밌게 놀아라"
 
                     show back at truecenter

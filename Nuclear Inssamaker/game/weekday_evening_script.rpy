@@ -46,12 +46,13 @@ label weekday_evening_event :
         "과준위를 모아 디자인을 토의해보기로 했다."
 
         scene black
-        Player "과잠준비위원회에 지원해주셔서 감사합니다! 그럼 빠르게 디자인부터 받아볼게요!"
+        Player "과잠준비위원회에 지원해주셔서 감사합니다!\n"
+        extend "그럼 빠르게 디자인부터 받아볼게요!"
         Jinil "카모로 하면 멋있을 것 같다 ㅋㅋㅋ"
         Samyong "나는 빨간색에 용무늬가 들어갔으면 좋겠는데 ㅋㅋㅋ"
         Jangjung "내가 봤을때는 그냥 검검이 제일 무난해 보이는데?"
-        Player "오 다들 그래도 한 가지씩은 생각해왔네"
-        Player "음 일단 그래도 좀 더 생각을 해보고.."
+        Player "오 다들 그래도 한 가지씩은 생각해왔네\n"
+        extend "음 일단 그래도 좀 더 생각을 해보고.."
         Samyong "그럼 실제로 업체랑 디자인 회의 같은 것 해보는 건 어때?"
         Jangjung "오 나도 찬성이야!"
         Jinil "아 무슨 귀찮게 업체까지 가냐..요새는 인터넷으로 그냥 하면 돼!"
@@ -156,8 +157,8 @@ label weekday_evening_event :
 
             "과 친구들에게 투표를 받는다.":
                 # $ gwazam_finished = False
-                Player "으음 여기서 바로 결정하는 것은 어렵겠지?"
-                Player "애들한테 투표로 물어보자!"
+                Player "으음 여기서 바로 결정하는 것은 어렵겠지?\n"
+                extend "애들한테 투표로 물어보자!"
                 Jinil "그러지 뭐, 분명 내 디자인이 뽑히겠지!"
                 Samyong "아니야 내 디자인이 뽑힐 듯?"
                 Jangjung "잘 모르네, 검검이 갑임 ㅋㅋㅋㅋ"
@@ -205,8 +206,7 @@ label weekday_evening_event :
                 show meeting at truecenter
 
                 "예산은 적당하게 50만원으로 잡았다."
-                "메뉴는 다른 장터와 차별을 두고 싶었지만 예산에 맞춰 재료를 준비해야했기\n
-                때문에 파전과 치킨너겟 등 기존 장터들과 비슷하게 메뉴를 정했다."
+                "메뉴는 다른 장터와 차별을 두고 싶었지만 예산에 맞춰 재료를 준비해야했기\n때문에 파전과 치킨너겟 등 기존 장터들과 비슷하게 메뉴를 정했다."
                 "오늘 회의에 와서 다행이라고 생각한다."
                 "애들이 열정이 많아서인지 무모해서인지는 모르겠지만 메뉴를 정할때 회의가 산으로 갈 뻔한 적이 많았다."
                 $ jangtuh_pre_event += 1
@@ -219,15 +219,14 @@ label weekday_evening_event :
         scene black
         "오늘은 장터 준비위원회끼리 모여서 메뉴판을 만들기로 했다."
 
-        "내가 없어도 메뉴판을 잘 만들 것 같지만...
-        \n 갈까 말까?"
+        "내가 없어도 메뉴판을 잘 만들 것 같지만...\n갈까 말까?"
 
         menu:
             "회의에 참여한다":
                 "회의에 참여했다."
 
                 show menu_pan at truecenter
-                "메뉴판은 정말 쉽게 정했다."
+                "메뉴판은 정말 쉽게 정했다.\n"
                 "이미 메뉴를 정했기 때문에 장터날에 붙일 것만 만들면 됐기 때문이다."
                 "오늘은 회의 보다는 메뉴판 디자인을 했디 때문에 내가 안왔어도 됐으려나 싶지만 그래도 마음은 조금 놓인다."
                 $ jangtuh_pre_event += 1
@@ -239,16 +238,16 @@ label weekday_evening_event :
         scene black
         "오늘은 장터 준비위원회끼리 장터 전날 모여서 장을 보기로 했다."
 
-        "내가 없어도 장을 잘 볼 수 있을지 의심스럽지만...
-        \n 갈까 말까?"
+        "내가 없어도 장을 잘 볼 수 있을지 의심스럽지만...\n갈까 말까?"
 
         menu:
             "장을 보러 간다":
                 "장을 보러 갔다."
 
                 show shopping at truecenter
-                "오늘은 내가 장을 보러 왔어야 했다."
-                "애들의 상태가 의심스럽기 때문이다. 중간고사가 끝난지 얼마 안돼서 모든 것을 놓은 것만 같다."
+                "알고보니 오늘은 내가 장을 꼭 보러 왔어야 했다.\n"
+                "애들의 상태가 의심스럽기 때문이다."
+                "중간고사가 끝난지 얼마 안돼서 모든 것을 놓은 것만 같다."
                 "장터 재료를 사는 것 보다 애들은 자신이 필요한 것들에 더 눈이 가는 것 같다."
                 "다행이 나라도 정신을 차리고 장터에 필요한 도구와 음식을 샀다."
                 $ jangtuh_pre_event += 1
@@ -291,7 +290,7 @@ label normal_weekday_evening :
 label evening_study:
     show study at truecenter
     if (month == 4 and week == 3 and day >= 5) or (month == 4 and week == 4 and day <= 4) or (month == 6 and week == 2 and day >= 4) or (month == 6 and week == 3 and day <= 3) :
-        "시험을 대비해서 열심히 공부했다\n"
+        "시험을 대비해서 공부를 열심히 했다.\n"
         extend "체력 -15, 멘탈 -15, 공부 +5"
 
         python :
@@ -302,7 +301,7 @@ label evening_study:
             # club_parameter -= 1
 
     else :
-        "공부했다\n"
+        "공부를 했다.\n"
         extend "체력 -15, 멘탈 -15, 공부 +3"
 
         python :
@@ -320,7 +319,7 @@ label evening_study:
 label evening_club:
     if day != 4 :
         show club at truecenter
-        "동아리 개인연습했다\n"
+        "동아리 개인연습을 했다.\n"
         extend "체력 -25, 멘탈 +20, 동아리 +3"
 
         python :
@@ -333,7 +332,7 @@ label evening_club:
     else :
         show club_thur at truecenter
         if club_count < 10 :
-            "동아리 정기연습했다\n"
+            "동아리 정기연습을 했다.\n"
             extend "체력 -25, 멘탈 +10, 동아리 +5"
 
             python :
@@ -344,7 +343,7 @@ label evening_club:
                 club_parameter += 5
 
         elif club_count < 20 :
-            "동아리에서 간단하게 버스킹을 했다\n"
+            "동아리에서 간단하게 버스킹을 했다.\n"
             extend "체력 -20, 멘탈 +20, 동아리 +7"
             python :
                 hp -= 20
@@ -370,7 +369,7 @@ label evening_club:
 
 label evening_gwa:
     show gwa at truecenter
-    "과 활동했다\n"
+    "과 활동을 했다.\n"
 
     extend "체력 -20, 멘탈 -5, 과 +3"
 
@@ -389,7 +388,7 @@ label evening_gwa:
 
 label evening_rest:
     show rest at truecenter
-    "쉬었다\n"
+    "쉬었다.\n"
     extend "체력 +50, 멘탈 +30"
 
     python :
