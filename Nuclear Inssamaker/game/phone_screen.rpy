@@ -11,14 +11,14 @@ screen phone_UI() :
         imagebutton :
             idle "phone/exitButton.png"
             hover "phone/exitButton_on.png"
-            action SetVariable("ktalk_mode", 1), Jump("phone_close")
+            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 1), Jump("phone_close")
 
     #홈버튼
     vbox xpos 620 ypos 672 :
         imagebutton :
             idle "phone/homebutton.png"
             hover "phone/homebutton_on.png"
-            action Hide("fbook"), Hide("ktalk"), SetVariable("ktalk_mode",1), Show("phone_button_in_homescreen")
+            action Play("sound", "sound/in_phone.mp3"), Hide("fbook"), Hide("ktalk"), SetVariable("ktalk_mode",1), Show("phone_button_in_homescreen")
 
 ## 일요일 방과 일정 실행 중에 핸드폰 아이콘
 screen phone_icon():
@@ -33,7 +33,7 @@ screen phone_icon():
             # 마우스를 갖다 댈 시에 뒤에 그림자가 생김
             hover "phone_icon_sel.png"
             # 클릭시 phone label을 실행함
-            action Hide("phone_icon"), Hide("planner_icon"), Play("sound", "music/phone_sel.mp3"), Call("phone")
+            action Hide("phone_icon"), Hide("planner_icon"), Play("sound", "sound/phone_sel.mp3"), Call("phone")
 
             #at shake
 
@@ -109,12 +109,12 @@ screen phone_button_in_homescreen() :
         imagebutton :
             idle "phone/icon_fbook.png"
             hover "phone/icon_fbook_on.png"
-            action Hide("phone_button_in_homescreen"), Show("fbook")#, SetVariable("fbook_count", 0)
+            action Play("sound", "sound/in_phone.mp3"), Hide("phone_button_in_homescreen"), Show("fbook")#, SetVariable("fbook_count", 0)
 
         imagebutton :
             idle "phone/icon_talk.png"
             hover "phone/icon_talk_on.png"
-            action Hide("phone_button_in_homescreen"), Show("ktalk")
+            action Play("sound", "sound/in_phone.mp3"), Hide("phone_button_in_homescreen"), Show("ktalk")
 
 #    if fbook_count != 0 :
 #        add "phone/red_dot.png" xpos 500 ypos 560 at shake
@@ -291,7 +291,7 @@ screen ktalk:
                 xpos 640 ypos 588
                 idle "phone/button_talk.png"
                 hover "phone/button_talk_on.png"
-                action SetVariable("ktalk_mode", 2)
+                action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 2)
 
     # 원래 2, 대화창 모드
     elif ktalk_mode == 2 :
@@ -311,7 +311,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
                         null height -92
                         add "character/profile_group.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -330,7 +330,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
                         null height -92
                         add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -349,7 +349,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
                         null height -92
                         add "character/profile_jinil.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -368,7 +368,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
                         null height -92
                         add "character/profile_samyong.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -387,7 +387,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
                         null height -92
                         add "character/profile_dongah.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -408,7 +408,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
                         null height -92
                         add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -420,7 +420,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "장중"), SetVariable("jangjung.new_message_count", 0)
                         null height -92
                         add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -432,7 +432,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "진일"), SetVariable("jinil.new_message_count", 0)
                         null height -92
                         add "character/profile_jinil.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -444,7 +444,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "삼용"), SetVariable("samyong.new_message_count", 0)
                         null height -92
                         add "character/profile_samyong.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -456,7 +456,7 @@ screen ktalk:
                         imagebutton :
                             idle "phone/ktalk/talklist.png"
                             hover "phone/ktalk/talklist_on.png"
-                            action SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
+                            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "동아"), SetVariable("dongah.new_message_count", 0)
                         null height -92
                         add "character/profile_dongah.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
@@ -468,7 +468,7 @@ screen ktalk:
                 xpos 420 ypos 588
                 idle "phone/button_friends.png"
                 hover "phone/button_friends_on.png"
-                action SetVariable("ktalk_mode", 1)
+                action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 1)
 
         add "phone/button_talk_sel.png" xpos 640 ypos 588
 
@@ -1061,7 +1061,7 @@ screen ktalk:
         imagebutton :
             xpos 420 ypos 40
             idle im.Alpha(im.Scale("white.png", 40, 50), 0)
-            action SetVariable("ktalk_mode", 2)
+            action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 2)
 
 #label grouptalk_refresh :
 #    $ grouptalk.message.extend(grouptalk.message_temp)

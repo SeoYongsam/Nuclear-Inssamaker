@@ -26,6 +26,7 @@ label jangtuh:
 
     "하지만 이제 곧 대망의 점심시간! 사람들이 하나 둘 몰려오기 시작한다!"
 
+    play sound "sound/grill_fry.mp3"
     show order at truecenter
     Jinil "이랏샤이마세~ 주문 뭘로 하실건가요??"
     "고객1" "저는 파전이랑 막걸리 하나씩이요!"
@@ -77,6 +78,7 @@ label jangtuh:
     "일찍부터 일한 나, 진일, 삼용은 드디어 다른 친구들에게 일을 맡기고 쉴 수 있었다. "
 
     "오후 4시부터는 고객들이 하나 둘 씩 줄어들면서 장터현장이 한가해졌다."
+    stop sound fadeout 1.0
 
     show jangtuh at truecenter
     Jangjung "야 뻔대야 우리 이제 정리할까?"
@@ -168,7 +170,7 @@ label jangtuh:
     "오후 6시가 되었다. 여러가지 우여곡절이 있었지만 결국 장터는 무사히 끝났다."
 
     #장터 뒷풀이"
-
+    play music "music/5.03_jangtuh_end.mp3"
     show cheers at truecenter
     "장터현장을 정리하고 우리는 다같이 뒷풀이를 하러 술집에 왔다"
     "장터에 도와주지 못한 친구들도 하나 둘씩 나타나며 뒷풀이에 참가하여 꽤 많은 인원이 모였다."
@@ -242,7 +244,7 @@ label jangtuh:
         $ gwa_parameter -= 3
         call parameter_maxmin_check
 
-
+    stop music fadeout 1.0
     #순이익 금액으로 장터가 성공했는지 판단
 
     ##장터 전 이벤트 4개 다 참여했을 시 순이익 200만원

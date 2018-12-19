@@ -12,7 +12,7 @@ label planner:
         "일주일 일정을 실행하시겠습니까?"
         menu:
             "실행한다":
-                play sound "music/in_planner.mp3"
+                play sound "sound/in_planner.mp3"
                 $ day = 1
                 call hide_planner_button
                 hide screen upper_right_UI
@@ -24,7 +24,7 @@ label planner:
                 jump weekday_day
 
             "처음부터":
-                play sound "music/in_planner.mp3"
+                play sound "sound/in_planner.mp3"
                 $ day = 1
                 $ hp_for_show = hp
                 $ mental_point_for_show = mental_point

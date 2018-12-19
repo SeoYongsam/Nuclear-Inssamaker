@@ -7,6 +7,7 @@ image perfo = "dongsoze/perfo.jpg"
 # 3월 9일 닞 동소제 이벤트
 # month3 week2 day 1
 label dongsoze:
+    play music "music/3.09_dongsoze.mp3"
     scene black
     "오늘은 동아리 소개제가 있는 날이다.\n"
     extend "공강 시간을 이용해 동아리 소개제 구경을 가게 되었다."
@@ -52,4 +53,5 @@ label dongsoze:
     "3/12(목) 저녁 일정이 동아리 정기 연습으로 교체되었습니다."
     $ day_schedule[0][12] = 2
 
+    stop music fadeout 1.0
     return

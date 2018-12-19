@@ -6,6 +6,7 @@ image clubroom = "club_first/clubroom.jpg"
 # 3월 12일 저녁 동아리 첫 연습
 # month1 week2 day4
 label club_first :
+    play sound "sound/club.mp3"
     scene black
     "오늘은 동아리 첫 연습이 있는 날이다.\n"
     extend "수업을 마친 동아와 만나 동아리 연습실로 찾아가게 되었다."
@@ -28,5 +29,6 @@ label club_first :
     $ mental_point += 20
 
     scene black
+    stop sound fadeout 1.0
 
     return

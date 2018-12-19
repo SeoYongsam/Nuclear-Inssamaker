@@ -166,9 +166,15 @@ label start:
     call change_SNS
     call event_schedule_set
 
+    if month == 3 or month == 4 :
+        play music "music/sunday_3and4.mp3"
+    else :
+        play music "music/sunday_5and6.mp3"
+
     # sunday_room_label의 sunday_room label 호출
     jump sunday_room
 
+    return
 
 # label start에서 넘어옴
 label limitation:

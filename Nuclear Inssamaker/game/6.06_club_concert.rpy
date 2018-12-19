@@ -9,7 +9,7 @@ label club_concert :
     "과 친구들도 공연을 보러 온다고 하니 실수하지 않고 공연을 잘 끝내고 싶은 생각 밖에 안든다."
     "엇 이제 공연 시작한다..!"
 
-
+    play music "music/6.06_club_concert.mp3"
     #공연 성공적
     if club_parameter >= 50 :
         python :
@@ -38,7 +38,7 @@ label club_concert :
         Player "그래 들어가라"
 
 
-#동아리 공연에 사람이 많이 옴
+    #동아리 공연에 사람이 많이 옴
     if club_parameter <= gwa_parameter:
         "동아리 공연이 끝나고 친구들이 있다는 곳으로 갔다"
         "생각보다 친구들이 많이 와줘서 엄청 뿌듯했다"
@@ -80,3 +80,7 @@ label club_concert :
     if club_parameter < 50 :
         "내가 공연을 망친 것 같아서 더 이상 동아리에 나가기가 부끄럽다. 당분간 동아리에는 못 갈 것 같다."
         $ club_open = False
+
+    stop music fadeout 1.0
+    
+    return

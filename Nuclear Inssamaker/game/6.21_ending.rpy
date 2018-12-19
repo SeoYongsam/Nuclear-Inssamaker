@@ -2,6 +2,8 @@
 # file, define a label and jump to it from another file.
 
 label ending :
+    play music "music/6.21_ending.mp3"
+
     "지난 3개월. 몸과 마음이 지쳐가며 열심히 살아온 당신. 괜찮았나요?"
 
     # 임의로 수치 부여함
@@ -42,3 +44,6 @@ label ending :
     "하지만, 누구에게나 처음은 어렵지요. 그 어려움을 이겨내고 지금에 이른 당신."
     "진심을 담아 너무나 수고하셨습니다. 다음에 겪게 될 처음들도 잘 이겨낼거에요."
     "행운을 빕니다. 당신도, 나도."
+
+    stop music fadeout 1.0
+    return

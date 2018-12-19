@@ -70,6 +70,7 @@ screen weekday_schedule_show :
                 null width 5
 
 label weekday_day :
+    stop music fadeout 1.0
     scene black #with dissolve
     show screen stats_screen
 
@@ -108,6 +109,7 @@ label weekday_day :
     return
 
 label hp_0_break_event :
+    play sound "sound/hospital.mp3"
     $ day_schedule[month - 3][(week - 1) * 8 + day] = 6
 
     show hospital at truecenter
@@ -120,6 +122,8 @@ label hp_0_break_event :
     $ gwa_parameter -= 2
     $ club_parameter -= 2
     call parameter_maxmin_check
+
+    stop sound fadeout 1.0
 
     jump weekday_SNS
     return
@@ -143,6 +147,7 @@ label hp_low_rest_event :
     return
 
 label mental_point_0_event :
+    play sound "sound/home.mp3"
     $ day_schedule[month - 3][(week - 1) * 8 + day] = 7
 
     show home at truecenter
@@ -155,8 +160,9 @@ label mental_point_0_event :
     $ club_parameter -= 1
     call parameter_maxmin_check
 
-    jump weekday_SNS
+    stop sound fadeout 1.0
 
+    jump weekday_SNS
     return
 
 label weekday_evening :
@@ -197,6 +203,10 @@ label weekday_SNS :
         call parameter_maxmin_check
 
         call event_schedule_set
+        if month == 3 or month == 4 :
+            play music "music/sunday_3and4.mp3"
+        else :
+            play music "music/sunday_5and6.mp3"
         jump sunday_room
     return
 
@@ -238,5 +248,6 @@ label change_SNS :
     call change_jinil_talk
     call change_samyong_talk
     call change_dongah_talk
+    # play sound "sound/phone_vibrate.mp3"
 
     return

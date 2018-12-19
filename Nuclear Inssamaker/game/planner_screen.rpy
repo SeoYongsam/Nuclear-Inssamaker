@@ -25,14 +25,14 @@ screen planner_UI() :
         imagebutton :
             idle "planner/arrow_left.png"
             hover "planner/arrow_left_on.png"
-            action Play("sound", "music/in_planner.mp3"), Call("show_previous_month")
+            action Play("sound", "sound/in_planner.mp3"), Call("show_previous_month")
 
     #플래너 다음 달로 가는 화살표
     vbox xpos 564 ypos 88 :
         imagebutton :
             idle "planner/arrow_right.png"
             hover "planner/arrow_right_on.png"
-            action Play("sound", "music/in_planner.mp3"), Call("show_next_month")
+            action Play("sound", "sound/in_planner.mp3"), Call("show_next_month")
 
     #플래너 종료창
     vbox xpos 896 ypos 72 :
@@ -40,7 +40,7 @@ screen planner_UI() :
             idle "planner/exitButton.png"
             hover "planner/exitButton_on.png"
             #플래너 X버튼 누르면 플래너 화면들을 전부 숨기고, 일요일 방으로 간다.
-            action Play("sound", "music/in_planner.mp3"), Jump("planner_close")
+            action Play("sound", "sound/in_planner.mp3"), Jump("planner_close")
             #아래 코드는 위와 똑같지만 작동하지 않는 코드. Call이 호출되면 뒷 액션들은 호출되지 않는 것 같다.
             #action Call("hide_planner_button"), Jump("sunday_room")
 
@@ -67,7 +67,7 @@ screen schedule_button():
                 idle "planner/button_study.png"
                 hover "planner/button_study_on.png"
                 if day <= 7 :
-                    action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
+                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
                 #else :
                 #    action Null
 
@@ -75,7 +75,7 @@ screen schedule_button():
                 idle "planner/button_gwa.png"
                 hover "planner/button_gwa_on.png"
                 if day <= 7 :
-                    action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
+                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
 
             imagebutton :
                 # if month != 3 or week > 2 :
@@ -84,14 +84,14 @@ screen schedule_button():
                     hover "planner/button_club_on.png"
                     if day <= 7 :
                         if day != 4 :
-                            action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
+                            action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
                         else :
                             if club_count < 10 :
-                                action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+10), Jump("planner")
+                                action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-25), SetVariable("mental_point_for_show", mental_point_for_show+10), Jump("planner")
                             elif club_count < 20 :
-                                action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
+                                action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show+20), Jump("planner")
                             else :
-                                action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show+15), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
+                                action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 2), SetVariable("hp_for_show", hp_for_show+15), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
 
                 else :
                     idle im.Alpha("planner/button_club.png", 0.2)
@@ -102,7 +102,7 @@ screen schedule_button():
                 idle "planner/button_rest.png"
                 hover "planner/button_rest_on.png"
                 if day <= 7 :
-                    action Play("sound", "music/in_planner.mp3"), SetVariable("for_day_schedule_select", 4), SetVariable("hp_for_show", hp_for_show+50), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
+                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 4), SetVariable("hp_for_show", hp_for_show+50), SetVariable("mental_point_for_show", mental_point_for_show+30), Jump("planner")
 
 screen month_schedule_icon_show():
     if month == month_for_display + 3 :

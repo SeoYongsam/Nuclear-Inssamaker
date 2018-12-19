@@ -1,7 +1,7 @@
 image sunday_room_image = "room.png" #im.Scale("room.png",1480,820)
 
 #start 함수에서 넘어옴
-label sunday_room:
+label sunday_room:        
     $ day = 0
     $ hp_for_show = hp
     $ mental_point_for_show = mental_point
@@ -19,9 +19,6 @@ label sunday_room:
     show screen phone_icon
     show screen planner_icon
 
-#    "일요일이 되었습니다.\n"
-#    extend "핸드폰을 이용해 SNS를 확인하거나,\n"
-#    extend "플래너를 이용해 다음주 일정을 짜세요."
     while True :
         window hide
         pause
@@ -39,5 +36,5 @@ screen planner_icon() :
             action [Hide("phone_icon"), Hide("planner_icon"),
                     SetVariable("month_for_display", month - 3),
                     SetVariable("day", 1),
-                    Hide("dateShow"), Play("sound", "music/planner_sel.mp3"),
+                    Hide("dateShow"), Play("sound", "sound/planner_sel.mp3"),
                     Jump("planner")]

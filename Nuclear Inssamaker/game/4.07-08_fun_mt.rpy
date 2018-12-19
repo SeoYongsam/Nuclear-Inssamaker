@@ -17,6 +17,7 @@ image subway = "fun_mt/subway.jpg"
 # 4월 6일, 7일 금,토 뻔엠
 # month4 week 1 day 5
 label fun_mt:
+    play music "music/4.07-08_fun_mt.mp3"
     scene black
     "오늘은 드디어 고대하던 뻔엠날이다."
     "우리들끼리 가는 엠티는 처음인만큼, 설렘 반 떨림 반의 마음을 가지고 엠티를 가기 위해 자취방을 나섰다."
@@ -139,6 +140,7 @@ label fun_mt:
 
     #과 파라미터에 따라 달라지는 스크립트. 5, 6
     #5 과 파라미터가 n 이상일 때
+    play sound "sound/grill_fry.mp3"
     if gwa_parameter >= 20 :
         show gogi_s at truecenter
         Jangjung "와 뻔대 최고다! 고기 진짜 잘 굽네"
@@ -173,6 +175,7 @@ label fun_mt:
         #멘탈 -
         $ mental_point -= 20
         call parameter_maxmin_check
+    stop sound
 
     show gwa at truecenter
     "친구들과 고기를 먹은 후, 레크리에이션을 다들 즐겁게 즐겼다. 준비한 보람이 있었다."
@@ -374,6 +377,8 @@ label fun_morning:
         "체크아웃 시간이 가까워졌기 때문에 남은 짐과 애들을 챙겨 엠티 장소에서 출발하였다."
         show subway at truecenter
         "집까지 갈 길이 아주 먼 것 같다."
+
+    stop music fadeout 1.0
 
     call change_SNS
     $ day_for_show = 7
