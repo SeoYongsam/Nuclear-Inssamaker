@@ -26,7 +26,7 @@ label han_river:
             "과 분위기가 좋아진 것 같다. 내 마음도 따뜻해진다."
 
             #과 파라미터 + / 멘탈 + / 체력 -
-            $ gwa_parameter += 10
+            $ gwa_parameter += 2
             $ mental_point += 10
             $ hp -= 20
             call parameter_maxmin_check
@@ -81,7 +81,7 @@ label han_river:
 
                     #일진 파라미타 -- / 과 ++
                     $ jinil.parameter -= 40
-                    $ gwa_parameter += 20
+                    $ gwa_parameter += 4
                     call parameter_maxmin_check
 
         "거절한다":

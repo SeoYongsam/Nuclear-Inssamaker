@@ -28,11 +28,13 @@ label change_jinil_talk :
         elif week == 4 :
             if day == 0 :
                 $ jinil.add("날짜|3월 22일 일요일")
-                # 투표 진행
-                $ jinil.add("김진일| ㅋㅋㅋㅋㅋ 내가 애들이 이거 좋아할거라고 했지? 아.. 근데 혹시 내가 단톡방에서 좀 오버했나??	")
+                if gwazam_finished == False :
+                    # 투표 진행
+                    $ jinil.add("김진일| ㅋㅋㅋㅋㅋ 내가 애들이 이거 좋아할거라고 했지? 아.. 근데 혹시 내가 단톡방에서 좀 오버했나??	")
 
-                # 강제 종료
-                $ jinil.add("김진일|과잠 예쁜 것 같아 빨리 입고 싶다ㅋㅋㅋㅋ")
+                else :
+                    # 강제 종료
+                    $ jinil.add("김진일|과잠 예쁜 것 같아 빨리 입고 싶다ㅋㅋㅋㅋ")
 
 
     elif month == 4 :

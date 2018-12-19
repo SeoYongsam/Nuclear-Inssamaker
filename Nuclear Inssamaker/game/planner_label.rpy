@@ -27,6 +27,8 @@ label planner:
                 while i < 8:
                     $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
                     $ i += 1
+                call event_schedule_set
+
 
     # 버튼 만악의 근원이었지만 해결함
     while True:
@@ -63,6 +65,9 @@ label planner_close :
     while i < 8:
         $ day_schedule[month - 3][(week - 1) * 8 + i] = 0
         $ i += 1
+
+    call event_schedule_set
+
     jump sunday_room
     return
 
@@ -118,3 +123,16 @@ label show_next_month :
 ##    if day_schedule[day] != 0
 ##        $ day += 1
 #    return
+
+label event_schedule_set :
+    # 3월 이벤트 설정
+    if (month-3) * 32 + (week-1)*8 + day >= 8:
+        $ day_schedule[0][13] = 5
+        $ day_schedule[0][14] = 5
+        $ day_schedule[0][15] = 5
+    if (month-3) * 32 + (week-1)*8 + day >= 16 :
+        $ day_schedule[0][18] = 5
+        $ day_schedule[0][20] = 5
+    if gwazam_store == True :
+        $ day_schedule[0][19] = 5
+    return

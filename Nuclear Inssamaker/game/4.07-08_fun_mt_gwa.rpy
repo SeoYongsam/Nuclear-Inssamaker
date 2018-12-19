@@ -55,7 +55,7 @@ label gwa_5:
     "분위기가 싸해진 것을 느끼면서 정신을 잃었다."
 
     #과 파라미터 감소
-    $ gwa_parameter -= 10
+    $ gwa_parameter -= 2
     call parameter_maxmin_check
 
     $rest_point -= 1

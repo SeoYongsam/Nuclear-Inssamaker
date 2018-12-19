@@ -1,4 +1,5 @@
 image lecture_room = "lecture_room.png"
+
 label weekday_day_event :
     $ day_or_evening = "day"
     if month == 3 and week == 1 and day == 3 :
@@ -9,86 +10,66 @@ label weekday_day_event :
 
     elif month == 3 and week == 2 and day == 1 :
         call dongsoze
+        $ club_open = True
 
     elif month == 3 and week == 2 and day == 5 :
         call all_mt
 
-    elif month == 3 and week == 3 and day == 4 :
-        "과잠 투표 결과 : 1안-8명 / 2안-6명 / 3안-4명"
-        "투표를 하시겠습니까, 과잠을 결정하시겠습니까?"
-        menu :
-            "투표 계속하기" :
-                ""
-
-            "투표 마치고 강제로 선택하기" :
-                "어떤 과잠을 선택하시겠습니까?"
-                menu :
-                    "1안" :
-                        ""
-                    "2안" :
-                        ""
-                    "3안" :
-                        ""
-                $ gwa_jam_finished = True
-
-
     elif month == 3 and week == 3 and day == 5 :
-        if gwa_jam_finished == False :
-            "과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
-            "투표를 더 진행하시겠습니까?"
+        # 3/20
+        if gwazam_finished == False :
+            "과잠 투표 결과"
+            "진일이가 제안한 카모-2명\n삼용이가 제안한 보라, 흰색-6명\n장중이가 제안한 검검-8명"
+            "투표를 하시겠습니까, 투표를 마치고 과잠을 결정하시겠습니까?"
             menu :
                 "투표 계속하기" :
-                    ""
+                    "아직 의견이 충분히 모인 것 같지 않다.\n시간을 더 두고 친구들의 의견을 모아보자."
+                    # $ gwazam_finished = False
 
-                "투표 마치고 강제로 선택하기" :
-                    "어떤 과잠을 선택하시겠습니까?"
-                    menu :
-                        "1안" :
-                            ""
-                        "2안" :
-                            ""
-                        "3안" :
-                            ""
-                    $ gwa_jam_finished = True
+                "최다 표를 얻은 검검 과잠 선택하기" :
+                    "친구들이 좋아하는 것 같긴 한데, 너무 빨리 정한 것 같은 느낌이 든다."
+                    $ gwa_parameter += 3
+                    call parameter_maxmin_check
 
+                    $ gwazam_hidden = True
+                    $ gwazam_finished = True
 
     elif month == 3 and week == 3 and day == 6 :
-        if gwa_jam_finished == False :
-            #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
-            "투표를 더 진행하시겠습니까?"
+        # 3/21
+        if gwazam_finished == False :
+            "과잠 투표 결과"
+            "진일이가 제안한 카모-3명\n삼용이가 제안한 보라, 흰색-8명\n장중이가 제안한 검검-10명"
+            "투표를 하시겠습니까, 투표를 마치고 과잠을 결정하시겠습니까?"
             menu :
                 "투표 계속하기" :
-                    ""
+                    "아직 의견이 충분히 모인 것 같지 않다.\n시간을 더 두고 친구들의 의견을 모아보자."
+                    # $ gwazam_finished = False
 
-                "투표 마치고 강제로 선택하기" :
-                    "어떤 과잠을 선택하시겠습니까?"
-                    menu :
-                        "1안" :
-                            ""
-                        "2안" :
-                            ""
-                        "3안" :
-                            ""
-                    $ gwa_jam_finished = True
+                "최다 표를 얻은 검검 과잠 선택하기" :
+                    "의견을 적당히 모은 것 같다. 과 분위기가 좋아진 것 같다."
+                    $ gwa_parameter += 6
+                    call parameter_maxmin_check
+
+                    $ gwazam_hidden = True
+                    $ gwazam_finished = True
 
     elif month == 3 and week == 4 and day == 1 :
-        if gwa_jam_finished == False :
-            #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
-            "투표를 더 진행하시겠습니까?"
+        # 3/23
+        if gwazam_finished == False :
+            "과잠 투표 결과"
+            "진일이가 제안한 카모-5명\n삼용이가 제안한 보라, 흰색-13명\n장중이가 제안한 검검-12명"
+            "투표를 하시겠습니까, 투표를 마치고 과잠을 결정하시겠습니까?"
             menu :
                 "투표 계속하기" :
-                    ""
+                    "아직 의견이 충분히 모인 것 같지 않다.\n시간을 더 두고 친구들의 의견을 모아보자."
+                    # $ gwazam_finished = False
 
-                "투표 마치고 강제로 선택하기" :
-                    "어떤 과잠을 선택하시겠습니까?"
-                    menu :
-                        "1안" :
-                            ""
-                        "2안" :
-                            ""
-                        "3안" :
-                            ""
-                    $ gwa_jam_finished = True
+                "최다 표를 얻은 검검 과잠 선택하기" :
+                    "오랫동안 의견을 수렴해서 불만이 거의 안나온다. 과 분위기가 많이 좋아졌다."
+                    $ gwa_parameter += 10
+                    call parameter_maxmin_check
+
+                    $ gwazam_finished = True
 
         scene black with dissolve
         show lecture_room at truecenter
@@ -113,23 +94,27 @@ label weekday_day_event :
             $ mental_point += 30
 
     elif month == 3 and week == 4 and day == 2 :
-        if gwa_jam_finished == False :
-            #"과잠 투표 결과 : 1안-11명 / 2안-8명 / 3안-5명"
-            "투표를 더 진행하시겠습니까?"
+        # 3/24
+        if gwazam_finished == False :
+            "과잠 투표 결과"
+            "진일이가 제안한 카모-6명\n삼용이가 제안한 보라, 흰색-15명\n장중이가 제안한 검검-13명"
+            "투표를 하시겠습니까, 투표를 마치고 과잠을 결정하시겠습니까?"
             menu :
                 "투표 계속하기" :
-                    ""
+                    "아직 의견이 충분히 모인 것 같지 않다.\n시간을 더 두고 친구들의 의견을 모아보자."
+                    # $ gwazam_finished = False
 
-                "투표 마치고 강제로 선택하기" :
-                    "어떤 과잠을 선택하시겠습니까?"
-                    menu :
-                        "1안" :
-                            ""
-                        "2안" :
-                            ""
-                        "3안" :
-                            ""
-                    $ gwa_jam_finished = True
+                "최다 표를 얻은 검검 과잠 선택하기" :
+                    "다 같이 만족하는 결과가 나왔다. 과 분위기가 아주 아주 좋아졌다."
+                    $ gwa_parameter += 7
+                    call parameter_maxmin_check
+
+                    $ gwazam_finished = True
+
+    elif month == 3 and week == 4 and day == 3 and gwazam_finished == False :
+            "기간이 다 되어서 투표가 마감되었다."
+            "다수결에 따라서 보라, 흰색 과잠으로 과잠 디자인이 결정되었다."
+            $ gwazam_finished == True
 
     elif month == 4 and week == 1 and day == 1 :
         call uniform_day
@@ -193,7 +178,7 @@ label weekday_day_event :
                     $ fun_mt_vote_finished = True
                     $ fun_mt_vote_day = (month-3)*28 + (week-1)*7 + day + 1
 
-    elif month == 4 and week == 1 and day == 4 : 
+    elif month == 4 and week == 1 and day == 4 :
         if fun_mt_vote_finished == False :
             "장발후발 투표 결과 장발대 8 / 후발대 14"
             "점점 장발대가 줄어들고 있습니다.\n투표를 더 진행하시겠습니까?"

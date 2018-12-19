@@ -142,13 +142,7 @@ label all_mt:
     "저녁식사는 엠티 분위기 덕분에 평소보다 더 맛있었던 것 같았다."
     "잠시 쉬다가 레크리에이션을 하고 술을 마시러 가볼까?!"
 
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
     $ day += 1
     if day < 7 :
         $ day_for_show = (week-1)*7 + day + 1
@@ -215,13 +209,7 @@ label all_mt:
 
     scene black
 
-    $ random.shuffle(rand_list_for_katlk_list)
-    call change_fbook_post
-    call change_group_talk
-    call change_jangjung_talk
-    call change_jinil_talk
-    call change_samyong_talk
-    call change_dongah_talk
+    call change_SNS
     $ day += 1
     if day < 7 :
         $ day_for_show = (week-1)*7 + day + 1

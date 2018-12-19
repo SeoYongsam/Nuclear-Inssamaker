@@ -59,6 +59,23 @@ transform shake:
     repeat
 
 screen phone_button_in_homescreen() :
+    #핸드폰 메인화면 TO DO LIST
+    vbox :
+        xpos 465 ypos 130
+        text "{color=#000000}TO DO LIST{/color}" size 35
+
+        # 3월
+        if (month-3) * 32 + (week-1)*8 + day <= 12 :
+            text "{color=#000000}- 총MT 잊지 말고 가기"
+        if (month-3) * 32 + (week-1)*8 + day >= 4 and (month-3) * 32 + (week-1)*8 + day <= 25 :
+            text "{color=#000000}- 언시리어스 게임 퀴즈 대비 공부"
+        if (month-3) * 32 + (week-1)*8 + day >= 4 and (month-3) * 32 + (week-1)*8 + day <= 9 :
+            text "{color=#000000}- 동아하고 동소제 구경하기"
+        if (month-3) * 32 + (week-1)*8 + day >= 13 and (month-3) * 32 + (week-1)*8 + day <= 20 :
+            text "{color=#000000}- 과잠 준비 하기"
+
+    text "{color=#000000}- 끝나지 않는 시리어스 게임" xpos 465 ypos 420
+
     hbox xpos 428 ypos 564 :
         spacing 8
         imagebutton :
@@ -431,7 +448,18 @@ screen ktalk:
         viewport:
             xpos 420 ypos 40
             xsize 440 ysize 624
-            yinitial 1.0
+            if talk_with_who == "그룹" :
+                yinitial (grouptalk.numerator_length / grouptalk.denominator_length)
+            elif talk_with_who == "장중" :
+                yinitial (jangjung.numerator_length / jangjung.denominator_length)
+            elif talk_with_who == "진일" :
+                yinitial (jinil.numerator_length / jinil.denominator_length)
+            elif talk_with_who == "삼용" :
+                yinitial (samyong.numerator_length / samyong.denominator_length)
+            elif talk_with_who == "동아" :
+                yinitial (dongah.numerator_length / dongah.denominator_length)
+            else :
+                yinitial 1.0
             draggable True
             mousewheel True
             arrowkeys True
@@ -486,6 +514,7 @@ screen ktalk:
 
                                         text "{color=#000}%s" %tmp size 18
                             null height 12
+
 
                         else :
                             hbox xpos 4 ypos 4:
@@ -1003,3 +1032,8 @@ screen ktalk:
             xpos 420 ypos 40
             idle im.Alpha(im.Scale("white.png", 40, 50), 0)
             action SetVariable("ktalk_mode", 2)
+
+#label grouptalk_refresh :
+#    $ grouptalk.message.extend(grouptalk.message_temp)
+#    $ grouptalk.reset_temp()
+#    return
