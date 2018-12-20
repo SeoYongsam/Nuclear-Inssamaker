@@ -60,7 +60,7 @@ label han_river:
 
                     "진일이가 나한테 내심 고마워하는 것 같긴 한데, 어쩐지 난 기분이 찝찝하다."
                     #김진일과의 파라미터 ++ // 멘탈 -
-                    $ jinil.parameter += 40
+                    $ jinil.parameter += 20
                     $ mental_point -= 20
                     call parameter_maxmin_check from _call_parameter_maxmin_check_34
 
@@ -81,8 +81,8 @@ label han_river:
                     "...그래도 진일이의 희생으로 과 분위기가 좋아진 것 같은데...?"
 
                     stop music fadeout 1.0
-                    #일진 파라미타 -- / 과 ++
-                    $ jinil.parameter -= 40
+                    #일진 파라미타 - / 과 ++
+                    $ jinil.parameter -= 10
                     $ gwa_parameter += 4
                     call parameter_maxmin_check from _call_parameter_maxmin_check_35
 

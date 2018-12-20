@@ -117,7 +117,7 @@ label hp_0_break_event :
     Player "몸이 너무 안좋아 하루동안 병원에 입원했다."
     extend "\n오늘 해야 할 일을 하지 못했다."
 
-    $ hp += 80
+    $ hp += 50
     $ study_parameter -= -2
     $ gwa_parameter -= 2
     $ club_parameter -= 2
@@ -137,7 +137,7 @@ label hp_low_rest_event :
             Player "몸이 너무 안좋다. 낮에 수업을 째고 집에서 잤다."
         else :
             Player "몸이 너무 안좋다. 낮에 집에서 잤다."
-        $ hp += 40
+        $ hp += 25
         $ study_parameter -= 3
         $ gwa_parameter -= 1
         $ club_parameter -= 1
@@ -154,7 +154,7 @@ label mental_point_0_event :
     Player "정신적으로 너무 힘들어서 집에 다녀왔다."
     extend "\n하루 일정을 날리긴 했지만, 멘탈을 좀 회복했다."
 
-    $ mental_point += 40
+    $ mental_point += 25
     $ study_parameter -= 1
     $ gwa_parameter -= 1
     $ club_parameter -= 1

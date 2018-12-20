@@ -1,8 +1,9 @@
 #이미지 선언
 image pcbang = "pcbang/pcbang.jpg"
-image leagueoflegends = "pcbang/leagueoflegends.jpg"
+image leagueoflegends = "pcbang/leagueoflegends.png"
 image leagueloss = "pcbang/leagueloss.png"
-image kartrider = "pcbang/kartrider.jpg"
+image kartrider = "pcbang/kartrider.png"
+image kartrider_end = "pcbang/kartrider_end.png"
 image pcbangstreet = "pcbang/pcbangstreet.jpg"
 
 #피시방 이벤트 저녁 4월 11일 month4 week2 day3
@@ -47,12 +48,12 @@ label pcbang:
                     extend "내가 다음번엔 제대로 가르쳐줄게"
                     Mirae "... 뻔대야 너무 신경쓰지마!"
 
-                    scene black at truecenter
+                    scene black
                     "친구들이 게임을 잘해서 많이 이긴 것 같다.\n그래도 다같이 재밌게 게임한 것 같다."
                     "진일이는 오늘 '리그 오브 전설'을 할 수 있어서 전반적으로 행복해했던 것 같다.\n
                     하지만 나는 진일이의 눈치를 봐야해서 힘들었다."
                     #진일이와의 친밀도 UP, 멘탈 DOWN
-                    $ jinil.parameter += 20
+                    $ jinil.parameter += 10
                     $ mental_point -= 20
                     call parameter_maxmin_check from _call_parameter_maxmin_check_30
 
@@ -64,7 +65,7 @@ label pcbang:
                     scene black
                     "3시간 뒤"
 
-                    scene kartrider_end at truecenter
+                    show kartrider_end at truecenter
                     Daehyun "아 치사하게 마지막에 아이템 쓰는거 뭐냐"
                     Mirae "ㅋㅋㅋㅋ 이것도 실력이라구~"
                     Hyunjae "와 미래 뭐야? 엄청 잘하네"
@@ -73,7 +74,7 @@ label pcbang:
                     Jinil "..."
 
                     stop music fadeout 1.0
-                    scene pcbangstreet at truecenter
+                    show pcbangstreet at truecenter
                     Mirae "ㅋㅋㅋㅋ 내 운전실력 다시는 무시하지마라~"
                     Hyunjae "와 근데 뻔대도 진짜 잘하던데??\n"
                     extend "오늘 나 한번도 1등 못함 얘 때문에!"

@@ -68,8 +68,8 @@ label weekday_evening_event :
                 "3/18의 일정이 업체 방문으로 교체 되었다."
 
                 #삼용, 장중 파라미터 증가, 3/18 일정 교체, 업체 방문 여부 ㅇ
-                $ samyong.parameter += 20
-                $ jangjung.parameter += 20
+                $ samyong.parameter += 11
+                $ jangjung.parameter += 10
                 $ gwazam_store = True
                 $ day_schedule[0][19] = 5
 
@@ -81,7 +81,7 @@ label weekday_evening_event :
                 "진일이와의 관계가 좋아진 것 같다."
 
                 #진일 파라미터 증가, 업체 방문 여부 x
-                $ jinil.parameter += 20
+                $ jinil.parameter += 10
                 $ gwazam_store = False
 
     elif month == 3 and week == 3 and day == 3 and gwazam_store == True :
@@ -122,7 +122,7 @@ label weekday_evening_event :
 
                         "진일이와의 관계가 좋아진 것 같다."
                         #진일 파라미터 업, 허나 너무 튀는 과잠이어서 과 파라미터 -10.
-                        $ jinil.parameter += 20
+                        $ jinil.parameter += 10
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "생각보다 반응이 싸늘했다..분위기가 살짝 안 좋아진것 같다.."
@@ -135,7 +135,7 @@ label weekday_evening_event :
 
                         "삼용이와의 관계가 좋아진 것 같다."
                         #삼용 파라미터 업, 디자인도 괜찮아서 과 파라미터 +20
-                        $ samyong.parameter += 20
+                        $ samyong.parameter += 11
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "열렬한 반응이 돌아왔다! 과 친구들 모두 마음에 들어하는 것 같다!"
@@ -148,7 +148,7 @@ label weekday_evening_event :
 
                         "장중이와의 관계가 좋아진 것 같다."
                         #장중 파라미터 업, 디자인도 나쁘지 않아서 과 파라미터 +10
-                        $ jangjung.parameter += 20
+                        $ jangjung.parameter += 10
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "별다른 반응이 없지만, 과잠을 맞춘 것 만으로도 만족하는 분위기이다."
@@ -188,6 +188,9 @@ label weekday_evening_event :
                 "포스터 디자인은 심플하게 가기로 했다."
                 "사실 심플 할지는 모르겠지만 포토샵을 다룰 줄 아는 현재가 알아서 하기로 했다."
                 "워낙 회의가 잘 진행돼서 내가 안왔어도 됐으려나 싶지만 그래도 마음은 조금 놓인다."
+
+                $ hp -= 15
+                $ mental_point -= 5
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
@@ -210,6 +213,9 @@ label weekday_evening_event :
                 "메뉴는 다른 장터와 차별을 두고 싶었지만 예산에 맞춰 재료를 준비해야했기\n때문에 파전과 치킨너겟 등 기존 장터들과 비슷하게 메뉴를 정했다."
                 "오늘 회의에 와서 다행이라고 생각한다."
                 "애들이 열정이 많아서인지 무모해서인지는 모르겠지만 메뉴를 정할때 회의가 산으로 갈 뻔한 적이 많았다."
+
+                $ hp -= 15
+                $ mental_point -= 5
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
@@ -231,6 +237,9 @@ label weekday_evening_event :
                 "메뉴판은 정말 쉽게 정했다.\n"
                 "이미 메뉴를 정했기 때문에 장터날에 붙일 것만 만들면 됐기 때문이다."
                 "오늘은 회의 보다는 메뉴판 디자인을 했디 때문에 내가 안왔어도 됐으려나 싶지만 그래도 마음은 조금 놓인다."
+
+                $ hp -= 15
+                $ mental_point -= 5
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
@@ -253,6 +262,9 @@ label weekday_evening_event :
                 "중간고사가 끝난지 얼마 안돼서 모든 것을 놓은 것만 같다."
                 "장터 재료를 사는 것 보다 애들은 자신이 필요한 것들에 더 눈이 가는 것 같다."
                 "다행이 나라도 정신을 차리고 장터에 필요한 도구와 음식을 샀다."
+
+                $ hp -= 20
+                $ mental_point -= 10
                 $ jangtuh_pre_event += 1
 
             "계획한 대로 오후를 보낸다":
@@ -329,11 +341,11 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습을 했다.\n"
-        extend "체력 -25, 멘탈 +20, 동아리 +2.7"
+        extend "체력 -25, 멘탈 + 10, 동아리 +2.7"
 
         python :
             hp -= 25
-            mental_point += 20
+            mental_point += 10
             # study_parameter -= 1
             # gwa_parameter -= 1
             club_parameter += 2.7
@@ -349,27 +361,26 @@ label evening_club:
                 mental_point += 10
                 # study_parameter -= 1
                 # gwa_parameter -= 1
-                club_parameter += 4
+                club_parameter += 5
 
         elif club_count < 20 :
             "동아리에서 간단하게 버스킹을 했다.\n"
-            extend "체력 -20, 멘탈 +20, 동아리 +7"
+            extend "체력 -20, 멘탈 +15, 동아리 +7"
             python :
                 hp -= 20
+                mental_point += 15
+                # study_parameter -= 1
+                # gwa_parameter -= 1
+                club_parameter += 7
+
+        else :
+            "동아리 선배들과 친해져서 맛집 탐방을 가기로 했다.\n맛있는 것을 먹으니 힐링이 된다!\n"
+            extend "체력 -0, 멘탈 +20, 동아리 +10"
+            python :
                 mental_point += 20
                 # study_parameter -= 1
                 # gwa_parameter -= 1
-                club_parameter += 5
-
-        else :
-            "동아리 선배들과 친해져서 맛집 탐방을 가기로 했다.\n맛있는 것을 먹으니 힘이 조금 나는 것 같다!\n"
-            extend "체력 +15, 멘탈 +30, 동아리 +10"
-            python :
-                hp += 15
-                mental_point += 30
-                # study_parameter -= 1
-                # gwa_parameter -= 1
-                club_parameter += 6
+                club_parameter += 10
 
     $ club_count += 1
     call parameter_maxmin_check from _call_parameter_maxmin_check_49
@@ -399,11 +410,11 @@ label evening_rest:
     play sound "sound/rest.mp3"
     show rest at truecenter
     "쉬었다.\n"
-    extend "체력 +50, 멘탈 +30"
+    extend "체력 +35, 멘탈 +5"
 
     python :
-        hp += 50
-        mental_point += 30
+        hp += 35
+        mental_point += 5
         #gwa_parameter -= 1
         #club_parameter -= 1
 

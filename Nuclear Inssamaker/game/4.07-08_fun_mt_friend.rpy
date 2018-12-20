@@ -11,7 +11,7 @@ label friend_2:
     "삼용이와의 관계가 좋아진 것 같다."
 
     #삼용이와 파라미터 +
-    $ samyong.parameter += 20
+    $ samyong.parameter += 11
     return
 
 label friend_3:
@@ -22,7 +22,7 @@ label friend_3:
     "장중이와의 관계가 좋아진 것 같다."
 
     #장중이와 파라미터 +
-    $ jangjung.parameter += 20
+    $ jangjung.parameter += 10
     return
 
 label friend_4:
@@ -34,7 +34,7 @@ label friend_4:
     "진일이와의 관계가 좋아진 것 같다."
 
     #진일이와 파라미터 +
-    $ jinil.parameter += 20
+    $ jinil.parameter += 10
     return
 
 label friend_5:

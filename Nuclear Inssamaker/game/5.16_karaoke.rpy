@@ -38,10 +38,10 @@ label karaoke:
     "진일이가 노래를 부르는 동안 무엇을 할까?"
     menu:
         "점수를 높게 낼 수 있는 노래를 찾는다":
-            $ jinil.parameter -= 20
+            $ jinil.parameter -= 10
             "진일이가 자꾸 리액션을 바라는 것 같은데..?"
         "진일이가 노래를 부르는 동안 리액션을 한다":
-            $ jinil.parameter += 20
+            $ jinil.parameter += 10
             "진일이가 기분이 좋아보인다"
 
     show are_you_happy at truecenter
@@ -65,11 +65,11 @@ label karaoke:
     "장중이랑 같이 랩을 할까?"
     menu:
         "친구들이 놀릴 것 같으니 거절한다":
-            $ jangjung.parameter -= 20
+            $ jangjung.parameter -= 10
             $ mental_point += 20
             "장중이가 아쉬워하는 것 같지만, 괜히 같이했다가 점수 낮게 나오면 코노비를 내야할지도 모르니까..."
         "장중이랑 같이 랩을 한다":
-            $ jangjung.parameter += 20
+            $ jangjung.parameter += 10
             $ mental_point -= 20
             "장중이가 같이해서 더 신났다고 한다, 근데 나 박치인거 다 들통났네 ㅠㅠ"
 
@@ -83,12 +83,12 @@ label karaoke:
     "삼용이에게 중국노래 하라고 할까?"
     menu:
         "분위기 갑분싸 될 것 같으니 거절한다":
-            $ samyong.parameter -= 20
+            $ samyong.parameter -= 11
             $ gwa_parameter += 2
             "삼용이는 아쉬워하지만 분위기를 위해서는 어쩔 수 없지"
 
         "삼용이가 바라는 것 같으니까 부르라고 한다":
-            $ samyong.parameter += 20
+            $ samyong.parameter += 11
             $ gwa_parameter -= 2
             "분위기는 쳐졌지만, 삼용이는 행복해하니..."
 

@@ -148,11 +148,11 @@ label jangtuh:
             Player "응.."
 
             #장중 파라미터 급격히 오름"
-            $ jangjung.parameter += 40
+            $ jangjung.parameter += 20
 
             #진일 삼용 파라미터 내림"
-            $ jinil.parameter -= 20
-            $ samyong.parameter -= 20
+            $ jinil.parameter -= 10
+            $ samyong.parameter -= 11
             call parameter_maxmin_check from _call_parameter_maxmin_check_1
 
         "안간다":
@@ -164,7 +164,7 @@ label jangtuh:
             Player "미안 ㅠㅠ 그래도 혹시나 무슨일 생기면 총괄자가 있어야하니깐 나는 여기 있어야할 것 같아 ㅠㅠ"
 
             #장중 파라미터 내림
-            $ jangjung.parameter -= 20
+            $ jangjung.parameter -= 10
 
     $ day_or_evening = "evening"
     "오후 6시가 되었다. 여러가지 우여곡절이 있었지만 결국 장터는 무사히 끝났다."

@@ -34,8 +34,8 @@ label uniform_day:
             menu:
                 "(장중이와 삼용이가 좋아하는)짜장면, 짬뽕":
                     #장중이 + 삼용 파라미터 +
-                    $ jangjung.parameter += 20
-                    $ samyong.parameter += 20
+                    $ jangjung.parameter += 10
+                    $ samyong.parameter += 11
 
                     show jjangge at truecenter
                     "중국집에서 음식을 시켰다."
@@ -44,7 +44,7 @@ label uniform_day:
 
                 "(진일이가 좋아하는)피자":
                     #진일이 파라미터 ++
-                    $ jinil.parameter += 40
+                    $ jinil.parameter += 20
 
                     show pizza at truecenter
                     "피자를 시켰다."

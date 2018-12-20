@@ -151,6 +151,7 @@ init python:
 
 # 여기에서부터 게임이 시작합니다.
 label start:
+
     # 플레이어 이름을 묻는 함수 what_is_your_name
     # call what_is_your_name
 
@@ -351,10 +352,10 @@ label parameter_maxmin_check :
     elif jinil.parameter > 100 :
         $ jinil.parameter = 100
 
-    if dongah.parameter < 0 :
-        $ dongah.parameter = 0
-    elif dongah.parameter > 100 :
-        $ dongah.parameter = 100
+#    if dongah.parameter < 0 :
+#        $ dongah.parameter = 0
+#    elif dongah.parameter > 100 :
+#        $ dongah.parameter = 100
 
 define Player = Character("주인공", color="#ffcccc", image="Player")
 image side Player :
