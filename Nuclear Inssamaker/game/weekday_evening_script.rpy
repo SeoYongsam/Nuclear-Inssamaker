@@ -311,7 +311,7 @@ label evening_study:
     play sound "sound/study.mp3"
     if (month == 4 and week == 3 and day >= 5) or (month == 4 and week == 4 and day <= 4) or (month == 6 and week == 2 and day >= 4) or (month == 6 and week == 3 and day <= 3) :
         "시험을 대비해서 공부를 열심히 했다.\n"
-        extend "체력 -15, 멘탈 -15, 공부 +4"
+        #extend "체력 -15, 멘탈 -15, 공부 +4"
 
         python :
             hp -= 15
@@ -322,7 +322,7 @@ label evening_study:
 
     else :
         "공부를 했다.\n"
-        extend "체력 -15, 멘탈 -15, 공부 +3.0"
+        #extend "체력 -15, 멘탈 -15, 공부 +3.0"
 
         python :
             hp -= 15
@@ -341,7 +341,7 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습을 했다.\n"
-        extend "체력 -25, 멘탈 + 10, 동아리 +3.0"
+        #extend "체력 -25, 멘탈 + 10, 동아리 +3.0"
 
         python :
             hp -= 25
@@ -354,7 +354,7 @@ label evening_club:
         show club_thur at truecenter
         if club_count < 10 :
             "동아리 정기연습을 했다.\n"
-            extend "체력 -25, 멘탈 +10, 동아리 +5"
+            #extend "체력 -25, 멘탈 +10, 동아리 +5"
 
             python :
                 hp -= 25
@@ -365,7 +365,7 @@ label evening_club:
 
         elif club_count < 20 :
             "동아리에서 간단하게 버스킹을 했다.\n"
-            extend "체력 -20, 멘탈 +15, 동아리 +7"
+            #extend "체력 -20, 멘탈 +15, 동아리 +7"
             python :
                 hp -= 20
                 mental_point += 15
@@ -375,7 +375,7 @@ label evening_club:
 
         else :
             "동아리 선배들과 친해져서 맛집 탐방을 가기로 했다.\n맛있는 것을 먹으니 힐링이 된다!\n"
-            extend "체력 -0, 멘탈 +20, 동아리 +10"
+            #extend "체력 -0, 멘탈 +20, 동아리 +10"
             python :
                 mental_point += 20
                 # study_parameter -= 1
@@ -392,7 +392,7 @@ label evening_gwa:
     show gwa at truecenter
     "과 활동을 했다.\n"
 
-    extend "체력 -20, 멘탈 -5, 과 +3.0"
+    #extend "체력 -20, 멘탈 -5, 과 +3.0"
 
     python :
         hp -= 20
@@ -410,7 +410,7 @@ label evening_rest:
     play sound "sound/rest.mp3"
     show rest at truecenter
     "쉬었다.\n"
-    extend "체력 +35, 멘탈 +5"
+    #extend "체력 +35, 멘탈 +5"
 
     python :
         hp += 35

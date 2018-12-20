@@ -4,19 +4,19 @@
 #6월 6일
 ## month 6 week 1 day 5 저녁
 label club_concert :
+    play music "music/6.06_club_concert.mp3"
     "오늘은 동아리 공연 날이다."
     "동아리 활동을 하면서 연습을 했지만 그래도 조금씩 긴장된다."
     "과 친구들도 공연을 보러 온다고 하니 실수하지 않고 공연을 잘 끝내고 싶은 생각 밖에 안든다."
     "엇 이제 공연 시작한다..!"
 
-    play music "music/6.06_club_concert.mp3"
     #공연 성공적
     if club_parameter >= 50 :
         python :
             mental_point += 30
             club_parameter += 5
 
-        "드디어 공연이 끝났다."
+        # "드디어 공연이 끝났다."
         "한 학기동안 동아리 연습을 많이 했어서 그런지 실수 안하고 공연을 성공적으로 끝마쳤다."
         Dongah "와 니 장난 아니데"
         Dongah "니 연습 얼마나 했길래 고음도 그렇게 깔끔하게 올라가는데 ㅋㅋㅋ"
@@ -30,7 +30,7 @@ label club_concert :
     else :
         $ mental_point -= 50
 
-        "드디어 공연이 끝났다."
+        # "드디어 공연이 끝났다."
         "한 학기동안 동아리 연습을 많이 안해서 공연때 실수를 계속해서 했다.\n오늘 공연은 성공적이지 못했다."
         Dongah "수고했다 ㅋㅋ"
         Player "미안...\n"

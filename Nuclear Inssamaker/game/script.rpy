@@ -165,6 +165,8 @@ label start:
     extend "핸드폰 한 번 확인해봐야겠다."
 
     "일요일에는\n핸드폰을 이용해 SNS를 확인하거나\n달력를 이용해 다음주 일정을 짜세요."
+    "우측 상단의 HP는 체력, MP는 멘탈포인트(멘탈)을 의미합니다.\n"
+    extend "떨어지지 않게 잘 관리해주세요."
 
     call change_SNS from _call_change_SNS_4
     call event_schedule_set from _call_event_schedule_set_2

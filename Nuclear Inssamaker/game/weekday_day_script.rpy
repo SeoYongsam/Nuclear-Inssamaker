@@ -13,6 +13,10 @@ label weekday_day_event :
         call dongsoze from _call_dongsoze
         $ club_open = True
 
+    elif month == 3 and week == 2 and day == 2 and club_open == False :
+        "비록 일이 생겨 어제 동소제에 가지 못했지만, 동아의 추천을 받아 동아리에 가입했다."
+        "'동아리' 선택지가 추가되었습니다. 일정 계획에서 동아리를 선택할 수 있게 되었습니다."
+
     elif month == 3 and week == 2 and day == 5 :
         call all_mt from _call_all_mt
 
@@ -74,25 +78,51 @@ label weekday_day_event :
 
         scene black with dissolve
         show lecture_room at truecenter
-        "김범준" "언시리어스게임 퀴즈를 시작하겠습니다"
-        "김범준" "초성퀴즈!"
-        "김범준" "ㅅㅂ"
-        Player "퀴즈가 너무 어려웠다."
-        if study_parameter <= 3.0*4 :
-            extend "그래서 망친 것 같다."
-            # 멘탈 하락
-            "멘탈이 터졌다"
-            $ mental_point -= 40
+        "김범준" "언시리어스 게임 퀴즈를 시작하겠습니다"
 
-        elif study_parameter < 3.0*8 :
-            extend "그렇지만 공부를 조금 해서 그럭저럭 봤다."
-            # 멘탈 일정
-
+        if study_parameter >= 3.0 * 6 :
+            "{color=#6495ED}문제 : 다음 중 마지막 글자가 다른 것은?{/color}"
+            "잘 맞춰보자"
         else :
-            extend "그렇지만 공부를 겁나 열심히 했었기 때문에 상쾌하게 잘 봤다."
-            # 멘탈 증가
-            "기분이 좋아졌다."
-            $ mental_point += 30
+            "{color=#6495ED}문제 : XX X XXX XXX 다른 XX?{/color}\n"
+            extend "공부 좀 더 할걸... 문제를 못 알아보겠네..."
+
+        menu :
+            "KBS" :
+                play sound "sound/wrong.mp3"
+                "문제 : 다음 중 마지막 글자가 다른 것은?\n{color=#6495ED}KBS{/color} / SBS / {color=#a33b39}MBC{/color}"
+                "퀴즈를 틀렸다... 멘탈이 터졌다."
+                $ mental_point -= 20
+
+            "SBS" :
+                play sound "sound/correct.mp3"
+                "문제 : 다음 중 마지막 글자가 다른 것은?\nKBS / {color=#6495ED}SBS / {color=#a33b39}MBC{/color}"
+                "퀴즈를 틀렸다... 멘탈이 터졌다."
+                $ mental_point -= 20
+
+            "MBC" :
+                play sound "sound/wrong.mp3"
+                "문제 : 다음 중 마지막 글자가 다른 것은?\nKBS / SBS / {color=#a33b39}MBC{/color}"
+                "퀴즈 잘 봤다! 행복하다."
+                $ mental_point += 30
+
+
+#        Player "퀴즈가 너무 어려웠다."
+#        if study_parameter <= 3.0*4 :
+#            extend "그래서 망친 것 같다."
+#            # 멘탈 하락
+#            "멘탈이 터졌다"
+#            $ mental_point -= 40
+
+#        elif study_parameter < 3.0*8 :
+#            extend "그렇지만 공부를 조금 해서 그럭저럭 봤다."
+#            # 멘탈 일정
+
+#        else :
+#            extend "그렇지만 공부를 겁나 열심히 했었기 때문에 상쾌하게 잘 봤다."
+#            # 멘탈 증가
+#            "기분이 좋아졌다."
+#            $ mental_point += 30
 
     elif month == 3 and week == 4 and day == 2 :
         # 3/24

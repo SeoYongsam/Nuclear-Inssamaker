@@ -203,6 +203,8 @@ label olympic:
     $ mental_point -= 30
     call parameter_maxmin_check from _call_parameter_maxmin_check_21
 
+    call change_SNS
+    $ day += 1
     jump weekday_SNS
 
     return

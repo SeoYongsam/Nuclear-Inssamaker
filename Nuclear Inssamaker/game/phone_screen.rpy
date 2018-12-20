@@ -154,6 +154,8 @@ screen fbook :
                         hbox xsize 440 ysize tmp_height xpos 8 ypos 8:
                             if msg[1] == "해장중" :
                                 add "character/profile_jangjung.png"
+                            elif msg[1] == "주인공" :
+                                add "character/profile_player.png"
                             elif msg[1] == "안금지" :
                                 add "character/profile_geumji.png"
                             elif msg[1] == "동삼용" :
@@ -341,7 +343,7 @@ screen ktalk:
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
-                                text "{color=#000}장중" xalign 0.5 yalign 0.5
+                                text "{color=#000}해장중" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
@@ -360,7 +362,7 @@ screen ktalk:
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
-                                text "{color=#000}진일" xalign 0.5 yalign 0.5
+                                text "{color=#000}김진일" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
@@ -379,7 +381,7 @@ screen ktalk:
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
-                                text "{color=#000}삼용" xalign 0.5 yalign 0.5
+                                text "{color=#000}동삼용" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
@@ -398,7 +400,7 @@ screen ktalk:
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             hbox xsize 440 ysize 92 :
-                                text "{color=#000}동아" xalign 0.5 yalign 0.5
+                                text "{color=#000}이동아" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
@@ -415,7 +417,7 @@ screen ktalk:
                             hover "phone/ktalk/talklist_on.png"
                             action Play("sound", "sound/in_phone.mp3"), SetVariable("ktalk_mode", 3), SetVariable("talk_with_who", "그룹"), SetVariable("grouptalk.new_message_count", 0)
                         null height -92
-                        add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
+                        add "character/profile_group.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
                             text "{color=#000}단톡" xalign 0.5 yalign 0.5
@@ -430,7 +432,7 @@ screen ktalk:
                         add "character/profile_jangjung.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
-                            text "{color=#000}장중" xalign 0.5 yalign 0.5
+                            text "{color=#000}해장중" xalign 0.5 yalign 0.5
                         null height -5
 
                     elif i == 3 and jinil.new_message_count == 0 :
@@ -442,7 +444,7 @@ screen ktalk:
                         add "character/profile_jinil.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
-                            text "{color=#000}진일" xalign 0.5 yalign 0.5
+                            text "{color=#000}김진일" xalign 0.5 yalign 0.5
                         null height -5
 
                     elif i == 4 and samyong.new_message_count == 0 :
@@ -454,7 +456,7 @@ screen ktalk:
                         add "character/profile_samyong.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
-                            text "{color=#000}삼용" xalign 0.5 yalign 0.5
+                            text "{color=#000}동삼용" xalign 0.5 yalign 0.5
                         null height -5
 
                     elif i == 5 and dongah.new_message_count == 0 :
@@ -466,7 +468,7 @@ screen ktalk:
                         add "character/profile_dongah.png" xpos 8 + 2 ypos 12 + 2
                         null height - 64
                         hbox xsize 440 ysize 92 :
-                            text "{color=#000}동아" xalign 0.5 yalign 0.5
+                            text "{color=#000}이동아" xalign 0.5 yalign 0.5
                         null height -5
 
         imagebutton :

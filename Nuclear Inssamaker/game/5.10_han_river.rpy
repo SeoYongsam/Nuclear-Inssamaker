@@ -16,6 +16,7 @@ label han_river:
     "한강에 가시겠습니까?"
     menu:
         "간다" :
+            $ day_schedule[2][10] = 5
             play music "music/5.10_han_river.mp3"
             $ day_or_evening = "evening"
             show han_river_image at truecenter

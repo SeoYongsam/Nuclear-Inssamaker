@@ -11,7 +11,7 @@ label phone :
     hide screen upper_right_UI
     show screen upper_right_UI
 
-    show homebutton
+#    show homebutton
 
     while True:
         window hide
