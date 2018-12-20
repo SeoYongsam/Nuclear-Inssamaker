@@ -6,7 +6,7 @@ image conversation = "olympic/conversation.jpg"
 
 # 노래방 5월 21일 토요일 month == 5 and week == 3 and day == 6 낮-저녁
 label olympic:
-    play music "music/olympic.mp3"
+    play music "music/5.21_olympic.mp3"
     show playground at truecenter
     Player "오늘 날씨 진짜 좋다!!! 오늘 심리학과 발라버리자~~\n"
     Jinil "가즈아~~~~\n"
