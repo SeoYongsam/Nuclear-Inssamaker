@@ -67,7 +67,7 @@ screen schedule_button():
                 idle "planner/button_study.png"
                 hover "planner/button_study_on.png"
                 if day <= 7 :
-                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
+                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 1), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
                 #else :
                 #    action Null
 
@@ -75,7 +75,7 @@ screen schedule_button():
                 idle "planner/button_gwa.png"
                 hover "planner/button_gwa_on.png"
                 if day <= 7 :
-                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-15), SetVariable("mental_point_for_show", mental_point_for_show-15), Jump("planner")
+                    action Play("sound", "sound/in_planner.mp3"), SetVariable("for_day_schedule_select", 3), SetVariable("hp_for_show", hp_for_show-20), SetVariable("mental_point_for_show", mental_point_for_show-5), Jump("planner")
 
             imagebutton :
                 # if month != 3 or week > 2 :
