@@ -69,7 +69,9 @@ label jangtuh:
     Jangjung "아 나 수업 끝나고 애들이랑 팀플하느라 늦었어 ㅠㅠ"
     Player "하.. 알겠어 얼른 가서 진일이 도와줘"
     Jangjung "나 뭐하면 돼?"
-    Player "지금 요리는 삼용이가 빨리빨리 잘해주고 있어서 괜찮은데 주문은 지금 워낙 많아서 진일이 혼자 감당하기 힘들어 ㅠㅠ 가서 얼른 진일이 도와줘"
+    Player "지금 요리는 삼용이가 빨리빨리 잘해주고 있어서 괜찮은데\n"
+    extend "주문은 지금 워낙 많아서 진일이 혼자 감당하기 힘들어 ㅠㅠ\n"
+    extend "가서 얼른 진일이 도와줘"
     Jangjung "오케이~"
     Jinil "야 해장중 너 빨리 와서 좀 도와"
 
@@ -169,11 +171,11 @@ label jangtuh:
     $ day_or_evening = "evening"
     "오후 6시가 되었다. 여러가지 우여곡절이 있었지만 결국 장터는 무사히 끝났다."
 
-    #장터 뒷풀이"
+    #장터 뒤풀이"
     play music "music/5.03_jangtuh_end.mp3"
     show cheers at truecenter
-    "장터현장을 정리하고 우리는 다같이 뒷풀이를 하러 술집에 왔다"
-    "장터에 도와주지 못한 친구들도 하나 둘씩 나타나며 뒷풀이에 참가하여 꽤 많은 인원이 모였다."
+    "장터현장을 정리하고 우리는 다같이 뒤풀이를 하러 술집에 왔다"
+    "장터에 도와주지 못한 친구들도 하나 둘씩 나타나며 뒤풀이에 참가하여 꽤 많은 인원이 모였다."
 
     Jinil "자자 주목~! 오늘 뻔대가 우리 학번중에 가장 열심히 일 했으니까 건배사 한답니다!!!"
 
@@ -215,7 +217,7 @@ label jangtuh:
     if jangtuh_pre_event == 4 :
         "장터 준비를 빠짐없이 참여하고 체계적으로 준비해서인지 엄청난 흑자가 났다."
 
-        "장터 순이익 : 200만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 150만원"
+        "장터 순이익 : 200만원\n뒤풀이 비용 : 50만원\n장터 후 총 금액 : 150만원"
         "장터 성적 : A, 과 분위기가 아주 좋아졌다."
         $ gwa_parameter += 5
         call parameter_maxmin_check from _call_parameter_maxmin_check_2
@@ -223,7 +225,7 @@ label jangtuh:
     elif jangtuh_pre_event == 3 or jangtuh_pre_event == 2 :
         "장터 준비를 조금 빠져서인지 겨우 흑자가 났다."
 
-        "장터 순이익 : 100만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 50만원"
+        "장터 순이익 : 100만원\n뒤풀이 비용 : 50만원\n장터 후 총 금액 : 50만원"
         "장터 성적 : B, 과 분위기가 좋아졌다."
         $ gwa_parameter += 3
         call parameter_maxmin_check from _call_parameter_maxmin_check_3
@@ -231,7 +233,7 @@ label jangtuh:
     elif jangtuh_pre_event == 1 :
         "장터 준비를 많이 빠져서인지 본전만 뽑았다."
 
-        "장터 순이익 : 50만원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : 0원"
+        "장터 순이익 : 50만원\n뒤풀이 비용 : 50만원\n장터 후 총 금액 : 0원"
         "장터 성적 : C, 흑자는 아니지만 과 사람들이 서로 돈독해진 것 같다."
         $ gwa_parameter += 1
         call parameter_maxmin_check from _call_parameter_maxmin_check_4
@@ -239,7 +241,7 @@ label jangtuh:
     else :
         "뻔대 주제에 장터 준비를 다 빠져서인지 망했다."
 
-        "장터 순이익 : 0원\n뒷풀이 비용 : 50만원\n장터 후 총 금액 : -50만원"
+        "장터 순이익 : 0원\n뒤풀이 비용 : 50만원\n장터 후 총 금액 : -50만원"
         "장터 성적 : D, 과 분위기 망했다."
         $ gwa_parameter -= 3
         call parameter_maxmin_check from _call_parameter_maxmin_check_5
@@ -251,11 +253,11 @@ label jangtuh:
     ##장터 전 이벤트 2,3개 참여했을 시 순이익 100만원
     ##장터 전 이벤트 1개 참여했을 시 순이익 50만원
     ##장터 전 이벤트 0개 참여했을 시 순이익 0원
-    ##뒷풀이 비용은 항상 50만원으로 세팅
+    ##뒤풀이 비용은 항상 50만원으로 세팅
 
     ###화면에 나올것
     ###장터 순이익: ___원
-    ###뒷풀이 비용: 50만원
+    ###뒤풀이 비용: 50만원
     ###장터 후 총 금액: ___원
     ###장터 성적: A (4개), B (2,3개), C (1개),D (0개)
 

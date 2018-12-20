@@ -1,12 +1,12 @@
 ﻿# Ren'Py automatically loads all script files ending with .rpy. To use this
 # file, define a label and jump to it from another file.
 
-image pcbang = "jongpa/bar_less.png"
-image pcbang = "jongpa/bar_many.png"
-image pcbang = "jongpa/bar_all.png"
-image pcbang = "jongpa/table1.png"
-image pcbang = "jongpa/table2.png"
-image pcbang = "jongpa/bar_street.png"
+image bar_less = "jongpa/bar_less.png"
+image bar_many = "jongpa/bar_many.png"
+image bar_all = "jongpa/bar_all.png"
+image table1 = "jongpa/table1.png"
+image table2 = "jongpa/table2.png"
+image bar_street = "jongpa/bar_street.png"
 
 
 label jongpa :
@@ -70,7 +70,7 @@ label jongpa :
     extend "커플이라고 유난떠냐 ㅋㅋ"
     Mirae "응~ 쏠로는 조용히 하자~"
     Player "ㅋㅋㅋ 너네들 안되겠다\n"
-    extend "이따가 자리 섞어야겠다"
+    extend "있다가 자리 섞어야겠다"
     Samyong "얘들아 일단 뻔대가 같이 한 잔 하자고 했으니 짠 부터 하자"
     Samyong "그래도 한 학기 고생한 뻔대가 얘기하는데 집중 해줘야지"
     Hyunjae "아 미안 미래랑 얘기하느라 못 들었어 ㅋㅋㅋ"

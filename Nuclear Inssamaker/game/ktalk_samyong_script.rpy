@@ -138,7 +138,7 @@ label change_samyong_talk :
 
             elif day == 3 :
                 $ samyong.add("날짜|5월 4일 수요일")
-                $ samyong.add("동삼용|우리 돈 어제 뒷풀이에서 진짜 다 썼어??")
+                $ samyong.add("동삼용|우리 돈 어제 뒤풀이에서 진짜 다 썼어??")
                 $ samyong.add("주인공|나도 얼마 남았는지 모르겠어 ㅠㅠ 나중에 정확한 금액은 공지로 알려줄게!")
 
         elif week == 4 :
