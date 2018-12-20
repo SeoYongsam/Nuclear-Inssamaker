@@ -151,7 +151,7 @@ init python:
 
 # 여기에서부터 게임이 시작합니다.
 label start:
-    $ renpy.block_rollback()
+    $ config.hard_rollback_limit = 0
     # 플레이어 이름을 묻는 함수 what_is_your_name
     # call what_is_your_name
 
