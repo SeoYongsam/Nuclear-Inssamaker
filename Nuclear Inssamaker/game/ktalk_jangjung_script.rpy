@@ -152,7 +152,7 @@ label change_jangjung_talk :
         elif week == 3 :
             if day == 0 :
                 $ jangjung.add("날짜|5월 15일 일요일")
-                $ jangjung.add("해장중|뻔대야 우리 꼭 뒷풀이 다른 과 애들이랑 같이 해야돼?")
+                $ jangjung.add("해장중|뻔대야 우리 꼭 뒤풀이 다른 과 애들이랑 같이 해야돼?")
                 $ jangjung.add("연속|나는 그냥 우리끼리 마셨으면 좋겠는데")
 
             elif day == 1 :

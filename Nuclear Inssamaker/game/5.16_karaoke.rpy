@@ -42,6 +42,7 @@ label karaoke:
             "진일이가 자꾸 리액션을 바라는 것 같은데..?"
         "진일이가 노래를 부르는 동안 리액션을 한다":
             $ jinil.parameter += 10
+            $ hp -= 10
             "진일이가 기분이 좋아보인다"
 
     show are_you_happy at truecenter

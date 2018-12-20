@@ -220,7 +220,7 @@ label all_mt:
             $ jinil.parameter += 10
             $ samyong.parameter += 11
             $ hp -= 30
-            $ mental -= 20
+            $ mental_point -= 20
             call parameter_maxmin_check from _call_parameter_maxmin_check_29
 
         "집에 바로 간다":
