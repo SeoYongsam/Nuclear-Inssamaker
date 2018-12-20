@@ -20,7 +20,7 @@ label ending :
     #학점에 따라 학점 사진이 다르게 구현
     "당신은 [study_count]일동안 공부했는데,\n"
     $ tmp = mid_term_grade + final_term_grade
-    extend "두번의 시험에서 총 8문제 중 [tmp]개를 맞추었습니다./n"
+    extend "두번의 시험에서 총 8문제 중 [tmp]개를 맞추었습니다.\n"
 
     if tmp >= 7 :
         show letter_a at truecenter
@@ -85,4 +85,8 @@ label ending :
     "행운을 빕니다. 당신도, 나도."
 
     stop music fadeout 1.0
+    
+    $ MainMenu(confirm=False)()
+
+
     return

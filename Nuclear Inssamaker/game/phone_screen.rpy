@@ -325,7 +325,7 @@ screen ktalk:
                                 text "{color=#000}단톡" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[grouptalk.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -344,7 +344,7 @@ screen ktalk:
                                 text "{color=#000}장중" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[jangjung.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -363,7 +363,7 @@ screen ktalk:
                                 text "{color=#000}진일" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[jinil.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -382,7 +382,7 @@ screen ktalk:
                                 text "{color=#000}삼용" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[samyong.new_message_count]" size 20 xalign 0.84 yalign 0.5
@@ -401,7 +401,7 @@ screen ktalk:
                                 text "{color=#000}동아" xalign 0.5 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
-                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.9 yalign 0.5
+                                add im.Scale("phone/red_rectangular.png",75,50) xalign 0.89 yalign 0.5
                             null width -440
                             hbox xsize 440 ysize 92 :
                                 text "[dongah.new_message_count]" size 20 xalign 0.84 yalign 0.5

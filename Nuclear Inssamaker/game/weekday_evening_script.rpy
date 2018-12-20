@@ -322,12 +322,12 @@ label evening_study:
 
     else :
         "공부를 했다.\n"
-        extend "체력 -15, 멘탈 -15, 공부 +2.7"
+        extend "체력 -15, 멘탈 -15, 공부 +3.0"
 
         python :
             hp -= 15
             mental_point -= 15
-            study_parameter += 2.7
+            study_parameter += 3.0
             # gwa_parameter -= 1
             # club_parameter -= 1
 
@@ -341,14 +341,14 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습을 했다.\n"
-        extend "체력 -25, 멘탈 + 10, 동아리 +2.7"
+        extend "체력 -25, 멘탈 + 10, 동아리 +3.0"
 
         python :
             hp -= 25
             mental_point += 10
             # study_parameter -= 1
             # gwa_parameter -= 1
-            club_parameter += 2.7
+            club_parameter += 3.0
 
     else :
         show club_thur at truecenter
@@ -392,13 +392,13 @@ label evening_gwa:
     show gwa at truecenter
     "과 활동을 했다.\n"
 
-    extend "체력 -20, 멘탈 -5, 과 +2.7"
+    extend "체력 -20, 멘탈 -5, 과 +3.0"
 
     python :
         hp -= 20
         mental_point -= 5
         #study_parameter -= 1
-        gwa_parameter += 2.7
+        gwa_parameter += 3.0
         #club_parameter -= 1
 
         gwa_count += 1

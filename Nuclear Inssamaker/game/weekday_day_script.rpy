@@ -78,13 +78,13 @@ label weekday_day_event :
         "김범준" "초성퀴즈!"
         "김범준" "ㅅㅂ"
         Player "퀴즈가 너무 어려웠다."
-        if study_parameter < 34 :
+        if study_parameter <= 3.0*4 :
             extend "그래서 망친 것 같다."
             # 멘탈 하락
             "멘탈이 터졌다"
             $ mental_point -= 40
 
-        elif study_parameter < 67 :
+        elif study_parameter < 3.0*8 :
             extend "그렇지만 공부를 조금 해서 그럭저럭 봤다."
             # 멘탈 일정
 
@@ -216,7 +216,7 @@ label weekday_day_event :
         play music "music/exams.mp3"
         show lecture_room at truecenter
         "중간시험 둘째 날이다. 오늘은 잘 볼 수 있을까?"
-        if study_parameter >= 2.7 * 6 :
+        if study_parameter >= 3.0 * 6 :
             "{color=#6495ED}문제 : 24절기 중 낮이 가장 짧고 밤이 가장 긴 절기는?{/color}"
         else :
             "{color=#6495ED}문제 : XXXXX X 낮XXX XXX XXX XX XX X XXX?{/color}"
@@ -246,7 +246,7 @@ label weekday_day_event :
         play music "music/exams.mp3"
         show lecture_room at truecenter
         "중간시험 셋째 날이다. 빨리 시험 끝났으면 좋겠다..."
-        if study_parameter >= 2.7 * 12 :
+        if study_parameter >= 3.0 * 12 :
             "{color=#6495ED}문제 : 영국의 소설가 골딩이 지은 장편소설은?{/color}"
         else :
             "{color=#6495ED}문제 : XXXX XX가 XXXX XXX XXXX은?{/color}\n"
@@ -277,7 +277,7 @@ label weekday_day_event :
         play music "music/exams.mp3"
         show lecture_room at truecenter
         "중간시험 마지막 날이다. 시험 마지막날 개꿀~"
-        if study_parameter >= 2.7 * 18 :
+        if study_parameter >= 3.0 * 18 :
             "{color=#6495ED}문제 : 보기 중 농구 선수인 사람은?{/color}"
         else :
             "{color=#6495ED}문제 : XXXXX XXXXX 선수X XXX XXX?{/color}\n"
@@ -339,7 +339,7 @@ label weekday_day_event :
         play music "music/exams.mp3"
         show lecture_room at truecenter
         "기말 고사 둘째 날이다. 계속 떨린다."
-        if study_parameter >= 2.7 * 10 :
+        if study_parameter >= 3.0 * 10 :
             "{color=#6495ED}문제 : 보기 중 목관 악기인 것은?{/color}"
         else :
             "{color=#6495ED}문제 : XXX XXXX XX XXXXXX XXXX 것은?{/color}\n"
@@ -369,7 +369,7 @@ label weekday_day_event :
         play music "music/exams.mp3"
         show lecture_room at truecenter
         "기말 고사 셋째 날이다. 곧 종강이다. 조금만 힘내자"
-        if study_parameter >= 2.7 * 20 :
+        if study_parameter >= 3.0 * 20 :
             "{color=#6495ED}문제 : 보기 중 꽃 이름인 것은?{/color}"
         else :
             "{color=#6495ED}문제 : XXX X X 이름X XX X XXXX XXXX XX?{/color}\n"
@@ -399,7 +399,7 @@ label weekday_day_event :
         play music "music/exams.mp3"
         show lecture_room at truecenter
         "기말 고사 마지막날이다. 유종의 미를 거두자."
-        if study_parameter >= 2.7 * 30 :
+        if study_parameter >= 3.0 * 30 :
             "{color=#6495ED}문제 : 보기 중 철자가 가장 긴 단어는?{/color}"
         else :
             "{color=#6495ED}문제 : XXX XX XX 가장 XXX XXX?{/color}\n"

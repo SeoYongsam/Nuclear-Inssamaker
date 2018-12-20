@@ -38,6 +38,9 @@ screen weekday_schedule_show :
                 elif day_schedule[month - 3][(week - 1) * 8 + i] == 7:
                     add "weekday_home.png"
 
+                elif day_schedule[month - 3][(week - 1) * 8 + i] == 8:
+                    add "weekday_event.png"
+
                 if i == 1 :
                     text "M" xalign 0.5
 
