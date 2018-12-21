@@ -146,6 +146,7 @@ label jangtuh:
             Player "미안…"
 
             Jinil "아 일단 모르겠고 우리 장터 가서 정리하는거 도와주기나 해"
+            Samyong "실망이다, 뻔대. 정말."
 
             Player "응.."
 

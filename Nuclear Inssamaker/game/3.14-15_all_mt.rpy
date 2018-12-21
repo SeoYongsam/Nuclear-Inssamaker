@@ -50,7 +50,7 @@ label all_mt:
             Jinil "불가능은 없다!!!"
 
             # 진일 파라미터 +
-            $ jinil.parameter += 10
+            $ jinil.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_23
 
         "장중이 옆":
@@ -63,7 +63,7 @@ label all_mt:
             Jangjung "우리의 청춘을 헛되게 낭비할수는 없으니깐!!!"
 
             # 장중 파라미터 +
-            $ jangjung.parameter += 10
+            $ jangjung.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_24
 
         "삼용이 옆":
@@ -76,7 +76,7 @@ label all_mt:
             Samyong "아니야... 만리장성 걸고 저 둘이 뭔가 있어"
 
             # 삼용 파라미터 +
-            $ samyong.parameter += 11
+            $ samyong.parameter += 19
             call parameter_maxmin_check from _call_parameter_maxmin_check_25
 
     show arriving at truecenter
@@ -120,7 +120,7 @@ label all_mt:
             stop sound fadeout 1.0
 
             # 장중 파라미터 +
-            $ jangjung.parameter += 10
+            $ jangjung.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_26
 
         "고기 굽기":
@@ -137,7 +137,7 @@ label all_mt:
             stop sound fadeout 1.0
 
             # 진일 파라미터 +
-            $ jinil.parameter += 10
+            $ jinil.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_27
 
         "밥/반찬 준비하기":
@@ -155,7 +155,7 @@ label all_mt:
             stop sound fadeout 1.0
 
             # 삼용 파라미터 +
-            $ samyong.parameter += 11
+            $ samyong.parameter += 19
             call parameter_maxmin_check from _call_parameter_maxmin_check_28
 
     show big_room at truecenter
@@ -216,9 +216,9 @@ label all_mt:
             stop sound fadeout 1.0
 
             #선택 간다 = 친구 파라미터 모두 업 + 체력 소모
-            $ jangjung.parameter += 10
-            $ jinil.parameter += 10
-            $ samyong.parameter += 11
+            $ jangjung.parameter += 15
+            $ jinil.parameter += 15
+            $ samyong.parameter += 19
             $ hp -= 30
             $ mental_point -= 20
             call parameter_maxmin_check from _call_parameter_maxmin_check_29

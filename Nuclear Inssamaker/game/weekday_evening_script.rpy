@@ -68,8 +68,8 @@ label weekday_evening_event :
                 "3/18의 일정이 업체 방문으로 교체 되었다."
 
                 #삼용, 장중 파라미터 증가, 3/18 일정 교체, 업체 방문 여부 ㅇ
-                $ samyong.parameter += 11
-                $ jangjung.parameter += 10
+                $ samyong.parameter += 19
+                $ jangjung.parameter += 15
                 $ gwazam_store = True
                 $ day_schedule[0][19] = 5
 
@@ -81,7 +81,7 @@ label weekday_evening_event :
                 "진일이와의 관계가 좋아진 것 같다."
 
                 #진일 파라미터 증가, 업체 방문 여부 x
-                $ jinil.parameter += 10
+                $ jinil.parameter += 15
                 $ gwazam_store = False
 
     elif month == 3 and week == 3 and day == 3 and gwazam_store == True :
@@ -122,7 +122,7 @@ label weekday_evening_event :
 
                         "진일이와의 관계가 좋아진 것 같다."
                         #진일 파라미터 업, 허나 너무 튀는 과잠이어서 과 파라미터 -10.
-                        $ jinil.parameter += 10
+                        $ jinil.parameter += 15
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "생각보다 반응이 싸늘했다..분위기가 살짝 안 좋아진것 같다.."
@@ -135,7 +135,7 @@ label weekday_evening_event :
 
                         "삼용이와의 관계가 좋아진 것 같다."
                         #삼용 파라미터 업, 디자인도 괜찮아서 과 파라미터 +20
-                        $ samyong.parameter += 11
+                        $ samyong.parameter += 19
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "열렬한 반응이 돌아왔다! 과 친구들 모두 마음에 들어하는 것 같다!"
@@ -148,7 +148,7 @@ label weekday_evening_event :
 
                         "장중이와의 관계가 좋아진 것 같다."
                         #장중 파라미터 업, 디자인도 나쁘지 않아서 과 파라미터 +10
-                        $ jangjung.parameter += 10
+                        $ jangjung.parameter += 15
 
                         "과 친구들에게 결정된 과잠 디자인을 보여주었다."
                         "별다른 반응이 없지만, 과잠을 맞춘 것 만으로도 만족하는 분위기이다."
@@ -322,12 +322,12 @@ label evening_study:
 
     else :
         "공부를 했다.\n"
-        #extend "체력 -15, 멘탈 -15, 공부 +3.0"
+        #extend "체력 -15, 멘탈 -15, 공부 +3.2"
 
         python :
             hp -= 15
             mental_point -= 15
-            study_parameter += 3.0
+            study_parameter += 3.2
             # gwa_parameter -= 1
             # club_parameter -= 1
 
@@ -341,14 +341,14 @@ label evening_club:
     if day != 4 :
         show club at truecenter
         "동아리 개인연습을 했다.\n"
-        #extend "체력 -25, 멘탈 + 10, 동아리 +3.0"
+        #extend "체력 -25, 멘탈 + 10, 동아리 +3.2"
 
         python :
             hp -= 25
             mental_point += 10
             # study_parameter -= 1
             # gwa_parameter -= 1
-            club_parameter += 3.0
+            club_parameter += 3.2
 
     else :
         show club_thur at truecenter
@@ -392,13 +392,13 @@ label evening_gwa:
     show gwa at truecenter
     "과 활동을 했다.\n"
 
-    #extend "체력 -20, 멘탈 -5, 과 +3.0"
+    #extend "체력 -20, 멘탈 -5, 과 +3.2"
 
     python :
         hp -= 20
         mental_point -= 5
         #study_parameter -= 1
-        gwa_parameter += 3.0
+        gwa_parameter += 3.2
         #club_parameter -= 1
 
         gwa_count += 1

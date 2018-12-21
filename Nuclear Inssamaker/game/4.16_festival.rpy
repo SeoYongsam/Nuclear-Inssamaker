@@ -48,7 +48,7 @@ label festival:
             "친구들과 함께 푸드트럭에서 스테이크를 사먹었다."
             "삼용이가 무척이나 기뻐한다."
             #삼용 파라미터 업
-            $ samyong.parameter += 11
+            $ samyong.parameter += 19
             call parameter_maxmin_check from _call_parameter_maxmin_check_14
 
         "난 새우~" :
@@ -60,7 +60,7 @@ label festival:
             "친구들과 함께 푸드트럭에서 새우를 사먹었다."
             "장중이가 무척이나 기뻐한다."
             #장중 파라미터 업
-            $ jangjung.parameter += 10
+            $ jangjung.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_15
 
         "오늘은 컵밥이 땡기네~" :
@@ -72,7 +72,7 @@ label festival:
             "친구들과 함께 푸드트럭에서 컵밥을 사먹었다."
             "진일이가 특히 맛있게 먹었다."
             #진일 파라미터 업
-            $ jinil.parameter += 10
+            $ jinil.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_16
 
     show fest_food at truecenter

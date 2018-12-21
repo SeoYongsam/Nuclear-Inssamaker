@@ -53,7 +53,7 @@ label pcbang:
                     "진일이는 오늘 '리그 오브 전설'을 할 수 있어서 전반적으로 행복해했던 것 같다.\n
                     하지만 나는 진일이의 눈치를 봐야해서 힘들었다."
                     #진일이와의 친밀도 UP, 멘탈 DOWN
-                    $ jinil.parameter += 10
+                    $ jinil.parameter += 15
                     $ mental_point -= 20
                     call parameter_maxmin_check from _call_parameter_maxmin_check_30
 

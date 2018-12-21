@@ -34,8 +34,8 @@ label uniform_day:
             menu:
                 "(장중이와 삼용이가 좋아하는)짜장면, 짬뽕":
                     #장중이 + 삼용 파라미터 +
-                    $ jangjung.parameter += 10
-                    $ samyong.parameter += 11
+                    $ jangjung.parameter += 15
+                    $ samyong.parameter += 19
 
                     show jjangge at truecenter
                     "중국집에서 음식을 시켰다."

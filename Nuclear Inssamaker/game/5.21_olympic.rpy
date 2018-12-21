@@ -52,7 +52,7 @@ label olympic:
 
             #과 파라미터 - / 장중 파라미터 +
             $ gwa_parameter -= 2
-            $ jangjung.parameter += 10
+            $ jangjung.parameter += 15
             call parameter_maxmin_check from _call_parameter_maxmin_check_17
 
         "거절한다":
@@ -136,7 +136,7 @@ label olympic:
             extend "네가 이해 좀 해줘..."
             Jangjung "아 진짜 이럴거면 왜 뽑은거야 ㅅㅂ"
             #진일 +, 장중 -, 과 -
-            $ jinil.parameter += 10
+            $ jinil.parameter += 15
             $ jangjung.parameter -= 10
             $ gwa_parameter -= 2
             call parameter_maxmin_check from _call_parameter_maxmin_check_19
@@ -203,7 +203,7 @@ label olympic:
     $ mental_point -= 30
     call parameter_maxmin_check from _call_parameter_maxmin_check_21
 
-    call change_SNS
+    call change_SNS from _call_change_SNS_7
     $ day += 1
     jump weekday_SNS
 
