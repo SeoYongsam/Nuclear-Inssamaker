@@ -90,6 +90,7 @@ init python:
             del self.message[:]
             self.denominator_length = 1.0 #분모
             self.numerator_length = 0.0 #분자
+            self.new_message_count = 0
 
         #def reset_temp(self) :
         #    del self.message_temp[:]
@@ -168,8 +169,6 @@ label start:
     "우측 상단의 HP는 체력, MP는 멘탈포인트(멘탈)을 의미합니다.\n"
     extend "떨어지지 않게 잘 관리해주세요."
 
-    call change_SNS from _call_change_SNS_4
-    call event_schedule_set from _call_event_schedule_set_2
 
     if month == 3 or month == 4 :
         play music "music/sunday_3and4.mp3"
